@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:himachali_rishta/features/authentication/login/ui/LoginPage.dart';
+import 'package:himachali_rishta/features/splash/ui/splash_page.dart';
 import 'package:sizer/sizer.dart';
 
 import 'core/app_colors.dart';
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             return GetMaterialApp(
               title: 'Flutter Demo',
               theme: controller.isDarkMode.value ? darkTheme : lightTheme,
-              home: LoginPage(),
+              home: SplashPage(),
             );
           });
     });

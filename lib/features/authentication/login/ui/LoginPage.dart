@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
+import 'package:himachali_rishta/features/authentication/login/ui/SubmitInformationPage.dart';
 import 'package:sizer/sizer.dart';
 
 import '../get_controller/login_page_get_controller.dart';
@@ -61,7 +62,8 @@ class LoginPage extends StatelessWidget {
                         Expanded(
                           child: TextFormField(
                             controller: getController.isdCodeController,
-                            style: TextStyle(color: AppColors.primaryTextColorDark),
+                            style: TextStyle(
+                                color: AppColors.primaryTextColorDark),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(4.0),
@@ -95,7 +97,8 @@ class LoginPage extends StatelessWidget {
                           flex: 3,
                           child: TextFormField(
                             controller: getController.mobileNumberController,
-                            style: TextStyle(color: AppColors.primaryTextColorDark),
+                            style: TextStyle(
+                                color: AppColors.primaryTextColorDark),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(4.0),
@@ -134,7 +137,9 @@ class LoginPage extends StatelessWidget {
                       children: [
                         Expanded(
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.to(() => SubmitInformationPage());
+                            },
                             child: Text(
                               'Get OTP',
                               style: TextStyle(fontSize: 18),
