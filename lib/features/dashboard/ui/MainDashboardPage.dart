@@ -2,8 +2,11 @@
 
 ///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
+import 'package:himachali_rishta/features/authentication/login/ui/LoginPage.dart';
 import 'package:sizer/sizer.dart';
 
 class MainDashboardPage extends StatelessWidget {
@@ -29,18 +32,25 @@ class MainDashboardPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.menu,
+                  Builder(builder: (context) {
+                    return GestureDetector(
+                      onTap: () {
+                        Scaffold.of(context).openDrawer();
+                      },
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.menu,
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          Text('Menu'),
+                        ],
                       ),
-                      SizedBox(
-                        height: 4,
-                      ),
-                      Text('Menu'),
-                    ],
-                  ),
+                    );
+                  }),
                   SizedBox(
                     width: 8,
                   ),
@@ -439,6 +449,94 @@ class MainDashboardPage extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+          ],
+        ),
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            Expanded(
+              child: Column(
+                children: [
+                  Container(
+                    height: 3.5.h,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  Image.asset('assets/images/homepagelogo.jpg'),
+                  SizedBox(
+                    height: 1.5.h,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 5.w),
+                    child: Container(
+                      height: 5.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: AppColors.lineColor,
+                      ),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.search),
+                            border: InputBorder.none,
+                            hintText: 'Search',
+                            hintStyle: TextStyle(fontSize: 18)),
+                      ),
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text(
+                      'My Home',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.account_tree_outlined),
+                    title: Text(
+                      'My Account',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.inbox),
+                    title: Text(
+                      'Inbox',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home_work),
+                    title: Text(
+                      'Membership Plans',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.person),
+                    title: Text(
+                      'Profile',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Divider(
+              thickness: 2,
+              color: Theme.of(context).primaryColor,
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text(
+                'Logout',
+                style: TextStyle(fontSize: 18),
+              ),
+              onTap: () {
+                FirebaseAuth.instance.signOut().then((value) {
+                  Get.offAll(() => LoginPage());
+                });
+              },
             ),
           ],
         ),

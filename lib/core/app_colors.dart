@@ -88,4 +88,6 @@ class AppColors {
   static Color alternate = Color(0xff018601);
   //f4f6fc
   static Color primaryBackground = Color(0xfff4f6fc);
+  static Color overlayColor = Color(0xffb3ffff);
+  static Color lineColor = Color(0xffdbe2e7);
 }
