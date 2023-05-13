@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "742374039090",
+    "firebase_url": "https://himachalirishtawebapi-default-rtdb.firebaseio.com",
+    "project_id": "himachalirishtawebapi",
+    "storage_bucket": "himachalirishtawebapi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742374039090:android:c5a99fe9e5b5d25675662b",
+        "android_client_info": {
+          "package_name": "com.himachalirishta.test.himachali_rishta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742374039090-kb4un64lgernhdtvus7ngmhdbpj0c001.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM7tZm3aWBq0DE4uRmtGYVoloqSmUNwfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742374039090-kb4un64lgernhdtvus7ngmhdbpj0c001.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

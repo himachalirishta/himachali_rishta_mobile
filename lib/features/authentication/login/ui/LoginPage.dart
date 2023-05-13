@@ -5,7 +5,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
-import 'package:himachali_rishta/features/authentication/login/ui/SubmitInformationPage.dart';
 import 'package:sizer/sizer.dart';
 
 import '../get_controller/login_page_get_controller.dart';
@@ -62,8 +61,9 @@ class LoginPage extends StatelessWidget {
                         Expanded(
                           child: TextFormField(
                             controller: getController.isdCodeController,
+                            keyboardType: TextInputType.phone,
                             style: TextStyle(
-                                color: AppColors.primaryTextColorDark),
+                                color: AppColors.primaryTextColorDark, fontSize: 18),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(4.0),
@@ -97,8 +97,9 @@ class LoginPage extends StatelessWidget {
                           flex: 3,
                           child: TextFormField(
                             controller: getController.mobileNumberController,
+                            keyboardType: TextInputType.phone,
                             style: TextStyle(
-                                color: AppColors.primaryTextColorDark),
+                                color: AppColors.primaryTextColorDark, fontSize: 18),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(4.0),
@@ -131,24 +132,30 @@ class LoginPage extends StatelessWidget {
                   SizedBox(
                     height: 5.h,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Get.to(() => SubmitInformationPage());
-                            },
-                            child: Text(
-                              'Get OTP',
-                              style: TextStyle(fontSize: 18),
+                  Obx(() {
+                    return getController.showLoader.value
+                        ? CircularProgressIndicator()
+                        : Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      getController
+                                          .initiatePhoneVerification(context);
+                                    },
+                                    child: Text(
+                                      'Get OTP',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                          );
+                  }),
                 ],
               ),
             ),
