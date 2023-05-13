@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
   ThemeData lightTheme = ThemeData(
     primarySwatch: AppColors.primaryLight,
     secondaryHeaderColor: AppColors.secondaryLight,
+    backgroundColor: AppColors.primaryBackground,
     textTheme: TextTheme(
       headline1: TextStyle(
           fontSize: 24.0,
@@ -84,6 +85,7 @@ class MyApp extends StatelessWidget {
   ThemeData darkTheme = ThemeData(
     primarySwatch: AppColors.primaryDark,
     secondaryHeaderColor: AppColors.secondaryDark,
+    backgroundColor: Color(0xff1d2428),
     textTheme: TextTheme(
       headline1: TextStyle(
           fontSize: 24.0,

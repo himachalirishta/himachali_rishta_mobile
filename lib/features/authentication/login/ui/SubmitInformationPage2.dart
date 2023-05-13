@@ -1,17 +1,10 @@
-///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
-
-///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
-
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:himachali_rishta/core/app_colors.dart';
-import 'package:himachali_rishta/features/authentication/login/get_controller/submit_information_get_controller.dart';
-import 'package:himachali_rishta/features/dashboard/ui/MainDashboardPage.dart';
 import 'package:sizer/sizer.dart';
 
-class SubmitInformationPage extends StatelessWidget {
-  SubmitInformationGetController getController =
-      Get.put(SubmitInformationGetController());
+import '../../../../core/app_colors.dart';
+
+class SubmitInformationPage2 extends StatelessWidget {
+  const SubmitInformationPage2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -237,84 +230,67 @@ class SubmitInformationPage extends StatelessWidget {
             border: Border.all(color: Color(0x53757575), width: 1),
             borderRadius: BorderRadius.circular(4),
           ),
-          child: Obx(() {
-            return DropdownButtonHideUnderline(
-              child: DropdownButton(
-                hint: Text("Select Marital Status"),
-                value: getController.selectedMaritalStatus.value,
-                items: getController.maritalStatus
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                style: TextStyle(
-                  color: Color(0xff000000),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.normal,
-                ),
-                onChanged: (value) {
-                  getController.selectedMaritalStatus.value = value!;
-                },
-                icon: Icon(Icons.expand_more),
-                iconSize: 18,
-                iconEnabledColor: Color(0xff616161),
-                elevation: 8,
-                isExpanded: true,
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton(
+              value: "Select Marital Status",
+              items: ["Select Marital Status"]
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              style: TextStyle(
+                color: Color(0xff000000),
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                fontStyle: FontStyle.normal,
               ),
-            );
-          })),
-      Obx(() {
-        return Visibility(
-          visible: getController.selectedMaritalStatus.value !=
-              getController.maritalStatus.first,
-          child: SizedBox(
-            height: 16,
-            width: 16,
+              onChanged: (value) {},
+              icon: Icon(Icons.expand_more),
+              iconSize: 18,
+              iconEnabledColor: Color(0xff616161),
+              elevation: 8,
+              isExpanded: true,
+            ),
+          )),
+      SizedBox(
+        height: 16,
+        width: 16,
+      ),
+      Container(
+          width: MediaQuery.of(context).size.width,
+          height: 50,
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          decoration: BoxDecoration(
+            color: Color(0xffffffff),
+            border: Border.all(color: Color(0x54757575), width: 1),
+            borderRadius: BorderRadius.circular(4),
           ),
-        );
-      }),
-      Obx(() {
-        return Visibility(
-          visible: getController.selectedMaritalStatus.value !=
-              getController.maritalStatus.first,
-          child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 50,
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                color: Color(0xffffffff),
-                border: Border.all(color: Color(0x54757575), width: 1),
-                borderRadius: BorderRadius.circular(4),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton(
+              value: "No. of children",
+              items: ["No. of children"]
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              style: TextStyle(
+                color: Color(0xff000000),
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                fontStyle: FontStyle.normal,
               ),
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton(
-                  value: "No. of children",
-                  items: ["No. of children"]
-                      .map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  style: TextStyle(
-                    color: Color(0xff000000),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                  ),
-                  onChanged: (value) {},
-                  icon: Icon(Icons.expand_more),
-                  iconSize: 18,
-                  iconEnabledColor: Color(0xff616161),
-                  elevation: 8,
-                  isExpanded: true,
-                ),
-              )),
-        );
-      }),
+              onChanged: (value) {},
+              icon: Icon(Icons.expand_more),
+              iconSize: 18,
+              iconEnabledColor: Color(0xff616161),
+              elevation: 8,
+              isExpanded: true,
+            ),
+          )),
       SizedBox(
         height: 16,
         width: 16,
@@ -521,9 +497,7 @@ class SubmitInformationPage extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 32.0),
         child: MaterialButton(
-          onPressed: () {
-            Get.to(()=>MainDashboardPage());
-          },
+          onPressed: () {},
           color: Color(0xffac0f11),
           elevation: 4,
           shape: RoundedRectangleBorder(

@@ -85,4 +85,7 @@ class AppColors {
   static Color accent1Light = Color(0xff616161);
   static Color accent2Light = Color(0xff757575);
   static Color infoLight = Color(0xff1c4498);
+  static Color alternate = Color(0xff018601);
+  //f4f6fc
+  static Color primaryBackground = Color(0xfff4f6fc);
 }
