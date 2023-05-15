@@ -47,7 +47,7 @@ class LoginPage extends StatelessWidget {
                     'Start with Mobile Number',
                     style: TextStyle(
                       color: AppColors.primaryTextColorDark,
-                      fontSize: 24,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -69,21 +69,21 @@ class LoginPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(4.0),
                                 borderSide: BorderSide(
                                   color: AppColors.primaryTextColorDark,
-                                  width: 2.0,
+                                  width: 1.0.sp,
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(4.0),
                                 borderSide: BorderSide(
                                   color: AppColors.primaryTextColorDark,
-                                  width: 2.0,
+                                  width: 1.0.sp,
                                 ),
                               ),
                               label: Text(
                                 'ISD Code',
                                 style: TextStyle(
                                   color: AppColors.primaryTextColorDark,
-                                  fontSize: 16,
+                                  fontSize: 10.sp,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -105,21 +105,21 @@ class LoginPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(4.0),
                                 borderSide: BorderSide(
                                   color: AppColors.primaryTextColorDark,
-                                  width: 2.0,
+                                  width: 1.0.sp,
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(4.0),
                                 borderSide: BorderSide(
                                   color: AppColors.primaryTextColorDark,
-                                  width: 2.0,
+                                  width: 1.0.sp,
                                 ),
                               ),
                               label: Text(
                                 'Mobile Number',
                                 style: TextStyle(
                                   color: AppColors.primaryTextColorDark,
-                                  fontSize: 16,
+                                  fontSize: 10.sp,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -148,7 +148,7 @@ class LoginPage extends StatelessWidget {
                                     },
                                     child: Text(
                                       'Get OTP',
-                                      style: TextStyle(fontSize: 18),
+                                      style: TextStyle(fontSize: 12.sp),
                                     ),
                                   ),
                                 ),

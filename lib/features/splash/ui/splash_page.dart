@@ -16,15 +16,7 @@ class SplashPage extends StatelessWidget {
         body: Center(
             child: FadeTransition(
       opacity: splashPageGetController.animationController,
-      child: CircleAvatar(
-        radius: 25.w,
-        backgroundColor: AppColors.primaryLight,
-        child: Text(
-          "Splash Page",
-          style: TextStyle(
-              color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
-        ),
-      ),
+      child: Image.asset("assets/images/homepagelogo.jpg"),
     )));
   }
 }
