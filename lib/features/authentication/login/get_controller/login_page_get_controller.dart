@@ -68,4 +68,14 @@ class LoginPageGetController extends GetxController {
         codeAutoRetrievalTimeout: (String verificationId) {});
     showLoader.value = false;
   }
+
+  @override
+  void onInit() {
+    if (FirebaseAuth.instance.currentUser != null) {
+      Future.delayed(Duration(milliseconds: 10), () {
+        Get.offAll(() => SubmitInformationPage());
+      });
+    }
+    super.onInit();
+  }
 }

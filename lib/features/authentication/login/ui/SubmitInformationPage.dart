@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/authentication/login/get_controller/submit_information_get_controller.dart';
+import 'package:himachali_rishta/features/authentication/login/ui/side_option_drawer.dart';
 import 'package:himachali_rishta/features/dashboard/ui/MainDashboardPage.dart';
 import 'package:sizer/sizer.dart';
 
@@ -15,47 +16,109 @@ class SubmitInformationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(0),
-        child: Container(
-          color: Theme.of(context).primaryColor,
+    return WillPopScope(
+      onWillPop: () {
+        if (getController.animationController.isCompleted) {
+          getController.animationController.reverse();
+        } else {
+          Get.offAll(MainDashboardPage());
+        }
+        return Future.value(false);
+      },
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(0),
+          child: Container(
+            color: Theme.of(context).primaryColor,
+          ),
         ),
-      ),
-      body: SizedBox(
-        height: 100.h,
-        child: Column(
+        body: Stack(
           children: [
-            Container(
-              height: 10.h,
-              width: 100.w,
-              decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20))),
-              child: Center(
-                child: Text(
-                  'Submit Bride/Groom Information',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: AppColors.primaryTextColorDark,
-                    fontWeight: FontWeight.bold,
+            SizedBox(
+              height: 100.h,
+              child: Column(
+                children: [
+                  Container(
+                    height: 10.h,
+                    width: 100.w,
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20))),
+                    child: Center(
+                      child: Text(
+                        'Submit Bride/Groom Information',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: AppColors.primaryTextColorDark,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                  Expanded(
+                      child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 8.0),
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        return formData(context)[index];
+                      },
+                      itemCount: formData(context).length,
+                    ),
+                  )),
+                ],
               ),
             ),
-            Expanded(
-                child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 8.0),
-              child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return formData(context)[index];
-                },
-                itemCount: formData(context).length,
-              ),
-            )),
+            AnimatedBuilder(
+                animation: getController.animationController,
+                builder: (context, widget) {
+                  return Positioned(
+                      right:
+                          -75.w * (1 - getController.animationController.value),
+                      child: SideOptionDrawer(
+                        options: getController
+                            .selectedOption[
+                                getController.selectedOptionIndex.value]!
+                            .value,
+                        onOptionSelected: (index) {
+                          switch (getController.selectedOptionIndex.value) {
+                            //gender, religion, caste, marital status, posting this profile for
+                            case 1:
+                              getController.selectedGender.value =
+                                  getController.gender[index];
+                              break;
+                            case 2:
+                              getController.selectedReligion.value =
+                                  getController.religion[index];
+
+                              break;
+                            case 3:
+                              getController.selectedCaste.value =
+                                  getController.caste[index];
+
+                              break;
+                            case 4:
+                              getController.selectedMaritalStatus.value =
+                                  getController.maritalStatus[index];
+                              break;
+                            case 5:
+                              getController.selectedNoOfChildren.value =
+                                  getController.noOfChildren[index];
+                              break;
+                            case 6:
+                              getController
+                                      .selectedPostingThisProfileFor.value =
+                                  getController.postingThisProfileFor[index];
+                              break;
+
+                            default:
+                              break;
+                          }
+                        },
+                      ));
+                })
           ],
         ),
       ),
@@ -109,167 +172,142 @@ class SubmitInformationPage extends StatelessWidget {
         height: 16,
         width: 16,
       ),
-      Container(
-          width: MediaQuery.of(context).size.width,
-          height: 50,
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          decoration: BoxDecoration(
-            color: Color(0xffffffff),
-            border: Border.all(color: Color(0x54757575), width: 1),
-            borderRadius: BorderRadius.circular(4),
-          ),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton(
-              value: "Select Gender",
-              items: ["Select Gender", "Male", "Female"]
-                  .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-              style: TextStyle(
-                color: Color(0xff000000),
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                fontStyle: FontStyle.normal,
-              ),
-              onChanged: (value) {},
-              icon: Icon(Icons.expand_more),
-              iconSize: 18,
-              iconEnabledColor: Color(0xff616161),
-              elevation: 8,
-              isExpanded: true,
+      GestureDetector(
+        onTap: () {
+          getController.selectedOptionIndex.value = 1;
+          getController.animationController.forward();
+        },
+        child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: 50,
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            decoration: BoxDecoration(
+              color: Color(0xffffffff),
+              border: Border.all(color: Color(0x54757575), width: 1),
+              borderRadius: BorderRadius.circular(4),
             ),
-          )),
-      SizedBox(
-        height: 16,
-        width: 16,
-      ),
-      Container(
-          width: MediaQuery.of(context).size.width,
-          height: 50,
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          decoration: BoxDecoration(
-            color: Color(0xffffffff),
-            border: Border.all(color: Color(0x55757575), width: 1),
-            borderRadius: BorderRadius.circular(4),
-          ),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton(
-              value: "Select Religion",
-              items: [
-                "Select Religion",
-                "Hindu",
-                "Christian",
-                "Parsi",
-                "Jain",
-                "Muslim",
-                "Sikh",
-                "Buddhist"
-              ].map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-              style: TextStyle(
-                color: Color(0xff000000),
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                fontStyle: FontStyle.normal,
-              ),
-              onChanged: (value) {},
-              icon: Icon(Icons.expand_more),
-              iconSize: 18,
-              iconEnabledColor: Color(0xff616161),
-              elevation: 8,
-              isExpanded: true,
-            ),
-          )),
-      SizedBox(
-        height: 16,
-        width: 16,
-      ),
-      Container(
-          width: MediaQuery.of(context).size.width,
-          height: 50,
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          decoration: BoxDecoration(
-            color: Color(0xffffffff),
-            border: Border.all(color: Color(0x55757575), width: 1),
-            borderRadius: BorderRadius.circular(4),
-          ),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton(
-              value: "Select Caste",
-              items: ["Select Caste"]
-                  .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-              style: TextStyle(
-                color: Color(0xff000000),
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                fontStyle: FontStyle.normal,
-              ),
-              onChanged: (value) {},
-              icon: Icon(Icons.expand_more),
-              iconSize: 18,
-              iconEnabledColor: Color(0xff616161),
-              elevation: 8,
-              isExpanded: true,
-            ),
-          )),
-      SizedBox(
-        height: 16,
-        width: 16,
-      ),
-      Container(
-          width: MediaQuery.of(context).size.width,
-          height: 50,
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          decoration: BoxDecoration(
-            color: Color(0xffffffff),
-            border: Border.all(color: Color(0x53757575), width: 1),
-            borderRadius: BorderRadius.circular(4),
-          ),
-          child: Obx(() {
-            return DropdownButtonHideUnderline(
-              child: DropdownButton(
-                hint: Text("Select Marital Status"),
-                value: getController.selectedMaritalStatus.value,
-                items: getController.maritalStatus
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
+            child: Row(
+              children: [
+                Expanded(child: Obx(() {
+                  return Text(
+                    getController.selectedGender.value,
+                    style: TextStyle(fontSize: 10.sp),
                   );
-                }).toList(),
-                style: TextStyle(
-                  color: Color(0xff000000),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.normal,
-                ),
-                onChanged: (value) {
-                  getController.selectedMaritalStatus.value = value!;
-                },
-                icon: Icon(Icons.expand_more),
-                iconSize: 18,
-                iconEnabledColor: Color(0xff616161),
-                elevation: 8,
-                isExpanded: true,
-              ),
-            );
-          })),
+                })),
+                Icon(
+                  Icons.chevron_right,
+                  color: Color(0xff616161),
+                  size: 15.sp,
+                )
+              ],
+            )),
+      ),
+      SizedBox(
+        height: 16,
+        width: 16,
+      ),
+      GestureDetector(
+        onTap: () {
+          getController.selectedOptionIndex.value = 2;
+          getController.animationController.forward();
+        },
+        child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: 50,
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            decoration: BoxDecoration(
+              color: Color(0xffffffff),
+              border: Border.all(color: Color(0x55757575), width: 1),
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: Row(
+              children: [
+                Expanded(child: Obx(() {
+                  return Text(
+                    getController.selectedReligion.value,
+                    style: TextStyle(fontSize: 10.sp),
+                  );
+                })),
+                Icon(
+                  Icons.chevron_right,
+                  color: Color(0xff616161),
+                  size: 15.sp,
+                )
+              ],
+            )),
+      ),
+      SizedBox(
+        height: 16,
+        width: 16,
+      ),
+      GestureDetector(
+        onTap: () {
+          getController.selectedOptionIndex.value = 3;
+          getController.animationController.forward();
+        },
+        child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: 50,
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            decoration: BoxDecoration(
+              color: Color(0xffffffff),
+              border: Border.all(color: Color(0x55757575), width: 1),
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: Row(
+              children: [
+                Expanded(child: Obx(() {
+                  return Text(
+                    getController.selectedCaste.value,
+                    style: TextStyle(fontSize: 10.sp),
+                  );
+                })),
+                Icon(
+                  Icons.chevron_right,
+                  color: Color(0xff616161),
+                  size: 15.sp,
+                )
+              ],
+            )),
+      ),
+      SizedBox(
+        height: 16,
+        width: 16,
+      ),
+      GestureDetector(
+        onTap: () {
+          getController.selectedOptionIndex.value = 4;
+          getController.animationController.forward();
+        },
+        child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: 50,
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            decoration: BoxDecoration(
+              color: Color(0xffffffff),
+              border: Border.all(color: Color(0x53757575), width: 1),
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: Row(
+              children: [
+                Expanded(child: Obx(() {
+                  return Text(
+                    getController.selectedMaritalStatus.value,
+                    style: TextStyle(fontSize: 10.sp),
+                  );
+                })),
+                Icon(
+                  Icons.chevron_right,
+                  color: Color(0xff616161),
+                  size: 15.sp,
+                )
+              ],
+            )),
+      ),
       Obx(() {
         return Visibility(
           visible: getController.selectedMaritalStatus.value !=
-              getController.maritalStatus.first,
+              getController.maritalStatus[1],
           child: SizedBox(
             height: 16,
             width: 16,
@@ -279,84 +317,73 @@ class SubmitInformationPage extends StatelessWidget {
       Obx(() {
         return Visibility(
           visible: getController.selectedMaritalStatus.value !=
-              getController.maritalStatus.first,
-          child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 50,
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                color: Color(0xffffffff),
-                border: Border.all(color: Color(0x54757575), width: 1),
-                borderRadius: BorderRadius.circular(4),
-              ),
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton(
-                  value: "No. of children",
-                  items: ["No. of children"]
-                      .map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  style: TextStyle(
-                    color: Color(0xff000000),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                  ),
-                  onChanged: (value) {},
-                  icon: Icon(Icons.expand_more),
-                  iconSize: 18,
-                  iconEnabledColor: Color(0xff616161),
-                  elevation: 8,
-                  isExpanded: true,
+              getController.maritalStatus[1],
+          child: GestureDetector(
+            onTap: () {
+              getController.selectedOptionIndex.value = 5;
+              getController.animationController.forward();
+            },
+            child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 50,
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: Color(0xffffffff),
+                  border: Border.all(color: Color(0x54757575), width: 1),
+                  borderRadius: BorderRadius.circular(4),
                 ),
-              )),
+                child: Row(
+                  children: [
+                    Expanded(child: Obx(() {
+                      return Text(
+                        getController.selectedNoOfChildren.value,
+                        style: TextStyle(fontSize: 10.sp),
+                      );
+                    })),
+                    Icon(
+                      Icons.chevron_right,
+                      color: Color(0xff616161),
+                      size: 15.sp,
+                    )
+                  ],
+                )),
+          ),
         );
       }),
       SizedBox(
         height: 16,
         width: 16,
       ),
-      Container(
-          width: MediaQuery.of(context).size.width,
-          height: 50,
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          decoration: BoxDecoration(
-            color: Color(0xffffffff),
-            border: Border.all(color: Color(0x53757575), width: 1),
-            borderRadius: BorderRadius.circular(4),
-          ),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton(
-              value: "Posting this profile for",
-              items: [
-                "Posting this profile for",
-                "Self",
-                "Son",
-                "Daughter",
-                "Relative"
-              ].map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-              style: TextStyle(
-                color: Color(0xff000000),
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                fontStyle: FontStyle.normal,
-              ),
-              onChanged: (value) {},
-              icon: Icon(Icons.expand_more),
-              iconSize: 18,
-              iconEnabledColor: Color(0xff616161),
-              elevation: 8,
-              isExpanded: true,
+      GestureDetector(
+        onTap: () {
+          getController.selectedOptionIndex.value = 6;
+          getController.animationController.forward();
+        },
+        child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: 50,
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            decoration: BoxDecoration(
+              color: Color(0xffffffff),
+              border: Border.all(color: Color(0x53757575), width: 1),
+              borderRadius: BorderRadius.circular(4),
             ),
-          )),
+            child: Row(
+              children: [
+                Expanded(child: Obx(() {
+                  return Text(
+                    getController.selectedPostingThisProfileFor.value,
+                    style: TextStyle(fontSize: 10.sp),
+                  );
+                })),
+                Icon(
+                  Icons.chevron_right,
+                  color: Color(0xff616161),
+                  size: 15.sp,
+                )
+              ],
+            )),
+      ),
       SizedBox(
         height: 16,
         width: 16,
@@ -522,7 +549,7 @@ class SubmitInformationPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 32.0),
         child: MaterialButton(
           onPressed: () {
-            Get.to(()=>MainDashboardPage());
+            Get.to(() => MainDashboardPage());
           },
           color: Color(0xffac0f11),
           elevation: 4,
