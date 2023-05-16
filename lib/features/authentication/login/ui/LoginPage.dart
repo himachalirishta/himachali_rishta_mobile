@@ -2,6 +2,7 @@
 
 ///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
 
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
@@ -59,34 +60,34 @@ class LoginPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Expanded(
-                          child: TextFormField(
-                            controller: getController.isdCodeController,
-                            keyboardType: TextInputType.phone,
-                            style: TextStyle(
-                                color: AppColors.primaryTextColorDark, fontSize: 18),
-                            decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
+                          child: GestureDetector(
+                            onTap: () {
+                              showCountryPicker(
+                                  context: context,
+                                  onSelect: (country) {
+                                    getController.selectedCountry.value =
+                                        country;
+                                  });
+                            },
+                            child: Container(
+                              height: 50.sp,
+                              decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(4.0),
-                                borderSide: BorderSide(
+                                border: Border.all(
                                   color: AppColors.primaryTextColorDark,
                                   width: 1.0.sp,
                                 ),
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(4.0),
-                                borderSide: BorderSide(
-                                  color: AppColors.primaryTextColorDark,
-                                  width: 1.0.sp,
-                                ),
-                              ),
-                              label: Text(
-                                'ISD Code',
-                                style: TextStyle(
-                                  color: AppColors.primaryTextColorDark,
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+                              alignment: Alignment.center,
+                              child: Obx(() {
+                                return Text(
+                                  getController.selectedCountry.value.phoneCode,
+                                  style: TextStyle(
+                                    fontSize: 18.sp,
+                                    color: AppColors.primaryTextColorDark,
+                                  ),
+                                );
+                              }),
                             ),
                           ),
                         ),
@@ -99,7 +100,8 @@ class LoginPage extends StatelessWidget {
                             controller: getController.mobileNumberController,
                             keyboardType: TextInputType.phone,
                             style: TextStyle(
-                                color: AppColors.primaryTextColorDark, fontSize: 18),
+                                color: AppColors.primaryTextColorDark,
+                                fontSize: 18.sp),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(4.0),

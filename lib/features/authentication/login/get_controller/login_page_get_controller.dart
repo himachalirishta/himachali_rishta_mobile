@@ -1,3 +1,4 @@
+import 'package:country_picker/country_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -5,19 +6,21 @@ import 'package:get/get.dart';
 import '../ui/SubmitInformationPage.dart';
 
 class LoginPageGetController extends GetxController {
-  TextEditingController isdCodeController = TextEditingController();
   TextEditingController mobileNumberController = TextEditingController();
   TextEditingController otpController = TextEditingController();
 
   RxBool showLoader = false.obs;
 
+  late Rx<Country> selectedCountry;
+
   Future<void> initiatePhoneVerification(BuildContext context) async {
-    if (isdCodeController.text.isEmpty || isdCodeController.text.isEmpty) {
+    if (mobileNumberController.text.isEmpty) {
       return;
     }
     showLoader.value = true;
     await FirebaseAuth.instance.verifyPhoneNumber(
-        phoneNumber: isdCodeController.text + mobileNumberController.text,
+        phoneNumber:
+            "+${selectedCountry.value.phoneCode}${mobileNumberController.text}",
         verificationCompleted: (PhoneAuthCredential credential) async {
           await FirebaseAuth.instance
               .signInWithCredential(credential)
@@ -71,6 +74,8 @@ class LoginPageGetController extends GetxController {
 
   @override
   void onInit() {
+    CountryService countryService = CountryService();
+    selectedCountry = countryService.findByCode('IN')!.obs;
     if (FirebaseAuth.instance.currentUser != null) {
       Future.delayed(Duration(milliseconds: 10), () {
         Get.offAll(() => SubmitInformationPage());
