@@ -57,78 +57,81 @@ class LoginPage extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: () {
-                              showCountryPicker(
-                                  context: context,
-                                  onSelect: (country) {
-                                    getController.selectedCountry.value =
-                                        country;
-                                  });
-                            },
-                            child: Container(
-                              height: 50.sp,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(4.0),
-                                border: Border.all(
-                                  color: AppColors.primaryTextColorDark,
-                                  width: 1.0.sp,
-                                ),
-                              ),
-                              alignment: Alignment.center,
-                              child: Obx(() {
-                                return Text(
-                                  getController.selectedCountry.value.phoneCode,
-                                  style: TextStyle(
-                                    fontSize: 18.sp,
+                    child: SizedBox(
+                      height: 45.sp,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                showCountryPicker(
+                                    context: context,
+                                    onSelect: (country) {
+                                      getController.selectedCountry.value =
+                                          country;
+                                    });
+                              },
+                              child: Container(
+                                height: double.maxFinite,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(4.0),
+                                  border: Border.all(
                                     color: AppColors.primaryTextColorDark,
+                                    width: 1.0.sp,
                                   ),
-                                );
-                              }),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 2.w,
-                        ),
-                        Expanded(
-                          flex: 3,
-                          child: TextFormField(
-                            controller: getController.mobileNumberController,
-                            keyboardType: TextInputType.phone,
-                            style: TextStyle(
-                                color: AppColors.primaryTextColorDark,
-                                fontSize: 18.sp),
-                            decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(4.0),
-                                borderSide: BorderSide(
-                                  color: AppColors.primaryTextColorDark,
-                                  width: 1.0.sp,
                                 ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(4.0),
-                                borderSide: BorderSide(
-                                  color: AppColors.primaryTextColorDark,
-                                  width: 1.0.sp,
-                                ),
-                              ),
-                              label: Text(
-                                'Mobile Number',
-                                style: TextStyle(
-                                  color: AppColors.primaryTextColorDark,
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                alignment: Alignment.center,
+                                child: Obx(() {
+                                  return Text(
+                                    getController.selectedCountry.value.phoneCode,
+                                    style: TextStyle(
+                                      fontSize: 18.sp,
+                                      color: AppColors.primaryTextColorDark,
+                                    ),
+                                  );
+                                }),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            width: 2.w,
+                          ),
+                          Expanded(
+                            flex: 3,
+                            child: TextFormField(
+                              controller: getController.mobileNumberController,
+                              keyboardType: TextInputType.phone,
+                              style: TextStyle(
+                                  color: AppColors.primaryTextColorDark,
+                                  fontSize: 18.sp),
+                              decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(4.0),
+                                  borderSide: BorderSide(
+                                    color: AppColors.primaryTextColorDark,
+                                    width: 1.0.sp,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(4.0),
+                                  borderSide: BorderSide(
+                                    color: AppColors.primaryTextColorDark,
+                                    width: 1.0.sp,
+                                  ),
+                                ),
+                                label: Text(
+                                  'Mobile Number',
+                                  style: TextStyle(
+                                    color: AppColors.primaryTextColorDark,
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
