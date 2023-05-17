@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/authentication/login/get_controller/submit_information_get_controller.dart';
+import 'package:himachali_rishta/features/authentication/login/ui/SubmitInformationPage2.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/side_option_drawer.dart';
-import 'package:himachali_rishta/features/dashboard/ui/MainDashboardPage.dart';
 import 'package:sizer/sizer.dart';
 
 class SubmitInformationPage extends StatelessWidget {
@@ -21,7 +21,7 @@ class SubmitInformationPage extends StatelessWidget {
         if (getController.animationController.isCompleted) {
           getController.animationController.reverse();
         } else {
-          Get.offAll(MainDashboardPage());
+          Get.back();
         }
         return Future.value(false);
       },
@@ -549,7 +549,7 @@ class SubmitInformationPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 32.0),
         child: MaterialButton(
           onPressed: () {
-            Get.to(() => MainDashboardPage());
+            Get.to(() => SubmitInformationPage2());
           },
           color: Color(0xffac0f11),
           elevation: 4,

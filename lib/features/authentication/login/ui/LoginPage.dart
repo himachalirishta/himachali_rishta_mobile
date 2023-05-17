@@ -6,6 +6,7 @@ import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
+import 'package:himachali_rishta/features/authentication/login/ui/OtpScreen.dart';
 import 'package:sizer/sizer.dart';
 
 import '../get_controller/login_page_get_controller.dart';
@@ -83,7 +84,8 @@ class LoginPage extends StatelessWidget {
                                 alignment: Alignment.center,
                                 child: Obx(() {
                                   return Text(
-                                    getController.selectedCountry.value.phoneCode,
+                                    getController
+                                        .selectedCountry.value.phoneCode,
                                     style: TextStyle(
                                       fontSize: 18.sp,
                                       color: AppColors.primaryTextColorDark,
@@ -148,8 +150,9 @@ class LoginPage extends StatelessWidget {
                                 Expanded(
                                   child: ElevatedButton(
                                     onPressed: () {
-                                      getController
-                                          .initiatePhoneVerification(context);
+                                      Get.to(() => OtpScreen());
+                                      /*getController
+                                          .initiatePhoneVerification(context);*/
                                     },
                                     child: Text(
                                       'Get OTP',
