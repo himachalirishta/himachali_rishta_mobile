@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static MaterialColor primaryLight = MaterialColor(
+  static MaterialColor primaryLight = const MaterialColor(
       //ac0f11
       0xffac0f11,
       {
@@ -18,7 +18,7 @@ class AppColors {
         900: Color(0xff570000),
       });
 
-  static MaterialColor secondaryLight = MaterialColor(
+  static MaterialColor secondaryLight = const MaterialColor(
     //01052e
     0xff01052e,
     {
@@ -38,12 +38,12 @@ class AppColors {
   );
 
   //101213
-  static Color primaryTextColorLight = Color(0xff101213);
+  static Color primaryTextColorLight = const Color(0xff101213);
 
   //57636c
-  static Color secondaryTextColorLight = Color(0xff57636c);
+  static Color secondaryTextColorLight = const Color(0xff57636c);
 
-  static MaterialColor primaryDark = MaterialColor(
+  static MaterialColor primaryDark = const MaterialColor(
       //23a8ff
       0xff23a8ff,
       {
@@ -60,7 +60,7 @@ class AppColors {
         900: Color(0xff125480),
       });
 
-  static MaterialColor secondaryDark = MaterialColor(
+  static MaterialColor secondaryDark = const MaterialColor(
       //18aa99
       0xff18aa99,
       {
@@ -77,17 +77,17 @@ class AppColors {
         900: Color(0xff0c554d),
       });
 
-  static Color primaryTextColorDark = Color(0xffffffff);
+  static Color primaryTextColorDark = const Color(0xffffffff);
 
   //57636c
-  static Color secondaryTextColorDark = Color(0xff95a1ac);
+  static Color secondaryTextColorDark = const Color(0xff95a1ac);
 
-  static Color accent1Light = Color(0xff616161);
-  static Color accent2Light = Color(0xff757575);
-  static Color infoLight = Color(0xff1c4498);
-  static Color alternate = Color(0xff018601);
+  static Color accent1Light = const Color(0xff616161);
+  static Color accent2Light = const Color(0xff757575);
+  static Color infoLight = const Color(0xff1c4498);
+  static Color alternate = const Color(0xff018601);
   //f4f6fc
-  static Color primaryBackground = Color(0xfff4f6fc);
-  static Color overlayColor = Color(0xffb3ffff);
-  static Color lineColor = Color(0xffdbe2e7);
+  static Color primaryBackground = const Color(0xfff4f6fc);
+  static Color overlayColor = const Color(0xffb3ffff);
+  static Color lineColor = const Color(0xffdbe2e7);
 }

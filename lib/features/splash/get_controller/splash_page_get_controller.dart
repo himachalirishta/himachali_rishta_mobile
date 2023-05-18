@@ -11,11 +11,11 @@ class SplashPageGetController extends GetxController
   void onInit() {
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
     );
     super.onInit();
     animationController.forward();
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Get.offAll(() => LoginPage());
     });
   }

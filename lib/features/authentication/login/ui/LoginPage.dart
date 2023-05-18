@@ -6,7 +6,6 @@ import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
-import 'package:himachali_rishta/features/authentication/login/ui/OtpScreen.dart';
 import 'package:sizer/sizer.dart';
 
 import '../get_controller/login_page_get_controller.dart';
@@ -14,16 +13,18 @@ import '../get_controller/login_page_get_controller.dart';
 class LoginPage extends StatelessWidget {
   LoginPageGetController getController = Get.put(LoginPageGetController());
 
+  LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffffffff),
+      backgroundColor: const Color(0xffffffff),
       body: Stack(
         alignment: Alignment.topLeft,
         children: [
           ///***If you have exported images you must have to copy those images in assets/images directory.
           Image(
-            image: AssetImage("assets/images/wallpaper.jpg"),
+            image: const AssetImage("assets/images/wallpaper.jpg"),
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover,
@@ -141,7 +142,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   Obx(() {
                     return getController.showLoader.value
-                        ? CircularProgressIndicator()
+                        ? const CircularProgressIndicator()
                         : Padding(
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 16.0),

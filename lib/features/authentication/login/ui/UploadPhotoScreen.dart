@@ -14,18 +14,20 @@ import '../get_controller/upload_photo_get_controller.dart';
 class UploadPhotoScreen extends StatelessWidget {
   UploadPhotoGetController getController = Get.put(UploadPhotoGetController());
 
+  UploadPhotoScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(0),
+        preferredSize: const Size.fromHeight(0),
         child: Container(
           color: Theme.of(context).primaryColor,
         ),
       ),
-      backgroundColor: Color(0xffffffff),
+      backgroundColor: const Color(0xffffffff),
       body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,7 +41,7 @@ class UploadPhotoScreen extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 fontStyle: FontStyle.normal,
                 fontSize: 20.sp,
-                color: Color(0xff000000),
+                color: const Color(0xff000000),
               ),
             ),
             SizedBox(
@@ -54,7 +56,7 @@ class UploadPhotoScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 fontStyle: FontStyle.normal,
                 fontSize: 12.sp,
-                color: Color(0xff000000),
+                color: const Color(0xff000000),
               ),
             ),
             SizedBox(
@@ -71,7 +73,7 @@ class UploadPhotoScreen extends StatelessWidget {
                       ? CircleAvatar(
                           radius: 50.sp,
                           backgroundImage:
-                              AssetImage('assets/images/maledefault.jpg'),
+                              const AssetImage('assets/images/maledefault.jpg'),
                         )
                       : CircleAvatar(
                           radius: 50.sp,
@@ -94,13 +96,16 @@ class UploadPhotoScreen extends StatelessWidget {
                   onPressed: () {
                     getController.startPickingImage();
                   },
-                  color: Color(0xffffffff),
+                  color: const Color(0xffffffff),
                   elevation: 4,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: Text(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  textColor: const Color(0xff000000),
+                  height: 30.sp,
+                  minWidth: 130.sp,
+                  child: const Text(
                     "Upload Photo",
                     style: TextStyle(
                       fontSize: 14,
@@ -108,9 +113,6 @@ class UploadPhotoScreen extends StatelessWidget {
                       fontStyle: FontStyle.normal,
                     ),
                   ),
-                  textColor: Color(0xff000000),
-                  height: 30.sp,
-                  minWidth: 130.sp,
                 ),
               ],
             ),
@@ -119,7 +121,7 @@ class UploadPhotoScreen extends StatelessWidget {
               width: 16.sp,
             ),
             Padding(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -137,8 +139,11 @@ class UploadPhotoScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      child: Text(
+                          const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      textColor: const Color(0xff000000),
+                      height: 30.sp,
+                      minWidth: 130.sp,
+                      child: const Text(
                         "Next",
                         style: TextStyle(
                             fontSize: 18,
@@ -146,9 +151,6 @@ class UploadPhotoScreen extends StatelessWidget {
                             fontStyle: FontStyle.normal,
                             color: Colors.white),
                       ),
-                      textColor: Color(0xff000000),
-                      height: 30.sp,
-                      minWidth: 130.sp,
                     ),
                   ),
                 ],

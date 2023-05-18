@@ -89,7 +89,7 @@ class LoginPageGetController extends GetxController {
     CountryService countryService = CountryService();
     selectedCountry = countryService.findByCode('IN')!.obs;
     if (FirebaseAuth.instance.currentUser != null) {
-      Future.delayed(Duration(milliseconds: 10), () {
+      Future.delayed(const Duration(milliseconds: 10), () {
         Get.offAll(() => SubmitInformationPage());
       });
     }

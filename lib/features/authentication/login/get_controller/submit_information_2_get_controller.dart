@@ -27,7 +27,7 @@ class SubmitInformation2GetController extends GetxController
   void onInit() {
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
     );
 
     selectedOption.value = {

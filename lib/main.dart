@@ -36,97 +36,93 @@ class MyApp extends StatelessWidget {
   }
 
   ThemeData lightTheme = ThemeData(
-    primarySwatch: AppColors.primaryLight,
     secondaryHeaderColor: AppColors.secondaryLight,
-    backgroundColor: AppColors.primaryBackground,
     textTheme: TextTheme(
-      headline1: TextStyle(
+      displayLarge: TextStyle(
           fontSize: 24.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryTextColorLight),
-      headline2: TextStyle(
+      displayMedium: TextStyle(
           fontSize: 18.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryTextColorLight),
-      headline3: TextStyle(
+      displaySmall: TextStyle(
           fontSize: 16.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryTextColorLight),
-      headline4: TextStyle(
+      headlineMedium: TextStyle(
           fontSize: 14.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryTextColorLight),
-      headline5: TextStyle(
+      headlineSmall: TextStyle(
           fontSize: 12.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryTextColorLight),
-      headline6: TextStyle(
+      titleLarge: TextStyle(
           fontSize: 10.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryTextColorLight),
-      bodyText1: TextStyle(
+      bodyLarge: TextStyle(
           fontSize: 14.0,
           fontWeight: FontWeight.normal,
           color: AppColors.primaryTextColorLight),
-      bodyText2: TextStyle(
+      bodyMedium: TextStyle(
           fontSize: 12.0,
           fontWeight: FontWeight.normal,
           color: AppColors.primaryTextColorLight),
-      subtitle1: TextStyle(
+      titleMedium: TextStyle(
           fontSize: 10.0,
           fontWeight: FontWeight.normal,
           color: AppColors.primaryTextColorLight),
-      subtitle2: TextStyle(
+      titleSmall: TextStyle(
           fontSize: 8.0,
           fontWeight: FontWeight.normal,
           color: AppColors.primaryTextColorLight),
-    ),
+    ), colorScheme: ColorScheme.fromSwatch(primarySwatch: AppColors.primaryLight).copyWith(background: AppColors.primaryBackground),
   );
   ThemeData darkTheme = ThemeData(
-    primarySwatch: AppColors.primaryDark,
     secondaryHeaderColor: AppColors.secondaryDark,
-    backgroundColor: Color(0xff1d2428),
     textTheme: TextTheme(
-      headline1: TextStyle(
+      displayLarge: TextStyle(
           fontSize: 24.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryTextColorDark),
-      headline2: TextStyle(
+      displayMedium: TextStyle(
           fontSize: 18.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryTextColorDark),
-      headline3: TextStyle(
+      displaySmall: TextStyle(
           fontSize: 16.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryTextColorDark),
-      headline4: TextStyle(
+      headlineMedium: TextStyle(
           fontSize: 14.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryTextColorDark),
-      headline5: TextStyle(
+      headlineSmall: TextStyle(
           fontSize: 12.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryTextColorDark),
-      headline6: TextStyle(
+      titleLarge: TextStyle(
           fontSize: 10.0,
           fontWeight: FontWeight.bold,
           color: AppColors.primaryTextColorDark),
-      bodyText1: TextStyle(
+      bodyLarge: TextStyle(
           fontSize: 14.0,
           fontWeight: FontWeight.normal,
           color: AppColors.primaryTextColorDark),
-      bodyText2: TextStyle(
+      bodyMedium: TextStyle(
           fontSize: 12.0,
           fontWeight: FontWeight.normal,
           color: AppColors.primaryTextColorDark),
-      subtitle1: TextStyle(
+      titleMedium: TextStyle(
           fontSize: 10.0,
           fontWeight: FontWeight.normal,
           color: AppColors.primaryTextColorDark),
-      subtitle2: TextStyle(
+      titleSmall: TextStyle(
           fontSize: 8.0,
           fontWeight: FontWeight.normal,
           color: AppColors.primaryTextColorDark),
-    ),
+    ), colorScheme: ColorScheme.fromSwatch(primarySwatch: AppColors.primaryDark).copyWith(background: const Color(0xff1d2428)),
   );
 }

@@ -19,14 +19,14 @@ class OtpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(0),
+        preferredSize: const Size.fromHeight(0),
         child: Container(
           color: Theme.of(context).primaryColor,
         ),
       ),
-      backgroundColor: Color(0xffffffff),
+      backgroundColor: const Color(0xffffffff),
       body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,14 +36,14 @@ class OtpScreen extends StatelessWidget {
               "Check your phone. We have sent a code on $phoneNumber. Enter code to verify your mobile number.",
               textAlign: TextAlign.start,
               overflow: TextOverflow.clip,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.w500,
                 fontStyle: FontStyle.normal,
                 fontSize: 16,
                 color: Color(0xff000000),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
               width: 16,
             ),
@@ -61,7 +61,7 @@ class OtpScreen extends StatelessWidget {
                     textAlign: TextAlign.start,
                     maxLines: 1,
                     onChanged: (text) => FocusScope.of(context).nextFocus(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 14,
@@ -71,26 +71,26 @@ class OtpScreen extends StatelessWidget {
                       disabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       filled: false,
-                      fillColor: Color(0x00f2f2f3),
+                      fillColor: const Color(0x00f2f2f3),
                       isDense: false,
-                      contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+                      contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                   width: 16,
                 ),
@@ -103,7 +103,7 @@ class OtpScreen extends StatelessWidget {
                     textAlign: TextAlign.start,
                     maxLines: 1,
                     onChanged: (text) => FocusScope.of(context).nextFocus(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 14,
@@ -113,26 +113,26 @@ class OtpScreen extends StatelessWidget {
                       disabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       filled: false,
-                      fillColor: Color(0xfff2f2f3),
+                      fillColor: const Color(0xfff2f2f3),
                       isDense: false,
-                      contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+                      contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                   width: 16,
                 ),
@@ -145,7 +145,7 @@ class OtpScreen extends StatelessWidget {
                     obscureText: false,
                     textAlign: TextAlign.start,
                     maxLines: 1,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 14,
@@ -155,26 +155,26 @@ class OtpScreen extends StatelessWidget {
                       disabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       filled: false,
-                      fillColor: Color(0xfff2f2f3),
+                      fillColor: const Color(0xfff2f2f3),
                       isDense: false,
-                      contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+                      contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                   width: 16,
                 ),
@@ -187,7 +187,7 @@ class OtpScreen extends StatelessWidget {
                     obscureText: false,
                     textAlign: TextAlign.start,
                     maxLines: 1,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 14,
@@ -197,26 +197,26 @@ class OtpScreen extends StatelessWidget {
                       disabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       filled: false,
-                      fillColor: Color(0xfff2f2f3),
+                      fillColor: const Color(0xfff2f2f3),
                       isDense: false,
-                      contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+                      contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                   width: 16,
                 ),
@@ -229,7 +229,7 @@ class OtpScreen extends StatelessWidget {
                     obscureText: false,
                     textAlign: TextAlign.start,
                     maxLines: 1,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 14,
@@ -239,26 +239,26 @@ class OtpScreen extends StatelessWidget {
                       disabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       filled: false,
-                      fillColor: Color(0xfff2f2f3),
+                      fillColor: const Color(0xfff2f2f3),
                       isDense: false,
-                      contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+                      contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                   width: 16,
                 ),
@@ -271,7 +271,7 @@ class OtpScreen extends StatelessWidget {
                     obscureText: false,
                     textAlign: TextAlign.start,
                     maxLines: 1,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 14,
@@ -281,28 +281,28 @@ class OtpScreen extends StatelessWidget {
                       disabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
                         borderSide:
-                            BorderSide(color: Color(0xff000000), width: 1),
+                            const BorderSide(color: Color(0xff000000), width: 1),
                       ),
                       filled: false,
-                      fillColor: Color(0xfff2f2f3),
+                      fillColor: const Color(0xfff2f2f3),
                       isDense: false,
-                      contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+                      contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
                     ),
                   ),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
               width: 16,
             ),
@@ -315,13 +315,16 @@ class OtpScreen extends StatelessWidget {
                     getController.controller5.text +
                     getController.controller6.text);
               },
-              color: Color(0xffac0f11),
+              color: const Color(0xffac0f11),
               elevation: 0,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: Text(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              textColor: const Color(0xff000000),
+              height: 40,
+              minWidth: 140,
+              child: const Text(
                 "Verify",
                 style: TextStyle(
                     fontSize: 14,
@@ -329,15 +332,12 @@ class OtpScreen extends StatelessWidget {
                     fontStyle: FontStyle.normal,
                     color: Colors.white),
               ),
-              textColor: Color(0xff000000),
-              height: 40,
-              minWidth: 140,
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
               width: 16,
             ),
-            Text(
+            const Text(
               "Didn't receive OTP? RESEND",
               textAlign: TextAlign.start,
               overflow: TextOverflow.clip,
@@ -348,7 +348,7 @@ class OtpScreen extends StatelessWidget {
                 color: Color(0xff000000),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
               width: 16,
             ),
@@ -356,7 +356,7 @@ class OtpScreen extends StatelessWidget {
               "Not $phoneNumber? Change Mobile No.",
               textAlign: TextAlign.start,
               overflow: TextOverflow.clip,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.w500,
                 fontStyle: FontStyle.normal,
                 fontSize: 12,

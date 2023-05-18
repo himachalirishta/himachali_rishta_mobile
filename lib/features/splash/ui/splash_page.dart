@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:himachali_rishta/core/app_colors.dart';
-import 'package:sizer/sizer.dart';
 
 import '../get_controller/splash_page_get_controller.dart';
 
