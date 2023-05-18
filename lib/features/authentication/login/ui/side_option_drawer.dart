@@ -16,36 +16,51 @@ class SideOptionDrawer extends StatelessWidget {
         height: 100.h,
         width: 75.w,
         color: Colors.white,
-        child: ListView.builder(
-          itemBuilder: (context, index) {
-            return Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    onOptionSelected(index);
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      options[index],
-                      style: TextStyle(
-                          fontSize: 12.sp,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ),
-                Divider(
-                  color: AppColors.infoLight,
-                  thickness: 1,
-                  indent: 15.sp,
-                  endIndent: 15.sp,
-                ),
-              ],
-            );
-          },
-          itemCount: options.length,
+        child: Column(
+          children: [
+            Container(
+              width: 75.w,
+              height: 10.h,
+              alignment: Alignment.center,
+              child: Image.asset("assets/images/homepagelogo.jpg"),
+            ),
+            SizedBox(
+              height: 5.h,
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          onOptionSelected(index);
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            options[index],
+                            style: TextStyle(
+                                fontSize: 12.sp,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        color: AppColors.infoLight.withOpacity(0.3),
+                        thickness: 1,
+                        indent: 15.sp,
+                        endIndent: 15.sp,
+                      ),
+                    ],
+                  );
+                },
+                itemCount: options.length,
+              ),
+            ),
+          ],
         ));
   }
 }
