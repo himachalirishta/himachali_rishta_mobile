@@ -2,12 +2,12 @@ import 'package:country_picker/country_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:himachali_rishta/features/authentication/login/ui/OtpScreen.dart';
 
 import '../ui/SubmitInformationPage.dart';
 
 class LoginPageGetController extends GetxController {
   TextEditingController mobileNumberController = TextEditingController();
-  TextEditingController otpController = TextEditingController();
 
   RxBool showLoader = false.obs;
 
@@ -33,7 +33,19 @@ class LoginPageGetController extends GetxController {
               backgroundColor: Colors.red, colorText: Colors.white);
         },
         codeSent: (String verificationId, int? resendToken) {
-          showDialog(
+          Get.to(() => OtpScreen(
+              phoneNumber:
+                  '+${selectedCountry.value.phoneCode}${mobileNumberController.text}',
+              otpEntered: (otpEntered) async {
+                PhoneAuthCredential credential = PhoneAuthProvider.credential(
+                    verificationId: verificationId, smsCode: otpEntered);
+                await FirebaseAuth.instance
+                    .signInWithCredential(credential)
+                    .then((value) {
+                  Get.to(() => SubmitInformationPage());
+                });
+              }));
+          /* showDialog(
               context: context,
               builder: (context) {
                 return AlertDialog(
@@ -66,7 +78,7 @@ class LoginPageGetController extends GetxController {
                         child: Text('Submit'))
                   ],
                 );
-              });
+              });*/
         },
         codeAutoRetrievalTimeout: (String verificationId) {});
     showLoader.value = false;

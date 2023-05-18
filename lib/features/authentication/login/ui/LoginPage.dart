@@ -150,9 +150,9 @@ class LoginPage extends StatelessWidget {
                                 Expanded(
                                   child: ElevatedButton(
                                     onPressed: () {
-                                      Get.to(() => OtpScreen());
-                                      /*getController
-                                          .initiatePhoneVerification(context);*/
+
+                                      getController
+                                          .initiatePhoneVerification(context);
                                     },
                                     child: Text(
                                       'Get OTP',
