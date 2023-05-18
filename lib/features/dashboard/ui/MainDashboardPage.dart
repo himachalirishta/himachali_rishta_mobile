@@ -9,7 +9,12 @@ import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/LoginPage.dart';
 import 'package:sizer/sizer.dart';
 
+import '../get_controllers/main_dashboard_get_controller.dart';
+
 class MainDashboardPage extends StatelessWidget {
+  MainDashboardGetController getController =
+      Get.put(MainDashboardGetController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,42 +37,35 @@ class MainDashboardPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Builder(builder: (context) {
-                    return GestureDetector(
-                      onTap: () {
-                        Scaffold.of(context).openDrawer();
-                      },
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            Icons.menu,
-                          ),
-                          SizedBox(
-                            height: 4,
-                          ),
-                          Text('Menu'),
-                        ],
-                      ),
-                    );
-                  }),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
+                  Row(
                     children: [
-                      Icon(
-                        Icons.shopping_basket,
-                      ),
+                      Builder(builder: (context) {
+                        return GestureDetector(
+                          onTap: () {
+                            Scaffold.of(context).openDrawer();
+                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.menu,
+                              ),
+                              SizedBox(
+                                height: 4,
+                              ),
+                              Text('Menu'),
+                            ],
+                          ),
+                        );
+                      }),
                       SizedBox(
-                        height: 4,
+                        width: 8,
                       ),
-                      Text('Wedding Market'),
+                      Image.asset('assets/images/homepagelogo.jpg'),
+                      SizedBox(
+                        width: 8,
+                      ),
                     ],
-                  ),
-                  SizedBox(
-                    width: 8,
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.min,
@@ -81,73 +79,106 @@ class MainDashboardPage extends StatelessWidget {
                       Text('Search'),
                     ],
                   ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Image.asset('assets/images/homepagelogo.jpg'),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Icon(
-                    Icons.notifications,
-                    size: 28,
-                  )
                 ],
               ),
             ),
             Container(
               height: 7.h,
-              color: Theme.of(context).primaryColor,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Latest',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    ),
-                    SizedBox(
-                      width: 8,
-                    ),
-                    Text('Online Members',
-                        style: TextStyle(color: Colors.white, fontSize: 16)),
-                    SizedBox(
-                      width: 8,
-                    ),
-                    //your match
-                    Text('Your Match',
-                        style: TextStyle(color: Colors.white, fontSize: 16)),
-                    SizedBox(
-                      width: 8,
-                    ),
-                    //featured
-                    Text('Featured',
-                        style: TextStyle(color: Colors.white, fontSize: 16)),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Text(
-                  "New Joined Members",
-                  textAlign: TextAlign.start,
-                  overflow: TextOverflow.clip,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 12,
-                    color: Color(0xff000000),
+              padding: EdgeInsets.symmetric(horizontal: 8.sp, vertical: 4.sp),
+              child: Row(
+                children: [
+                  Obx(() {
+                    return GestureDetector(
+                      onTap: () {
+                        getController.buttonSelected.value = 1;
+                      },
+                      child: Container(
+                        height: 30.sp,
+                        width: 40.sp,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: getController.buttonSelected.value == 1
+                                ? Theme.of(context).primaryColor
+                                : Colors.transparent),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            'New',
+                            style: TextStyle(
+                                fontSize: 10.sp,
+                                color: getController.buttonSelected.value == 1
+                                    ? Colors.white
+                                    : AppColors.secondaryTextColorLight),
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
+                  SizedBox(
+                    width: 16.sp,
                   ),
-                ),
-              ],
+                  Obx(() {
+                    return GestureDetector(
+                      onTap: () {
+                        getController.buttonSelected.value = 2;
+                      },
+                      child: Container(
+                        height: 30.sp,
+                        width: 40.sp,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: getController.buttonSelected.value == 2
+                                ? Theme.of(context).primaryColor
+                                : Colors.transparent),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            'Your Match',
+                            style: TextStyle(
+                                fontSize: 8.sp,
+                                color: getController.buttonSelected.value == 2
+                                    ? Colors.white
+                                    : AppColors.secondaryTextColorLight),
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
+                  SizedBox(
+                    width: 16.sp,
+                  ),
+                  Obx(() {
+                    return GestureDetector(
+                      onTap: () {
+                        getController.buttonSelected.value = 3;
+                      },
+                      child: Container(
+                        height: 30.sp,
+                        width: 40.sp,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: getController.buttonSelected.value == 3
+                                ? Theme.of(context).primaryColor
+                                : Colors.transparent),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            'Active',
+                            style: TextStyle(
+                                fontSize: 10.sp,
+                                color: getController.buttonSelected.value == 3
+                                    ? Colors.white
+                                    : AppColors.secondaryTextColorLight),
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
+                ],
+              ),
             ),
             Expanded(
               flex: 1,
@@ -463,7 +494,14 @@ class MainDashboardPage extends StatelessWidget {
                     height: 3.5.h,
                     color: Theme.of(context).primaryColor,
                   ),
-                  Image.asset('assets/images/homepagelogo.jpg'),
+                  SizedBox(
+                    height: 2.sp,
+                  ),
+                  CircleAvatar(
+                    radius: 8.h,
+                    backgroundImage:
+                        NetworkImage('https://picsum.photos/250?image=9'),
+                  ),
                   SizedBox(
                     height: 1.5.h,
                   ),
