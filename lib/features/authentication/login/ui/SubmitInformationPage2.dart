@@ -466,41 +466,53 @@ class SubmitInformationPage2 extends StatelessWidget {
             width: 16,
           ),
           Expanded(
-            child: TextFormField(
-              controller: getController.birthTimeController,
-              obscureText: false,
-              textAlign: TextAlign.start,
-              maxLines: 1,
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontStyle: FontStyle.normal,
-                fontSize: 14,
-                color: Color(0xff000000),
-              ),
-              decoration: InputDecoration(
-                disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide: BorderSide(color: Color(0x55757575), width: 1),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide: BorderSide(color: Color(0x55757575), width: 1),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide: BorderSide(color: Color(0x55757575), width: 1),
-                ),
-                labelText: "Birth Time",
-                labelStyle: TextStyle(
-                  fontWeight: FontWeight.w400,
+            child: GestureDetector(
+              onTap: () {
+                showTimePicker(context: context, initialTime: TimeOfDay.now())
+                    .then((value) {
+                  if (value!= null) {
+                    getController.birthTimeController.text =
+                        "${value.hour}:${value.minute}";
+                  }
+                });
+              },
+              child: TextFormField(
+                controller: getController.birthTimeController,
+                obscureText: false,
+                textAlign: TextAlign.start,
+                maxLines: 1,
+                enabled: false,
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
                   fontStyle: FontStyle.normal,
                   fontSize: 14,
                   color: Color(0xff000000),
                 ),
-                filled: false,
-                fillColor: Color(0xfff2f2f3),
-                isDense: false,
-                contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+                decoration: InputDecoration(
+                  disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4.0),
+                    borderSide: BorderSide(color: Color(0x55757575), width: 1),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4.0),
+                    borderSide: BorderSide(color: Color(0x55757575), width: 1),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4.0),
+                    borderSide: BorderSide(color: Color(0x55757575), width: 1),
+                  ),
+                  labelText: "Birth Time",
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 14,
+                    color: Color(0xff000000),
+                  ),
+                  filled: false,
+                  fillColor: Color(0xfff2f2f3),
+                  isDense: false,
+                  contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+                ),
               ),
             ),
           ),
