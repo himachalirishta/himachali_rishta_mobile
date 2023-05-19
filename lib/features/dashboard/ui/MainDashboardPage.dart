@@ -548,13 +548,13 @@ class MainDashboardPage extends StatelessWidget {
                     ),
                   ),
                   ListTile(
-                    leading: Icon(Icons.home_work),
-                    title: Text(
+                    leading: const Icon(Icons.home_work),
+                    title: const Text(
                       'Membership Plans',
                       style: TextStyle(fontSize: 18),
                     ),
                     onTap: () {
-                      Get.to(() => MembershipPageFree());
+                      Get.to(() => const MembershipPageFree());
                     },
                   ),
                   const ListTile(
