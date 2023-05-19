@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
   }
 
   ThemeData lightTheme = ThemeData(
+    primaryColor: AppColors.primaryLight,
     secondaryHeaderColor: AppColors.secondaryLight,
     textTheme: TextTheme(
       displayLarge: TextStyle(
@@ -81,6 +82,7 @@ class MyApp extends StatelessWidget {
     ), colorScheme: ColorScheme.fromSwatch(primarySwatch: AppColors.primaryLight).copyWith(background: AppColors.primaryBackground),
   );
   ThemeData darkTheme = ThemeData(
+    primaryColor: AppColors.primaryDark,
     secondaryHeaderColor: AppColors.secondaryDark,
     textTheme: TextTheme(
       displayLarge: TextStyle(

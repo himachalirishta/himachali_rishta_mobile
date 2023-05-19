@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/LoginPage.dart';
+import 'package:himachali_rishta/features/membership/ui/MembershipPageFree.dart';
 import 'package:sizer/sizer.dart';
 
 import '../get_controllers/main_dashboard_get_controller.dart';
@@ -254,7 +255,8 @@ class MainDashboardPage extends StatelessWidget {
                                       color: const Color(0xff018601),
                                       shape: BoxShape.circle,
                                       border: Border.all(
-                                          color: const Color(0x4d9e9e9e), width: 1),
+                                          color: const Color(0x4d9e9e9e),
+                                          width: 1),
                                     ),
                                   ),
                                 ],
@@ -545,12 +547,15 @@ class MainDashboardPage extends StatelessWidget {
                       style: TextStyle(fontSize: 18),
                     ),
                   ),
-                  const ListTile(
+                  ListTile(
                     leading: Icon(Icons.home_work),
                     title: Text(
                       'Membership Plans',
                       style: TextStyle(fontSize: 18),
                     ),
+                    onTap: () {
+                      Get.to(() => MembershipPageFree());
+                    },
                   ),
                   const ListTile(
                     leading: Icon(Icons.person),
