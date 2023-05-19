@@ -1,14 +1,11 @@
-///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
-
-///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
-
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:himachali_rishta/core/app_colors.dart';
-import 'package:himachali_rishta/features/membership/ui/membership_page_paid.dart';
 import 'package:sizer/sizer.dart';
 
-class MembershipPageFree extends StatelessWidget {
+import '../../../core/app_colors.dart';
+
+class MembershipPagePaid extends StatelessWidget {
+  const MembershipPagePaid({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -212,33 +209,110 @@ class MembershipPageFree extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Text(
-                              "Hi Neha.Your mernembership is not octive.Upgrode your plan to premiume plan and contact/chat your match directy to start further conversation ",
-                              textAlign: TextAlign.start,
-                              overflow: TextOverflow.clip,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontStyle: FontStyle.normal,
-                                fontSize: 10.sp,
-                              ),
+                            Table(
+                              children: [
+                                TableRow(children: [
+                                  Text(
+                                    'Current Plan:',
+                                    style: TextStyle(fontSize: 10.sp),
+                                  ),
+                                  Text(
+                                    'Silver Plan',
+                                    style: TextStyle(fontSize: 10.sp),
+                                  ),
+                                ]),
+                                TableRow(children: [
+                                  Text(
+                                    'Plan Activated On:',
+                                    style: TextStyle(fontSize: 10.sp),
+                                  ),
+                                  Text(
+                                    '24-02-2023',
+                                    style: TextStyle(
+                                        fontSize: 10.sp,
+                                        color: AppColors.alternate,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ]),
+                                TableRow(children: [
+                                  Text(
+                                    'Plan Status:',
+                                    style: TextStyle(fontSize: 10.sp),
+                                  ),
+                                  Text(
+                                    'Valid, active till 31-05-2023',
+                                    style: TextStyle(
+                                        fontSize: 10.sp,
+                                        color: AppColors.alternate,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ]),
+                                TableRow(children: [
+                                  Text(
+                                    'Contact Remaining:',
+                                    style: TextStyle(fontSize: 10.sp),
+                                  ),
+                                  Text(
+                                    '21',
+                                    style: TextStyle(
+                                        fontSize: 10.sp,
+                                        color: AppColors.alternate,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ]),
+                                TableRow(children: [
+                                  Text(
+                                    'Contact Viewed:',
+                                    style: TextStyle(fontSize: 10.sp),
+                                  ),
+                                  Text(
+                                    '29',
+                                    style: TextStyle(
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ]),
+                              ],
                             ),
                             SizedBox(
                               height: 8.sp,
-                              width: 16.sp,
                             ),
                             MaterialButton(
-                              onPressed: () {
-                                Get.to(() => MembershipPagePaid());
-                              },
-                              color: Theme.of(context).primaryColor,
+                              onPressed: () {},
                               elevation: 4,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(4.0.sp),
+                                side: BorderSide(
+                                    color: Color(0xff000000), width: 1.sp),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 8),
+                              child: Text(
+                                "My Viewed Contacts",
+                                style: TextStyle(
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                ),
+                              ),
+                              textColor: Color(0xff000000),
+                              height: 38.sp,
+                              minWidth: 138.sp,
+                            ),
+                            SizedBox(
+                              height: 8.sp,
+                            ),
+                            MaterialButton(
+                              onPressed: () {},
+                              elevation: 4,
+                              color: Theme.of(context).primaryColorDark,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(4.0.sp),
                               ),
                               padding: EdgeInsets.symmetric(
                                   horizontal: 16, vertical: 8),
                               child: Text(
-                                "Upgrade Membership",
+                                "Request Invoice",
                                 style: TextStyle(
                                   fontSize: 12.sp,
                                   color: Colors.white,
@@ -264,7 +338,7 @@ class MembershipPageFree extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          "Special Offer on your profile",
+                          "Need Personal Matchmaking Service",
                           textAlign: TextAlign.start,
                           overflow: TextOverflow.clip,
                           style: TextStyle(
@@ -292,7 +366,7 @@ class MembershipPageFree extends StatelessWidget {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Text(
-                              "Nebo. your mataches are being picked up by other mebers . Dont get delayed and upgrade your membership with best offer Below",
+                              "We understand how difficult is to find matrimonial mocthes in bull lifeDont worry our experts con work on your profile and can speak on behalf of you to help you to find your match .Top below to send enquery oboty this process.Our executive will call you and will explain the process. ",
                               textAlign: TextAlign.start,
                               overflow: TextOverflow.clip,
                               style: TextStyle(
@@ -307,7 +381,7 @@ class MembershipPageFree extends StatelessWidget {
                             ),
                             MaterialButton(
                               onPressed: () {},
-                              color: Theme.of(context).secondaryHeaderColor,
+                              color: Theme.of(context).primaryColor,
                               elevation: 4,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(4.0.sp),
@@ -315,7 +389,7 @@ class MembershipPageFree extends StatelessWidget {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 16, vertical: 8),
                               child: Text(
-                                "Get upto 75% discount",
+                                "Request Call Back",
                                 style: TextStyle(
                                   fontSize: 12.sp,
                                   color: Colors.white,
