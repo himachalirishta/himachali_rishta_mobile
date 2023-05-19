@@ -86,6 +86,7 @@ class AppColors {
   static Color accent2Light = const Color(0xff757575);
   static Color infoLight = const Color(0xff1c4498);
   static Color alternate = const Color(0xff018601);
+
   //f4f6fc
   static Color primaryBackground = const Color(0xfff4f6fc);
   static Color overlayColor = const Color(0xffb3ffff);

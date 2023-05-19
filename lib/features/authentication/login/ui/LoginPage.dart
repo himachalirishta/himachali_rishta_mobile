@@ -151,7 +151,6 @@ class LoginPage extends StatelessWidget {
                                 Expanded(
                                   child: ElevatedButton(
                                     onPressed: () {
-
                                       getController
                                           .initiatePhoneVerification(context);
                                     },

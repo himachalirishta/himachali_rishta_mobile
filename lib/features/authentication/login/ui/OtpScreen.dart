@@ -70,18 +70,18 @@ class OtpScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       disabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       filled: false,
                       fillColor: const Color(0x00f2f2f3),
@@ -112,18 +112,18 @@ class OtpScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       disabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       filled: false,
                       fillColor: const Color(0xfff2f2f3),
@@ -154,18 +154,18 @@ class OtpScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       disabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       filled: false,
                       fillColor: const Color(0xfff2f2f3),
@@ -196,18 +196,18 @@ class OtpScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       disabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       filled: false,
                       fillColor: const Color(0xfff2f2f3),
@@ -238,18 +238,18 @@ class OtpScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       disabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       filled: false,
                       fillColor: const Color(0xfff2f2f3),
@@ -280,18 +280,18 @@ class OtpScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       disabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       enabledBorder: UnderlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0),
-                        borderSide:
-                            const BorderSide(color: Color(0xff000000), width: 1),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
                       ),
                       filled: false,
                       fillColor: const Color(0xfff2f2f3),

@@ -438,15 +438,18 @@ class SubmitInformationPage2 extends StatelessWidget {
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+                  borderSide:
+                      const BorderSide(color: Color(0x55757575), width: 1),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+                  borderSide:
+                      const BorderSide(color: Color(0x55757575), width: 1),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+                  borderSide:
+                      const BorderSide(color: Color(0x55757575), width: 1),
                 ),
                 labelText: "Birth Place",
                 labelStyle: const TextStyle(
@@ -470,7 +473,7 @@ class SubmitInformationPage2 extends StatelessWidget {
               onTap: () {
                 showTimePicker(context: context, initialTime: TimeOfDay.now())
                     .then((value) {
-                  if (value!= null) {
+                  if (value != null) {
                     getController.birthTimeController.text =
                         "${value.hour}:${value.minute}";
                   }
@@ -491,15 +494,18 @@ class SubmitInformationPage2 extends StatelessWidget {
                 decoration: InputDecoration(
                   disabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(4.0),
-                    borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+                    borderSide:
+                        const BorderSide(color: Color(0x55757575), width: 1),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(4.0),
-                    borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+                    borderSide:
+                        const BorderSide(color: Color(0x55757575), width: 1),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(4.0),
-                    borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+                    borderSide:
+                        const BorderSide(color: Color(0x55757575), width: 1),
                   ),
                   labelText: "Birth Time",
                   labelStyle: const TextStyle(

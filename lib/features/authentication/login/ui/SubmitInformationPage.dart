@@ -429,15 +429,18 @@ class SubmitInformationPage extends StatelessWidget {
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  borderSide: const BorderSide(color: Color(0x54757575), width: 1),
+                  borderSide:
+                      const BorderSide(color: Color(0x54757575), width: 1),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  borderSide: const BorderSide(color: Color(0x54757575), width: 1),
+                  borderSide:
+                      const BorderSide(color: Color(0x54757575), width: 1),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  borderSide: const BorderSide(color: Color(0x54757575), width: 1),
+                  borderSide:
+                      const BorderSide(color: Color(0x54757575), width: 1),
                 ),
                 labelText: "Day",
                 labelStyle: const TextStyle(
@@ -473,15 +476,18 @@ class SubmitInformationPage extends StatelessWidget {
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  borderSide: const BorderSide(color: Color(0x53757575), width: 1),
+                  borderSide:
+                      const BorderSide(color: Color(0x53757575), width: 1),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  borderSide: const BorderSide(color: Color(0x53757575), width: 1),
+                  borderSide:
+                      const BorderSide(color: Color(0x53757575), width: 1),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  borderSide: const BorderSide(color: Color(0x53757575), width: 1),
+                  borderSide:
+                      const BorderSide(color: Color(0x53757575), width: 1),
                 ),
                 labelText: "Month",
                 labelStyle: const TextStyle(
@@ -517,15 +523,18 @@ class SubmitInformationPage extends StatelessWidget {
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  borderSide: const BorderSide(color: Color(0x53757575), width: 1),
+                  borderSide:
+                      const BorderSide(color: Color(0x53757575), width: 1),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  borderSide: const BorderSide(color: Color(0x53757575), width: 1),
+                  borderSide:
+                      const BorderSide(color: Color(0x53757575), width: 1),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  borderSide: const BorderSide(color: Color(0x53757575), width: 1),
+                  borderSide:
+                      const BorderSide(color: Color(0x53757575), width: 1),
                 ),
                 labelText: "Year",
                 labelStyle: const TextStyle(

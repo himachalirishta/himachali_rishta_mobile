@@ -62,11 +62,13 @@ class DefaultFirebaseOptions {
     projectId: 'himachalirishtawebapi',
     databaseURL: 'https://himachalirishtawebapi-default-rtdb.firebaseio.com',
     storageBucket: 'himachalirishtawebapi.appspot.com',
-    iosClientId: '742374039090-bims8h953ns5aeihlp408m41d63tfmoh.apps.googleusercontent.com',
+    iosClientId:
+        '742374039090-bims8h953ns5aeihlp408m41d63tfmoh.apps.googleusercontent.com',
     iosBundleId: 'com.himachalirishta.test.himachaliRishta',
   );
 
-  static const FirebaseOptions web = FirebaseOptions(apiKey: "AIzaSyASyhy0XVdTZPmN-nEwsE3SZy0J7ZlUJnU",
+  static const FirebaseOptions web = FirebaseOptions(
+      apiKey: "AIzaSyASyhy0XVdTZPmN-nEwsE3SZy0J7ZlUJnU",
       authDomain: "himachalirishtawebapi.firebaseapp.com",
       databaseURL: "https://himachalirishtawebapi-default-rtdb.firebaseio.com",
       projectId: "himachalirishtawebapi",

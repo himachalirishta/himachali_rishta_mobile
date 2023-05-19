@@ -79,7 +79,9 @@ class MyApp extends StatelessWidget {
           fontSize: 8.0,
           fontWeight: FontWeight.normal,
           color: AppColors.primaryTextColorLight),
-    ), colorScheme: ColorScheme.fromSwatch(primarySwatch: AppColors.primaryLight).copyWith(background: AppColors.primaryBackground),
+    ),
+    colorScheme: ColorScheme.fromSwatch(primarySwatch: AppColors.primaryLight)
+        .copyWith(background: AppColors.primaryBackground),
   );
   ThemeData darkTheme = ThemeData(
     primaryColor: AppColors.primaryDark,
@@ -125,6 +127,8 @@ class MyApp extends StatelessWidget {
           fontSize: 8.0,
           fontWeight: FontWeight.normal,
           color: AppColors.primaryTextColorDark),
-    ), colorScheme: ColorScheme.fromSwatch(primarySwatch: AppColors.primaryDark).copyWith(background: const Color(0xff1d2428)),
+    ),
+    colorScheme: ColorScheme.fromSwatch(primarySwatch: AppColors.primaryDark)
+        .copyWith(background: const Color(0xff1d2428)),
   );
 }

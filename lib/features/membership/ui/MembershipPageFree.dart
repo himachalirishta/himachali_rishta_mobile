@@ -205,7 +205,8 @@ class MembershipPageFree extends StatelessWidget {
                       elevation: 3,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4.0.sp),
-                        side: const BorderSide(color: Color(0x4d9e9e9e), width: 1),
+                        side: const BorderSide(
+                            color: Color(0x4d9e9e9e), width: 1),
                       ),
                       child: Padding(
                         padding: EdgeInsets.all(4.sp),
@@ -284,7 +285,8 @@ class MembershipPageFree extends StatelessWidget {
                       elevation: 3,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4.0.sp),
-                        side: const BorderSide(color: Color(0x4d9e9e9e), width: 1),
+                        side: const BorderSide(
+                            color: Color(0x4d9e9e9e), width: 1),
                       ),
                       child: Padding(
                         padding: EdgeInsets.all(4.sp),

@@ -16,8 +16,14 @@ class SubmitInformation2GetController extends GetxController
       ['Select Occupation Type', 'Private', 'Government', 'Entrepreneur'].obs;
   RxString selectedOccupationType = 'Select Occupation Type'.obs;
 
-  RxList<String> education =
-      ['Select Education', '10', '12', 'Graduate', 'Post Graduate', 'Ph.D.'].obs;
+  RxList<String> education = [
+    'Select Education',
+    '10',
+    '12',
+    'Graduate',
+    'Post Graduate',
+    'Ph.D.'
+  ].obs;
   RxString selectedEducation = 'Select Education'.obs;
 
   RxMap<int, RxList<String>> selectedOption = <int, RxList<String>>{}.obs;

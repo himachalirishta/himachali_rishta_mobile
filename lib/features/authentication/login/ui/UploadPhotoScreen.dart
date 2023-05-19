@@ -101,7 +101,8 @@ class UploadPhotoScreen extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   textColor: const Color(0xff000000),
                   height: 30.sp,
                   minWidth: 130.sp,
@@ -138,8 +139,8 @@ class UploadPhotoScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 8),
                       textColor: const Color(0xff000000),
                       height: 30.sp,
                       minWidth: 130.sp,
