@@ -19,7 +19,7 @@ class ProfilePage extends StatelessWidget {
           ),
           body: Column(
             children: [
-              TabBar(tabs: [
+              TabBar(indicatorColor: Theme.of(context).primaryColor, tabs: [
                 Tab(
                   child: Text(
                     'About',
@@ -52,8 +52,8 @@ class ProfilePage extends StatelessWidget {
             children: [
               Expanded(
                 child: Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 32.sp, vertical: 8.sp),
-
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 32.sp, vertical: 8.sp),
                   child: MaterialButton(
                     onPressed: () {},
                     color: AppColors.alternate,
