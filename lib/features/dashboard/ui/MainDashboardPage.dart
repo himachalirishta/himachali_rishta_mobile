@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/LoginPage.dart';
 import 'package:himachali_rishta/features/membership/ui/MembershipPageFree.dart';
+import 'package:himachali_rishta/profile/ui/profile_page.dart';
 import 'package:sizer/sizer.dart';
 
 import '../get_controllers/main_dashboard_get_controller.dart';
@@ -533,12 +534,15 @@ class MainDashboardPage extends StatelessWidget {
                       style: TextStyle(fontSize: 18),
                     ),
                   ),
-                  const ListTile(
+                  ListTile(
                     leading: Icon(Icons.account_tree_outlined),
                     title: Text(
                       'My Account',
                       style: TextStyle(fontSize: 18),
                     ),
+                    onTap: () {
+                      Get.to(() => ProfilePage());
+                    },
                   ),
                   const ListTile(
                     leading: Icon(Icons.inbox),
