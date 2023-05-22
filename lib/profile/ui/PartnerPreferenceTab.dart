@@ -26,11 +26,11 @@ class PartnerPreferenceTab extends StatelessWidget {
                 Icon(
                   Icons.family_restroom,
                   color: Color(0xffac0f11),
-                  size: 24,
+                  size: 22.sp,
                 ),
                 SizedBox(
-                  height: 16,
-                  width: 8,
+                  height: 16.sp,
+                  width: 8.sp,
                 ),
                 Text(
                   "Partner Preference",
@@ -39,7 +39,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontStyle: FontStyle.normal,
-                    fontSize: 18,
+                    fontSize: 18.sp,
                     color: Color(0xffac0f11),
                   ),
                 ),
@@ -47,27 +47,27 @@ class PartnerPreferenceTab extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.all(8),
-              child: Row(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                  Text(
+                    "You Match Her",
+                    textAlign: TextAlign.start,
+                    overflow: TextOverflow.clip,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontStyle: FontStyle.normal,
+                      fontSize: 16.sp,
+                      color: Color(0xff000000),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
-                        "You Match Her",
-                        textAlign: TextAlign.start,
-                        overflow: TextOverflow.clip,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                          fontSize: 16,
-                          color: Color(0xff000000),
-                        ),
-                      ),
                       SizedBox(
                         height: 20.h,
                         width: 20.h,
@@ -80,44 +80,45 @@ class PartnerPreferenceTab extends StatelessWidget {
                               ],
                               xValueMapper: (MatchData data, _) => data.name,
                               yValueMapper: (MatchData data, _) => data.value,
-                              dataLabelMapper: (MatchData data, _) => "${data.value}%",
-                              radius: '100%',
+                              dataLabelMapper: (MatchData data, _) =>
+                                  "${data.value}%",
+                              radius: '80%',
                               legendIconType: LegendIconType.circle,
                               dataLabelSettings: DataLabelSettings(
                                   isVisible: true,
                                   color: Colors.black,
                                   textStyle: TextStyle(
-                                      fontSize: 12,
+                                      fontSize: 12.sp,
                                       fontWeight: FontWeight.w500)),
                             )
                           ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 8.sp,
+                        width: 8.sp,
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(16.0),
+                        child:
 
+                            ///***If you have exported images you must have to copy those images in assets/images directory.
+                            Image(
+                          image:
+                              NetworkImage("https://picsum.photos/250?image=9"),
+                          height: 100,
+                          width: 100,
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ],
-                  ),
-                  SizedBox(
-                    height: 16,
-                    width: 16,
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(16.0),
-                    child:
-
-                        ///***If you have exported images you must have to copy those images in assets/images directory.
-                        Image(
-                      image: NetworkImage("https://picsum.photos/250?image=9"),
-                      height: 100,
-                      width: 100,
-                      fit: BoxFit.cover,
-                    ),
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 16,
-              width: 16,
+              height: 16.sp,
+              width: 16.sp,
             ),
             Expanded(
               flex: 1,
@@ -148,7 +149,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   color: Color(0xff000000),
                                 ),
                               ),
@@ -159,7 +160,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   color: Color(0xff000000),
                                 ),
                               ),
@@ -169,7 +170,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                         Icon(
                           Icons.check_circle,
                           color: AppColors.alternate,
-                          size: 24,
+                          size: 22.sp,
                         ),
                       ],
                     ),
@@ -195,7 +196,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   color: Color(0xff000000),
                                 ),
                               ),
@@ -206,7 +207,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   color: Color(0xff000000),
                                 ),
                               ),
@@ -216,7 +217,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                         Icon(
                           Icons.cancel_rounded,
                           color: AppColors.primaryLight,
-                          size: 24,
+                          size: 22.sp,
                         ),
                       ],
                     ),
@@ -242,7 +243,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   color: Color(0xff000000),
                                 ),
                               ),
@@ -253,7 +254,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   color: Color(0xff000000),
                                 ),
                               ),
@@ -263,7 +264,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                         Icon(
                           Icons.check_circle,
                           color: AppColors.alternate,
-                          size: 24,
+                          size: 22.sp,
                         ),
                       ],
                     ),
@@ -289,7 +290,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   color: Color(0xff000000),
                                 ),
                               ),
@@ -300,7 +301,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   color: Color(0xff000000),
                                 ),
                               ),
@@ -310,7 +311,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                         Icon(
                           Icons.check_circle,
                           color: AppColors.alternate,
-                          size: 24,
+                          size: 22.sp,
                         ),
                       ],
                     ),
@@ -336,7 +337,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   color: Color(0xff000000),
                                 ),
                               ),
@@ -347,7 +348,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   color: Color(0xff000000),
                                 ),
                               ),
@@ -357,7 +358,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                         Icon(
                           Icons.check_circle,
                           color: AppColors.alternate,
-                          size: 24,
+                          size: 22.sp,
                         ),
                       ],
                     ),
