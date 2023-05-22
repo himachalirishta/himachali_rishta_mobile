@@ -43,6 +43,7 @@ dependencies:
   image_cropper: ^4.0.1
   image_picker: ^0.8.7+5
   material_design_icons_flutter: ^6.0.7096
+  syncfusion_flutter_charts: ^21.2.5
 
 dev_dependencies:
   flutter_test:

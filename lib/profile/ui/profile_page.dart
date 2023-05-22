@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/profile/ui/AboutPage.dart';
+import 'package:himachali_rishta/profile/ui/PartnerPreferenceTab.dart';
 import 'package:sizer/sizer.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -19,6 +21,38 @@ class ProfilePage extends StatelessWidget {
           ),
           body: Column(
             children: [
+              Container(
+                height: 7.h,
+                child: Row(
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        icon: Icon(
+                          Icons.arrow_back,
+                        )),
+                    Text(
+                      "HRP123456",
+                      style: TextStyle(fontSize: 16.sp),
+                    ),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Image.asset('assets/images/homepagelogo.jpg'),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.more_vert,
+                                color: Theme.of(context).primaryColor,
+                              ))
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
               TabBar(indicatorColor: Theme.of(context).primaryColor, tabs: [
                 Tab(
                   child: Text(
@@ -39,9 +73,7 @@ class ProfilePage extends StatelessWidget {
                 child: TabBarView(
                   children: [
                     AboutPage(),
-                    Center(
-                      child: Text('Partner Preference'),
-                    ),
+                    PartnerPreferenceTab(),
                   ],
                 ),
               ),

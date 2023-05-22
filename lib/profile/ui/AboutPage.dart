@@ -11,7 +11,6 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffffffff),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: SingleChildScrollView(
