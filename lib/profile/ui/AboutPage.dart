@@ -2,6 +2,7 @@
 
 ///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -1194,10 +1195,31 @@ class AboutPage extends StatelessWidget {
           SliverAppBar(
             pinned: false,
             automaticallyImplyLeading: false,
-            expandedHeight: 30.h,
+            expandedHeight: 50.h,
             backgroundColor: Colors.transparent,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.network('https://picsum.photos/250?image=9'),
+              background: CarouselSlider(items: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network('https://picsum.photos/250?image=9', fit: BoxFit.cover,)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network('https://picsum.photos/250?image=9', fit: BoxFit.cover,)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network('https://picsum.photos/250?image=9', fit: BoxFit.cover,)),
+                ),
+              ], options: CarouselOptions(
+                viewportFraction: 0.5
+              ),)
             ),
           ),
           SliverList(
