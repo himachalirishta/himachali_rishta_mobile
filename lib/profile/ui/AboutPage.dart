@@ -1198,35 +1198,45 @@ class AboutPage extends StatelessWidget {
             expandedHeight: 50.h,
             backgroundColor: Colors.transparent,
             flexibleSpace: FlexibleSpaceBar(
-              background: CarouselSlider(items: [
+                background: CarouselSlider(
+              items: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
-                      child: Image.network('https://picsum.photos/250?image=9', fit: BoxFit.cover,)),
+                      child: Image.network(
+                        'https://picsum.photos/250?image=9',
+                        fit: BoxFit.cover,
+                      )),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
-                      child: Image.network('https://picsum.photos/250?image=9', fit: BoxFit.cover,)),
+                      child: Image.network(
+                        'https://picsum.photos/250?image=9',
+                        fit: BoxFit.cover,
+                      )),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
-                      child: Image.network('https://picsum.photos/250?image=9', fit: BoxFit.cover,)),
+                      child: Image.network(
+                        'https://picsum.photos/250?image=9',
+                        fit: BoxFit.cover,
+                      )),
                 ),
-              ], options: CarouselOptions(
-                viewportFraction: 0.5
-              ),)
-            ),
+              ],
+              options: CarouselOptions(viewportFraction: 0.5),
+            )),
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8.0),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8.0),
                   child: _sliverItems[index],
                 );
               },

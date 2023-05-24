@@ -543,7 +543,7 @@ class MainDashboardPage extends StatelessWidget {
                       'My Account',
                       style: TextStyle(fontSize: 18),
                     ),
-                    onTap: (){
+                    onTap: () {
                       Get.to(() => MyProfilePage());
                     },
                   ),
