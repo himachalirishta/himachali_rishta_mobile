@@ -73,7 +73,8 @@ class SearchPage extends StatelessWidget {
                         filled: false,
                         fillColor: Color(0xfff2f2f3),
                         isDense: false,
-                        contentPadding: EdgeInsets.fromLTRB(12.sp, 8.sp, 12.sp, 8.sp),
+                        contentPadding:
+                            EdgeInsets.fromLTRB(12.sp, 8.sp, 12.sp, 8.sp),
                         prefixIcon: Icon(Icons.search,
                             color: Color(0xff212435), size: 24.sp),
                       ),
@@ -90,7 +91,7 @@ class SearchPage extends StatelessWidget {
                       ),
                       padding: EdgeInsets.symmetric(
                           horizontal: 16.sp, vertical: 8.sp),
-                      textColor:  Color(0xff000000),
+                      textColor: Color(0xff000000),
                       height: 38.sp,
                       minWidth: 138.sp,
                       child: Text(
@@ -618,7 +619,7 @@ class SearchPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding:  EdgeInsets.all(4.0.sp),
+            padding: EdgeInsets.all(4.0.sp),
             child: MaterialButton(
               onPressed: () {},
               color: AppColors.alternate,
@@ -627,7 +628,7 @@ class SearchPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8.0.sp),
               ),
               padding: EdgeInsets.symmetric(horizontal: 16.sp, vertical: 8.sp),
-              textColor:  Color(0xff000000),
+              textColor: Color(0xff000000),
               height: 38.sp,
               minWidth: 138.sp,
               child: Text(
