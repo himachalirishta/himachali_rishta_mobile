@@ -103,13 +103,13 @@ class SearchPage extends StatelessWidget {
                             color: AppColors.secondaryLight,
                             elevation: 4,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0.sp),
+                              borderRadius: BorderRadius.circular(32.0.sp),
                             ),
                             padding: EdgeInsets.symmetric(
                                 horizontal: 16.sp, vertical: 8.sp),
                             textColor: Color(0xff000000),
                             height: 38.sp,
-                            minWidth: 138.sp,
+                            minWidth: 108.sp,
                             child: Text(
                               "Search",
                               style: TextStyle(
@@ -477,7 +477,10 @@ class SearchPage extends StatelessWidget {
                                         ],
                                       ),
                                     ),
-                                    Icon(Icons.arrow_forward_ios, size: 12.sp,),
+                                    Icon(
+                                      Icons.arrow_forward_ios,
+                                      size: 12.sp,
+                                    ),
                                   ],
                                 ),
                               ),
@@ -561,7 +564,10 @@ class SearchPage extends StatelessWidget {
                                         ],
                                       ),
                                     ),
-                                    Icon(Icons.arrow_forward_ios, size: 12.sp,),
+                                    Icon(
+                                      Icons.arrow_forward_ios,
+                                      size: 12.sp,
+                                    ),
                                   ],
                                 ),
                               ),
@@ -646,7 +652,10 @@ class SearchPage extends StatelessWidget {
                                         ],
                                       ),
                                     ),
-                                    Icon(Icons.arrow_forward_ios, size: 12.sp,),
+                                    Icon(
+                                      Icons.arrow_forward_ios,
+                                      size: 12.sp,
+                                    ),
                                   ],
                                 ),
                               ),
