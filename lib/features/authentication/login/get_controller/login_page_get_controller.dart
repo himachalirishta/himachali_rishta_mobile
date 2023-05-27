@@ -1,8 +1,12 @@
+import 'dart:convert';
+
 import 'package:country_picker/country_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:himachali_rishta/features/authentication/login/models/login_response.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/OtpScreen.dart';
+import 'package:http/http.dart' as http;
 
 import '../ui/SubmitInformationPage.dart';
 
@@ -42,43 +46,11 @@ class LoginPageGetController extends GetxController {
                 await FirebaseAuth.instance
                     .signInWithCredential(credential)
                     .then((value) {
-                  Get.to(() => SubmitInformationPage());
+                  initLoginApi().then((value) {
+                    Get.to(() => SubmitInformationPage());
+                  });
                 });
               }));
-          /* showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  title: Text('Enter OTP'),
-                  content: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      TextFormField(
-                        controller: otpController,
-                        decoration: InputDecoration(
-                          hintText: 'Enter OTP',
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ],
-                  ),
-                  actions: [
-                    TextButton(
-                        onPressed: () async {
-                          PhoneAuthCredential credential =
-                              PhoneAuthProvider.credential(
-                                  verificationId: verificationId,
-                                  smsCode: otpController.text);
-                          await FirebaseAuth.instance
-                              .signInWithCredential(credential)
-                              .then((value) {
-                            Get.to(() => SubmitInformationPage());
-                          });
-                        },
-                        child: Text('Submit'))
-                  ],
-                );
-              });*/
         },
         codeAutoRetrievalTimeout: (String verificationId) {});
     showLoader.value = false;
@@ -94,5 +66,25 @@ class LoginPageGetController extends GetxController {
       });
     }
     super.onInit();
+  }
+
+  Future<LoginResponse> initLoginApi() async {
+    var headers = {'Content-Type': 'application/json'};
+    var request = http.Request(
+        'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
+    request.body = json.encode({"phone": "7668809743"});
+    request.headers.addAll(headers);
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      LoginResponse loginResponse =
+          loginResponseFromJson(await response.stream.bytesToString());
+      return loginResponse;
+    } else {
+      Get.snackbar('Error', response.reasonPhrase.toString(),
+          backgroundColor: Colors.red, colorText: Colors.white);
+      throw response.reasonPhrase.toString();
+    }
   }
 }
