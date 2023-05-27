@@ -33,12 +33,8 @@ class SideOptionDrawer extends StatelessWidget {
                   return Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      GestureDetector(
-                        onTap: () {
-                          onOptionSelected(index);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                      ListTile(
+                        title: Center(
                           child: Text(
                             options[index],
                             style: TextStyle(
@@ -47,6 +43,9 @@ class SideOptionDrawer extends StatelessWidget {
                                 fontWeight: FontWeight.w500),
                           ),
                         ),
+                        onTap: () {
+                          onOptionSelected(index);
+                        },
                       ),
                       Divider(
                         color: AppColors.infoLight.withOpacity(0.3),
