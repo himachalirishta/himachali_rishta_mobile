@@ -4,6 +4,7 @@ import 'package:country_picker/country_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:himachali_rishta/features/authentication/login/models/login_request.dart';
 import 'package:himachali_rishta/features/authentication/login/models/login_response.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/OtpScreen.dart';
 import 'package:http/http.dart' as http;
@@ -72,7 +73,7 @@ class LoginPageGetController extends GetxController {
     var headers = {'Content-Type': 'application/json'};
     var request = http.Request(
         'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
-    request.body = json.encode({"phone": "7668809743"});
+    request.body = json.encode(LoginRequest(phone: '7668809743'));
     request.headers.addAll(headers);
 
     http.StreamedResponse response = await request.send();

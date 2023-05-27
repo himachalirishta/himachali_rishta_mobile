@@ -171,8 +171,8 @@ class SearchPage extends StatelessWidget {
                           Expanded(
                             flex: 1,
                             child: Container(
-                                width: 130.sp,
-                                height: 50.sp,
+                                width: 128.sp,
+                                height: 48.sp,
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 8.sp, vertical: 4.sp),
                                 decoration: BoxDecoration(
@@ -193,7 +193,7 @@ class SearchPage extends StatelessWidget {
                                     }).toList(),
                                     style: TextStyle(
                                       color: Color(0xff000000),
-                                      fontSize: 14.sp,
+                                      fontSize: 12.sp,
                                       fontWeight: FontWeight.w400,
                                       fontStyle: FontStyle.normal,
                                     ),
@@ -225,8 +225,8 @@ class SearchPage extends StatelessWidget {
                           Expanded(
                             flex: 1,
                             child: Container(
-                                width: 130.sp,
-                                height: 50.sp,
+                                width: 128.sp,
+                                height: 48.sp,
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 8.sp, vertical: 4.sp),
                                 decoration: BoxDecoration(
@@ -247,7 +247,7 @@ class SearchPage extends StatelessWidget {
                                     }).toList(),
                                     style: TextStyle(
                                       color: Color(0xff000000),
-                                      fontSize: 14.sp,
+                                      fontSize: 12.sp,
                                       fontWeight: FontWeight.w400,
                                       fontStyle: FontStyle.normal,
                                     ),
@@ -289,8 +289,8 @@ class SearchPage extends StatelessWidget {
                           Expanded(
                             flex: 1,
                             child: Container(
-                                width: 130.sp,
-                                height: 50.sp,
+                                width: 128.sp,
+                                height: 48.sp,
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 8.sp, vertical: 4.sp),
                                 decoration: BoxDecoration(
@@ -312,7 +312,7 @@ class SearchPage extends StatelessWidget {
                                     }).toList(),
                                     style: TextStyle(
                                       color: Color(0xff000000),
-                                      fontSize: 14.sp,
+                                      fontSize: 12.sp,
                                       fontWeight: FontWeight.w400,
                                       fontStyle: FontStyle.normal,
                                     ),
@@ -344,8 +344,8 @@ class SearchPage extends StatelessWidget {
                           Expanded(
                             flex: 1,
                             child: Container(
-                                width: 130.sp,
-                                height: 50.sp,
+                                width: 128.sp,
+                                height: 48.sp,
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 8.sp, vertical: 4.sp),
                                 decoration: BoxDecoration(
@@ -367,7 +367,7 @@ class SearchPage extends StatelessWidget {
                                     }).toList(),
                                     style: TextStyle(
                                       color: Color(0xff000000),
-                                      fontSize: 14.sp,
+                                      fontSize: 12.sp,
                                       fontWeight: FontWeight.w400,
                                       fontStyle: FontStyle.normal,
                                     ),
