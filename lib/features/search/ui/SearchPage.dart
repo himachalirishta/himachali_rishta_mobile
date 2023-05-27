@@ -681,10 +681,17 @@ class SearchPage extends StatelessWidget {
                             .value,
                         onOptionSelected: (index) {
                           switch (getController.selectedOptionIndex.value) {
-                            //gender, religion, caste, marital status, posting this profile for
                             case 1:
                               getController.selectedReligion.value =
                                   getController.religion[index];
+                              break;
+                            case 2:
+                              getController.selectedCaste.value =
+                                  getController.caste[index];
+                              break;
+                            case 3:
+                              getController.selectedMaritalStatus.value =
+                                  getController.maritalStatus[index];
                               break;
 
                             default:
