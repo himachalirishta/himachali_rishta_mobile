@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/LoginPage.dart';
 import 'package:himachali_rishta/features/membership/ui/MembershipPageFree.dart';
+import 'package:himachali_rishta/features/search/ui/SearchPage.dart';
 import 'package:himachali_rishta/profile/ui/MyProfilePage.dart';
 import 'package:himachali_rishta/profile/ui/profile_page.dart';
 import 'package:sizer/sizer.dart';
@@ -72,17 +73,22 @@ class MainDashboardPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.search,
-                      ),
-                      SizedBox(
-                        height: 4,
-                      ),
-                      Text('Search'),
-                    ],
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => SearchPage());
+                    },
+                    child: const Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.search,
+                        ),
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Text('Search'),
+                      ],
+                    ),
                   ),
                 ],
               ),
