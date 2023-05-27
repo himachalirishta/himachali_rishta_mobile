@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/membership/ui/membership_page_paid.dart';
+import 'package:himachali_rishta/features/membership/ui/membership_plan_page.dart';
 import 'package:sizer/sizer.dart';
 
 class MembershipPageFree extends StatelessWidget {
@@ -231,7 +232,7 @@ class MembershipPageFree extends StatelessWidget {
                             ),
                             MaterialButton(
                               onPressed: () {
-                                Get.to(() => const MembershipPagePaid());
+                                Get.to(() => const MembershipPlanPage());
                               },
                               color: Theme.of(context).primaryColor,
                               elevation: 4,
