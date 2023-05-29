@@ -5,7 +5,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
-import 'package:himachali_rishta/features/membership/ui/membership_page_paid.dart';
 import 'package:himachali_rishta/features/membership/ui/membership_plan_page.dart';
 import 'package:sizer/sizer.dart';
 
