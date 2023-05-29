@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../core/app_colors.dart';
 import '../../../profile/ui/profile_page.dart';
 
 class AllTab extends StatelessWidget {
-  const AllTab({Key? key}) : super(key: key);
+  AllTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,20 +15,20 @@ class AllTab extends StatelessWidget {
       scrollDirection: Axis.vertical,
       padding: EdgeInsets.zero,
       shrinkWrap: false,
-      physics: const ScrollPhysics(),
+      physics: ScrollPhysics(),
       children: [
         ...List.generate(
           10,
           (index) => Card(
-            margin: const EdgeInsets.all(4.0),
-            color: const Color(0xffffffff),
-            shadowColor: const Color(0xff000000),
+            margin: EdgeInsets.all(4.0),
+            color: Color(0xffffffff),
+            shadowColor: Color(0xff000000),
             elevation: 3,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16.0),
+              borderRadius: BorderRadius.circular(16.0.sp),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8),
+              padding: EdgeInsets.all(8.sp),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,79 +39,78 @@ class AllTab extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      const Text(
+                      Text(
                         "HPR518619",
                         textAlign: TextAlign.start,
                         overflow: TextOverflow.clip,
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontStyle: FontStyle.normal,
-                          fontSize: 14,
+                          fontSize: 12.sp,
                           color: Color(0xffe21c3d),
                         ),
                       ),
-                      const SizedBox(
-                        height: 16,
-                        width: 16,
+                      SizedBox(
+                        height: 16.sp,
+                        width: 16.sp,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          const Text(
+                          Text(
                             "Last Active: Today 5:40 pm",
                             textAlign: TextAlign.start,
                             overflow: TextOverflow.clip,
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontStyle: FontStyle.normal,
-                              fontSize: 12,
+                              fontSize: 10.sp,
                               color: Color(0xff000000),
                             ),
                           ),
-                          const SizedBox(
-                            height: 16,
-                            width: 8,
+                          SizedBox(
+                            height: 16.sp,
+                            width: 8.sp,
                           ),
                           Container(
                             margin: EdgeInsets.zero,
                             padding: EdgeInsets.zero,
-                            width: 10,
-                            height: 10,
+                            width: 10.sp,
+                            height: 10.sp,
                             decoration: BoxDecoration(
-                              color: const Color(0xff018601),
+                              color: Color(0xff018601),
                               shape: BoxShape.circle,
                               border: Border.all(
-                                  color: const Color(0x4d9e9e9e), width: 1),
+                                  color: Color(0x4d9e9e9e), width: 1.sp),
                             ),
                           ),
                         ],
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 16,
-                    width: 16,
+                  SizedBox(
+                    height: 16.sp,
+                    width: 16.sp,
                   ),
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(16.0),
+                    borderRadius: BorderRadius.circular(8.sp),
                     child:
 
                         ///***If you have exported images you must have to copy those images in assets/images directory.
                         Image(
-                      image: const NetworkImage(
-                          "https://picsum.photos/250?image=9"),
-                      height: MediaQuery.of(context).size.height * 0.25,
-                      width: MediaQuery.of(context).size.width,
+                      image: NetworkImage(
+                          "https://beingpahadi.com/wp-content/uploads/2017/03/manisha-choudhary-amma-ji.jpg"),
+                      height: 40.h,
                       fit: BoxFit.fitHeight,
                     ),
                   ),
-                  const SizedBox(
-                    height: 16,
-                    width: 16,
+                  SizedBox(
+                    height: 16.sp,
+                    width: 16.sp,
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
@@ -122,13 +122,13 @@ class AllTab extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
-                          fontSize: 12,
+                          fontSize: 10.sp,
                           color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
@@ -140,13 +140,13 @@ class AllTab extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
-                          fontSize: 13,
+                          fontSize: 11.sp,
                           color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
@@ -158,13 +158,13 @@ class AllTab extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontStyle: FontStyle.normal,
-                          fontSize: 16,
+                          fontSize: 14.sp,
                           color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
@@ -176,13 +176,13 @@ class AllTab extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
-                          fontSize: 12,
+                          fontSize: 10.sp,
                           color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
@@ -194,13 +194,13 @@ class AllTab extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
-                          fontSize: 12,
+                          fontSize: 10.sp,
                           color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
@@ -212,15 +212,15 @@ class AllTab extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
-                          fontSize: 12,
+                          fontSize: 10.sp,
                           color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 16,
-                    width: 16,
+                  SizedBox(
+                    height: 16.sp,
+                    width: 16.sp,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -234,28 +234,28 @@ class AllTab extends StatelessWidget {
                           color: AppColors.alternate,
                           elevation: 4,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
+                            borderRadius: BorderRadius.circular(8.0.sp),
                           ),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 8),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 16.sp, vertical: 8.sp),
                           textColor: Colors.white,
                           height: 40,
                           minWidth: 140,
-                          child: const Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(
                                 Icons.call,
                                 color: Colors.white,
-                                size: 18,
+                                size: 16.sp,
                               ),
                               SizedBox(
-                                width: 8,
+                                width: 8.sp,
                               ),
                               Text(
                                 "Contact",
                                 style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                 ),
@@ -264,9 +264,9 @@ class AllTab extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 16,
-                        width: 16,
+                      SizedBox(
+                        height: 16.sp,
+                        width: 16.sp,
                       ),
                       Expanded(
                         flex: 1,
@@ -274,28 +274,28 @@ class AllTab extends StatelessWidget {
                           onPressed: () {
                             Get.to(() => ProfilePage());
                           },
-                          color: const Color(0xff01052e),
+                          color: Color(0xff01052e),
                           elevation: 3,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
+                            borderRadius: BorderRadius.circular(8.0.sp),
                           ),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 8),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 16.sp, vertical: 8.sp),
                           textColor: Colors.white,
                           height: 40,
                           minWidth: 140,
-                          child: const Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(
                                 Icons.more_vert,
                                 color: Colors.white,
-                                size: 18,
+                                size: 16.sp,
                               ),
                               Text(
                                 "More",
                                 style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                 ),

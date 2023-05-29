@@ -111,12 +111,17 @@ class MainDashboardPage extends StatelessWidget {
               ),
               Expanded(
                 flex: 1,
-                child: TabBarView(
-                  children: [
-                    AllTab(),
-                    AllTab(),
-                    AllTab(),
-                  ],
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxWidth: 700,
+                  ),
+                  child: TabBarView(
+                    children: [
+                      AllTab(),
+                      AllTab(),
+                      AllTab(),
+                    ],
+                  ),
                 ),
               ),
             ],
