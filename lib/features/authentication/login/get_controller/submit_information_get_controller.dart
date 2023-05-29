@@ -1,5 +1,7 @@
 import 'package:flutter/animation.dart';
 import 'package:get/get.dart';
+import 'package:himachali_rishta/features/authentication/login/models/caste_model.dart';
+import 'package:http/http.dart' as http;
 
 class SubmitInformationGetController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -33,6 +35,7 @@ class SubmitInformationGetController extends GetxController
 
   @override
   void onInit() {
+    getCastes();
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 300),
@@ -47,5 +50,21 @@ class SubmitInformationGetController extends GetxController
       6: postingThisProfileFor
     };
     super.onInit();
+  }
+
+  Future<void> getCastes() async {
+    var request = http.Request(
+        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/cast'));
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      List<CasteModel> castes =
+          casteModelFromJson(await response.stream.bytesToString());
+      caste.value = castes.map((e) => e.name).toList().obs;
+      selectedCaste.value = caste[0];
+    } else {
+      print(response.reasonPhrase);
+    }
   }
 }

@@ -29,7 +29,7 @@ class SubmitInformationPage extends StatelessWidget {
       },
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(0),
+          preferredSize: Size.fromHeight(0),
           child: Container(
             color: Theme.of(context).primaryColor,
           ),
@@ -41,18 +41,18 @@ class SubmitInformationPage extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    height: 10.h,
+                    height: 8.h,
                     width: 100.w,
                     decoration: BoxDecoration(
                         color: Theme.of(context).primaryColor,
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20),
                             bottomRight: Radius.circular(20))),
                     child: Center(
                       child: Text(
                         'Submit Bride/Groom Information',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 16.sp,
                           color: AppColors.primaryTextColorDark,
                           fontWeight: FontWeight.bold,
                         ),
@@ -61,8 +61,8 @@ class SubmitInformationPage extends StatelessWidget {
                   ),
                   Expanded(
                       child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 8.0),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 16.sp, vertical: 8.sp),
                     child: ListView.builder(
                       itemBuilder: (context, index) {
                         return formData(context)[index];
@@ -129,50 +129,50 @@ class SubmitInformationPage extends StatelessWidget {
 
   List<Widget> formData(BuildContext context) {
     return [
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       TextField(
         controller: TextEditingController(),
         obscureText: false,
         textAlign: TextAlign.start,
         maxLines: 1,
-        style: const TextStyle(
+        style: TextStyle(
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontSize: 14,
+          fontSize: 12.sp,
           color: Color(0xff000000),
         ),
         decoration: InputDecoration(
           disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp),
+            borderSide: BorderSide(color: Color(0x55757575), width: 1.sp),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp),
+            borderSide: BorderSide(color: Color(0x55757575), width: 1.sp),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp),
+            borderSide: BorderSide(color: Color(0x55757575), width: 1.sp),
           ),
           labelText: "Bride/Groom's Name",
-          labelStyle: const TextStyle(
+          labelStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
-            fontSize: 14,
+            fontSize: 12.sp,
             color: Color(0xff000000),
           ),
           filled: false,
-          fillColor: const Color(0xfff2f2f3),
+          fillColor: Color(0xfff2f2f3),
           isDense: false,
-          contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+          contentPadding: EdgeInsets.fromLTRB(12.sp, 8.sp, 12.sp, 8.sp),
         ),
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       GestureDetector(
         onTap: () {
@@ -181,12 +181,12 @@ class SubmitInformationPage extends StatelessWidget {
         },
         child: Container(
             width: MediaQuery.of(context).size.width,
-            height: 50,
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            height: 45.sp,
+            padding: EdgeInsets.symmetric(horizontal: 8.sp, vertical: 4.sp),
             decoration: BoxDecoration(
-              color: const Color(0xffffffff),
-              border: Border.all(color: const Color(0x54757575), width: 1),
-              borderRadius: BorderRadius.circular(4),
+              color: Color(0xffffffff),
+              border: Border.all(color: Color(0x54757575), width: 1.sp),
+              borderRadius: BorderRadius.circular(4.sp),
             ),
             child: Row(
               children: [
@@ -198,15 +198,15 @@ class SubmitInformationPage extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: const Color(0xff616161),
+                  color: Color(0xff616161),
                   size: 15.sp,
                 )
               ],
             )),
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       GestureDetector(
         onTap: () {
@@ -214,13 +214,13 @@ class SubmitInformationPage extends StatelessWidget {
           getController.animationController.forward();
         },
         child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: 50,
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            width: 100.w,
+            height: 45.sp,
+            padding: EdgeInsets.symmetric(horizontal: 8.sp, vertical: 4.sp),
             decoration: BoxDecoration(
-              color: const Color(0xffffffff),
-              border: Border.all(color: const Color(0x55757575), width: 1),
-              borderRadius: BorderRadius.circular(4),
+              color: Color(0xffffffff),
+              border: Border.all(color: Color(0x55757575), width: 1.sp),
+              borderRadius: BorderRadius.circular(4.sp),
             ),
             child: Row(
               children: [
@@ -232,15 +232,15 @@ class SubmitInformationPage extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: const Color(0xff616161),
+                  color: Color(0xff616161),
                   size: 15.sp,
                 )
               ],
             )),
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       GestureDetector(
         onTap: () {
@@ -249,12 +249,12 @@ class SubmitInformationPage extends StatelessWidget {
         },
         child: Container(
             width: MediaQuery.of(context).size.width,
-            height: 50,
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            height: 45.sp,
+            padding: EdgeInsets.symmetric(horizontal: 8.sp, vertical: 4.sp),
             decoration: BoxDecoration(
-              color: const Color(0xffffffff),
-              border: Border.all(color: const Color(0x55757575), width: 1),
-              borderRadius: BorderRadius.circular(4),
+              color: Color(0xffffffff),
+              border: Border.all(color: Color(0x55757575), width: 1.sp),
+              borderRadius: BorderRadius.circular(4.sp),
             ),
             child: Row(
               children: [
@@ -266,15 +266,15 @@ class SubmitInformationPage extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: const Color(0xff616161),
+                  color: Color(0xff616161),
                   size: 15.sp,
                 )
               ],
             )),
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       GestureDetector(
         onTap: () {
@@ -283,12 +283,12 @@ class SubmitInformationPage extends StatelessWidget {
         },
         child: Container(
             width: MediaQuery.of(context).size.width,
-            height: 50,
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            height: 45.sp,
+            padding: EdgeInsets.symmetric(horizontal: 8.sp, vertical: 4.sp),
             decoration: BoxDecoration(
-              color: const Color(0xffffffff),
-              border: Border.all(color: const Color(0x53757575), width: 1),
-              borderRadius: BorderRadius.circular(4),
+              color: Color(0xffffffff),
+              border: Border.all(color: Color(0x53757575), width: 1.sp),
+              borderRadius: BorderRadius.circular(4.sp),
             ),
             child: Row(
               children: [
@@ -300,7 +300,7 @@ class SubmitInformationPage extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: const Color(0xff616161),
+                  color: Color(0xff616161),
                   size: 15.sp,
                 )
               ],
@@ -310,9 +310,9 @@ class SubmitInformationPage extends StatelessWidget {
         return Visibility(
           visible: getController.selectedMaritalStatus.value !=
               getController.maritalStatus[1],
-          child: const SizedBox(
-            height: 16,
-            width: 16,
+          child: SizedBox(
+            height: 16.sp,
+            width: 16.sp,
           ),
         );
       }),
@@ -327,12 +327,12 @@ class SubmitInformationPage extends StatelessWidget {
             },
             child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: 50,
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                height: 45.sp,
+                padding: EdgeInsets.symmetric(horizontal: 8.sp, vertical: 4.sp),
                 decoration: BoxDecoration(
-                  color: const Color(0xffffffff),
-                  border: Border.all(color: const Color(0x54757575), width: 1),
-                  borderRadius: BorderRadius.circular(4),
+                  color: Color(0xffffffff),
+                  border: Border.all(color: Color(0x54757575), width: 1.sp),
+                  borderRadius: BorderRadius.circular(4.sp),
                 ),
                 child: Row(
                   children: [
@@ -344,7 +344,7 @@ class SubmitInformationPage extends StatelessWidget {
                     })),
                     Icon(
                       Icons.chevron_right,
-                      color: const Color(0xff616161),
+                      color: Color(0xff616161),
                       size: 15.sp,
                     )
                   ],
@@ -352,9 +352,9 @@ class SubmitInformationPage extends StatelessWidget {
           ),
         );
       }),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       GestureDetector(
         onTap: () {
@@ -363,12 +363,12 @@ class SubmitInformationPage extends StatelessWidget {
         },
         child: Container(
             width: MediaQuery.of(context).size.width,
-            height: 50,
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            height: 45.sp,
+            padding: EdgeInsets.symmetric(horizontal: 8.sp, vertical: 4.sp),
             decoration: BoxDecoration(
-              color: const Color(0xffffffff),
-              border: Border.all(color: const Color(0x53757575), width: 1),
-              borderRadius: BorderRadius.circular(4),
+              color: Color(0xffffffff),
+              border: Border.all(color: Color(0x53757575), width: 1.sp),
+              borderRadius: BorderRadius.circular(4.sp),
             ),
             child: Row(
               children: [
@@ -380,17 +380,17 @@ class SubmitInformationPage extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: const Color(0xff616161),
+                  color: Color(0xff616161),
                   size: 15.sp,
                 )
               ],
             )),
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
-      const Row(
+      Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
@@ -402,7 +402,7 @@ class SubmitInformationPage extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
-              fontSize: 12,
+              fontSize: 10.sp,
               color: Color(0xff000000),
             ),
           ),
@@ -420,45 +420,42 @@ class SubmitInformationPage extends StatelessWidget {
               obscureText: false,
               textAlign: TextAlign.start,
               maxLines: 1,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontStyle: FontStyle.normal,
-                fontSize: 14,
+                fontSize: 12.sp,
                 color: Color(0xff000000),
               ),
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide:
-                      const BorderSide(color: Color(0x54757575), width: 1),
+                  borderRadius: BorderRadius.circular(4.0.sp),
+                  borderSide: BorderSide(color: Color(0x54757575), width: 1.sp),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide:
-                      const BorderSide(color: Color(0x54757575), width: 1),
+                  borderRadius: BorderRadius.circular(4.0.sp),
+                  borderSide: BorderSide(color: Color(0x54757575), width: 1.sp),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide:
-                      const BorderSide(color: Color(0x54757575), width: 1),
+                  borderRadius: BorderRadius.circular(4.0.sp),
+                  borderSide: BorderSide(color: Color(0x54757575), width: 1.sp),
                 ),
                 labelText: "Day",
-                labelStyle: const TextStyle(
+                labelStyle: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontStyle: FontStyle.normal,
-                  fontSize: 14,
+                  fontSize: 12.sp,
                   color: Color(0xff000000),
                 ),
                 filled: false,
-                fillColor: const Color(0xfff2f2f3),
+                fillColor: Color(0xfff2f2f3),
                 isDense: false,
-                contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+                contentPadding: EdgeInsets.fromLTRB(12.sp, 8.sp, 12.sp, 8.sp),
               ),
             ),
           ),
-          const SizedBox(
-            height: 16,
-            width: 16,
+          SizedBox(
+            height: 16.sp,
+            width: 16.sp,
           ),
           Expanded(
             flex: 1,
@@ -467,45 +464,42 @@ class SubmitInformationPage extends StatelessWidget {
               obscureText: false,
               textAlign: TextAlign.start,
               maxLines: 1,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontStyle: FontStyle.normal,
-                fontSize: 14,
+                fontSize: 12.sp,
                 color: Color(0xff000000),
               ),
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide:
-                      const BorderSide(color: Color(0x53757575), width: 1),
+                  borderRadius: BorderRadius.circular(4.0.sp),
+                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide:
-                      const BorderSide(color: Color(0x53757575), width: 1),
+                  borderRadius: BorderRadius.circular(4.0.sp),
+                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide:
-                      const BorderSide(color: Color(0x53757575), width: 1),
+                  borderRadius: BorderRadius.circular(4.0.sp),
+                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp),
                 ),
                 labelText: "Month",
-                labelStyle: const TextStyle(
+                labelStyle: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontStyle: FontStyle.normal,
-                  fontSize: 14,
+                  fontSize: 12.sp,
                   color: Color(0xff000000),
                 ),
                 filled: false,
-                fillColor: const Color(0xfff2f2f3),
+                fillColor: Color(0xfff2f2f3),
                 isDense: false,
-                contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+                contentPadding: EdgeInsets.fromLTRB(12.sp, 8.sp, 12.sp, 8.sp),
               ),
             ),
           ),
-          const SizedBox(
-            height: 16,
-            width: 16,
+          SizedBox(
+            height: 16.sp,
+            width: 16.sp,
           ),
           Expanded(
             flex: 1,
@@ -514,67 +508,64 @@ class SubmitInformationPage extends StatelessWidget {
               obscureText: false,
               textAlign: TextAlign.start,
               maxLines: 1,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontStyle: FontStyle.normal,
-                fontSize: 14,
+                fontSize: 12.sp,
                 color: Color(0xff000000),
               ),
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide:
-                      const BorderSide(color: Color(0x53757575), width: 1),
+                  borderRadius: BorderRadius.circular(4.0.sp),
+                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide:
-                      const BorderSide(color: Color(0x53757575), width: 1),
+                  borderRadius: BorderRadius.circular(4.0.sp),
+                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide:
-                      const BorderSide(color: Color(0x53757575), width: 1),
+                  borderRadius: BorderRadius.circular(4.0.sp),
+                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp),
                 ),
                 labelText: "Year",
-                labelStyle: const TextStyle(
+                labelStyle: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontStyle: FontStyle.normal,
-                  fontSize: 14,
+                  fontSize: 12.sp,
                   color: Color(0xff000000),
                 ),
                 filled: false,
-                fillColor: const Color(0xfff2f2f3),
+                fillColor: Color(0xfff2f2f3),
                 isDense: false,
-                contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+                contentPadding: EdgeInsets.fromLTRB(12.sp, 8.sp, 12.sp, 8.sp),
               ),
             ),
           ),
         ],
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32.0),
+        padding: EdgeInsets.symmetric(horizontal: 32.0),
         child: MaterialButton(
           onPressed: () {
             Get.to(() => SubmitInformationPage2());
           },
-          color: const Color(0xffac0f11),
+          color: Color(0xffac0f11),
           elevation: 4,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(10.0.sp),
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          textColor: const Color(0xff000000),
-          height: 40,
-          minWidth: 140,
+          padding: EdgeInsets.symmetric(horizontal: 16.sp, vertical: 8.sp),
+          textColor: Color(0xff000000),
+          height: 38.sp,
+          minWidth: 138.sp,
           child: Text(
             "Next",
             style: TextStyle(
-                fontSize: 18,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.normal,
                 color: AppColors.primaryTextColorDark),
