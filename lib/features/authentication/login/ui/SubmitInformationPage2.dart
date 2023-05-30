@@ -332,7 +332,51 @@ class SubmitInformationPage2 extends StatelessWidget {
         width: 16.sp,
       ),
       TextFormField(
-        controller: getController.homeTownCountryController,
+        controller: getController.livingCityController,
+        obscureText: false,
+        textAlign: TextAlign.start,
+        maxLines: 1,
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+          fontStyle: FontStyle.normal,
+          fontSize: 14.sp.adjustedSp,
+          color: Color(0xff000000),
+        ),
+        decoration: InputDecoration(
+          disabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+          ),
+          labelText: "Living City",
+          labelStyle: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontStyle: FontStyle.normal,
+            fontSize: 14.sp.adjustedSp,
+            color: Color(0xff000000),
+          ),
+          filled: false,
+          fillColor: Color(0xfff2f2f3),
+          isDense: false,
+          contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+        ),
+      ),
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
+      ),
+      TextFormField(
+        controller: getController.homeTownController,
         obscureText: false,
         textAlign: TextAlign.start,
         maxLines: 1,

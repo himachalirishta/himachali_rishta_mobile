@@ -6,9 +6,8 @@ class SubmitInformation2GetController extends GetxController
   TextEditingController heightController = TextEditingController();
   TextEditingController livingCountryController = TextEditingController();
   TextEditingController livingStateController = TextEditingController();
-  TextEditingController homeTownCountryController = TextEditingController();
-  TextEditingController homeTownStateController = TextEditingController();
-  TextEditingController homeTownCityController = TextEditingController();
+  TextEditingController livingCityController = TextEditingController();
+  TextEditingController homeTownController = TextEditingController();
   TextEditingController birthPlaceController = TextEditingController();
   TextEditingController birthTimeController = TextEditingController();
   late AnimationController animationController;
