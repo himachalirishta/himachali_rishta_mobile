@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/UploadPhotoScreen.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/side_option_drawer.dart';
+import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/app_colors.dart';
@@ -15,138 +16,160 @@ class SubmitInformationPage2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () {
-        if (getController.animationController.isCompleted) {
-          getController.animationController.reverse();
-        } else {
-          Get.back();
-        }
-        return Future.value(false);
-      },
-      child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(0),
-          child: Container(
-            color: Theme.of(context).primaryColor,
-          ),
-        ),
-        body: Stack(
-          children: [
-            SizedBox(
-              height: 100.h,
-              child: Column(
-                children: [
-                  Container(
-                    height: 10.h,
-                    width: 100.w,
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20))),
-                    child: Center(
-                      child: Text(
-                        'Submit Bride/Groom Information',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: AppColors.primaryTextColorDark,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+    return StreamBuilder<bool>(
+        stream: Stream.periodic(Duration(seconds: 1), (_) {
+          return SizerUtil.orientation == Orientation.landscape;
+        }),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ConstrainedBox(
+              constraints: BoxConstraints(
+                  maxWidth: snapshot.data! ? 700 : 100.w.adjustedW),
+              child: WillPopScope(
+                onWillPop: () {
+                  if (getController.animationController.isCompleted) {
+                    getController.animationController.reverse();
+                  } else {
+                    Get.back();
+                  }
+                  return Future.value(false);
+                },
+                child: Scaffold(
+                  appBar: PreferredSize(
+                    preferredSize: Size.fromHeight(0),
+                    child: Container(
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
-                  Expanded(
-                      child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 8.0),
-                    child: ListView.builder(
-                      itemBuilder: (context, index) {
-                        return formData(context)[index];
-                      },
-                      itemCount: formData(context).length,
-                    ),
-                  )),
-                ],
-              ),
-            ),
-            AnimatedBuilder(
-                animation: getController.animationController,
-                builder: (context, widget) {
-                  return Positioned(
-                      right:
-                          -75.w * (1 - getController.animationController.value),
-                      child: SideOptionDrawer(
-                        options: getController
-                            .selectedOption[
-                                getController.selectedOptionIndex.value]!
-                            .value,
-                        onOptionSelected: (index) {
-                          switch (getController.selectedOptionIndex.value) {
-                            //gender, religion, caste, marital status, posting this profile for
-                            case 1:
-                              getController.selectedOccupationType.value =
-                                  getController.occupationType[index];
-                              break;
+                  body: Stack(
+                    children: [
+                      SizedBox(
+                        height: 100.h,
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 8.h,
+                              width: 100.w,
+                              decoration: BoxDecoration(
+                                  color: Theme.of(context).primaryColor,
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20))),
+                              child: Center(
+                                child: Text(
+                                  'Submit Bride/Groom Information',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: AppColors.primaryTextColorDark,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                                child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16.sp.adjustedSp,
+                                  vertical: 8.0.sp.adjustedSp),
+                              child: ListView.builder(
+                                itemBuilder: (context, index) {
+                                  return formData(context)[index];
+                                },
+                                itemCount: formData(context).length,
+                              ),
+                            )),
+                          ],
+                        ),
+                      ),
+                      AnimatedBuilder(
+                          animation: getController.animationController,
+                          builder: (context, widget) {
+                            return Positioned(
+                                right: -75.w *
+                                    (1 -
+                                        getController
+                                            .animationController.value),
+                                child: SideOptionDrawer(
+                                  options: getController
+                                      .selectedOption[getController
+                                          .selectedOptionIndex.value]!
+                                      .value,
+                                  onOptionSelected: (index) {
+                                    switch (getController
+                                        .selectedOptionIndex.value) {
+                                      //gender, religion, caste, marital status, posting this profile for
+                                      case 1:
+                                        getController
+                                                .selectedOccupationType.value =
+                                            getController.occupationType[index];
+                                        break;
 
-                            default:
-                              break;
-                          }
-                        },
-                      ));
-                }),
-          ],
-        ),
-      ),
-    );
+                                      default:
+                                        break;
+                                    }
+                                  },
+                                ));
+                          }),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }
+          return Container();
+        });
   }
 
   List<Widget> formData(BuildContext context) {
     return [
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       TextFormField(
         controller: getController.heightController,
         obscureText: false,
         textAlign: TextAlign.start,
         maxLines: 1,
-        style: const TextStyle(
+        style: TextStyle(
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontSize: 14,
+          fontSize: 14.sp.adjustedSp,
           color: Color(0xff000000),
         ),
         decoration: InputDecoration(
           disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           labelText: "Height",
-          labelStyle: const TextStyle(
+          labelStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
-            fontSize: 14,
+            fontSize: 14.sp.adjustedSp,
             color: Color(0xff000000),
           ),
           filled: false,
-          fillColor: const Color(0xfff2f2f3),
+          fillColor: Color(0xfff2f2f3),
           isDense: false,
-          contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+          contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp, 8.sp.adjustedSp,
+              12.sp.adjustedSp, 8.sp.adjustedSp),
         ),
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       GestureDetector(
         onTap: () {
@@ -154,33 +177,35 @@ class SubmitInformationPage2 extends StatelessWidget {
           getController.animationController.forward();
         },
         child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: 50,
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            width: 100.w.adjustedH,
+            height: 50.sp.adjustedSp,
+            padding: EdgeInsets.symmetric(
+                horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
-              color: const Color(0xffffffff),
-              border: Border.all(color: const Color(0x54757575), width: 1),
-              borderRadius: BorderRadius.circular(4),
+              color: Color(0xffffffff),
+              border:
+                  Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+              borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
               children: [
                 Expanded(child: Obx(() {
                   return Text(
                     getController.selectedOccupationType.value,
-                    style: TextStyle(fontSize: 10.sp),
+                    style: TextStyle(fontSize: 12.sp.adjustedSp),
                   );
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: const Color(0xff616161),
-                  size: 15.sp,
+                  color: Color(0xff616161),
+                  size: 15.sp.adjustedSp,
                 )
               ],
             )),
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       GestureDetector(
         onTap: () {
@@ -188,156 +213,167 @@ class SubmitInformationPage2 extends StatelessWidget {
           getController.animationController.forward();
         },
         child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: 50,
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            width: 100.w,
+            height: 50.sp.adjustedSp,
+            padding: EdgeInsets.symmetric(
+                horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
-              color: const Color(0xffffffff),
-              border: Border.all(color: const Color(0x55757575), width: 1),
-              borderRadius: BorderRadius.circular(4),
+              color: Color(0xffffffff),
+              border:
+                  Border.all(color: Color(0x55757575), width: 1.sp.adjustedSp),
+              borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
               children: [
                 Expanded(child: Obx(() {
                   return Text(
                     getController.selectedEducation.value,
-                    style: TextStyle(fontSize: 10.sp),
+                    style: TextStyle(fontSize: 12.sp.adjustedSp),
                   );
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: const Color(0xff616161),
-                  size: 15.sp,
+                  color: Color(0xff616161),
+                  size: 15.sp.adjustedSp,
                 )
               ],
             )),
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       TextFormField(
         controller: getController.livingCountryController,
         obscureText: false,
         textAlign: TextAlign.start,
         maxLines: 1,
-        style: const TextStyle(
+        style: TextStyle(
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontSize: 14,
+          fontSize: 14.sp.adjustedSp,
           color: Color(0xff000000),
         ),
         decoration: InputDecoration(
           disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           labelText: "Living Country",
-          labelStyle: const TextStyle(
+          labelStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
-            fontSize: 14,
+            fontSize: 14.sp.adjustedSp,
             color: Color(0xff000000),
           ),
           filled: false,
-          fillColor: const Color(0xfff2f2f3),
+          fillColor: Color(0xfff2f2f3),
           isDense: false,
-          contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+          contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
         ),
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       TextFormField(
         controller: getController.livingStateController,
         obscureText: false,
         textAlign: TextAlign.start,
         maxLines: 1,
-        style: const TextStyle(
+        style: TextStyle(
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontSize: 14,
+          fontSize: 14.sp.adjustedSp,
           color: Color(0xff000000),
         ),
         decoration: InputDecoration(
           disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           labelText: "Living State",
-          labelStyle: const TextStyle(
+          labelStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
-            fontSize: 14,
+            fontSize: 14.sp.adjustedSp,
             color: Color(0xff000000),
           ),
           filled: false,
-          fillColor: const Color(0xfff2f2f3),
+          fillColor: Color(0xfff2f2f3),
           isDense: false,
-          contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+          contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
         ),
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       TextFormField(
         controller: getController.homeTownCountryController,
         obscureText: false,
         textAlign: TextAlign.start,
         maxLines: 1,
-        style: const TextStyle(
+        style: TextStyle(
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontSize: 14,
+          fontSize: 14.sp.adjustedSp,
           color: Color(0xff000000),
         ),
         decoration: InputDecoration(
           disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(color: Color(0x55757575), width: 1),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           labelText: "Home Town",
-          labelStyle: const TextStyle(
+          labelStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
-            fontSize: 14,
+            fontSize: 14.sp.adjustedSp,
             color: Color(0xff000000),
           ),
           filled: false,
-          fillColor: const Color(0xfff2f2f3),
+          fillColor: Color(0xfff2f2f3),
           isDense: false,
-          contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+          contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
         ),
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       Row(
         children: [
@@ -347,44 +383,44 @@ class SubmitInformationPage2 extends StatelessWidget {
               obscureText: false,
               textAlign: TextAlign.start,
               maxLines: 1,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontStyle: FontStyle.normal,
-                fontSize: 14,
+                fontSize: 14.sp.adjustedSp,
                 color: Color(0xff000000),
               ),
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide:
-                      const BorderSide(color: Color(0x55757575), width: 1),
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: Color(0x55757575), width: 1.sp.adjustedSp),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide:
-                      const BorderSide(color: Color(0x55757575), width: 1),
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: Color(0x55757575), width: 1.sp.adjustedSp),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                  borderSide:
-                      const BorderSide(color: Color(0x55757575), width: 1),
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: Color(0x55757575), width: 1.sp.adjustedSp),
                 ),
                 labelText: "Birth Place",
-                labelStyle: const TextStyle(
+                labelStyle: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontStyle: FontStyle.normal,
-                  fontSize: 14,
+                  fontSize: 14.sp.adjustedSp,
                   color: Color(0xff000000),
                 ),
                 filled: false,
-                fillColor: const Color(0xfff2f2f3),
+                fillColor: Color(0xfff2f2f3),
                 isDense: false,
-                contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+                contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
               ),
             ),
           ),
-          const SizedBox(
-            width: 16,
+          SizedBox(
+            width: 16.sp,
           ),
           Expanded(
             child: GestureDetector(
@@ -403,68 +439,69 @@ class SubmitInformationPage2 extends StatelessWidget {
                 textAlign: TextAlign.start,
                 maxLines: 1,
                 enabled: false,
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontStyle: FontStyle.normal,
-                  fontSize: 14,
+                  fontSize: 14.sp.adjustedSp,
                   color: Color(0xff000000),
                 ),
                 decoration: InputDecoration(
                   disabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(4.0),
-                    borderSide:
-                        const BorderSide(color: Color(0x55757575), width: 1),
+                    borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                    borderSide: BorderSide(
+                        color: Color(0x55757575), width: 1.sp.adjustedSp),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(4.0),
-                    borderSide:
-                        const BorderSide(color: Color(0x55757575), width: 1),
+                    borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                    borderSide: BorderSide(
+                        color: Color(0x55757575), width: 1.sp.adjustedSp),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(4.0),
-                    borderSide:
-                        const BorderSide(color: Color(0x55757575), width: 1),
+                    borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                    borderSide: BorderSide(
+                        color: Color(0x55757575), width: 1.sp.adjustedSp),
                   ),
                   labelText: "Birth Time",
-                  labelStyle: const TextStyle(
+                  labelStyle: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    fontSize: 14,
+                    fontSize: 14.sp.adjustedSp,
                     color: Color(0xff000000),
                   ),
                   filled: false,
-                  fillColor: const Color(0xfff2f2f3),
+                  fillColor: Color(0xfff2f2f3),
                   isDense: false,
-                  contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+                  contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                 ),
               ),
             ),
           ),
         ],
       ),
-      const SizedBox(
-        height: 16,
-        width: 16,
+      SizedBox(
+        height: 16.sp,
+        width: 16.sp,
       ),
       Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32.0),
+        padding: EdgeInsets.symmetric(horizontal: 32.0),
         child: MaterialButton(
           onPressed: () {
             Get.to(() => UploadPhotoScreen());
           },
-          color: const Color(0xffac0f11),
+          color: Color(0xffac0f11),
           elevation: 4,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(10.0.sp.adjustedSp),
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          textColor: const Color(0xff000000),
-          height: 40,
-          minWidth: 140,
+          padding: EdgeInsets.symmetric(
+              horizontal: 16.sp.adjustedSp, vertical: 8.sp.adjustedSp),
+          textColor: Color(0xff000000),
+          height: 40.sp.adjustedSp,
+          minWidth: 140.sp.adjustedSp,
           child: Text(
             "Proceed",
             style: TextStyle(
-                fontSize: 18,
+                fontSize: 18.sp.adjustedSp,
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.normal,
                 color: AppColors.primaryTextColorDark),
