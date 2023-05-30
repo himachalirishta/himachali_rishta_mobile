@@ -19,119 +19,133 @@ class SubmitInformationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: BoxConstraints(
-          maxWidth: SizerUtil.orientation == Orientation.landscape
-              ? 700
-              : 100.w.adjustedW),
-      child: WillPopScope(
-        onWillPop: () {
-          if (getController.animationController.isCompleted) {
-            getController.animationController.reverse();
-          } else {
-            Get.back();
-          }
-          return Future.value(false);
-        },
-        child: Scaffold(
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(0),
-            child: Container(
-              color: Theme.of(context).primaryColor,
-            ),
-          ),
-          body: Stack(
-            children: [
-              SizedBox(
-                height: 100.h.adjustedH,
-                child: Column(
-                  children: [
-                    Container(
-                      height: 8.h.adjustedH,
-                      width: 100.w.adjustedW,
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor,
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20))),
-                      child: Center(
-                        child: Text(
-                          'Submit Bride/Groom Information',
-                          style: TextStyle(
-                            fontSize: 16.sp.adjustedSp,
-                            color: AppColors.primaryTextColorDark,
-                            fontWeight: FontWeight.bold,
-                          ),
+    return StreamBuilder<bool>(
+        stream: Stream.periodic(Duration(seconds: 1), (_) {
+          return SizerUtil.orientation == Orientation.landscape;
+        }),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ConstrainedBox(
+              constraints: BoxConstraints(
+                  maxWidth: snapshot.data! ? 700 : 100.w.adjustedW),
+              child: WillPopScope(
+                onWillPop: () {
+                  if (getController.animationController.isCompleted) {
+                    getController.animationController.reverse();
+                  } else {
+                    Get.back();
+                  }
+                  return Future.value(false);
+                },
+                child: Scaffold(
+                  appBar: PreferredSize(
+                    preferredSize: Size.fromHeight(0),
+                    child: Container(
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ),
+                  body: Stack(
+                    children: [
+                      SizedBox(
+                        height: 100.h,
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 8.h,
+                              width: 100.w,
+                              decoration: BoxDecoration(
+                                  color: Theme.of(context).primaryColor,
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20))),
+                              child: Center(
+                                child: Text(
+                                  'Submit Bride/Groom Information',
+                                  style: TextStyle(
+                                    fontSize: 16.sp.adjustedSp,
+                                    color: AppColors.primaryTextColorDark,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                                child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16.sp.adjustedSp, vertical: 8.sp.adjustedSp),
+                              child: ListView.builder(
+                                itemBuilder: (context, index) {
+                                  return formData(context)[index];
+                                },
+                                itemCount: formData(context).length,
+                              ),
+                            )),
+                          ],
                         ),
                       ),
-                    ),
-                    Expanded(
-                        child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 16.sp.adjustedSp, vertical: 8.sp),
-                      child: ListView.builder(
-                        itemBuilder: (context, index) {
-                          return formData(context)[index];
-                        },
-                        itemCount: formData(context).length,
-                      ),
-                    )),
-                  ],
+                      AnimatedBuilder(
+                          animation: getController.animationController,
+                          builder: (context, widget) {
+                            return Positioned(
+                                right: -75.w *
+                                    (1 -
+                                        getController
+                                            .animationController.value),
+                                child: SideOptionDrawer(
+                                  options: getController
+                                      .selectedOption[getController
+                                          .selectedOptionIndex.value]!
+                                      .value,
+                                  onOptionSelected: (index) {
+                                    switch (getController
+                                        .selectedOptionIndex.value) {
+                                      //gender, religion, caste, marital status, posting this profile for
+                                      case 1:
+                                        getController.selectedGender.value =
+                                            getController.gender[index];
+                                        break;
+                                      case 2:
+                                        getController.selectedReligion.value =
+                                            getController.religion[index];
+
+                                        break;
+                                      case 3:
+                                        getController.selectedCaste.value =
+                                            getController.caste[index];
+
+                                        break;
+                                      case 4:
+                                        getController
+                                                .selectedMaritalStatus.value =
+                                            getController.maritalStatus[index];
+                                        break;
+                                      case 5:
+                                        getController
+                                                .selectedNoOfChildren.value =
+                                            getController.noOfChildren[index];
+                                        break;
+                                      case 6:
+                                        getController
+                                                .selectedPostingThisProfileFor
+                                                .value =
+                                            getController
+                                                .postingThisProfileFor[index];
+                                        break;
+
+                                      default:
+                                        break;
+                                    }
+                                  },
+                                ));
+                          })
+                    ],
+                  ),
                 ),
               ),
-              AnimatedBuilder(
-                  animation: getController.animationController,
-                  builder: (context, widget) {
-                    return Positioned(
-                        right: -75.w *
-                            (1 - getController.animationController.value),
-                        child: SideOptionDrawer(
-                          options: getController
-                              .selectedOption[
-                                  getController.selectedOptionIndex.value]!
-                              .value,
-                          onOptionSelected: (index) {
-                            switch (getController.selectedOptionIndex.value) {
-                              //gender, religion, caste, marital status, posting this profile for
-                              case 1:
-                                getController.selectedGender.value =
-                                    getController.gender[index];
-                                break;
-                              case 2:
-                                getController.selectedReligion.value =
-                                    getController.religion[index];
-
-                                break;
-                              case 3:
-                                getController.selectedCaste.value =
-                                    getController.caste[index];
-
-                                break;
-                              case 4:
-                                getController.selectedMaritalStatus.value =
-                                    getController.maritalStatus[index];
-                                break;
-                              case 5:
-                                getController.selectedNoOfChildren.value =
-                                    getController.noOfChildren[index];
-                                break;
-                              case 6:
-                                getController
-                                        .selectedPostingThisProfileFor.value =
-                                    getController.postingThisProfileFor[index];
-                                break;
-
-                              default:
-                                break;
-                            }
-                          },
-                        ));
-                  })
-            ],
-          ),
-        ),
-      ),
-    );
+            );
+          }
+          return Container();
+        });
   }
 
   List<Widget> formData(BuildContext context) {
@@ -153,16 +167,16 @@ class SubmitInformationPage extends StatelessWidget {
         ),
         decoration: InputDecoration(
           disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp),
-            borderSide: BorderSide(color: Color(0x55757575), width: 1.sp),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide: BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp),
-            borderSide: BorderSide(color: Color(0x55757575), width: 1.sp),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide: BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp),
-            borderSide: BorderSide(color: Color(0x55757575), width: 1.sp),
+            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            borderSide: BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           labelText: "Bride/Groom's Name",
           labelStyle: TextStyle(
@@ -175,7 +189,7 @@ class SubmitInformationPage extends StatelessWidget {
           fillColor: Color(0xfff2f2f3),
           isDense: false,
           contentPadding: EdgeInsets.fromLTRB(
-              12.sp.adjustedSp, 8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp),
+              12.sp.adjustedSp, 8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
         ),
       ),
       SizedBox(
@@ -191,18 +205,18 @@ class SubmitInformationPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: 45.sp.adjustedSp,
             padding: EdgeInsets.symmetric(
-                horizontal: 8.sp.adjustedSp, vertical: 4.sp),
+                horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: Color(0xffffffff),
-              border: Border.all(color: Color(0x54757575), width: 1.sp),
-              borderRadius: BorderRadius.circular(4.sp),
+              border: Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+              borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
               children: [
                 Expanded(child: Obx(() {
                   return Text(
                     getController.selectedGender.value,
-                    style: TextStyle(fontSize: 10.sp),
+                    style: TextStyle(fontSize: 10.sp.adjustedSp),
                   );
                 })),
                 Icon(
@@ -226,18 +240,18 @@ class SubmitInformationPage extends StatelessWidget {
             width: 100.w.adjustedW,
             height: 45.sp.adjustedSp,
             padding: EdgeInsets.symmetric(
-                horizontal: 8.sp.adjustedSp, vertical: 4.sp),
+                horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: Color(0xffffffff),
-              border: Border.all(color: Color(0x55757575), width: 1.sp),
-              borderRadius: BorderRadius.circular(4.sp),
+              border: Border.all(color: Color(0x55757575), width: 1.sp.adjustedSp),
+              borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
               children: [
                 Expanded(child: Obx(() {
                   return Text(
                     getController.selectedReligion.value,
-                    style: TextStyle(fontSize: 10.sp),
+                    style: TextStyle(fontSize: 10.sp.adjustedSp),
                   );
                 })),
                 Icon(
@@ -261,18 +275,18 @@ class SubmitInformationPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: 45.sp.adjustedSp,
             padding: EdgeInsets.symmetric(
-                horizontal: 8.sp.adjustedSp, vertical: 4.sp),
+                horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: Color(0xffffffff),
-              border: Border.all(color: Color(0x55757575), width: 1.sp),
-              borderRadius: BorderRadius.circular(4.sp),
+              border: Border.all(color: Color(0x55757575), width: 1.sp.adjustedSp),
+              borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
               children: [
                 Expanded(child: Obx(() {
                   return Text(
                     getController.selectedCaste.value,
-                    style: TextStyle(fontSize: 10.sp),
+                    style: TextStyle(fontSize: 10.sp.adjustedSp),
                   );
                 })),
                 Icon(
@@ -296,18 +310,18 @@ class SubmitInformationPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: 45.sp.adjustedSp,
             padding: EdgeInsets.symmetric(
-                horizontal: 8.sp.adjustedSp, vertical: 4.sp),
+                horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: Color(0xffffffff),
-              border: Border.all(color: Color(0x53757575), width: 1.sp),
-              borderRadius: BorderRadius.circular(4.sp),
+              border: Border.all(color: Color(0x53757575), width: 1.sp.adjustedSp),
+              borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
               children: [
                 Expanded(child: Obx(() {
                   return Text(
                     getController.selectedMaritalStatus.value,
-                    style: TextStyle(fontSize: 10.sp),
+                    style: TextStyle(fontSize: 10.sp.adjustedSp),
                   );
                 })),
                 Icon(
@@ -341,18 +355,18 @@ class SubmitInformationPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 45.sp.adjustedSp,
                 padding: EdgeInsets.symmetric(
-                    horizontal: 8.sp.adjustedSp, vertical: 4.sp),
+                    horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
                 decoration: BoxDecoration(
                   color: Color(0xffffffff),
-                  border: Border.all(color: Color(0x54757575), width: 1.sp),
-                  borderRadius: BorderRadius.circular(4.sp),
+                  border: Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+                  borderRadius: BorderRadius.circular(4.sp.adjustedSp),
                 ),
                 child: Row(
                   children: [
                     Expanded(child: Obx(() {
                       return Text(
                         getController.selectedNoOfChildren.value,
-                        style: TextStyle(fontSize: 10.sp),
+                        style: TextStyle(fontSize: 10.sp.adjustedSp),
                       );
                     })),
                     Icon(
@@ -378,18 +392,18 @@ class SubmitInformationPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: 45.sp.adjustedSp,
             padding: EdgeInsets.symmetric(
-                horizontal: 8.sp.adjustedSp, vertical: 4.sp),
+                horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: Color(0xffffffff),
-              border: Border.all(color: Color(0x53757575), width: 1.sp),
-              borderRadius: BorderRadius.circular(4.sp),
+              border: Border.all(color: Color(0x53757575), width: 1.sp.adjustedSp),
+              borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
               children: [
                 Expanded(child: Obx(() {
                   return Text(
                     getController.selectedPostingThisProfileFor.value,
-                    style: TextStyle(fontSize: 10.sp),
+                    style: TextStyle(fontSize: 10.sp.adjustedSp),
                   );
                 })),
                 Icon(
@@ -442,16 +456,16 @@ class SubmitInformationPage extends StatelessWidget {
               ),
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp),
-                  borderSide: BorderSide(color: Color(0x54757575), width: 1.sp),
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(color: Color(0x54757575), width: 1.sp.adjustedSp),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp),
-                  borderSide: BorderSide(color: Color(0x54757575), width: 1.sp),
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(color: Color(0x54757575), width: 1.sp.adjustedSp),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp),
-                  borderSide: BorderSide(color: Color(0x54757575), width: 1.sp),
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(color: Color(0x54757575), width: 1.sp.adjustedSp),
                 ),
                 labelText: "Day",
                 labelStyle: TextStyle(
@@ -464,7 +478,7 @@ class SubmitInformationPage extends StatelessWidget {
                 fillColor: Color(0xfff2f2f3),
                 isDense: false,
                 contentPadding: EdgeInsets.fromLTRB(
-                    12.sp.adjustedSp, 8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp),
+                    12.sp.adjustedSp, 8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
               ),
             ),
           ),
@@ -487,16 +501,16 @@ class SubmitInformationPage extends StatelessWidget {
               ),
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp),
-                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp),
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp),
-                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp),
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp),
-                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp),
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 labelText: "Month",
                 labelStyle: TextStyle(
@@ -509,7 +523,7 @@ class SubmitInformationPage extends StatelessWidget {
                 fillColor: Color(0xfff2f2f3),
                 isDense: false,
                 contentPadding: EdgeInsets.fromLTRB(
-                    12.sp.adjustedSp, 8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp),
+                    12.sp.adjustedSp, 8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
               ),
             ),
           ),
@@ -532,16 +546,16 @@ class SubmitInformationPage extends StatelessWidget {
               ),
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp),
-                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp),
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp),
-                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp),
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp),
-                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp),
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 labelText: "Year",
                 labelStyle: TextStyle(
@@ -554,7 +568,7 @@ class SubmitInformationPage extends StatelessWidget {
                 fillColor: Color(0xfff2f2f3),
                 isDense: false,
                 contentPadding: EdgeInsets.fromLTRB(
-                    12.sp.adjustedSp, 8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp),
+                    12.sp.adjustedSp, 8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
               ),
             ),
           ),
@@ -573,10 +587,10 @@ class SubmitInformationPage extends StatelessWidget {
           color: Color(0xffac0f11),
           elevation: 4,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0.sp),
+            borderRadius: BorderRadius.circular(10.0.sp.adjustedSp),
           ),
           padding: EdgeInsets.symmetric(
-              horizontal: 16.sp.adjustedSp, vertical: 8.sp),
+              horizontal: 16.sp.adjustedSp, vertical: 8.sp.adjustedSp),
           textColor: Color(0xff000000),
           height: 38.sp.adjustedSp,
           minWidth: 138.sp.adjustedSp,
