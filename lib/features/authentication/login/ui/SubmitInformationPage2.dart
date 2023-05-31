@@ -103,6 +103,23 @@ class SubmitInformationPage2 extends StatelessWidget {
                                                 .selectedOccupationType.value =
                                             getController.occupationType[index];
                                         break;
+                                      case 2:
+                                        getController.selectedEducation.value =
+                                            getController.education[index];
+                                        break;
+
+                                      case 3:
+                                        getController.selectedCountry.value =
+                                            getController.country[index];
+                                        break;
+                                      case 4:
+                                        getController.selectedState.value =
+                                            getController.state[index];
+                                        break;
+                                      case 5:
+                                        getController.selectedCity.value =
+                                            getController.city[index];
+                                        break;
 
                                       default:
                                         break;
@@ -243,95 +260,111 @@ class SubmitInformationPage2 extends StatelessWidget {
         height: 16.sp,
         width: 16.sp,
       ),
-      TextFormField(
-        controller: getController.livingCountryController,
-        obscureText: false,
-        textAlign: TextAlign.start,
-        maxLines: 1,
-        style: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontStyle: FontStyle.normal,
-          fontSize: 14.sp.adjustedSp,
-          color: Color(0xff000000),
-        ),
-        decoration: InputDecoration(
-          disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
-          ),
-          labelText: "Living Country",
-          labelStyle: TextStyle(
-            fontWeight: FontWeight.w400,
-            fontStyle: FontStyle.normal,
-            fontSize: 14.sp.adjustedSp,
-            color: Color(0xff000000),
-          ),
-          filled: false,
-          fillColor: Color(0xfff2f2f3),
-          isDense: false,
-          contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
-        ),
+      GestureDetector(
+        onTap: () {
+          getController.selectedOptionIndex.value = 3;
+          getController.animationController.forward();
+        },
+        child: Container(
+            width: 100.w.adjustedH,
+            height: 50.sp.adjustedSp,
+            padding: EdgeInsets.symmetric(
+                horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
+            decoration: BoxDecoration(
+              color: Color(0xffffffff),
+              border:
+                  Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+              borderRadius: BorderRadius.circular(4.sp.adjustedSp),
+            ),
+            child: Row(
+              children: [
+                Expanded(child: Obx(() {
+                  return Text(
+                    getController.selectedCountry.value,
+                    style: TextStyle(fontSize: 12.sp.adjustedSp),
+                  );
+                })),
+                Icon(
+                  Icons.chevron_right,
+                  color: Color(0xff616161),
+                  size: 15.sp.adjustedSp,
+                )
+              ],
+            )),
       ),
       SizedBox(
         height: 16.sp,
         width: 16.sp,
       ),
-      TextFormField(
-        controller: getController.livingStateController,
-        obscureText: false,
-        textAlign: TextAlign.start,
-        maxLines: 1,
-        style: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontStyle: FontStyle.normal,
-          fontSize: 14.sp.adjustedSp,
-          color: Color(0xff000000),
-        ),
-        decoration: InputDecoration(
-          disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
-          ),
-          labelText: "Living State",
-          labelStyle: TextStyle(
-            fontWeight: FontWeight.w400,
-            fontStyle: FontStyle.normal,
-            fontSize: 14.sp.adjustedSp,
-            color: Color(0xff000000),
-          ),
-          filled: false,
-          fillColor: Color(0xfff2f2f3),
-          isDense: false,
-          contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
-        ),
+      GestureDetector(
+        onTap: () {
+          getController.selectedOptionIndex.value = 4;
+          getController.animationController.forward();
+        },
+        child: Container(
+            width: 100.w.adjustedH,
+            height: 50.sp.adjustedSp,
+            padding: EdgeInsets.symmetric(
+                horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
+            decoration: BoxDecoration(
+              color: Color(0xffffffff),
+              border:
+                  Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+              borderRadius: BorderRadius.circular(4.sp.adjustedSp),
+            ),
+            child: Row(
+              children: [
+                Expanded(child: Obx(() {
+                  return Text(
+                    getController.selectedState.value,
+                    style: TextStyle(fontSize: 12.sp.adjustedSp),
+                  );
+                })),
+                Icon(
+                  Icons.chevron_right,
+                  color: Color(0xff616161),
+                  size: 15.sp.adjustedSp,
+                )
+              ],
+            )),
       ),
       SizedBox(
         height: 16.sp,
         width: 16.sp,
       ),
-      TextFormField(
+      GestureDetector(
+        onTap: () {
+          getController.selectedOptionIndex.value = 5;
+          getController.animationController.forward();
+        },
+        child: Container(
+            width: 100.w.adjustedH,
+            height: 50.sp.adjustedSp,
+            padding: EdgeInsets.symmetric(
+                horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
+            decoration: BoxDecoration(
+              color: Color(0xffffffff),
+              border:
+                  Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+              borderRadius: BorderRadius.circular(4.sp.adjustedSp),
+            ),
+            child: Row(
+              children: [
+                Expanded(child: Obx(() {
+                  return Text(
+                    getController.selectedCity.value,
+                    style: TextStyle(fontSize: 12.sp.adjustedSp),
+                  );
+                })),
+                Icon(
+                  Icons.chevron_right,
+                  color: Color(0xff616161),
+                  size: 15.sp.adjustedSp,
+                )
+              ],
+            )),
+      ),
+      /*TextFormField(
         controller: getController.livingCityController,
         obscureText: false,
         textAlign: TextAlign.start,
@@ -370,7 +403,7 @@ class SubmitInformationPage2 extends StatelessWidget {
           isDense: false,
           contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
         ),
-      ),
+      ),*/
       SizedBox(
         height: 16.sp,
         width: 16.sp,

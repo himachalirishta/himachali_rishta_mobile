@@ -1,6 +1,7 @@
 import 'package:flutter/animation.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/authentication/login/models/caste_model.dart';
+import 'package:himachali_rishta/features/authentication/login/models/religion_model.dart';
 import 'package:http/http.dart' as http;
 
 class SubmitInformationGetController extends GetxController
@@ -36,6 +37,7 @@ class SubmitInformationGetController extends GetxController
   @override
   void onInit() {
     getCastes();
+    getReligions();
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 300),
@@ -62,7 +64,23 @@ class SubmitInformationGetController extends GetxController
       List<CasteModel> castes =
           casteModelFromJson(await response.stream.bytesToString());
       caste.value = castes.map((e) => e.name).toList().obs;
-      selectedCaste.value = caste[0];
+      selectedCaste.value = caste.first;
+    } else {
+      print(response.reasonPhrase);
+    }
+  }
+
+  Future<void> getReligions() async {
+    var request = http.Request(
+        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/religion'));
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      List<ReligionModel> religions =
+          religionModelFromJson(await response.stream.bytesToString());
+      religion.value = religions.map((e) => e.name).toList().obs;
+      selectedReligion.value = religion.first;
     } else {
       print(response.reasonPhrase);
     }
