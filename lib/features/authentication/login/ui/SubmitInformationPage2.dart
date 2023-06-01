@@ -102,23 +102,33 @@ class SubmitInformationPage2 extends StatelessWidget {
                                         getController
                                                 .selectedOccupationType.value =
                                             getController.occupationType[index];
+                                        getController.animationController
+                                            .reverse();
                                         break;
                                       case 2:
                                         getController.selectedEducation.value =
                                             getController.education[index];
+                                        getController.animationController
+                                            .reverse();
                                         break;
 
                                       case 3:
                                         getController.selectedCountry.value =
                                             getController.country[index];
+                                        getController.animationController
+                                            .reverse();
                                         break;
                                       case 4:
                                         getController.selectedState.value =
                                             getController.state[index];
+                                        getController.animationController
+                                            .reverse();
                                         break;
                                       case 5:
                                         getController.selectedCity.value =
                                             getController.city[index];
+                                        getController.animationController
+                                            .reverse();
                                         break;
 
                                       default:

@@ -72,7 +72,8 @@ class SubmitInformationPage extends StatelessWidget {
                             Expanded(
                                 child: Padding(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 16.sp.adjustedSp, vertical: 8.sp.adjustedSp),
+                                  horizontal: 16.sp.adjustedSp,
+                                  vertical: 8.sp.adjustedSp),
                               child: ListView.builder(
                                 itemBuilder: (context, index) {
                                   return formData(context)[index];
@@ -103,26 +104,35 @@ class SubmitInformationPage extends StatelessWidget {
                                       case 1:
                                         getController.selectedGender.value =
                                             getController.gender[index];
+                                        getController.animationController
+                                            .reverse();
                                         break;
                                       case 2:
                                         getController.selectedReligion.value =
                                             getController.religion[index];
+                                        getController.animationController
+                                            .reverse();
 
                                         break;
                                       case 3:
                                         getController.selectedCaste.value =
                                             getController.caste[index];
-
+                                        getController.animationController
+                                            .reverse();
                                         break;
                                       case 4:
                                         getController
                                                 .selectedMaritalStatus.value =
                                             getController.maritalStatus[index];
+                                        getController.animationController
+                                            .reverse();
                                         break;
                                       case 5:
                                         getController
                                                 .selectedNoOfChildren.value =
                                             getController.noOfChildren[index];
+                                        getController.animationController
+                                            .reverse();
                                         break;
                                       case 6:
                                         getController
@@ -130,6 +140,8 @@ class SubmitInformationPage extends StatelessWidget {
                                                 .value =
                                             getController
                                                 .postingThisProfileFor[index];
+                                        getController.animationController
+                                            .reverse();
                                         break;
 
                                       default:
@@ -168,15 +180,18 @@ class SubmitInformationPage extends StatelessWidget {
         decoration: InputDecoration(
           disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide: BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide: BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide: BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+            borderSide:
+                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           labelText: "Bride/Groom's Name",
           labelStyle: TextStyle(
@@ -188,8 +203,8 @@ class SubmitInformationPage extends StatelessWidget {
           filled: false,
           fillColor: Color(0xfff2f2f3),
           isDense: false,
-          contentPadding: EdgeInsets.fromLTRB(
-              12.sp.adjustedSp, 8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
+          contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp, 8.sp.adjustedSp,
+              12.sp.adjustedSp, 8.sp.adjustedSp),
         ),
       ),
       SizedBox(
@@ -208,7 +223,8 @@ class SubmitInformationPage extends StatelessWidget {
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: Color(0xffffffff),
-              border: Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+              border:
+                  Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -243,7 +259,8 @@ class SubmitInformationPage extends StatelessWidget {
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: Color(0xffffffff),
-              border: Border.all(color: Color(0x55757575), width: 1.sp.adjustedSp),
+              border:
+                  Border.all(color: Color(0x55757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -278,7 +295,8 @@ class SubmitInformationPage extends StatelessWidget {
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: Color(0xffffffff),
-              border: Border.all(color: Color(0x55757575), width: 1.sp.adjustedSp),
+              border:
+                  Border.all(color: Color(0x55757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -313,7 +331,8 @@ class SubmitInformationPage extends StatelessWidget {
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: Color(0xffffffff),
-              border: Border.all(color: Color(0x53757575), width: 1.sp.adjustedSp),
+              border:
+                  Border.all(color: Color(0x53757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -358,7 +377,8 @@ class SubmitInformationPage extends StatelessWidget {
                     horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
                 decoration: BoxDecoration(
                   color: Color(0xffffffff),
-                  border: Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+                  border: Border.all(
+                      color: Color(0x54757575), width: 1.sp.adjustedSp),
                   borderRadius: BorderRadius.circular(4.sp.adjustedSp),
                 ),
                 child: Row(
@@ -395,7 +415,8 @@ class SubmitInformationPage extends StatelessWidget {
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: Color(0xffffffff),
-              border: Border.all(color: Color(0x53757575), width: 1.sp.adjustedSp),
+              border:
+                  Border.all(color: Color(0x53757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -457,15 +478,18 @@ class SubmitInformationPage extends StatelessWidget {
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(color: Color(0x54757575), width: 1.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: Color(0x54757575), width: 1.sp.adjustedSp),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(color: Color(0x54757575), width: 1.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: Color(0x54757575), width: 1.sp.adjustedSp),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(color: Color(0x54757575), width: 1.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: Color(0x54757575), width: 1.sp.adjustedSp),
                 ),
                 labelText: "Day",
                 labelStyle: TextStyle(
@@ -477,8 +501,8 @@ class SubmitInformationPage extends StatelessWidget {
                 filled: false,
                 fillColor: Color(0xfff2f2f3),
                 isDense: false,
-                contentPadding: EdgeInsets.fromLTRB(
-                    12.sp.adjustedSp, 8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
+                contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
+                    8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
               ),
             ),
           ),
@@ -502,15 +526,18 @@ class SubmitInformationPage extends StatelessWidget {
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 labelText: "Month",
                 labelStyle: TextStyle(
@@ -522,8 +549,8 @@ class SubmitInformationPage extends StatelessWidget {
                 filled: false,
                 fillColor: Color(0xfff2f2f3),
                 isDense: false,
-                contentPadding: EdgeInsets.fromLTRB(
-                    12.sp.adjustedSp, 8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
+                contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
+                    8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
               ),
             ),
           ),
@@ -547,15 +574,18 @@ class SubmitInformationPage extends StatelessWidget {
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(color: Color(0x53757575), width: 1.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 labelText: "Year",
                 labelStyle: TextStyle(
@@ -567,8 +597,8 @@ class SubmitInformationPage extends StatelessWidget {
                 filled: false,
                 fillColor: Color(0xfff2f2f3),
                 isDense: false,
-                contentPadding: EdgeInsets.fromLTRB(
-                    12.sp.adjustedSp, 8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
+                contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
+                    8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
               ),
             ),
           ),
