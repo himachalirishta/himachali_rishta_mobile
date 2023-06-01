@@ -8,6 +8,7 @@ import 'package:himachali_rishta/features/authentication/login/models/login_requ
 import 'package:himachali_rishta/features/authentication/login/models/login_response.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/OtpScreen.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../ui/SubmitInformationPage.dart';
 
@@ -48,7 +49,11 @@ class LoginPageGetController extends GetxController {
                     .signInWithCredential(credential)
                     .then((value) {
                   initLoginApi().then((value) {
-                    Get.to(() => SubmitInformationPage());
+                    SharedPreferences.getInstance().then((prefs) {
+                      prefs.setString('AccessToken', value.accessToken);
+                    }).then((value) {
+                      Get.to(() => SubmitInformationPage());
+                    });
                   });
                 });
               }));
