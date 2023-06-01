@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
+import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:sizer/sizer.dart';
 
 class SideOptionDrawer extends StatelessWidget {
@@ -68,7 +69,9 @@ class SideOptionDrawer extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 ListTile(
-                                  title: Center(
+                                  title: Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 8.0.sp.adjustedSp),
                                     child: Text(
                                       options[index],
                                       style: TextStyle(
