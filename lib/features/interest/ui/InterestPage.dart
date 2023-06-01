@@ -99,6 +99,7 @@ class InterestPage extends StatelessWidget {
                         fontSize: 12.sp.adjustedSp,
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
+                        color: Colors.white,
                       ),
                     ),
                     textColor: Color(0xff000000),
@@ -112,51 +113,36 @@ class InterestPage extends StatelessWidget {
               height: 8.sp.adjustedSp,
               width: 16.sp.adjustedSp,
             ),
-            StreamBuilder<bool>(
-                stream: Stream.periodic(Duration(seconds: 1), (_) {
-                  return SizerUtil.orientation == Orientation.landscape;
-                }),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return ConstrainedBox(
-                      constraints: snapshot.data!
-                          ? BoxConstraints(maxWidth: 700)
-                          : BoxConstraints(maxWidth: double.infinity),
-                      child: Card(
-                        margin: EdgeInsets.all(4.0.sp.adjustedSp),
-                        color: Color(0xffffffff),
-                        shadowColor: Color(0xff000000),
-                        elevation: 3,
-                        shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(4.0.sp.adjustedSp),
-                          side: BorderSide(
-                              color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(8.sp.adjustedSp),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "These profiles are interested in your profile",
-                                textAlign: TextAlign.start,
-                                overflow: TextOverflow.clip,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+            Card(
+              margin: EdgeInsets.all(4.0.sp.adjustedSp),
+              color: Color(0xffffffff),
+              shadowColor: Color(0xff000000),
+              elevation: 3,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                side: BorderSide(
+                    color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(8.sp.adjustedSp),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "These profiles are interested in your profile",
+                      textAlign: TextAlign.start,
+                      overflow: TextOverflow.clip,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.normal,
+                        fontSize: 12.sp.adjustedSp,
+                        color: Color(0xff000000),
                       ),
-                    );
-                  }
-                  return Container();
-                }),
+                    ),
+                  ],
+                ),
+              ),
+            ),
             SizedBox(
               height: 16.sp.adjustedSp,
               width: 16.sp.adjustedSp,
@@ -170,9 +156,9 @@ class InterestPage extends StatelessWidget {
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       return ConstrainedBox(
-                        constraints: snapshot.data!
-                            ? BoxConstraints(maxWidth: 700)
-                            : BoxConstraints(maxWidth: double.infinity),
+                        constraints: BoxConstraints(
+                          maxWidth: snapshot.data! ? 700 : double.infinity,
+                        ),
                         child: ListView(
                           scrollDirection: Axis.vertical,
                           padding: EdgeInsets.zero,
