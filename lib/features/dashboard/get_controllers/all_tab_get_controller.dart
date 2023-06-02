@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
+import 'package:himachali_rishta/features/authentication/login/get_controller/login_page_get_controller.dart';
+import 'package:himachali_rishta/features/authentication/login/models/login_response.dart';
 import 'package:himachali_rishta/features/dashboard/models/latest_profile_model.dart';
 import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
 
 class AllTabGetController extends GetxController {
   @override
@@ -10,14 +11,9 @@ class AllTabGetController extends GetxController {
   }
 
   Future<LatestProfileModel> getLatestProfiles() async {
-    String token = '';
-    await SharedPreferences.getInstance().then((prefs) {
-      String? accessToken = prefs.getString("AccessToken");
-      if (accessToken != null) {
-        token = accessToken;
-      }
-    });
-    var headers = {'Authorization': 'Bearer $token'};
+    LoginPageGetController loginPageGetController = Get.find();
+    LoginResponse loginResponse = await loginPageGetController.initLoginApi();
+    var headers = {'Authorization': 'Bearer ${loginResponse.accessToken}'};
     var request = http.Request(
         'GET', Uri.parse('https://devmatri.rishtaguru.com/api/latest-profile'));
 
