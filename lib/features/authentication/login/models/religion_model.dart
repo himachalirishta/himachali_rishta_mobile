@@ -47,4 +47,11 @@ class ReligionModel {
     "sortorder": sortorder,
     "status": status,
   };
+
+  factory ReligionModel.empty() => ReligionModel(
+    id: -1,
+    name: '',
+    sortorder: 0,
+    status: '',
+  );
 }

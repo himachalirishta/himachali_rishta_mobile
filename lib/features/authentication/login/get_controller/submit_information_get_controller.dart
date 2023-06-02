@@ -34,10 +34,13 @@ class SubmitInformationGetController extends GetxController
   RxMap<int, RxList<String>> selectedOption = <int, RxList<String>>{}.obs;
   RxInt selectedOptionIndex = 0.obs;
 
+  List<ReligionModel> allReligions = [];
+
   @override
   void onInit() {
-    getCastes();
-    getReligions();
+    getReligions().then((value) {
+      getCastes();
+    });
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 300),
@@ -55,14 +58,19 @@ class SubmitInformationGetController extends GetxController
   }
 
   Future<void> getCastes() async {
+    int indexWhere = allReligions.indexWhere((element) =>
+        element.name.toLowerCase() == selectedReligion.value.toLowerCase());
     var request = http.Request(
-        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/cast'));
+        'GET',
+        Uri.parse(
+            'https://devmatri.rishtaguru.com/api/cast?id=${allReligions[indexWhere].id}'));
 
     http.StreamedResponse response = await request.send();
 
     if (response.statusCode == 200) {
       List<CasteModel> castes =
           casteModelFromJson(await response.stream.bytesToString());
+      caste.clear();
       caste.value = castes.map((e) => e.name).toList().obs;
       selectedCaste.value = caste.first;
     } else {
@@ -81,6 +89,7 @@ class SubmitInformationGetController extends GetxController
           religionModelFromJson(await response.stream.bytesToString());
       religion.value = religions.map((e) => e.name).toList().obs;
       selectedReligion.value = religion.first;
+      allReligions = religions;
     } else {
       print(response.reasonPhrase);
     }

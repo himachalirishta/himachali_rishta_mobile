@@ -110,6 +110,7 @@ class SubmitInformationPage extends StatelessWidget {
                                       case 2:
                                         getController.selectedReligion.value =
                                             getController.religion[index];
+                                        getController.getCastes();
                                         getController.animationController
                                             .reverse();
 
