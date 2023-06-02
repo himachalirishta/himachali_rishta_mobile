@@ -41,11 +41,17 @@ class SubmitInformation2GetController extends GetxController
   RxMap<int, RxList<String>> selectedOption = <int, RxList<String>>{}.obs;
   RxInt selectedOptionIndex = 0.obs;
 
+  List<CountryModel> allCountries = [];
+  List<StateModel> allStates = [];
+
   @override
   void onInit() {
-    loadCountries();
-    loadStates();
-    loadCities();
+    loadCountries().then((value) {
+      loadStates().then((value) {
+        loadCities();
+      });
+    });
+
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 300),
@@ -69,11 +75,10 @@ class SubmitInformation2GetController extends GetxController
     http.StreamedResponse response = await request.send();
 
     if (response.statusCode == 200) {
-      print("Response received");
       List<CountryModel> countryModel =
           countryModelFromJson(await response.stream.bytesToString());
       countryModel.remove((value) => countryModel.indexOf(value) >= 50);
-      print("Length: ${countryModel.length}");
+
       country.value = countryModel.map((e) => e.name ?? '').toList();
       selectedCountry.value = country.first;
     } else {
@@ -91,29 +96,32 @@ class SubmitInformation2GetController extends GetxController
       List<StateModel> stateModel =
           stateModelFromJson(await response.stream.bytesToString());
 
-      stateModel.remove((value) => stateModel.indexOf(value) >= 50);
+      state.clear();
 
       state.value = stateModel.map((e) => e.name ?? '').toList();
       selectedState.value = state.first;
     } else {
-      print(response.reasonPhrase);
+      throw response.reasonPhrase.toString();
     }
   }
 
   Future<void> loadCities() async {
+    int indexWhere = allStates.indexWhere(
+        (element) => element.name == selectedState.value.toLowerCase());
     var request = http.Request(
-        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/city'));
-
+        'GET',
+        Uri.parse(
+            'https://devmatri.rishtaguru.com/api/city?id=${allStates[indexWhere].id}}'));
     http.StreamedResponse response = await request.send();
 
     if (response.statusCode == 200) {
       List<CityModel> cityModel =
           cityModelFromJson(await response.stream.bytesToString());
-      cityModel.remove((value) => cityModel.indexOf(value) >= 50);
+      city.clear();
       city.value = cityModel.map((e) => e.name ?? '').toList();
       selectedCity.value = city.first;
     } else {
-      print(response.reasonPhrase);
+      throw response.reasonPhrase.toString();
     }
   }
 }

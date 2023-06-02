@@ -115,12 +115,14 @@ class SubmitInformationPage2 extends StatelessWidget {
                                       case 3:
                                         getController.selectedCountry.value =
                                             getController.country[index];
+                                        getController.loadStates();
                                         getController.animationController
                                             .reverse();
                                         break;
                                       case 4:
                                         getController.selectedState.value =
                                             getController.state[index];
+                                        getController.loadCities();
                                         getController.animationController
                                             .reverse();
                                         break;
@@ -161,7 +163,7 @@ class SubmitInformationPage2 extends StatelessWidget {
         style: TextStyle(
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontSize: 14.sp.adjustedSp,
+          fontSize: 12.sp.adjustedSp,
           color: Color(0xff000000),
         ),
         decoration: InputDecoration(
@@ -184,7 +186,7 @@ class SubmitInformationPage2 extends StatelessWidget {
           labelStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
-            fontSize: 14.sp.adjustedSp,
+            fontSize: 12.sp.adjustedSp,
             color: Color(0xff000000),
           ),
           filled: false,
@@ -374,46 +376,6 @@ class SubmitInformationPage2 extends StatelessWidget {
               ],
             )),
       ),
-      /*TextFormField(
-        controller: getController.livingCityController,
-        obscureText: false,
-        textAlign: TextAlign.start,
-        maxLines: 1,
-        style: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontStyle: FontStyle.normal,
-          fontSize: 14.sp.adjustedSp,
-          color: Color(0xff000000),
-        ),
-        decoration: InputDecoration(
-          disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
-          ),
-          labelText: "Living City",
-          labelStyle: TextStyle(
-            fontWeight: FontWeight.w400,
-            fontStyle: FontStyle.normal,
-            fontSize: 14.sp.adjustedSp,
-            color: Color(0xff000000),
-          ),
-          filled: false,
-          fillColor: Color(0xfff2f2f3),
-          isDense: false,
-          contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
-        ),
-      ),*/
       SizedBox(
         height: 16.sp,
         width: 16.sp,
@@ -426,7 +388,7 @@ class SubmitInformationPage2 extends StatelessWidget {
         style: TextStyle(
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontSize: 14.sp.adjustedSp,
+          fontSize: 12.sp.adjustedSp,
           color: Color(0xff000000),
         ),
         decoration: InputDecoration(
@@ -449,7 +411,7 @@ class SubmitInformationPage2 extends StatelessWidget {
           labelStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
-            fontSize: 14.sp.adjustedSp,
+            fontSize: 12.sp.adjustedSp,
             color: Color(0xff000000),
           ),
           filled: false,
@@ -473,7 +435,7 @@ class SubmitInformationPage2 extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontStyle: FontStyle.normal,
-                fontSize: 14.sp.adjustedSp,
+                fontSize: 12.sp.adjustedSp,
                 color: Color(0xff000000),
               ),
               decoration: InputDecoration(
@@ -496,7 +458,7 @@ class SubmitInformationPage2 extends StatelessWidget {
                 labelStyle: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontStyle: FontStyle.normal,
-                  fontSize: 14.sp.adjustedSp,
+                  fontSize: 12.sp.adjustedSp,
                   color: Color(0xff000000),
                 ),
                 filled: false,
@@ -529,7 +491,7 @@ class SubmitInformationPage2 extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontStyle: FontStyle.normal,
-                  fontSize: 14.sp.adjustedSp,
+                  fontSize: 12.sp.adjustedSp,
                   color: Color(0xff000000),
                 ),
                 decoration: InputDecoration(
@@ -552,7 +514,7 @@ class SubmitInformationPage2 extends StatelessWidget {
                   labelStyle: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    fontSize: 14.sp.adjustedSp,
+                    fontSize: 12.sp.adjustedSp,
                     color: Color(0xff000000),
                   ),
                   filled: false,
@@ -583,12 +545,12 @@ class SubmitInformationPage2 extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               horizontal: 16.sp.adjustedSp, vertical: 8.sp.adjustedSp),
           textColor: Color(0xff000000),
-          height: 40.sp.adjustedSp,
-          minWidth: 140.sp.adjustedSp,
+          height: 30.sp.adjustedSp,
+          minWidth: 130.sp.adjustedSp,
           child: Text(
             "Proceed",
             style: TextStyle(
-                fontSize: 18.sp.adjustedSp,
+                fontSize: 14.sp.adjustedSp,
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.normal,
                 color: AppColors.primaryTextColorDark),
