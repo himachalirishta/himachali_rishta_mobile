@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:sizer/sizer.dart';
+
+import '../get_controller/side_bar_get_controller.dart';
 
 class SideOptionDrawer extends StatelessWidget {
   final List<String> options;
@@ -11,7 +14,7 @@ class SideOptionDrawer extends StatelessWidget {
       {Key? key, required this.options, required this.onOptionSelected})
       : super(key: key);
 
-  TextEditingController searchController = TextEditingController();
+  SideBarGetController getController = Get.put(SideBarGetController());
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +42,7 @@ class SideOptionDrawer extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0.sp),
               child: TextFormField(
-                controller: searchController,
+                controller: getController.searchController.value,
                 decoration: InputDecoration(
                   hintText: "Search",
                   prefixIcon: Icon(Icons.search),
@@ -55,47 +58,39 @@ class SideOptionDrawer extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                 itemBuilder: (context, index) {
-                  return StreamBuilder<String>(
-                      stream: Stream.periodic(Duration(milliseconds: 1), (_) {
-                        return searchController.text;
-                      }),
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          return Visibility(
-                            visible: options[index]
-                                .toLowerCase()
-                                .contains(snapshot.data!.toLowerCase()),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                ListTile(
-                                  title: Padding(
-                                    padding: EdgeInsets.only(
-                                        left: 8.0.sp.adjustedSp),
-                                    child: Text(
-                                      options[index],
-                                      style: TextStyle(
-                                          fontSize: 12.sp,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    onOptionSelected(index);
-                                  },
-                                ),
-                                Divider(
-                                  color: AppColors.infoLight.withOpacity(0.3),
-                                  thickness: 1,
-                                  indent: 15.sp,
-                                  endIndent: 15.sp,
-                                ),
-                              ],
+                  return Obx(() {
+                    return Visibility(
+                      visible: options[index].toLowerCase().contains(
+                          getController.searchController.value.text
+                              .toLowerCase()),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          ListTile(
+                            title: Padding(
+                              padding: EdgeInsets.only(left: 8.0.sp.adjustedSp),
+                              child: Text(
+                                options[index],
+                                style: TextStyle(
+                                    fontSize: 12.sp,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500),
+                              ),
                             ),
-                          );
-                        }
-                        return Container();
-                      });
+                            onTap: () {
+                              onOptionSelected(index);
+                            },
+                          ),
+                          Divider(
+                            color: AppColors.infoLight.withOpacity(0.3),
+                            thickness: 1,
+                            indent: 15.sp,
+                            endIndent: 15.sp,
+                          ),
+                        ],
+                      ),
+                    );
+                  });
                 },
                 itemCount: options.length,
               ),

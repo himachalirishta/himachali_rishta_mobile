@@ -70,25 +70,32 @@ class SubmitInformation2GetController extends GetxController
 
   Future<void> loadCountries() async {
     var request = http.Request(
-        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/state'));
+        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/country'));
 
     http.StreamedResponse response = await request.send();
 
     if (response.statusCode == 200) {
       List<CountryModel> countryModel =
           countryModelFromJson(await response.stream.bytesToString());
-      countryModel.remove((value) => countryModel.indexOf(value) >= 50);
-
+      country.clear();
       country.value = countryModel.map((e) => e.name ?? '').toList();
+      print("Country Length: ${country.length}");
       selectedCountry.value = country.first;
+      allCountries = countryModel;
     } else {
       throw response.reasonPhrase.toString();
     }
   }
 
   Future<void> loadStates() async {
+    int indexWhere = allCountries.indexWhere((element) =>
+        element.name.toString().toLowerCase() ==
+        selectedCountry.value.toLowerCase());
+    print("IndexWhere country: $indexWhere");
     var request = http.Request(
-        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/state'));
+        'GET',
+        Uri.parse(
+            'https://devmatri.rishtaguru.com/api/state?id=${allCountries[indexWhere].id}}'));
 
     http.StreamedResponse response = await request.send();
 
@@ -100,14 +107,16 @@ class SubmitInformation2GetController extends GetxController
 
       state.value = stateModel.map((e) => e.name ?? '').toList();
       selectedState.value = state.first;
+      allStates = stateModel;
     } else {
       throw response.reasonPhrase.toString();
     }
   }
 
   Future<void> loadCities() async {
-    int indexWhere = allStates.indexWhere(
-        (element) => element.name == selectedState.value.toLowerCase());
+    int indexWhere = allStates.indexWhere((element) =>
+        element.name.toString().toLowerCase() ==
+        selectedState.value.toLowerCase());
     var request = http.Request(
         'GET',
         Uri.parse(
