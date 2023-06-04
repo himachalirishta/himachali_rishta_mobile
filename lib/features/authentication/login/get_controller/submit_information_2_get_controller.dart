@@ -116,7 +116,7 @@ class SubmitInformation2GetController extends GetxController
   Future<void> loadCities() async {
     int indexWhere = allStates.indexWhere((element) =>
         element.name.toString().toLowerCase() ==
-        selectedState.value.toLowerCase());
+        selectedState.value.toLowerCase()); 
     var request = http.Request(
         'GET',
         Uri.parse(

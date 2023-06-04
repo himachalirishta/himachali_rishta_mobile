@@ -10,6 +10,7 @@ import 'package:himachali_rishta/features/authentication/login/ui/OtpScreen.dart
 import 'package:http/http.dart' as http;
 
 import '../ui/SubmitInformationPage.dart';
+import 'otp_screen_get_controller.dart';
 
 class LoginPageGetController extends GetxController {
   TextEditingController mobileNumberController = TextEditingController();
@@ -47,8 +48,42 @@ class LoginPageGetController extends GetxController {
                 await FirebaseAuth.instance
                     .signInWithCredential(credential)
                     .then((value) {
-                  initLoginApi().then((value) {
-                    Get.to(() => SubmitInformationPage());
+                  initLoginApi().then((value) async {
+                    var headers = {'Content-Type': 'application/json'};
+                    var request = http.Request(
+                        'POST',
+                        Uri.parse(
+                            'https://devmatri.rishtaguru.com/api/auth/register'));
+                    request.body = json.encode(RegisterAccountByPhoneRequest(
+                        phone:
+                            '+${selectedCountry.value.phoneCode}${mobileNumberController.text}',
+                        otp: ""));
+                    request.headers.addAll(headers);
+
+                    http.StreamedResponse response = await request.send();
+
+                    if (response.statusCode == 200) {
+                      RegisterAccountByPhoneResponse
+                          registerAccountByPhoneResponse =
+                          registerAccountByPhoneResponseFromJson(
+                              await response.stream.bytesToString());
+                      if (registerAccountByPhoneResponse.accessToken != null) {
+                        Get.to(() => SubmitInformationPage(
+                              accessToken:
+                                  registerAccountByPhoneResponse.accessToken!,
+                            ));
+                      } else {
+                        Get.snackbar('Error', 'Phone number already registered',
+                            backgroundColor: Colors.red,
+                            colorText: Colors.white);
+                        Get.to(() => SubmitInformationPage(
+                              accessToken:
+                                  registerAccountByPhoneResponse.accessToken!,
+                            ));
+                      }
+                    } else {
+                      print(response.reasonPhrase);
+                    }
                   });
                 });
               }));

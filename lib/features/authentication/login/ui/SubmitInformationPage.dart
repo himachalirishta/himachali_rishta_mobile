@@ -12,10 +12,11 @@ import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:sizer/sizer.dart';
 
 class SubmitInformationPage extends StatelessWidget {
+  final String accessToken;
   SubmitInformationGetController getController =
       Get.put(SubmitInformationGetController());
 
-  SubmitInformationPage({super.key});
+  SubmitInformationPage({super.key, required this.accessToken});
 
   @override
   Widget build(BuildContext context) {
@@ -613,6 +614,7 @@ class SubmitInformationPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 32.0),
         child: MaterialButton(
           onPressed: () {
+
             Get.to(() => SubmitInformationPage2());
           },
           color: Color(0xffac0f11),
