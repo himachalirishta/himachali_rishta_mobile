@@ -68,18 +68,12 @@ class LoginPageGetController extends GetxController {
                           registerAccountByPhoneResponseFromJson(
                               await response.stream.bytesToString());
                       if (registerAccountByPhoneResponse.accessToken != null) {
-                        Get.to(() => SubmitInformationPage(
-                              accessToken:
-                                  registerAccountByPhoneResponse.accessToken!,
-                            ));
+                        Get.to(() => SubmitInformationPage());
                       } else {
                         Get.snackbar('Error', 'Phone number already registered',
                             backgroundColor: Colors.red,
                             colorText: Colors.white);
-                        Get.to(() => SubmitInformationPage(
-                              accessToken:
-                                  registerAccountByPhoneResponse.accessToken!,
-                            ));
+                        Get.to(() => SubmitInformationPage());
                       }
                     } else {
                       print(response.reasonPhrase);
