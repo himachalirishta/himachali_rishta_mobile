@@ -6,23 +6,24 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/authentication/login/get_controller/submit_information_get_controller.dart';
-import 'package:himachali_rishta/features/authentication/login/ui/SubmitInformationPage2.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/side_option_drawer.dart';
 import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:sizer/sizer.dart';
 
 class SubmitInformationPage extends StatelessWidget {
+  final String accessToken;
   SubmitInformationGetController getController =
       Get.put(SubmitInformationGetController());
 
   SubmitInformationPage({
     super.key,
+    required this.accessToken,
   });
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<bool>(
-        stream: Stream.periodic(Duration(seconds: 1), (_) {
+        stream: Stream.periodic(const Duration(seconds: 1), (_) {
           return SizerUtil.orientation == Orientation.landscape;
         }),
         builder: (context, snapshot) {
@@ -41,7 +42,7 @@ class SubmitInformationPage extends StatelessWidget {
                 },
                 child: Scaffold(
                   appBar: PreferredSize(
-                    preferredSize: Size.fromHeight(0),
+                    preferredSize: const Size.fromHeight(0),
                     child: Container(
                       color: Theme.of(context).primaryColor,
                     ),
@@ -57,7 +58,7 @@ class SubmitInformationPage extends StatelessWidget {
                               width: 100.w,
                               decoration: BoxDecoration(
                                   color: Theme.of(context).primaryColor,
-                                  borderRadius: BorderRadius.only(
+                                  borderRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(20),
                                       bottomRight: Radius.circular(20))),
                               child: Center(
@@ -170,7 +171,7 @@ class SubmitInformationPage extends StatelessWidget {
         width: 16.sp.adjustedSp,
       ),
       TextField(
-        controller: TextEditingController(),
+        controller: getController.nameController,
         obscureText: false,
         textAlign: TextAlign.start,
         maxLines: 1,
@@ -178,33 +179,33 @@ class SubmitInformationPage extends StatelessWidget {
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
           fontSize: 12.sp.adjustedSp,
-          color: Color(0xff000000),
+          color: const Color(0xff000000),
         ),
         decoration: InputDecoration(
           disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
             borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+                BorderSide(color: const Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
             borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+                BorderSide(color: const Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
             borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+                BorderSide(color: const Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           labelText: "Bride/Groom's Name",
           labelStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
             fontSize: 12.sp.adjustedSp,
-            color: Color(0xff000000),
+            color: const Color(0xff000000),
           ),
           filled: false,
-          fillColor: Color(0xfff2f2f3),
+          fillColor: const Color(0xfff2f2f3),
           isDense: false,
           contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp, 8.sp.adjustedSp,
               12.sp.adjustedSp, 8.sp.adjustedSp),
@@ -225,9 +226,9 @@ class SubmitInformationPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
-              color: Color(0xffffffff),
+              color: const Color(0xffffffff),
               border:
-                  Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+                  Border.all(color: const Color(0x54757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -240,7 +241,7 @@ class SubmitInformationPage extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: Color(0xff616161),
+                  color: const Color(0xff616161),
                   size: 15.sp.adjustedSp,
                 )
               ],
@@ -261,9 +262,9 @@ class SubmitInformationPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
-              color: Color(0xffffffff),
+              color: const Color(0xffffffff),
               border:
-                  Border.all(color: Color(0x55757575), width: 1.sp.adjustedSp),
+                  Border.all(color: const Color(0x55757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -276,7 +277,7 @@ class SubmitInformationPage extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: Color(0xff616161),
+                  color: const Color(0xff616161),
                   size: 15.sp.adjustedSp,
                 )
               ],
@@ -297,9 +298,9 @@ class SubmitInformationPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
-              color: Color(0xffffffff),
+              color: const Color(0xffffffff),
               border:
-                  Border.all(color: Color(0x55757575), width: 1.sp.adjustedSp),
+                  Border.all(color: const Color(0x55757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -312,7 +313,7 @@ class SubmitInformationPage extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: Color(0xff616161),
+                  color: const Color(0xff616161),
                   size: 15.sp.adjustedSp,
                 )
               ],
@@ -333,9 +334,9 @@ class SubmitInformationPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
-              color: Color(0xffffffff),
+              color: const Color(0xffffffff),
               border:
-                  Border.all(color: Color(0x53757575), width: 1.sp.adjustedSp),
+                  Border.all(color: const Color(0x53757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -348,7 +349,7 @@ class SubmitInformationPage extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: Color(0xff616161),
+                  color: const Color(0xff616161),
                   size: 15.sp.adjustedSp,
                 )
               ],
@@ -379,9 +380,9 @@ class SubmitInformationPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                     horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
                 decoration: BoxDecoration(
-                  color: Color(0xffffffff),
+                  color: const Color(0xffffffff),
                   border: Border.all(
-                      color: Color(0x54757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x54757575), width: 1.sp.adjustedSp),
                   borderRadius: BorderRadius.circular(4.sp.adjustedSp),
                 ),
                 child: Row(
@@ -394,7 +395,7 @@ class SubmitInformationPage extends StatelessWidget {
                     })),
                     Icon(
                       Icons.chevron_right,
-                      color: Color(0xff616161),
+                      color: const Color(0xff616161),
                       size: 15.sp.adjustedSp,
                     )
                   ],
@@ -417,9 +418,9 @@ class SubmitInformationPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
-              color: Color(0xffffffff),
+              color: const Color(0xffffffff),
               border:
-                  Border.all(color: Color(0x53757575), width: 1.sp.adjustedSp),
+                  Border.all(color: const Color(0x53757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -432,7 +433,7 @@ class SubmitInformationPage extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: Color(0xff616161),
+                  color: const Color(0xff616161),
                   size: 15.sp.adjustedSp,
                 )
               ],
@@ -455,7 +456,7 @@ class SubmitInformationPage extends StatelessWidget {
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
               fontSize: 10.sp.adjustedSp,
-              color: Color(0xff000000),
+              color: const Color(0xff000000),
             ),
           ),
         ],
@@ -468,7 +469,7 @@ class SubmitInformationPage extends StatelessWidget {
           Expanded(
             flex: 1,
             child: TextField(
-              controller: TextEditingController(),
+              controller: getController.dayController,
               obscureText: false,
               textAlign: TextAlign.start,
               maxLines: 1,
@@ -476,33 +477,33 @@ class SubmitInformationPage extends StatelessWidget {
                 fontWeight: FontWeight.w400,
                 fontStyle: FontStyle.normal,
                 fontSize: 12.sp.adjustedSp,
-                color: Color(0xff000000),
+                color: const Color(0xff000000),
               ),
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                   borderSide: BorderSide(
-                      color: Color(0x54757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x54757575), width: 1.sp.adjustedSp),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                   borderSide: BorderSide(
-                      color: Color(0x54757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x54757575), width: 1.sp.adjustedSp),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                   borderSide: BorderSide(
-                      color: Color(0x54757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x54757575), width: 1.sp.adjustedSp),
                 ),
                 labelText: "Day",
                 labelStyle: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontStyle: FontStyle.normal,
                   fontSize: 12.sp.adjustedSp,
-                  color: Color(0xff000000),
+                  color: const Color(0xff000000),
                 ),
                 filled: false,
-                fillColor: Color(0xfff2f2f3),
+                fillColor: const Color(0xfff2f2f3),
                 isDense: false,
                 contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
                     8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
@@ -516,7 +517,7 @@ class SubmitInformationPage extends StatelessWidget {
           Expanded(
             flex: 1,
             child: TextField(
-              controller: TextEditingController(),
+              controller: getController.monthController,
               obscureText: false,
               textAlign: TextAlign.start,
               maxLines: 1,
@@ -524,33 +525,33 @@ class SubmitInformationPage extends StatelessWidget {
                 fontWeight: FontWeight.w400,
                 fontStyle: FontStyle.normal,
                 fontSize: 12.sp.adjustedSp,
-                color: Color(0xff000000),
+                color: const Color(0xff000000),
               ),
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                   borderSide: BorderSide(
-                      color: Color(0x53757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                   borderSide: BorderSide(
-                      color: Color(0x53757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                   borderSide: BorderSide(
-                      color: Color(0x53757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 labelText: "Month",
                 labelStyle: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontStyle: FontStyle.normal,
                   fontSize: 12.sp.adjustedSp,
-                  color: Color(0xff000000),
+                  color: const Color(0xff000000),
                 ),
                 filled: false,
-                fillColor: Color(0xfff2f2f3),
+                fillColor: const Color(0xfff2f2f3),
                 isDense: false,
                 contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
                     8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
@@ -564,7 +565,7 @@ class SubmitInformationPage extends StatelessWidget {
           Expanded(
             flex: 1,
             child: TextField(
-              controller: TextEditingController(),
+              controller: getController.yearController,
               obscureText: false,
               textAlign: TextAlign.start,
               maxLines: 1,
@@ -572,33 +573,33 @@ class SubmitInformationPage extends StatelessWidget {
                 fontWeight: FontWeight.w400,
                 fontStyle: FontStyle.normal,
                 fontSize: 12.sp.adjustedSp,
-                color: Color(0xff000000),
+                color: const Color(0xff000000),
               ),
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                   borderSide: BorderSide(
-                      color: Color(0x53757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                   borderSide: BorderSide(
-                      color: Color(0x53757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                   borderSide: BorderSide(
-                      color: Color(0x53757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x53757575), width: 1.sp.adjustedSp),
                 ),
                 labelText: "Year",
                 labelStyle: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontStyle: FontStyle.normal,
                   fontSize: 12.sp.adjustedSp,
-                  color: Color(0xff000000),
+                  color: const Color(0xff000000),
                 ),
                 filled: false,
-                fillColor: Color(0xfff2f2f3),
+                fillColor: const Color(0xfff2f2f3),
                 isDense: false,
                 contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
                     8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
@@ -612,19 +613,19 @@ class SubmitInformationPage extends StatelessWidget {
         width: 16.sp.adjustedSp,
       ),
       Padding(
-        padding: EdgeInsets.symmetric(horizontal: 32.0),
+        padding: const EdgeInsets.symmetric(horizontal: 32.0),
         child: MaterialButton(
           onPressed: () {
-            Get.to(() => SubmitInformationPage2());
+            getController.submitFirstStepRegistration(accessToken);
           },
-          color: Color(0xffac0f11),
+          color: const Color(0xffac0f11),
           elevation: 4,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0.sp.adjustedSp),
           ),
           padding: EdgeInsets.symmetric(
               horizontal: 16.sp.adjustedSp, vertical: 8.sp.adjustedSp),
-          textColor: Color(0xff000000),
+          textColor: const Color(0xff000000),
           height: 38.sp.adjustedSp,
           minWidth: 138.sp.adjustedSp,
           child: Text(

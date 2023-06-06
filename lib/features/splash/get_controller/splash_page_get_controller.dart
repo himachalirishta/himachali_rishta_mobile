@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:himachali_rishta/features/index/ui/index_page.dart';
+import 'package:himachali_rishta/features/authentication/login/ui/LoginPage.dart';
 
 class SplashPageGetController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -15,7 +15,7 @@ class SplashPageGetController extends GetxController
     super.onInit();
     animationController.forward();
     Future.delayed(const Duration(seconds: 2), () {
-      Get.offAll(() => IndexPage());
+      Get.offAll(() => LoginPage());
     });
   }
 }

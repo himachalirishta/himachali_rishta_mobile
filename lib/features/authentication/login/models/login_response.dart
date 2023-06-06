@@ -48,6 +48,20 @@ class LoginResponse {
         "expires_in": expiresIn,
         "userdata": userdata.toJson(),
       };
+
+  factory LoginResponse.empty() => LoginResponse(
+        accessToken: '',
+        tokenType: '',
+        expiresIn: 0,
+        userdata: Userdata(
+          id: -1,
+          oldId: -1,
+          name: '',
+          email: '',
+          phone: '',
+          stepScreen: '',
+        ),
+      );
 }
 
 class Userdata {

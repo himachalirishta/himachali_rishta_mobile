@@ -9,14 +9,16 @@ import '../../../profile/ui/profile_page.dart';
 import '../get_controllers/all_tab_get_controller.dart';
 
 class AllTab extends StatelessWidget {
-  AllTab({Key? key}) : super(key: key);
+  final String accessToken;
+
+  AllTab({Key? key, required this.accessToken}) : super(key: key);
   AllTabGetController getController = Get.put(AllTabGetController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: FutureBuilder<LatestProfileModel>(
-            future: getController.getLatestProfiles(),
+            future: getController.getLatestProfiles(accessToken),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 LatestProfileModel latestProfileModel = snapshot.data!;
@@ -26,12 +28,12 @@ class AllTab extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   padding: EdgeInsets.zero,
                   shrinkWrap: false,
-                  physics: ScrollPhysics(),
+                  physics: const ScrollPhysics(),
                   children: [
                     ...latestProfiles.map((e) => Card(
                           margin: EdgeInsets.all(4.0.sp.adjustedSp),
-                          color: Color(0xffffffff),
-                          shadowColor: Color(0xff000000),
+                          color: const Color(0xffffffff),
+                          shadowColor: const Color(0xff000000),
                           elevation: 3,
                           shape: RoundedRectangleBorder(
                             borderRadius:
@@ -57,7 +59,7 @@ class AllTab extends StatelessWidget {
                                         fontWeight: FontWeight.w600,
                                         fontStyle: FontStyle.normal,
                                         fontSize: 18.sp.adjustedSp,
-                                        color: Color(0xffe21c3d),
+                                        color: const Color(0xffe21c3d),
                                       ),
                                     ),
                                     SizedBox(
@@ -80,7 +82,7 @@ class AllTab extends StatelessWidget {
                                               fontWeight: FontWeight.w600,
                                               fontStyle: FontStyle.normal,
                                               fontSize: 10.sp.adjustedSp,
-                                              color: Color(0xff000000),
+                                              color: const Color(0xff000000),
                                             ),
                                           ),
                                           SizedBox(
@@ -93,10 +95,10 @@ class AllTab extends StatelessWidget {
                                             width: 10.sp.adjustedSp,
                                             height: 10.sp.adjustedSp,
                                             decoration: BoxDecoration(
-                                              color: Color(0xff018601),
+                                              color: const Color(0xff018601),
                                               shape: BoxShape.circle,
                                               border: Border.all(
-                                                  color: Color(0x4d9e9e9e),
+                                                  color: const Color(0x4d9e9e9e),
                                                   width: 1.sp.adjustedSp),
                                             ),
                                           ),
@@ -139,7 +141,7 @@ class AllTab extends StatelessWidget {
                                         fontWeight: FontWeight.w400,
                                         fontStyle: FontStyle.normal,
                                         fontSize: 10.sp.adjustedSp,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                     ),
                                   ],
@@ -157,7 +159,7 @@ class AllTab extends StatelessWidget {
                                         fontWeight: FontWeight.w400,
                                         fontStyle: FontStyle.normal,
                                         fontSize: 11.sp.adjustedSp,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                     ),
                                   ],
@@ -175,7 +177,7 @@ class AllTab extends StatelessWidget {
                                         fontWeight: FontWeight.w600,
                                         fontStyle: FontStyle.normal,
                                         fontSize: 14.sp.adjustedSp,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                     ),
                                   ],
@@ -193,7 +195,7 @@ class AllTab extends StatelessWidget {
                                         fontWeight: FontWeight.w400,
                                         fontStyle: FontStyle.normal,
                                         fontSize: 10.sp.adjustedSp,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                     ),
                                   ],
@@ -211,7 +213,7 @@ class AllTab extends StatelessWidget {
                                         fontWeight: FontWeight.w400,
                                         fontStyle: FontStyle.normal,
                                         fontSize: 10.sp.adjustedSp,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                     ),
                                   ],
@@ -230,7 +232,7 @@ class AllTab extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 10.sp.adjustedSp,
-                                          color: Color(0xff000000),
+                                          color: const Color(0xff000000),
                                         ),
                                       ),
                                     ),
@@ -293,9 +295,9 @@ class AllTab extends StatelessWidget {
                                       flex: 1,
                                       child: MaterialButton(
                                         onPressed: () {
-                                          Get.to(() => ProfilePage());
+                                          Get.to(() => const ProfilePage());
                                         },
-                                        color: Color(0xff01052e),
+                                        color: const Color(0xff01052e),
                                         elevation: 3,
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(
@@ -337,7 +339,7 @@ class AllTab extends StatelessWidget {
                   ],
                 );
               }
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             }));
   }
 }

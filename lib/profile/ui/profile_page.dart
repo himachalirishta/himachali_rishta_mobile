@@ -14,14 +14,14 @@ class ProfilePage extends StatelessWidget {
         length: 2,
         child: Scaffold(
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(0),
+            preferredSize: const Size.fromHeight(0),
             child: Container(
               color: Theme.of(context).primaryColor,
             ),
           ),
           body: Column(
             children: [
-              Container(
+              SizedBox(
                 height: 7.h,
                 child: Row(
                   children: [
@@ -29,7 +29,7 @@ class ProfilePage extends StatelessWidget {
                         onPressed: () {
                           Get.back();
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.arrow_back,
                         )),
                     Text(
@@ -69,7 +69,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
               ]),
-              Expanded(
+              const Expanded(
                 child: TabBarView(
                   children: [
                     AboutPage(),
@@ -92,7 +92,9 @@ class ProfilePage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4.0.sp),
                     ),
-                    child: Row(
+                    height: 38.sp,
+                    minWidth: 138.sp,
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -105,8 +107,6 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    height: 38.sp,
-                    minWidth: 138.sp,
                   ),
                 ),
               )

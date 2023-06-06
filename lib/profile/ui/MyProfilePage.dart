@@ -10,11 +10,13 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 import 'PartnerPreferenceTab.dart';
 
 class MyProfilePage extends StatelessWidget {
+  const MyProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(0),
+        preferredSize: const Size.fromHeight(0),
         child: Container(
           color: Theme.of(context).primaryColor,
         ),
@@ -33,10 +35,10 @@ class MyProfilePage extends StatelessWidget {
                 padding: EdgeInsets.all(8.sp),
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Color(0xffffffff),
+                  color: const Color(0xffffffff),
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.zero,
-                  border: Border.all(color: Color(0x4d9e9e9e), width: 1.sp),
+                  border: Border.all(color: const Color(0x4d9e9e9e), width: 1.sp),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -52,7 +54,7 @@ class MyProfilePage extends StatelessWidget {
                           height: 30.w,
                           width: 30.w,
                           clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                           ),
                           child: Image.network(
@@ -68,7 +70,7 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Text(
+                            const Text(
                               "Neha Sharma",
                               textAlign: TextAlign.start,
                               overflow: TextOverflow.clip,
@@ -91,7 +93,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 10.sp,
-                                color: Color(0xffac0f11),
+                                color: const Color(0xffac0f11),
                               ),
                             ),
                             SizedBox(
@@ -106,7 +108,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 10.sp,
-                                color: Color(0xff000000),
+                                color: const Color(0xff000000),
                               ),
                             ),
                           ],
@@ -125,7 +127,7 @@ class MyProfilePage extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                     ),
                     SizedBox(
@@ -140,7 +142,7 @@ class MyProfilePage extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp,
-                        color: Color(0xffac0f11),
+                        color: const Color(0xffac0f11),
                       ),
                     ),
                   ],
@@ -151,13 +153,13 @@ class MyProfilePage extends StatelessWidget {
                 width: 16.sp,
               ),
               Card(
-                margin: EdgeInsets.all(4.0),
-                color: Color(0xffffffff),
-                shadowColor: Color(0xff000000),
+                margin: const EdgeInsets.all(4.0),
+                color: const Color(0xffffffff),
+                shadowColor: const Color(0xff000000),
                 elevation: 3,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(4.0),
-                  side: BorderSide(color: Color(0x4d9e9e9e), width: 1.sp),
+                  side: BorderSide(color: const Color(0x4d9e9e9e), width: 1.sp),
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(8.sp),
@@ -174,7 +176,7 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                           fontStyle: FontStyle.normal,
                           fontSize: 12.sp,
-                          color: Color(0xff000000),
+                          color: const Color(0xff000000),
                         ),
                       ),
                       SizedBox(
@@ -196,7 +198,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 10.sp,
-                                color: Color(0xff000000),
+                                color: const Color(0xff000000),
                               ),
                             ),
                           ),
@@ -265,11 +267,11 @@ class MyProfilePage extends StatelessWidget {
                       margin: EdgeInsets.zero,
                       padding: EdgeInsets.all(4.sp),
                       decoration: BoxDecoration(
-                        color: Color(0xffffffff),
+                        color: const Color(0xffffffff),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(8.0.sp),
                         border:
-                            Border.all(color: Color(0xff01052e), width: 1.sp),
+                            Border.all(color: const Color(0xff01052e), width: 1.sp),
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -284,7 +286,7 @@ class MyProfilePage extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                               fontStyle: FontStyle.normal,
                               fontSize: 10.sp,
-                              color: Color(0xff000000),
+                              color: const Color(0xff000000),
                             ),
                           ),
                           SizedBox(
@@ -304,7 +306,7 @@ class MyProfilePage extends StatelessWidget {
                                   children: [
                                     ///***If you have exported images you must have to copy those images in assets/images directory.
                                     Image(
-                                      image: NetworkImage(
+                                      image: const NetworkImage(
                                           "https://picsum.photos/250?image=9"),
                                       width: MediaQuery.of(context).size.width *
                                           0.2,
@@ -318,9 +320,9 @@ class MyProfilePage extends StatelessWidget {
                                 width: 4,
                               ),
                               IconButton(
-                                icon: Icon(Icons.add_a_photo),
+                                icon: const Icon(Icons.add_a_photo),
                                 onPressed: () {},
-                                color: Color(0xffac0f11),
+                                color: const Color(0xffac0f11),
                                 iconSize: 24,
                               ),
                             ],
@@ -337,7 +339,7 @@ class MyProfilePage extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                               fontStyle: FontStyle.normal,
                               fontSize: 10.sp,
-                              color: Color(0xff000000),
+                              color: const Color(0xff000000),
                             ),
                           ),
                         ],
@@ -358,16 +360,16 @@ class MyProfilePage extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   height: 100,
                   decoration: BoxDecoration(
-                    color: Color(0xffffffff),
+                    color: const Color(0xffffffff),
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.zero,
-                    border: Border.all(color: Color(0x4d9e9e9e), width: 1.sp),
+                    border: Border.all(color: const Color(0x4d9e9e9e), width: 1.sp),
                   ),
                   child: ListView(
                     scrollDirection: Axis.vertical,
                     padding: EdgeInsets.all(8.sp),
                     shrinkWrap: false,
-                    physics: ScrollPhysics(),
+                    physics: const ScrollPhysics(),
                     children: [
                       ...List.generate(
                           10,
@@ -391,7 +393,7 @@ class MyProfilePage extends StatelessWidget {
                                               CrossAxisAlignment.center,
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Icon(
+                                            const Icon(
                                               Icons.add,
                                               color: Color(0xff212435),
                                               size: 24,
@@ -408,7 +410,7 @@ class MyProfilePage extends StatelessWidget {
                                                 fontWeight: FontWeight.w600,
                                                 fontStyle: FontStyle.normal,
                                                 fontSize: 12.sp,
-                                                color: Color(0xff000000),
+                                                color: const Color(0xff000000),
                                               ),
                                             ),
                                           ],
@@ -421,7 +423,7 @@ class MyProfilePage extends StatelessWidget {
                                             CrossAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.edit,
                                             color: Color(0xff212435),
                                             size: 18,
@@ -438,7 +440,7 @@ class MyProfilePage extends StatelessWidget {
                                               fontWeight: FontWeight.w400,
                                               fontStyle: FontStyle.normal,
                                               fontSize: 12.sp,
-                                              color: Color(0xff000000),
+                                              color: const Color(0xff000000),
                                             ),
                                           ),
                                         ],
@@ -463,7 +465,7 @@ class MyProfilePage extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 10.sp,
-                                          color: Color(0xff000000),
+                                          color: const Color(0xff000000),
                                         ),
                                       ),
                                     ],
@@ -486,7 +488,7 @@ class MyProfilePage extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 10.sp,
-                                          color: Color(0xff000000),
+                                          color: const Color(0xff000000),
                                         ),
                                       ),
                                     ],

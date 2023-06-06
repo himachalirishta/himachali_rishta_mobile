@@ -29,19 +29,19 @@ class IndexPage extends StatelessWidget {
       ListTile(
         title: Text('Registration Page 1', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => SubmitInformationPage());
+          Get.to(() => SubmitInformationPage(accessToken: '',));
         },
       ),
       ListTile(
         title: Text('Registration Page 2', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => SubmitInformationPage2());
+          Get.to(() => SubmitInformationPage2(accessToken: '',));
         },
       ),
       ListTile(
         title: Text('Dashboard', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => MainDashboardPage());
+          Get.to(() => MainDashboardPage(accessToken: '',));
         },
       ),
       ListTile(
@@ -56,25 +56,25 @@ class IndexPage extends StatelessWidget {
       ListTile(
         title: Text('Interest Page', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => InterestPage());
+          Get.to(() => const InterestPage());
         },
       ),
       ListTile(
         title: Text('Membership Page Free', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => MembershipPageFree());
+          Get.to(() => const MembershipPageFree());
         },
       ),
       ListTile(
         title: Text('Membership Page Paid', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => MembershipPagePaid());
+          Get.to(() => const MembershipPagePaid());
         },
       ),
       ListTile(
         title: Text('Membership Plan Page', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => MembershipPlanPage());
+          Get.to(() => const MembershipPlanPage());
         },
       ),
       ListTile(
@@ -86,7 +86,7 @@ class IndexPage extends StatelessWidget {
       ListTile(
         title: Text('Upload Photo Page', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => UploadPhotoScreen());
+          Get.to(() => UploadPhotoScreen(accessToken: '',));
         },
       ),
     ];

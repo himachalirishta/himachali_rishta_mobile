@@ -17,10 +17,12 @@ import 'package:sizer/sizer.dart';
 import '../get_controllers/main_dashboard_get_controller.dart';
 
 class MainDashboardPage extends StatelessWidget {
+
+  final String accessToken;
   MainDashboardGetController getController =
       Get.put(MainDashboardGetController());
 
-  MainDashboardPage({super.key});
+  MainDashboardPage({super.key, required this.accessToken});
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +100,7 @@ class MainDashboardPage extends StatelessWidget {
               ),
               Container(
                 color: Theme.of(context).primaryColor,
-                child: TabBar(tabs: [
+                child: const TabBar(tabs: [
                   Tab(
                     text: 'All',
                   ),
@@ -113,14 +115,15 @@ class MainDashboardPage extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: ConstrainedBox(
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     maxWidth: 700,
                   ),
                   child: TabBarView(
                     children: [
-                      AllTab(),
-                      AllTab(),
-                      AllTab(),
+                      AllTab(accessToken: accessToken,),
+                      AllTab(accessToken: accessToken,),
+                      AllTab(accessToken: accessToken,),
+
                     ],
                   ),
                 ),
@@ -174,23 +177,23 @@ class MainDashboardPage extends StatelessWidget {
                       ),
                     ),
                     ListTile(
-                      leading: Icon(Icons.account_tree_outlined),
-                      title: Text(
+                      leading: const Icon(Icons.account_tree_outlined),
+                      title: const Text(
                         'My Account',
                         style: TextStyle(fontSize: 18),
                       ),
                       onTap: () {
-                        Get.to(() => MyProfilePage());
+                        Get.to(() => const MyProfilePage());
                       },
                     ),
                     ListTile(
-                      leading: Icon(Icons.inbox),
-                      title: Text(
+                      leading: const Icon(Icons.inbox),
+                      title: const Text(
                         'Inbox',
                         style: TextStyle(fontSize: 18),
                       ),
                       onTap: () {
-                        Get.to(() => InterestPage());
+                        Get.to(() => const InterestPage());
                       },
                     ),
                     ListTile(

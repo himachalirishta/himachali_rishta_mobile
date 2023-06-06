@@ -1,13 +1,18 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/authentication/login/models/city_model.dart';
 import 'package:himachali_rishta/features/authentication/login/models/country_model.dart';
+import 'package:himachali_rishta/features/authentication/login/models/registration_step_2_request.dart';
 import 'package:himachali_rishta/features/authentication/login/models/state_model.dart';
+import 'package:himachali_rishta/features/authentication/login/ui/UploadPhotoScreen.dart';
 import 'package:http/http.dart' as http;
 
 class SubmitInformation2GetController extends GetxController
     with GetSingleTickerProviderStateMixin {
-  TextEditingController heightController = TextEditingController();
+  TextEditingController ftController = TextEditingController();
+  TextEditingController inchController = TextEditingController();
   TextEditingController livingCountryController = TextEditingController();
   TextEditingController livingStateController = TextEditingController();
   TextEditingController livingCityController = TextEditingController();
@@ -116,7 +121,7 @@ class SubmitInformation2GetController extends GetxController
   Future<void> loadCities() async {
     int indexWhere = allStates.indexWhere((element) =>
         element.name.toString().toLowerCase() ==
-        selectedState.value.toLowerCase()); 
+        selectedState.value.toLowerCase());
     var request = http.Request(
         'GET',
         Uri.parse(
@@ -131,6 +136,41 @@ class SubmitInformation2GetController extends GetxController
       selectedCity.value = city.first;
     } else {
       throw response.reasonPhrase.toString();
+    }
+  }
+
+  Future<void> submitSecondStepRegistration(String accessToken) async {
+    var headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer $accessToken',
+    };
+    RegistrationStep2Request registrationStep2Request =
+        RegistrationStep2Request(
+            height: "${ftController.text}ft  ${inchController.text}in",
+            occupationType: selectedOccupationType.value,
+            education: selectedEducation.value,
+            livingCountry: selectedCountry.value,
+            livingState: selectedState.value,
+            livingCity: selectedCity.value,
+            homeTown: homeTownController.text,
+            birthPlace: birthPlaceController.text,
+            birthTime: birthTimeController.text);
+    var request = http.Request('POST',
+        Uri.parse('https://devmatri.rishtaguru.com/api/register/step/2'));
+    request.body = json.encode(registrationStep2Request.toJson());
+    request.headers.addAll(headers);
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      RegistrationStep2Response registrationStep2Response =
+          registrationStep2ResponseFromJson(
+              await response.stream.bytesToString());
+      Get.snackbar("Success", registrationStep2Response.message,
+          backgroundColor: Colors.green, colorText: Colors.white);
+      Get.to(() => UploadPhotoScreen(accessToken: accessToken));
+    } else {
+      throw Exception(response.reasonPhrase);
     }
   }
 }

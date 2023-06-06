@@ -6,11 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/authentication/login/models/login_request.dart';
 import 'package:himachali_rishta/features/authentication/login/models/login_response.dart';
+import 'package:himachali_rishta/features/authentication/login/models/register_phone_api_response.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/OtpScreen.dart';
+import 'package:himachali_rishta/features/dashboard/ui/MainDashboardPage.dart';
 import 'package:http/http.dart' as http;
 
 import '../ui/SubmitInformationPage.dart';
-import 'otp_screen_get_controller.dart';
 
 class LoginPageGetController extends GetxController {
   TextEditingController mobileNumberController = TextEditingController();
@@ -28,10 +29,22 @@ class LoginPageGetController extends GetxController {
         phoneNumber:
             "+${selectedCountry.value.phoneCode}${mobileNumberController.text}",
         verificationCompleted: (PhoneAuthCredential credential) async {
-          await FirebaseAuth.instance
-              .signInWithCredential(credential)
-              .then((value) {
-            Get.to(() => SubmitInformationPage());
+          initLoginApi().then((loginResponse) async {
+            if (loginResponse.userdata.id != -1) {
+              await FirebaseAuth.instance
+                  .signInWithCredential(credential)
+                  .then((value) {
+                Get.to(() =>
+                    MainDashboardPage(accessToken: loginResponse.accessToken));
+              });
+            } else {
+              await FirebaseAuth.instance
+                  .signInWithCredential(credential)
+                  .then((value) {
+                Get.to(() => SubmitInformationPage(
+                    accessToken: loginResponse.accessToken));
+              });
+            }
           });
         },
         verificationFailed: (FirebaseAuthException e) {
@@ -45,40 +58,27 @@ class LoginPageGetController extends GetxController {
               otpEntered: (otpEntered) async {
                 PhoneAuthCredential credential = PhoneAuthProvider.credential(
                     verificationId: verificationId, smsCode: otpEntered);
-                await FirebaseAuth.instance
-                    .signInWithCredential(credential)
-                    .then((value) {
-                  initLoginApi().then((value) async {
-                    var headers = {'Content-Type': 'application/json'};
-                    var request = http.Request(
-                        'POST',
-                        Uri.parse(
-                            'https://devmatri.rishtaguru.com/api/auth/register'));
-                    request.body = json.encode(RegisterAccountByPhoneRequest(
-                        phone:
-                            '+${selectedCountry.value.phoneCode}${mobileNumberController.text}',
-                        otp: ""));
-                    request.headers.addAll(headers);
-
-                    http.StreamedResponse response = await request.send();
-
-                    if (response.statusCode == 200) {
-                      RegisterAccountByPhoneResponse
-                          registerAccountByPhoneResponse =
-                          registerAccountByPhoneResponseFromJson(
-                              await response.stream.bytesToString());
-                      if (registerAccountByPhoneResponse.accessToken != null) {
-                        Get.to(() => SubmitInformationPage());
-                      } else {
-                        Get.snackbar('Error', 'Phone number already registered',
-                            backgroundColor: Colors.red,
-                            colorText: Colors.white);
-                        Get.to(() => SubmitInformationPage());
-                      }
-                    } else {
-                      print(response.reasonPhrase);
-                    }
-                  });
+                initLoginApi().then((loginResponse) async {
+                  if (loginResponse.userdata.id != -1) {
+                    await FirebaseAuth.instance
+                        .signInWithCredential(credential)
+                        .then((value) {
+                      Get.to(() => MainDashboardPage(
+                            accessToken: loginResponse.accessToken,
+                          ));
+                    });
+                  } else {
+                    initRegisterPhoneApi()
+                        .then((registerPhoneApiResponse) async {
+                      await FirebaseAuth.instance
+                          .signInWithCredential(credential)
+                          .then((value) {
+                        Get.to(() => SubmitInformationPage(
+                              accessToken: loginResponse.accessToken,
+                            ));
+                      });
+                    });
+                  }
                 });
               }));
         },
@@ -91,9 +91,12 @@ class LoginPageGetController extends GetxController {
     CountryService countryService = CountryService();
     selectedCountry = countryService.findByCode('IN')!.obs;
     if (FirebaseAuth.instance.currentUser != null) {
-      Future.delayed(const Duration(milliseconds: 10), () {
-        Get.offAll(() => SubmitInformationPage());
+      initLoginApi().then((loginResponse) {
+        Future.delayed(const Duration(milliseconds: 10), () {
+          Get.offAll(() => SubmitInformationPage(accessToken: '',));
+        });
       });
+
     }
     super.onInit();
   }
@@ -102,7 +105,9 @@ class LoginPageGetController extends GetxController {
     var headers = {'Content-Type': 'application/json'};
     var request = http.Request(
         'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
-    request.body = json.encode(LoginRequest(phone: '7668809743'));
+    request.body = json.encode(LoginRequest(
+        phone:
+            '+${selectedCountry.value.phoneCode}${mobileNumberController.text}'));
     request.headers.addAll(headers);
 
     http.StreamedResponse response = await request.send();
@@ -111,9 +116,35 @@ class LoginPageGetController extends GetxController {
       LoginResponse loginResponse =
           loginResponseFromJson(await response.stream.bytesToString());
       return loginResponse;
+    } else if (response.statusCode == 401) {
+      LoginResponse loginResponse = LoginResponse.empty();
+      return loginResponse;
     } else {
       Get.snackbar('Error', response.reasonPhrase.toString(),
           backgroundColor: Colors.red, colorText: Colors.white);
+      throw response.reasonPhrase.toString();
+    }
+  }
+
+  Future<RegisterPhoneNumberApiResponse> initRegisterPhoneApi() async {
+    var headers = {'Content-Type': 'application/json'};
+    var request = http.Request(
+        'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/register'));
+    request.body = json.encode({
+      "phone":
+          '+${selectedCountry.value.phoneCode}${mobileNumberController.text}',
+      "otp": "3435"
+    });
+    request.headers.addAll(headers);
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      RegisterPhoneNumberApiResponse registerPhoneNumberApiResponse =
+          registerPhoneNumberApiResponseFromJson(
+              await response.stream.bytesToString());
+      return registerPhoneNumberApiResponse;
+    } else {
       throw response.reasonPhrase.toString();
     }
   }

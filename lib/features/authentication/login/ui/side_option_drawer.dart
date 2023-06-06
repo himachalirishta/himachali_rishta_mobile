@@ -45,7 +45,7 @@ class SideOptionDrawer extends StatelessWidget {
                 controller: getController.searchController.value,
                 decoration: InputDecoration(
                   hintText: "Search",
-                  prefixIcon: Icon(Icons.search),
+                  prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.sp),
                   ),

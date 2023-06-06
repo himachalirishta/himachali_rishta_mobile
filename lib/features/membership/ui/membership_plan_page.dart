@@ -14,10 +14,10 @@ class MembershipPlanPage extends StatelessWidget {
     return Scaffold(
         backgroundColor: AppColors.pink,
         appBar: PreferredSize(
+            preferredSize: const Size.fromHeight(0),
             child: Container(
               color: Theme.of(context).primaryColor,
-            ),
-            preferredSize: Size.fromHeight(0)),
+            )),
         body: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -32,7 +32,7 @@ class MembershipPlanPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
                               Container(
@@ -324,18 +324,18 @@ class MembershipPlanPage extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Get.to(() => MembershipPagePaid());
+                                  Get.to(() => const MembershipPagePaid());
                                 },
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text('Buy Now',
-                                      style: TextStyle(fontSize: 12.sp)),
-                                ),
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: AppColors.alternate,
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(8.sp))),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text('Buy Now',
+                                      style: TextStyle(fontSize: 12.sp)),
+                                ),
                               )
                             ],
                           ),
@@ -350,7 +350,7 @@ class MembershipPlanPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
                               Container(
@@ -642,18 +642,18 @@ class MembershipPlanPage extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Get.to(() => MembershipPagePaid());
+                                  Get.to(() => const MembershipPagePaid());
                                 },
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text('Buy Now',
-                                      style: TextStyle(fontSize: 12.sp)),
-                                ),
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: AppColors.alternate,
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(8.sp))),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text('Buy Now',
+                                      style: TextStyle(fontSize: 12.sp)),
+                                ),
                               )
                             ],
                           ),
@@ -668,7 +668,7 @@ class MembershipPlanPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
                               Container(
@@ -960,18 +960,18 @@ class MembershipPlanPage extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Get.to(() => MembershipPagePaid());
+                                  Get.to(() => const MembershipPagePaid());
                                 },
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text('Buy Now',
-                                      style: TextStyle(fontSize: 12.sp)),
-                                ),
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: AppColors.alternate,
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(8.sp))),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text('Buy Now',
+                                      style: TextStyle(fontSize: 12.sp)),
+                                ),
                               )
                             ],
                           ),

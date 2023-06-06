@@ -1,12 +1,21 @@
-import 'package:flutter/animation.dart';
+import 'dart:convert';
+
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/authentication/login/models/caste_model.dart';
 import 'package:himachali_rishta/features/authentication/login/models/religion_model.dart';
+import 'package:himachali_rishta/features/authentication/login/ui/SubmitInformationPage2.dart';
+import 'package:himachali_rishta/features/authentication/login/models/registration_step_1_request.dart';
 import 'package:http/http.dart' as http;
 
 class SubmitInformationGetController extends GetxController
     with GetSingleTickerProviderStateMixin {
   late AnimationController animationController;
+
+  TextEditingController nameController = TextEditingController();
+  TextEditingController dayController = TextEditingController();
+  TextEditingController monthController = TextEditingController();
+  TextEditingController yearController = TextEditingController();
   RxList<String> gender = ['Select Gender', 'Male', 'Female'].obs;
   RxString selectedGender = 'Select Gender'.obs;
   RxList<String> religion =
@@ -92,6 +101,41 @@ class SubmitInformationGetController extends GetxController
       allReligions = religions;
     } else {
       print(response.reasonPhrase);
+    }
+  }
+
+  Future<void> submitFirstStepRegistration(String accessToken) async {
+    var headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer $accessToken'
+    };
+
+    RegistrationStep1Request registrationStep1Request =
+        RegistrationStep1Request(
+            brideGroomName: nameController.text.trim(),
+            gender: selectedGender.value,
+            religion: selectedReligion.value,
+            caste: selectedCaste.value,
+            maritalStatus: selectedMaritalStatus.value,
+            postingThisProfileFor: selectedPostingThisProfileFor.value,
+            dateOfBirth: DateTime(
+                int.parse(yearController.text.trim()),
+                int.parse(monthController.text.trim()),
+                int.parse(dayController.text.trim())));
+    var request = http.Request('POST',
+        Uri.parse('https://devmatri.rishtaguru.com/api/register/step/1'));
+    request.body = json.encode(registrationStep1Request.toJson());
+    request.headers.addAll(headers);
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      RegistrationStep1Response registrationStep1Response =
+          registrationStep1ResponseFromJson(
+              await response.stream.bytesToString());
+      Get.to(() => SubmitInformationPage2(accessToken: accessToken));
+    } else {
+      throw Exception(response.reasonPhrase);
     }
   }
 }

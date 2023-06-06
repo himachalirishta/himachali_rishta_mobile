@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:himachali_rishta/features/authentication/login/ui/UploadPhotoScreen.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/side_option_drawer.dart';
 import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:sizer/sizer.dart';
@@ -9,7 +8,10 @@ import '../../../../core/app_colors.dart';
 import '../get_controller/submit_information_2_get_controller.dart';
 
 class SubmitInformationPage2 extends StatelessWidget {
-  SubmitInformationPage2({Key? key}) : super(key: key);
+  final String accessToken;
+
+  SubmitInformationPage2({Key? key, required this.accessToken})
+      : super(key: key);
 
   SubmitInformation2GetController getController =
       Get.put(SubmitInformation2GetController());
@@ -17,7 +19,7 @@ class SubmitInformationPage2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<bool>(
-        stream: Stream.periodic(Duration(seconds: 1), (_) {
+        stream: Stream.periodic(const Duration(seconds: 1), (_) {
           return SizerUtil.orientation == Orientation.landscape;
         }),
         builder: (context, snapshot) {
@@ -36,7 +38,7 @@ class SubmitInformationPage2 extends StatelessWidget {
                 },
                 child: Scaffold(
                   appBar: PreferredSize(
-                    preferredSize: Size.fromHeight(0),
+                    preferredSize: const Size.fromHeight(0),
                     child: Container(
                       color: Theme.of(context).primaryColor,
                     ),
@@ -52,7 +54,7 @@ class SubmitInformationPage2 extends StatelessWidget {
                               width: 100.w,
                               decoration: BoxDecoration(
                                   color: Theme.of(context).primaryColor,
-                                  borderRadius: BorderRadius.only(
+                                  borderRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(20),
                                       bottomRight: Radius.circular(20))),
                               child: Center(
@@ -155,46 +157,108 @@ class SubmitInformationPage2 extends StatelessWidget {
         height: 16.sp,
         width: 16.sp,
       ),
-      TextFormField(
-        controller: getController.heightController,
-        obscureText: false,
-        textAlign: TextAlign.start,
-        maxLines: 1,
+      Text(
+        'Height',
         style: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontStyle: FontStyle.normal,
-          fontSize: 12.sp.adjustedSp,
-          color: Color(0xff000000),
+          fontSize: 12.sp,
+          color: AppColors.secondaryLight,
+          fontWeight: FontWeight.bold,
         ),
-        decoration: InputDecoration(
-          disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+      ),
+      Row(
+        children: [
+          Expanded(
+            child: TextFormField(
+              controller: getController.ftController,
+              obscureText: false,
+              textAlign: TextAlign.start,
+              keyboardType: TextInputType.number,
+              maxLines: 1,
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontStyle: FontStyle.normal,
+                fontSize: 12.sp.adjustedSp,
+                color: const Color(0xff000000),
+              ),
+              decoration: InputDecoration(
+                disabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: const Color(0x55757575), width: 1.sp.adjustedSp),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: const Color(0x55757575), width: 1.sp.adjustedSp),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: const Color(0x55757575), width: 1.sp.adjustedSp),
+                ),
+                labelText: "ft.",
+                labelStyle: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.normal,
+                  fontSize: 12.sp.adjustedSp,
+                  color: const Color(0xff000000),
+                ),
+                filled: false,
+                fillColor: const Color(0xfff2f2f3),
+                isDense: false,
+                contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
+                    8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
+              ),
+            ),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+          SizedBox(
+            width: 8.sp,
           ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+          Expanded(
+            child: TextFormField(
+              controller: getController.ftController,
+              obscureText: false,
+              textAlign: TextAlign.start,
+              maxLines: 1,
+              keyboardType: TextInputType.number,
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontStyle: FontStyle.normal,
+                fontSize: 12.sp.adjustedSp,
+                color: const Color(0xff000000),
+              ),
+              decoration: InputDecoration(
+                disabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: const Color(0x55757575), width: 1.sp.adjustedSp),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: const Color(0x55757575), width: 1.sp.adjustedSp),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                  borderSide: BorderSide(
+                      color: const Color(0x55757575), width: 1.sp.adjustedSp),
+                ),
+                labelText: "in.",
+                labelStyle: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.normal,
+                  fontSize: 12.sp.adjustedSp,
+                  color: const Color(0xff000000),
+                ),
+                filled: false,
+                fillColor: const Color(0xfff2f2f3),
+                isDense: false,
+                contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
+                    8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
+              ),
+            ),
           ),
-          labelText: "Height",
-          labelStyle: TextStyle(
-            fontWeight: FontWeight.w400,
-            fontStyle: FontStyle.normal,
-            fontSize: 12.sp.adjustedSp,
-            color: Color(0xff000000),
-          ),
-          filled: false,
-          fillColor: Color(0xfff2f2f3),
-          isDense: false,
-          contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp, 8.sp.adjustedSp,
-              12.sp.adjustedSp, 8.sp.adjustedSp),
-        ),
+        ],
       ),
       SizedBox(
         height: 16.sp.adjustedSp,
@@ -211,9 +275,9 @@ class SubmitInformationPage2 extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
-              color: Color(0xffffffff),
-              border:
-                  Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+              color: const Color(0xffffffff),
+              border: Border.all(
+                  color: const Color(0x54757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -226,7 +290,7 @@ class SubmitInformationPage2 extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: Color(0xff616161),
+                  color: const Color(0xff616161),
                   size: 15.sp.adjustedSp,
                 )
               ],
@@ -247,9 +311,9 @@ class SubmitInformationPage2 extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
-              color: Color(0xffffffff),
-              border:
-                  Border.all(color: Color(0x55757575), width: 1.sp.adjustedSp),
+              color: const Color(0xffffffff),
+              border: Border.all(
+                  color: const Color(0x55757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -262,7 +326,7 @@ class SubmitInformationPage2 extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: Color(0xff616161),
+                  color: const Color(0xff616161),
                   size: 15.sp.adjustedSp,
                 )
               ],
@@ -283,9 +347,9 @@ class SubmitInformationPage2 extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
-              color: Color(0xffffffff),
-              border:
-                  Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+              color: const Color(0xffffffff),
+              border: Border.all(
+                  color: const Color(0x54757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -298,7 +362,7 @@ class SubmitInformationPage2 extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: Color(0xff616161),
+                  color: const Color(0xff616161),
                   size: 15.sp.adjustedSp,
                 )
               ],
@@ -319,9 +383,9 @@ class SubmitInformationPage2 extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
-              color: Color(0xffffffff),
-              border:
-                  Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+              color: const Color(0xffffffff),
+              border: Border.all(
+                  color: const Color(0x54757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -334,7 +398,7 @@ class SubmitInformationPage2 extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: Color(0xff616161),
+                  color: const Color(0xff616161),
                   size: 15.sp.adjustedSp,
                 )
               ],
@@ -355,9 +419,9 @@ class SubmitInformationPage2 extends StatelessWidget {
             padding: EdgeInsets.symmetric(
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
-              color: Color(0xffffffff),
-              border:
-                  Border.all(color: Color(0x54757575), width: 1.sp.adjustedSp),
+              color: const Color(0xffffffff),
+              border: Border.all(
+                  color: const Color(0x54757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -370,7 +434,7 @@ class SubmitInformationPage2 extends StatelessWidget {
                 })),
                 Icon(
                   Icons.chevron_right,
-                  color: Color(0xff616161),
+                  color: const Color(0xff616161),
                   size: 15.sp.adjustedSp,
                 )
               ],
@@ -389,35 +453,35 @@ class SubmitInformationPage2 extends StatelessWidget {
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
           fontSize: 12.sp.adjustedSp,
-          color: Color(0xff000000),
+          color: const Color(0xff000000),
         ),
         decoration: InputDecoration(
           disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+            borderSide: BorderSide(
+                color: const Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+            borderSide: BorderSide(
+                color: const Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: Color(0x55757575), width: 1.sp.adjustedSp),
+            borderSide: BorderSide(
+                color: const Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           labelText: "Home Town",
           labelStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
             fontSize: 12.sp.adjustedSp,
-            color: Color(0xff000000),
+            color: const Color(0xff000000),
           ),
           filled: false,
-          fillColor: Color(0xfff2f2f3),
+          fillColor: const Color(0xfff2f2f3),
           isDense: false,
-          contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+          contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
         ),
       ),
       SizedBox(
@@ -436,35 +500,35 @@ class SubmitInformationPage2 extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 fontStyle: FontStyle.normal,
                 fontSize: 12.sp.adjustedSp,
-                color: Color(0xff000000),
+                color: const Color(0xff000000),
               ),
               decoration: InputDecoration(
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                   borderSide: BorderSide(
-                      color: Color(0x55757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x55757575), width: 1.sp.adjustedSp),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                   borderSide: BorderSide(
-                      color: Color(0x55757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x55757575), width: 1.sp.adjustedSp),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                   borderSide: BorderSide(
-                      color: Color(0x55757575), width: 1.sp.adjustedSp),
+                      color: const Color(0x55757575), width: 1.sp.adjustedSp),
                 ),
                 labelText: "Birth Place",
                 labelStyle: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontStyle: FontStyle.normal,
                   fontSize: 12.sp.adjustedSp,
-                  color: Color(0xff000000),
+                  color: const Color(0xff000000),
                 ),
                 filled: false,
-                fillColor: Color(0xfff2f2f3),
+                fillColor: const Color(0xfff2f2f3),
                 isDense: false,
-                contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+                contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
               ),
             ),
           ),
@@ -492,35 +556,35 @@ class SubmitInformationPage2 extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   fontStyle: FontStyle.normal,
                   fontSize: 12.sp.adjustedSp,
-                  color: Color(0xff000000),
+                  color: const Color(0xff000000),
                 ),
                 decoration: InputDecoration(
                   disabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                     borderSide: BorderSide(
-                        color: Color(0x55757575), width: 1.sp.adjustedSp),
+                        color: const Color(0x55757575), width: 1.sp.adjustedSp),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                     borderSide: BorderSide(
-                        color: Color(0x55757575), width: 1.sp.adjustedSp),
+                        color: const Color(0x55757575), width: 1.sp.adjustedSp),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                     borderSide: BorderSide(
-                        color: Color(0x55757575), width: 1.sp.adjustedSp),
+                        color: const Color(0x55757575), width: 1.sp.adjustedSp),
                   ),
                   labelText: "Birth Time",
                   labelStyle: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
                     fontSize: 12.sp.adjustedSp,
-                    color: Color(0xff000000),
+                    color: const Color(0xff000000),
                   ),
                   filled: false,
-                  fillColor: Color(0xfff2f2f3),
+                  fillColor: const Color(0xfff2f2f3),
                   isDense: false,
-                  contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+                  contentPadding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
                 ),
               ),
             ),
@@ -532,19 +596,19 @@ class SubmitInformationPage2 extends StatelessWidget {
         width: 16.sp,
       ),
       Padding(
-        padding: EdgeInsets.symmetric(horizontal: 32.0),
+        padding: const EdgeInsets.symmetric(horizontal: 32.0),
         child: MaterialButton(
           onPressed: () {
-            Get.to(() => UploadPhotoScreen());
+            getController.submitSecondStepRegistration(accessToken);
           },
-          color: Color(0xffac0f11),
+          color: const Color(0xffac0f11),
           elevation: 4,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0.sp.adjustedSp),
           ),
           padding: EdgeInsets.symmetric(
               horizontal: 16.sp.adjustedSp, vertical: 8.sp.adjustedSp),
-          textColor: Color(0xff000000),
+          textColor: const Color(0xff000000),
           height: 30.sp.adjustedSp,
           minWidth: 130.sp.adjustedSp,
           child: Text(

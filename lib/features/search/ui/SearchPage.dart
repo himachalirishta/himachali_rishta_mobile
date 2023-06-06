@@ -13,6 +13,8 @@ import '../get_controllers/search_page_get_controller.dart';
 class SearchPage extends StatelessWidget {
   SearchPageGetController getController = Get.put(SearchPageGetController());
 
+  SearchPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -26,7 +28,7 @@ class SearchPage extends StatelessWidget {
       },
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(0),
+          preferredSize: const Size.fromHeight(0),
           child: Container(
             color: Theme.of(context).primaryColor,
           ),
@@ -42,12 +44,12 @@ class SearchPage extends StatelessWidget {
                 children: [
                   Card(
                     margin: EdgeInsets.all(4.0.sp),
-                    color: Color(0xffffffff),
-                    shadowColor: Color(0xff000000),
+                    color: const Color(0xffffffff),
+                    shadowColor: const Color(0xff000000),
                     elevation: 3,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.0.sp),
-                      side: BorderSide(color: Color(0x4d9e9e9e), width: 1.sp),
+                      side: BorderSide(color: const Color(0x4d9e9e9e), width: 1.sp),
                     ),
                     child: Row(
                       children: [
@@ -61,22 +63,22 @@ class SearchPage extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                               fontStyle: FontStyle.normal,
                               fontSize: 12.sp,
-                              color: Color(0xff000000),
+                              color: const Color(0xff000000),
                             ),
                             decoration: InputDecoration(
                               disabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(16.0.sp),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Color(0xffffffff), width: 0),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(16.0.sp),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Color(0xffffffff), width: 0),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(16.0.sp),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Color(0xffffffff), width: 0),
                               ),
                               hintText: "Enter Matri ID",
@@ -84,15 +86,15 @@ class SearchPage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: Color(0xff000000),
+                                color: const Color(0xff000000),
                               ),
                               filled: false,
-                              fillColor: Color(0xfff2f2f3),
+                              fillColor: const Color(0xfff2f2f3),
                               isDense: false,
                               contentPadding:
                                   EdgeInsets.fromLTRB(12.sp, 8.sp, 12.sp, 8.sp),
                               prefixIcon: Icon(Icons.search,
-                                  color: Color(0xff212435), size: 24.sp),
+                                  color: const Color(0xff212435), size: 24.sp),
                             ),
                           ),
                         ),
@@ -107,7 +109,7 @@ class SearchPage extends StatelessWidget {
                             ),
                             padding: EdgeInsets.symmetric(
                                 horizontal: 16.sp, vertical: 8.sp),
-                            textColor: Color(0xff000000),
+                            textColor: const Color(0xff000000),
                             height: 38.sp,
                             minWidth: 108.sp,
                             child: Text(
@@ -135,11 +137,11 @@ class SearchPage extends StatelessWidget {
                       width: MediaQuery.of(context).size.width,
                       height: 100,
                       decoration: BoxDecoration(
-                        color: Color(0xffffffff),
+                        color: const Color(0xffffffff),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(8.0.sp),
                         border:
-                            Border.all(color: Color(0x4d9e9e9e), width: 1.sp),
+                            Border.all(color: const Color(0x4d9e9e9e), width: 1.sp),
                       ),
                       child: SingleChildScrollView(
                         child: Column(
@@ -155,7 +157,7 @@ class SearchPage extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: Color(0xffac0f11),
+                                color: const Color(0xffac0f11),
                               ),
                             ),
                             SizedBox(
@@ -175,7 +177,7 @@ class SearchPage extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 10.sp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ],
@@ -191,9 +193,9 @@ class SearchPage extends StatelessWidget {
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 8.sp, vertical: 4.sp),
                                       decoration: BoxDecoration(
-                                        color: Color(0xffffffff),
+                                        color: const Color(0xffffffff),
                                         border: Border.all(
-                                            color: Color(0xff616161),
+                                            color: const Color(0xff616161),
                                             width: 1.sp),
                                         borderRadius:
                                             BorderRadius.circular(8.sp),
@@ -210,7 +212,7 @@ class SearchPage extends StatelessWidget {
                                             );
                                           }).toList(),
                                           style: TextStyle(
-                                            color: Color(0xff000000),
+                                            color: const Color(0xff000000),
                                             fontSize: 12.sp,
                                             fontWeight: FontWeight.w400,
                                             fontStyle: FontStyle.normal,
@@ -233,7 +235,7 @@ class SearchPage extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 10.sp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                 ),
                                 SizedBox(
@@ -246,9 +248,9 @@ class SearchPage extends StatelessWidget {
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 8.sp, vertical: 4.sp),
                                       decoration: BoxDecoration(
-                                        color: Color(0xffffffff),
+                                        color: const Color(0xffffffff),
                                         border: Border.all(
-                                            color: Color(0xff616161),
+                                            color: const Color(0xff616161),
                                             width: 1.sp),
                                         borderRadius:
                                             BorderRadius.circular(8.sp),
@@ -265,7 +267,7 @@ class SearchPage extends StatelessWidget {
                                             );
                                           }).toList(),
                                           style: TextStyle(
-                                            color: Color(0xff000000),
+                                            color: const Color(0xff000000),
                                             fontSize: 12.sp,
                                             fontWeight: FontWeight.w400,
                                             fontStyle: FontStyle.normal,
@@ -295,7 +297,7 @@ class SearchPage extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 10.sp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ],
@@ -311,9 +313,9 @@ class SearchPage extends StatelessWidget {
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 8.sp, vertical: 4.sp),
                                       decoration: BoxDecoration(
-                                        color: Color(0xffffffff),
+                                        color: const Color(0xffffffff),
                                         border: Border.all(
-                                            color: Color(0xff616161),
+                                            color: const Color(0xff616161),
                                             width: 1.sp),
                                         borderRadius:
                                             BorderRadius.circular(8.sp),
@@ -330,7 +332,7 @@ class SearchPage extends StatelessWidget {
                                             );
                                           }).toList(),
                                           style: TextStyle(
-                                            color: Color(0xff000000),
+                                            color: const Color(0xff000000),
                                             fontSize: 12.sp,
                                             fontWeight: FontWeight.w400,
                                             fontStyle: FontStyle.normal,
@@ -353,7 +355,7 @@ class SearchPage extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 10.sp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                 ),
                                 SizedBox(
@@ -366,9 +368,9 @@ class SearchPage extends StatelessWidget {
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 8.sp, vertical: 4.sp),
                                       decoration: BoxDecoration(
-                                        color: Color(0xffffffff),
+                                        color: const Color(0xffffffff),
                                         border: Border.all(
-                                            color: Color(0xff616161),
+                                            color: const Color(0xff616161),
                                             width: 1.sp),
                                         borderRadius:
                                             BorderRadius.circular(8.sp),
@@ -385,7 +387,7 @@ class SearchPage extends StatelessWidget {
                                             );
                                           }).toList(),
                                           style: TextStyle(
-                                            color: Color(0xff000000),
+                                            color: const Color(0xff000000),
                                             fontSize: 12.sp,
                                             fontWeight: FontWeight.w400,
                                             fontStyle: FontStyle.normal,
@@ -411,11 +413,11 @@ class SearchPage extends StatelessWidget {
                                 margin: EdgeInsets.zero,
                                 padding: EdgeInsets.all(6.sp),
                                 decoration: BoxDecoration(
-                                  color: Color(0xffffffff),
+                                  color: const Color(0xffffffff),
                                   shape: BoxShape.rectangle,
                                   borderRadius: BorderRadius.circular(8.0.sp),
                                   border: Border.all(
-                                      color: Color(0xff616161), width: 1.sp),
+                                      color: const Color(0xff616161), width: 1.sp),
                                 ),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -446,7 +448,7 @@ class SearchPage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp,
-                                                  color: Color(0xff000000),
+                                                  color: const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -468,7 +470,7 @@ class SearchPage extends StatelessWidget {
                                                     fontWeight: FontWeight.w500,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 12.sp,
-                                                    color: Color(0xff000000),
+                                                    color: const Color(0xff000000),
                                                   ),
                                                 );
                                               }),
@@ -498,11 +500,11 @@ class SearchPage extends StatelessWidget {
                                 margin: EdgeInsets.zero,
                                 padding: EdgeInsets.all(6.sp),
                                 decoration: BoxDecoration(
-                                  color: Color(0xffffffff),
+                                  color: const Color(0xffffffff),
                                   shape: BoxShape.rectangle,
                                   borderRadius: BorderRadius.circular(8.0.sp),
                                   border: Border.all(
-                                      color: Color(0xff616161), width: 1.sp),
+                                      color: const Color(0xff616161), width: 1.sp),
                                 ),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -533,7 +535,7 @@ class SearchPage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp,
-                                                  color: Color(0xff000000),
+                                                  color: const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -555,7 +557,7 @@ class SearchPage extends StatelessWidget {
                                                     fontWeight: FontWeight.w500,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 12.sp,
-                                                    color: Color(0xff000000),
+                                                    color: const Color(0xff000000),
                                                   ),
                                                 );
                                               }),
@@ -585,11 +587,11 @@ class SearchPage extends StatelessWidget {
                                 margin: EdgeInsets.zero,
                                 padding: EdgeInsets.all(6.sp),
                                 decoration: BoxDecoration(
-                                  color: Color(0xffffffff),
+                                  color: const Color(0xffffffff),
                                   shape: BoxShape.rectangle,
                                   borderRadius: BorderRadius.circular(8.0.sp),
                                   border: Border.all(
-                                      color: Color(0xff616161), width: 1.sp),
+                                      color: const Color(0xff616161), width: 1.sp),
                                 ),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -620,7 +622,7 @@ class SearchPage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp,
-                                                  color: Color(0xff000000),
+                                                  color: const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -643,7 +645,7 @@ class SearchPage extends StatelessWidget {
                                                     fontWeight: FontWeight.w500,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 12.sp,
-                                                    color: Color(0xff000000),
+                                                    color: const Color(0xff000000),
                                                   ),
                                                 );
                                               }),
@@ -716,7 +718,7 @@ class SearchPage extends StatelessWidget {
                 ),
                 padding:
                     EdgeInsets.symmetric(horizontal: 16.sp, vertical: 8.sp),
-                textColor: Color(0xff000000),
+                textColor: const Color(0xff000000),
                 height: 38.sp,
                 minWidth: 138.sp,
                 child: Text(

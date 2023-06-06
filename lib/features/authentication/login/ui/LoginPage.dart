@@ -27,14 +27,14 @@ class LoginPage extends StatelessWidget {
           SizedBox(
             height: 100.h,
             width: 100.w,
-            child: Image(
-              image: const AssetImage("assets/images/wallpaper.jpg"),
+            child: const Image(
+              image: AssetImage("assets/images/wallpaper.jpg"),
               fit: BoxFit.cover,
             ),
           ),
           Center(
             child: StreamBuilder<bool>(
-                stream: Stream.periodic(Duration(seconds: 1), (_) {
+                stream: Stream.periodic(const Duration(seconds: 1), (_) {
                   return SizerUtil.orientation == Orientation.landscape;
                 }),
                 builder: (context, snapshot) {

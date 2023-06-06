@@ -8,11 +8,13 @@ import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class PartnerPreferenceTab extends StatelessWidget {
+  const PartnerPreferenceTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,7 +27,7 @@ class PartnerPreferenceTab extends StatelessWidget {
               children: [
                 Icon(
                   Icons.family_restroom,
-                  color: Color(0xffac0f11),
+                  color: const Color(0xffac0f11),
                   size: 22.sp,
                 ),
                 SizedBox(
@@ -40,13 +42,13 @@ class PartnerPreferenceTab extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     fontStyle: FontStyle.normal,
                     fontSize: 18.sp,
-                    color: Color(0xffac0f11),
+                    color: const Color(0xffac0f11),
                   ),
                 ),
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,7 +62,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       fontStyle: FontStyle.normal,
                       fontSize: 16.sp,
-                      color: Color(0xff000000),
+                      color: const Color(0xff000000),
                     ),
                   ),
                   Row(
@@ -103,7 +105,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                         child:
 
                             ///***If you have exported images you must have to copy those images in assets/images directory.
-                            Image(
+                            const Image(
                           image:
                               NetworkImage("https://picsum.photos/250?image=9"),
                           height: 100,
@@ -124,12 +126,12 @@ class PartnerPreferenceTab extends StatelessWidget {
               flex: 1,
               child: ListView(
                 scrollDirection: Axis.vertical,
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 shrinkWrap: false,
-                physics: ScrollPhysics(),
+                physics: const ScrollPhysics(),
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -150,7 +152,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 14.sp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                               Text(
@@ -161,7 +163,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ],
@@ -176,7 +178,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -197,7 +199,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 14.sp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                               Text(
@@ -208,7 +210,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ],
@@ -223,7 +225,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -244,7 +246,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 14.sp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                               Text(
@@ -255,7 +257,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ],
@@ -270,7 +272,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -291,7 +293,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 14.sp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                               Text(
@@ -302,7 +304,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ],
@@ -317,7 +319,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -338,7 +340,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 14.sp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                               Text(
@@ -349,7 +351,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ],

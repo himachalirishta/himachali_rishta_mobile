@@ -7,6 +7,8 @@ import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:sizer/sizer.dart';
 
 class InterestPage extends StatelessWidget {
+  const InterestPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,7 @@ class InterestPage extends StatelessWidget {
                 children: [
                   MaterialButton(
                     onPressed: () {},
-                    color: Color(0xffd42856),
+                    color: const Color(0xffd42856),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
@@ -41,6 +43,9 @@ class InterestPage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                         horizontal: 16.sp.adjustedSp,
                         vertical: 8.sp.adjustedSp),
+                    textColor: const Color(0xff000000),
+                    height: 34.sp.adjustedSp,
+                    minWidth: 134.sp.adjustedSp,
                     child: Text(
                       "Received",
                       style: TextStyle(
@@ -49,9 +54,6 @@ class InterestPage extends StatelessWidget {
                           fontStyle: FontStyle.normal,
                           color: Colors.white),
                     ),
-                    textColor: Color(0xff000000),
-                    height: 34.sp.adjustedSp,
-                    minWidth: 134.sp.adjustedSp,
                   ),
                   SizedBox(
                     height: 16.sp.adjustedSp,
@@ -59,7 +61,7 @@ class InterestPage extends StatelessWidget {
                   ),
                   MaterialButton(
                     onPressed: () {},
-                    color: Color(0xff3bd2c0),
+                    color: const Color(0xff3bd2c0),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
@@ -67,6 +69,9 @@ class InterestPage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                         horizontal: 16.sp.adjustedSp,
                         vertical: 8.sp.adjustedSp),
+                    textColor: const Color(0xff000000),
+                    height: 34.sp.adjustedSp,
+                    minWidth: 134.sp.adjustedSp,
                     child: Text(
                       "Sent By Me",
                       style: TextStyle(
@@ -75,9 +80,6 @@ class InterestPage extends StatelessWidget {
                           fontStyle: FontStyle.normal,
                           color: Colors.white),
                     ),
-                    textColor: Color(0xff000000),
-                    height: 34.sp.adjustedSp,
-                    minWidth: 134.sp.adjustedSp,
                   ),
                   SizedBox(
                     height: 16.sp.adjustedSp,
@@ -85,7 +87,7 @@ class InterestPage extends StatelessWidget {
                   ),
                   MaterialButton(
                     onPressed: () {},
-                    color: Color(0xffd42856),
+                    color: const Color(0xffd42856),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
@@ -93,6 +95,9 @@ class InterestPage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                         horizontal: 16.sp.adjustedSp,
                         vertical: 8.sp.adjustedSp),
+                    textColor: const Color(0xff000000),
+                    height: 34.sp.adjustedSp,
+                    minWidth: 134.sp.adjustedSp,
                     child: Text(
                       "Accepted",
                       style: TextStyle(
@@ -102,9 +107,6 @@ class InterestPage extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    textColor: Color(0xff000000),
-                    height: 34.sp.adjustedSp,
-                    minWidth: 134.sp.adjustedSp,
                   ),
                 ],
               ),
@@ -115,13 +117,13 @@ class InterestPage extends StatelessWidget {
             ),
             Card(
               margin: EdgeInsets.all(4.0.sp.adjustedSp),
-              color: Color(0xffffffff),
-              shadowColor: Color(0xff000000),
+              color: const Color(0xffffffff),
+              shadowColor: const Color(0xff000000),
               elevation: 3,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                 side: BorderSide(
-                    color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
+                    color: const Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
               ),
               child: Padding(
                 padding: EdgeInsets.all(8.sp.adjustedSp),
@@ -136,7 +138,7 @@ class InterestPage extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp.adjustedSp,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                     ),
                   ],
@@ -150,7 +152,7 @@ class InterestPage extends StatelessWidget {
             Expanded(
               flex: 1,
               child: StreamBuilder<bool>(
-                  stream: Stream.periodic(Duration(seconds: 1), (_) {
+                  stream: Stream.periodic(const Duration(seconds: 1), (_) {
                     return SizerUtil.orientation == Orientation.landscape;
                   }),
                   builder: (context, snapshot) {
@@ -163,20 +165,20 @@ class InterestPage extends StatelessWidget {
                           scrollDirection: Axis.vertical,
                           padding: EdgeInsets.zero,
                           shrinkWrap: false,
-                          physics: ScrollPhysics(),
+                          physics: const ScrollPhysics(),
                           children: [
                             ...List.generate(
                                 10,
                                 (index) => Card(
                                       margin: EdgeInsets.all(4.0.sp.adjustedSp),
-                                      color: Color(0xffffffff),
-                                      shadowColor: Color(0xff000000),
+                                      color: const Color(0xffffffff),
+                                      shadowColor: const Color(0xff000000),
                                       elevation: 3,
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         side: BorderSide(
-                                            color: Color(0x4d9e9e9e),
+                                            color: const Color(0x4d9e9e9e),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       child: Padding(
@@ -204,7 +206,7 @@ class InterestPage extends StatelessWidget {
 
                                                       ///***If you have exported images you must have to copy those images in assets/images directory.
                                                       Image(
-                                                    image: NetworkImage(
+                                                    image: const NetworkImage(
                                                         "https://picsum.photos/250?image=9"),
                                                     width:
                                                         MediaQuery.of(context)
@@ -243,7 +245,7 @@ class InterestPage extends StatelessWidget {
                                                           fontSize:
                                                               12.sp.adjustedSp,
                                                           color:
-                                                              Color(0xff000000),
+                                                              const Color(0xff000000),
                                                         ),
                                                       ),
                                                       Text(
@@ -260,7 +262,7 @@ class InterestPage extends StatelessWidget {
                                                           fontSize:
                                                               10.sp.adjustedSp,
                                                           color:
-                                                              Color(0xff000000),
+                                                              const Color(0xff000000),
                                                         ),
                                                       ),
                                                       Text(
@@ -277,7 +279,7 @@ class InterestPage extends StatelessWidget {
                                                           fontSize:
                                                               10.sp.adjustedSp,
                                                           color:
-                                                              Color(0xff000000),
+                                                              const Color(0xff000000),
                                                         ),
                                                       ),
                                                       Text(
@@ -294,7 +296,7 @@ class InterestPage extends StatelessWidget {
                                                           fontSize:
                                                               10.sp.adjustedSp,
                                                           color:
-                                                              Color(0xff000000),
+                                                              const Color(0xff000000),
                                                         ),
                                                       ),
                                                       Text(
@@ -311,7 +313,7 @@ class InterestPage extends StatelessWidget {
                                                           fontSize:
                                                               10.sp.adjustedSp,
                                                           color:
-                                                              Color(0xff000000),
+                                                              const Color(0xff000000),
                                                         ),
                                                       ),
                                                       Text(
@@ -328,7 +330,7 @@ class InterestPage extends StatelessWidget {
                                                           fontSize:
                                                               10.sp.adjustedSp,
                                                           color:
-                                                              Color(0xff000000),
+                                                              const Color(0xff000000),
                                                         ),
                                                       ),
                                                       Text(
@@ -345,7 +347,7 @@ class InterestPage extends StatelessWidget {
                                                           fontSize:
                                                               10.sp.adjustedSp,
                                                           color:
-                                                              Color(0xff000000),
+                                                              const Color(0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -365,7 +367,7 @@ class InterestPage extends StatelessWidget {
                                                 fontWeight: FontWeight.w400,
                                                 fontStyle: FontStyle.normal,
                                                 fontSize: 10.sp.adjustedSp,
-                                                color: Color(0xff000000),
+                                                color: const Color(0xff000000),
                                               ),
                                             ),
                                             SizedBox(
@@ -383,7 +385,7 @@ class InterestPage extends StatelessWidget {
                                                   flex: 1,
                                                   child: MaterialButton(
                                                     onPressed: () {},
-                                                    color: Color(0xff05a44c),
+                                                    color: const Color(0xff05a44c),
                                                     elevation: 0,
                                                     shape:
                                                         RoundedRectangleBorder(
@@ -401,12 +403,16 @@ class InterestPage extends StatelessWidget {
                                                             vertical: 8
                                                                 .sp
                                                                 .adjustedSp),
+                                                    textColor:
+                                                        const Color(0xff000000),
+                                                    height: 34.sp.adjustedSp,
+                                                    minWidth: 134.sp.adjustedSp,
                                                     child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        Icon(
+                                                        const Icon(
                                                           Icons.check_circle,
                                                           color: Colors.white,
                                                         ),
@@ -431,10 +437,6 @@ class InterestPage extends StatelessWidget {
                                                         ),
                                                       ],
                                                     ),
-                                                    textColor:
-                                                        Color(0xff000000),
-                                                    height: 34.sp.adjustedSp,
-                                                    minWidth: 134.sp.adjustedSp,
                                                   ),
                                                 ),
                                                 SizedBox(
@@ -445,7 +447,7 @@ class InterestPage extends StatelessWidget {
                                                   flex: 1,
                                                   child: MaterialButton(
                                                     onPressed: () {},
-                                                    color: Color(0xffe31c3d),
+                                                    color: const Color(0xffe31c3d),
                                                     elevation: 0,
                                                     shape:
                                                         RoundedRectangleBorder(
@@ -463,12 +465,16 @@ class InterestPage extends StatelessWidget {
                                                             vertical: 8
                                                                 .sp
                                                                 .adjustedSp),
+                                                    textColor:
+                                                        const Color(0xff000000),
+                                                    height: 34.sp.adjustedSp,
+                                                    minWidth: 134.sp.adjustedSp,
                                                     child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        Icon(
+                                                        const Icon(
                                                           Icons.cancel,
                                                           color: Colors.white,
                                                         ),
@@ -493,10 +499,6 @@ class InterestPage extends StatelessWidget {
                                                         ),
                                                       ],
                                                     ),
-                                                    textColor:
-                                                        Color(0xff000000),
-                                                    height: 34.sp.adjustedSp,
-                                                    minWidth: 134.sp.adjustedSp,
                                                   ),
                                                 ),
                                               ],
