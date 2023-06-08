@@ -90,7 +90,11 @@ class LoginPageGetController extends GetxController {
   void onInit() {
     CountryService countryService = CountryService();
     selectedCountry = countryService.findByCode('IN')!.obs;
-    if (FirebaseAuth.instance.currentUser != null) {}
+    if (FirebaseAuth.instance.currentUser != null) {
+      getAccessToken().then((accessToken) {
+        Get.offAll(() => MainDashboardPage(accessToken: accessToken));
+      });
+    }
     super.onInit();
   }
 
@@ -139,6 +143,28 @@ class LoginPageGetController extends GetxController {
               await response.stream.bytesToString());
       return registerPhoneNumberApiResponse;
     } else {
+      throw response.reasonPhrase.toString();
+    }
+  }
+
+  Future<String> getAccessToken() async {
+    var headers = {'Content-Type': 'application/json'};
+    var request = http.Request(
+        'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
+    request.body = json.encode(
+        LoginRequest(phone: FirebaseAuth.instance.currentUser!.phoneNumber!));
+    request.headers.addAll(headers);
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      String responseString = await response.stream.bytesToString();
+      print("Response String: $responseString");
+      LoginResponse loginResponse = loginResponseFromJson(responseString);
+      return loginResponse.accessToken;
+    } else {
+      Get.snackbar('Error', response.reasonPhrase.toString(),
+          backgroundColor: Colors.red, colorText: Colors.white);
       throw response.reasonPhrase.toString();
     }
   }
