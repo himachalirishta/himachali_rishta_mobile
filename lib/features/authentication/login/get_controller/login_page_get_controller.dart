@@ -90,14 +90,7 @@ class LoginPageGetController extends GetxController {
   void onInit() {
     CountryService countryService = CountryService();
     selectedCountry = countryService.findByCode('IN')!.obs;
-    if (FirebaseAuth.instance.currentUser != null) {
-      initLoginApi().then((loginResponse) {
-        Future.delayed(const Duration(milliseconds: 10), () {
-          Get.offAll(() => SubmitInformationPage(accessToken: '',));
-        });
-      });
-
-    }
+    if (FirebaseAuth.instance.currentUser != null) {}
     super.onInit();
   }
 
@@ -113,8 +106,9 @@ class LoginPageGetController extends GetxController {
     http.StreamedResponse response = await request.send();
 
     if (response.statusCode == 200) {
-      LoginResponse loginResponse =
-          loginResponseFromJson(await response.stream.bytesToString());
+      String responseString = await response.stream.bytesToString();
+      print("Response String: $responseString");
+      LoginResponse loginResponse = loginResponseFromJson(responseString);
       return loginResponse;
     } else if (response.statusCode == 401) {
       LoginResponse loginResponse = LoginResponse.empty();

@@ -74,15 +74,17 @@ class AllTab extends StatelessWidget {
                                             CrossAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Text(
-                                            "${e.gender}",
-                                            textAlign: TextAlign.start,
-                                            overflow: TextOverflow.clip,
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle: FontStyle.normal,
-                                              fontSize: 10.sp.adjustedSp,
-                                              color: const Color(0xff000000),
+                                          Expanded(
+                                            child: Text(
+                                              "${e.gender}",
+                                              textAlign: TextAlign.start,
+                                              overflow: TextOverflow.clip,
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle: FontStyle.normal,
+                                                fontSize: 10.sp.adjustedSp,
+                                                color: const Color(0xff000000),
+                                              ),
                                             ),
                                           ),
                                           SizedBox(
@@ -98,7 +100,8 @@ class AllTab extends StatelessWidget {
                                               color: const Color(0xff018601),
                                               shape: BoxShape.circle,
                                               border: Border.all(
-                                                  color: const Color(0x4d9e9e9e),
+                                                  color:
+                                                      const Color(0x4d9e9e9e),
                                                   width: 1.sp.adjustedSp),
                                             ),
                                           ),
@@ -339,7 +342,7 @@ class AllTab extends StatelessWidget {
                   ],
                 );
               }
-              return const Center(child: CircularProgressIndicator());
+              return Center(child: CircularProgressIndicator());
             }));
   }
 }

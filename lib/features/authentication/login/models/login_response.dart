@@ -54,8 +54,8 @@ class LoginResponse {
         tokenType: '',
         expiresIn: 0,
         userdata: Userdata(
-          id: -1,
-          oldId: -1,
+          id: 0,
+          oldId: 0,
           name: '',
           email: '',
           phone: '',
@@ -67,7 +67,7 @@ class LoginResponse {
 class Userdata {
   final int id;
   final dynamic oldId;
-  final String name;
+  final dynamic name;
   final dynamic email;
   final String phone;
   final String stepScreen;
@@ -75,7 +75,7 @@ class Userdata {
   Userdata({
     required this.id,
     this.oldId,
-    required this.name,
+    this.name,
     this.email,
     required this.phone,
     required this.stepScreen,
@@ -84,7 +84,7 @@ class Userdata {
   Userdata copyWith({
     int? id,
     dynamic oldId,
-    String? name,
+    dynamic name,
     dynamic email,
     String? phone,
     String? stepScreen,

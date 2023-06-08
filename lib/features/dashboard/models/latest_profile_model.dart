@@ -9,19 +9,19 @@ LatestProfileModel latestProfileModelFromJson(String str) => LatestProfileModel.
 String latestProfileModelToJson(LatestProfileModel data) => json.encode(data.toJson());
 
 class LatestProfileModel {
-  final int currentPage;
-  final List<Datum> data;
-  final String firstPageUrl;
-  final int from;
-  final int lastPage;
-  final String lastPageUrl;
-  final List<Link> links;
-  final String nextPageUrl;
-  final String path;
-  final int perPage;
-  final dynamic prevPageUrl;
-  final int to;
-  final int total;
+  int currentPage;
+  List<Datum> data;
+  String firstPageUrl;
+  int from;
+  int lastPage;
+  String lastPageUrl;
+  List<Link> links;
+  String nextPageUrl;
+  String path;
+  int perPage;
+  dynamic prevPageUrl;
+  int to;
+  int total;
 
   LatestProfileModel({
     required this.currentPage,
@@ -104,16 +104,16 @@ class LatestProfileModel {
 }
 
 class Datum {
-  final String matriId;
-  final String name;
-  final String hometown;
-  final String? age;
-  final MartialStatus martialStatus;
-  final Gender gender;
-  final String education;
-  final String occupation;
-  final String? livingCityName;
-  final dynamic image;
+  String matriId;
+  String name;
+  String hometown;
+  String? age;
+  MartialStatus martialStatus;
+  Gender gender;
+  String education;
+  String occupation;
+  String? livingCityName;
+  dynamic image;
 
   Datum({
     required this.matriId,
@@ -180,25 +180,26 @@ class Datum {
   };
 }
 
-enum Gender { MALE, FEMALE }
+enum Gender { MALE, FEMALE, GENDER_MALE }
 
 final genderValues = EnumValues({
   "Female": Gender.FEMALE,
-  "Male": Gender.MALE
+  "Male": Gender.GENDER_MALE,
+  "male": Gender.MALE
 });
 
-enum MartialStatus { UNMARRID, UNMARRIED, DIVORCED }
+enum MartialStatus { SINGLE, UNMARRIED, DIVORCED }
 
 final martialStatusValues = EnumValues({
   "Divorced": MartialStatus.DIVORCED,
-  "Unmarrid": MartialStatus.UNMARRID,
+  "single": MartialStatus.SINGLE,
   "Unmarried": MartialStatus.UNMARRIED
 });
 
 class Link {
-  final String? url;
-  final String label;
-  final bool active;
+  String? url;
+  String label;
+  bool active;
 
   Link({
     this.url,

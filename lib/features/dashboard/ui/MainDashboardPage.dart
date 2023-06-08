@@ -17,7 +17,6 @@ import 'package:sizer/sizer.dart';
 import '../get_controllers/main_dashboard_get_controller.dart';
 
 class MainDashboardPage extends StatelessWidget {
-
   final String accessToken;
   MainDashboardGetController getController =
       Get.put(MainDashboardGetController());
@@ -26,6 +25,7 @@ class MainDashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("Access Token: $accessToken");
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -120,10 +120,15 @@ class MainDashboardPage extends StatelessWidget {
                   ),
                   child: TabBarView(
                     children: [
-                      AllTab(accessToken: accessToken,),
-                      AllTab(accessToken: accessToken,),
-                      AllTab(accessToken: accessToken,),
-
+                      AllTab(
+                        accessToken: accessToken,
+                      ),
+                      AllTab(
+                        accessToken: accessToken,
+                      ),
+                      AllTab(
+                        accessToken: accessToken,
+                      ),
                     ],
                   ),
                 ),
