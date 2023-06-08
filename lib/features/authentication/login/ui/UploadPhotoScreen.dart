@@ -150,9 +150,13 @@ class UploadPhotoScreen extends StatelessWidget {
                                   flex: 1,
                                   child: MaterialButton(
                                     onPressed: () {
-                                      Get.offAll(() => MainDashboardPage(
-                                            accessToken: accessToken,
-                                          ));
+                                      getController
+                                          .callUploadPhotoApi(accessToken)
+                                          .then((value) {
+                                        Get.offAll(() => MainDashboardPage(
+                                              accessToken: accessToken,
+                                            ));
+                                      });
                                     },
                                     color: Theme.of(context).primaryColor,
                                     elevation: 4,
