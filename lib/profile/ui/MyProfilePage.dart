@@ -3,7 +3,9 @@
 ///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
+import 'package:himachali_rishta/features/edit_information/ui/BasicEditPage.dart';
 import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -62,7 +64,7 @@ class MyProfilePage extends StatelessWidget {
                               fit: BoxFit.cover),
                         ),
                         SizedBox(
-                          height: 16.sp,
+                          height: 4.sp,
                           width: 16.sp,
                         ),
                         Column(
@@ -82,7 +84,7 @@ class MyProfilePage extends StatelessWidget {
                               ),
                             ),
                             SizedBox(
-                              height: 8.sp,
+                              height: 4.sp,
                               width: 16.sp,
                             ),
                             Text(
@@ -97,7 +99,7 @@ class MyProfilePage extends StatelessWidget {
                               ),
                             ),
                             SizedBox(
-                              height: 8.sp,
+                              height: 4.sp,
                               width: 16.sp,
                             ),
                             Text(
@@ -116,7 +118,7 @@ class MyProfilePage extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: 16.sp,
+                      height: 4.sp,
                       width: 16.sp,
                     ),
                     Text(
@@ -131,7 +133,7 @@ class MyProfilePage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 8.sp,
+                      height: 4.sp,
                       width: 16.sp,
                     ),
                     Text(
@@ -149,7 +151,7 @@ class MyProfilePage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 16.sp,
+                height: 4.sp,
                 width: 16.sp,
               ),
               Card(
@@ -180,7 +182,7 @@ class MyProfilePage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 8.sp,
+                        height: 4.sp,
                         width: 16.sp,
                       ),
                       Row(
@@ -203,7 +205,7 @@ class MyProfilePage extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 16.sp,
+                            height: 4.sp,
                             width: 16.sp,
                           ),
                           /*Container(
@@ -252,7 +254,7 @@ class MyProfilePage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 16.sp,
+                height: 4.sp,
                 width: 16.sp,
               ),
               Padding(
@@ -316,7 +318,7 @@ class MyProfilePage extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(
-                                height: 16.sp,
+                                height: 4.sp,
                                 width: 4,
                               ),
                               IconButton(
@@ -349,7 +351,7 @@ class MyProfilePage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 16.sp,
+                height: 4.sp,
                 width: 16.sp,
               ),
               Expanded(
@@ -371,134 +373,271 @@ class MyProfilePage extends StatelessWidget {
                     shrinkWrap: false,
                     physics: const ScrollPhysics(),
                     children: [
-                      ...List.generate(
-                          10,
-                          (index) => Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        flex: 1,
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            const Icon(
-                                              Icons.add,
-                                              color: Color(0xff212435),
-                                              size: 24,
-                                            ),
-                                            SizedBox(
-                                              height: 16.sp,
-                                              width: 4,
-                                            ),
-                                            Text(
-                                              "Basic Information",
-                                              textAlign: TextAlign.start,
-                                              overflow: TextOverflow.clip,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w600,
-                                                fontStyle: FontStyle.normal,
-                                                fontSize: 12.sp,
-                                                color: const Color(0xff000000),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment:
+                            CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.start,
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    const Icon(
+                                      Icons.add,
+                                      color: Color(0xff212435),
+                                      size: 24,
+                                    ),
+                                    SizedBox(
+                                      height: 4.sp,
+                                      width: 4,
+                                    ),
+                                    Text(
+                                      "Basic Information",
+                                      textAlign: TextAlign.start,
+                                      overflow: TextOverflow.clip,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        fontStyle: FontStyle.normal,
+                                        fontSize: 12.sp,
+                                        color: const Color(0xff000000),
                                       ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          const Icon(
-                                            Icons.edit,
-                                            color: Color(0xff212435),
-                                            size: 18,
-                                          ),
-                                          SizedBox(
-                                            height: 16.sp,
-                                            width: 4,
-                                          ),
-                                          Text(
-                                            "Edit",
-                                            textAlign: TextAlign.start,
-                                            overflow: TextOverflow.clip,
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.w400,
-                                              fontStyle: FontStyle.normal,
-                                              fontSize: 12.sp,
-                                              color: const Color(0xff000000),
-                                            ),
-                                          ),
-                                        ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: (){
+                                  Get.to(()=>BasicEditPage());
+                                },
+                                child: Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.start,
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    const Icon(
+                                      Icons.edit,
+                                      color: Color(0xff212435),
+                                      size: 18,
+                                    ),
+                                    SizedBox(
+                                      height: 4.sp,
+                                      width: 4,
+                                    ),
+                                    Text(
+                                      "Edit",
+                                      textAlign: TextAlign.start,
+                                      overflow: TextOverflow.clip,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontStyle: FontStyle.normal,
+                                        fontSize: 12.sp,
+                                        color: const Color(0xff000000),
                                       ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 8.sp,
-                                    width: 16.sp,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Text(
-                                        "Name:",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.clip,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w400,
-                                          fontStyle: FontStyle.normal,
-                                          fontSize: 10.sp,
-                                          color: const Color(0xff000000),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 8.sp,
-                                    width: 16.sp,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Text(
-                                        "Age:",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.clip,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w400,
-                                          fontStyle: FontStyle.normal,
-                                          fontSize: 10.sp,
-                                          color: const Color(0xff000000),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 16.sp,
-                                    width: 16.sp,
-                                  ),
-                                ],
-                              )),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 4.sp,
+                            width: 16.sp,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment:
+                            CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                "Name:",
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.clip,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.sp,
+                                  color: const Color(0xff000000),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 4.sp,
+                            width: 16.sp,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment:
+                            CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                "Marital Status:",
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.clip,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.sp,
+                                  color: const Color(0xff000000),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 4.sp,
+                            width: 16.sp,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment:
+                            CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                "Religion:",
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.clip,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.sp,
+                                  color: const Color(0xff000000),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 4.sp,
+                            width: 16.sp,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment:
+                            CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                "Caste:",
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.clip,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.sp,
+                                  color: const Color(0xff000000),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 4.sp,
+                            width: 16.sp,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment:
+                            CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                "Height:",
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.clip,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.sp,
+                                  color: const Color(0xff000000),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 4.sp,
+                            width: 16.sp,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment:
+                            CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                "DOB:",
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.clip,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.sp,
+                                  color: const Color(0xff000000),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 4.sp,
+                            width: 16.sp,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment:
+                            CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                "Number of Children:",
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.clip,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.sp,
+                                  color: const Color(0xff000000),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 4.sp,
+                            width: 16.sp,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment:
+                            CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                "Children Living With:",
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.clip,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.sp,
+                                  color: const Color(0xff000000),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
