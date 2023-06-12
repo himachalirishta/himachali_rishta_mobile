@@ -93,21 +93,22 @@ class EducationOccupationGetController extends GetxController
 
       var headers = {
         'Content-Type': 'application/json',
-        'Authorization':
-            'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2Rldm1hdHJpLnJpc2h0YWd1cnUuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjg1NjE4NzA4LCJleHAiOjE2ODgyMTA3MDgsIm5iZiI6MTY4NTYxODcwOCwianRpIjoiVEZBTnRCUTcxSmo1U3hCRSIsInN1YiI6IjExMTMxOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.jBQlB5KMV_MYVMiTZjWclPscxqF2gFtSocuSHVLkeBM'
+        'Authorization': 'Bearer ${loginResponse.accessToken}'
       };
       var request = http.Request(
           'POST',
           Uri.parse(
               'https://devmatri.rishtaguru.com/api/edit/education-occupation'));
-      request.body = json.encode({
-        "education": "Diploma",
-        "education_details": "Diploma in ME",
-        "emp_type": "Private",
-        "occupation": "abc",
-        "occupation_detail": "XYZ Occ Details",
-        "annual_income": "4-5 LPA"
-      });
+
+      EducationOccupationRequest educationOccupationRequest =
+          EducationOccupationRequest(
+              education: educationController.text,
+              educationDetails: educationDetailsController.text,
+              empType: employmentTypeController.text,
+              occupation: occupationController.text,
+              occupationDetail: occupationDetailsController.text,
+              annualIncome: annualIncomeController.text);
+      request.body = json.encode(educationOccupationRequest.toJson());
       request.headers.addAll(headers);
 
       http.StreamedResponse responseForEducationOccupation =

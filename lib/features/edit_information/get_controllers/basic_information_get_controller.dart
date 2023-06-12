@@ -87,7 +87,6 @@ class BasicInformationGetController extends GetxController
       caste.value = castes.map((e) => e.name).toList().obs;
       selectedCaste.value = caste.first;
     } else {
-      print(response.reasonPhrase);
     }
   }
 
@@ -104,7 +103,6 @@ class BasicInformationGetController extends GetxController
       selectedReligion.value = religion.first;
       allReligions = religions;
     } else {
-      print(response.reasonPhrase);
     }
   }
 

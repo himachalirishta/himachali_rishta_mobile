@@ -25,7 +25,6 @@ class MainDashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("Access Token: $accessToken");
     return DefaultTabController(
       length: 3,
       child: Scaffold(

@@ -188,11 +188,11 @@ final genderValues = EnumValues({
   "male": Gender.MALE
 });
 
-enum MartialStatus { SINGLE, UNMARRIED, DIVORCED }
+enum MartialStatus { UNMARRID, UNMARRIED, DIVORCED }
 
 final martialStatusValues = EnumValues({
   "Divorced": MartialStatus.DIVORCED,
-  "single": MartialStatus.SINGLE,
+  "Unmarrid": MartialStatus.UNMARRID,
   "Unmarried": MartialStatus.UNMARRIED
 });
 

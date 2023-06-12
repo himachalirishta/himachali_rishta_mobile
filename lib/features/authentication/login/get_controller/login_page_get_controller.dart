@@ -111,7 +111,6 @@ class LoginPageGetController extends GetxController {
 
     if (response.statusCode == 200) {
       String responseString = await response.stream.bytesToString();
-      print("Response String: $responseString");
       LoginResponse loginResponse = loginResponseFromJson(responseString);
       return loginResponse;
     } else if (response.statusCode == 401) {
@@ -159,7 +158,6 @@ class LoginPageGetController extends GetxController {
 
     if (response.statusCode == 200) {
       String responseString = await response.stream.bytesToString();
-      print("Response String: $responseString");
       LoginResponse loginResponse = loginResponseFromJson(responseString);
       return loginResponse.accessToken;
     } else {

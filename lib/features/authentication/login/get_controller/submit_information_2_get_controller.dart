@@ -84,7 +84,6 @@ class SubmitInformation2GetController extends GetxController
           countryModelFromJson(await response.stream.bytesToString());
       country.clear();
       country.value = countryModel.map((e) => e.name ?? '').toList();
-      print("Country Length: ${country.length}");
       selectedCountry.value = country.first;
       allCountries = countryModel;
     } else {
@@ -96,7 +95,6 @@ class SubmitInformation2GetController extends GetxController
     int indexWhere = allCountries.indexWhere((element) =>
         element.name.toString().toLowerCase() ==
         selectedCountry.value.toLowerCase());
-    print("IndexWhere country: $indexWhere");
     var request = http.Request(
         'GET',
         Uri.parse(

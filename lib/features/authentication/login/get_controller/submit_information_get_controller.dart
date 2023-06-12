@@ -83,7 +83,6 @@ class SubmitInformationGetController extends GetxController
       caste.value = castes.map((e) => e.name).toList().obs;
       selectedCaste.value = caste.first;
     } else {
-      print(response.reasonPhrase);
     }
   }
 
@@ -100,7 +99,6 @@ class SubmitInformationGetController extends GetxController
       selectedReligion.value = religion.first;
       allReligions = religions;
     } else {
-      print(response.reasonPhrase);
     }
   }
 

@@ -15,8 +15,11 @@ class AllTabGetController extends GetxController {
     http.StreamedResponse response = await request.send();
 
     if (response.statusCode == 200) {
+      print("Response Code 200");
       LatestProfileModel latestProfileModel =
           latestProfileModelFromJson(await response.stream.bytesToString());
+      print("Latest Profiles number");
+      print(latestProfileModel.data.length);
       return latestProfileModel;
     } else {
       throw response.reasonPhrase.toString();
