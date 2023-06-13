@@ -45,7 +45,7 @@ class EducationOccupationEditPage extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                               vertical: 8.sp.adjustedSp,
                               horizontal: 16.sp.adjustedSp),
-                          child: Column(
+                          child: ListView(
                             children: [
                               GestureDetector(
                                 onTap: () {
