@@ -38,6 +38,14 @@ class FamilyDetailsGetController extends GetxController
   ].obs;
   RxString selectedFamilyType = 'Upper'.obs;
 
+  RxList<String> elderBrothers = <String>[
+    '0',
+    '1',
+    '2',
+    'More than 2',
+  ].obs;
+  RxString selectedElderBrothers = '0'.obs;
+
   RxMap<int, RxList<String>> selectedOption = <int, RxList<String>>{}.obs;
   RxInt selectedOptionIndex = 0.obs;
   late AnimationController animationController;
@@ -49,6 +57,7 @@ class FamilyDetailsGetController extends GetxController
     selectedOption.value = {
       0: <String>[].obs,
       1: familyType,
+      2: elderBrothers,
     };
     super.onInit();
   }

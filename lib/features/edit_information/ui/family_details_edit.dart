@@ -211,54 +211,66 @@ class FamilyDetailsEdit extends StatelessWidget {
                             SizedBox(
                               height: 8.sp.adjustedSp,
                             ),
-                            TextField(
-                              controller: getController.elderBrothersController,
-                              obscureText: false,
-                              textAlign: TextAlign.start,
-                              maxLines: 1,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontStyle: FontStyle.normal,
-                                fontSize: 12.sp.adjustedSp,
-                                color: Color(0xff000000),
-                              ),
-                              decoration: InputDecoration(
-                                disabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(4.0.sp.adjustedSp),
-                                  borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
-                                      width: 1.sp.adjustedSp),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(4.0.sp.adjustedSp),
-                                  borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
-                                      width: 1.sp.adjustedSp),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(4.0.sp.adjustedSp),
-                                  borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
-                                      width: 1.sp.adjustedSp),
-                                ),
-                                labelText: "Elder Brothers",
-                                labelStyle: TextStyle(
+                            GestureDetector(
+                              onTap: () {
+                                getController.selectedOptionIndex.value = 2;
+                                getController.animationController.forward();
+                              },
+                              child: TextField(
+                                enabled: false,
+                                controller:
+                                    getController.elderBrothersController,
+                                obscureText: false,
+                                textAlign: TextAlign.start,
+                                maxLines: 1,
+                                style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
                                   color: Color(0xff000000),
                                 ),
-                                filled: false,
-                                fillColor: Color(0xfff2f2f3),
-                                isDense: false,
-                                contentPadding: EdgeInsets.fromLTRB(
-                                    12.sp.adjustedSp,
-                                    8.sp.adjustedSp,
-                                    12.sp.adjustedSp,
-                                    8),
+                                decoration: InputDecoration(
+                                  disabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
+                                    borderSide: BorderSide(
+                                        color: Color(0xffe0e0e0),
+                                        width: 1.sp.adjustedSp),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
+                                    borderSide: BorderSide(
+                                        color: Color(0xffe0e0e0),
+                                        width: 1.sp.adjustedSp),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
+                                    borderSide: BorderSide(
+                                        color: Color(0xffe0e0e0),
+                                        width: 1.sp.adjustedSp),
+                                  ),
+                                  labelText: "Elder Brothers",
+                                  labelStyle: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 12.sp.adjustedSp,
+                                    color: Color(0xff000000),
+                                  ),
+                                  filled: false,
+                                  fillColor: Color(0xfff2f2f3),
+                                  isDense: false,
+                                  contentPadding: EdgeInsets.fromLTRB(
+                                      12.sp.adjustedSp,
+                                      8.sp.adjustedSp,
+                                      12.sp.adjustedSp,
+                                      8),
+                                  suffixIcon: Icon(
+                                    Icons.chevron_right,
+                                    color: Color(0xff000000),
+                                  ),
+                                ),
                               ),
                             ),
                             SizedBox(
@@ -316,61 +328,75 @@ class FamilyDetailsEdit extends StatelessWidget {
                                     8),
                               ),
                             ),
-                            SizedBox(
-                              height: 8.sp.adjustedSp,
-                            ),
-                            TextField(
-                              controller:
-                                  getController.marriedBrothersController,
-                              keyboardType: TextInputType.number,
-                              obscureText: false,
-                              textAlign: TextAlign.start,
-                              maxLines: 1,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontStyle: FontStyle.normal,
-                                fontSize: 12.sp.adjustedSp,
-                                color: Color(0xff000000),
-                              ),
-                              decoration: InputDecoration(
-                                disabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(4.0.sp.adjustedSp),
-                                  borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
-                                      width: 1.sp.adjustedSp),
+                            Obx(() {
+                              return Visibility(
+                                visible:
+                                    getController.selectedElderBrothers.value !=
+                                        '0',
+                                child: SizedBox(
+                                  height: 8.sp.adjustedSp,
                                 ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(4.0.sp.adjustedSp),
-                                  borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
-                                      width: 1.sp.adjustedSp),
+                              );
+                            }),
+                            Obx(() {
+                              return Visibility(
+                                visible:
+                                    getController.selectedElderBrothers.value !=
+                                        '0',
+                                child: TextField(
+                                  controller:
+                                      getController.marriedBrothersController,
+                                  keyboardType: TextInputType.number,
+                                  obscureText: false,
+                                  textAlign: TextAlign.start,
+                                  maxLines: 1,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 12.sp.adjustedSp,
+                                    color: Color(0xff000000),
+                                  ),
+                                  decoration: InputDecoration(
+                                    disabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(
+                                          4.0.sp.adjustedSp),
+                                      borderSide: BorderSide(
+                                          color: Color(0xffe0e0e0),
+                                          width: 1.sp.adjustedSp),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(
+                                          4.0.sp.adjustedSp),
+                                      borderSide: BorderSide(
+                                          color: Color(0xffe0e0e0),
+                                          width: 1.sp.adjustedSp),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(
+                                          4.0.sp.adjustedSp),
+                                      borderSide: BorderSide(
+                                          color: Color(0xffe0e0e0),
+                                          width: 1.sp.adjustedSp),
+                                    ),
+                                    labelText: "Married Brothers",
+                                    labelStyle: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 12.sp.adjustedSp,
+                                      color: Color(0xff000000),
+                                    ),
+                                    filled: false,
+                                    fillColor: Color(0xfff2f2f3),
+                                    isDense: false,
+                                    contentPadding: EdgeInsets.fromLTRB(
+                                        12.sp.adjustedSp,
+                                        8.sp.adjustedSp,
+                                        12.sp.adjustedSp,
+                                        8),
+                                  ),
                                 ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(4.0.sp.adjustedSp),
-                                  borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
-                                      width: 1.sp.adjustedSp),
-                                ),
-                                labelText: "Younger Brothers",
-                                labelStyle: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
-                                ),
-                                filled: false,
-                                fillColor: Color(0xfff2f2f3),
-                                isDense: false,
-                                contentPadding: EdgeInsets.fromLTRB(
-                                    12.sp.adjustedSp,
-                                    8.sp.adjustedSp,
-                                    12.sp.adjustedSp,
-                                    8),
-                              ),
-                            ),
+                              );
+                            }),
                             SizedBox(
                               height: 8.sp.adjustedSp,
                             ),
@@ -590,6 +616,18 @@ class FamilyDetailsEdit extends StatelessWidget {
                                                 .familyTypeController.text =
                                             getController
                                                 .selectedFamilyType.value;
+                                        getController.animationController
+                                            .reverse();
+                                        break;
+                                      case 2:
+                                        getController
+                                                .selectedElderBrothers.value =
+                                            getController.elderBrothers[index];
+                                        getController
+                                                .elderBrothersController.text =
+                                            getController
+                                                .selectedElderBrothers.value
+                                                .toString();
                                         getController.animationController
                                             .reverse();
                                         break;
