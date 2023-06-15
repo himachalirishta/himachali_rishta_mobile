@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:himachali_rishta/features/edit_information/get_controllers/assets_and_properties_get_controller.dart';
 import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../authentication/login/ui/side_option_drawer.dart';
-import '../get_controllers/physical_attributes_and_eating_habits_get_controller.dart';
 
-class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
-  PhysicalAttributesAndEatingHabitsPage({super.key});
+class AssetsAndPropertiesEdit extends StatelessWidget {
+  AssetsAndPropertiesEdit({super.key});
 
-  PhysicalAttributesAndEatingHabitsGetController getController =
-      Get.put(PhysicalAttributesAndEatingHabitsGetController());
+  AssetsAndPropertiesGetController getController =
+      Get.put(AssetsAndPropertiesGetController());
 
   @override
   Widget build(BuildContext context) {
@@ -23,205 +23,31 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
         }
         return Future.value(false);
       },
-      child: StreamBuilder<bool>(
-          stream: Stream.periodic(const Duration(seconds: 1), (_) {
-            return SizerUtil.orientation == Orientation.landscape;
-          }),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Scaffold(
-                appBar: PreferredSize(
-                  preferredSize: Size.fromHeight(0),
-                  child: Container(
-                    color: Theme.of(context).primaryColor,
-                  ),
-                ),
-                body: ConstrainedBox(
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(0),
+          child: Container(
+            color: Theme.of(context).primaryColor,
+          ),
+        ),
+        body: StreamBuilder<bool>(
+            stream: Stream.periodic(const Duration(seconds: 1), (_) {
+              return SizerUtil.orientation == Orientation.landscape;
+            }),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return ConstrainedBox(
                   constraints: BoxConstraints(
                       maxWidth: snapshot.data! ? 700 : 100.w.adjustedW),
                   child: Stack(
                     children: [
                       Padding(
                         padding: EdgeInsets.symmetric(
-                            horizontal: 16.sp.adjustedSp,
-                            vertical: 8.0.sp.adjustedSp),
+                          horizontal: 16.sp.adjustedSp,
+                          vertical: 8.0.sp.adjustedSp,
+                        ),
                         child: ListView(
                           children: [
-                            Text(
-                              'Height',
-                              style: TextStyle(
-                                  fontSize: 10.sp.adjustedSp,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: TextField(
-                                    controller: getController.ftController,
-                                    obscureText: false,
-                                    textAlign: TextAlign.start,
-                                    maxLines: 1,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontStyle: FontStyle.normal,
-                                      fontSize: 12.sp.adjustedSp,
-                                      color: Color(0xff000000),
-                                    ),
-                                    decoration: InputDecoration(
-                                      disabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(
-                                            4.0.sp.adjustedSp),
-                                        borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
-                                            width: 1.sp.adjustedSp),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(
-                                            4.0.sp.adjustedSp),
-                                        borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
-                                            width: 1.sp.adjustedSp),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(
-                                            4.0.sp.adjustedSp),
-                                        borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
-                                            width: 1.sp.adjustedSp),
-                                      ),
-                                      labelText: "ft.",
-                                      labelStyle: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontStyle: FontStyle.normal,
-                                        fontSize: 12.sp.adjustedSp,
-                                        color: Color(0xff000000),
-                                      ),
-                                      filled: false,
-                                      fillColor: Color(0xfff2f2f3),
-                                      isDense: false,
-                                      contentPadding: EdgeInsets.fromLTRB(
-                                          12.sp.adjustedSp,
-                                          8.sp.adjustedSp,
-                                          12.sp.adjustedSp,
-                                          8),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 8.sp.adjustedSp,
-                                ),
-                                Expanded(
-                                  child: TextField(
-                                    controller: getController.inchesController,
-                                    obscureText: false,
-                                    textAlign: TextAlign.start,
-                                    maxLines: 1,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontStyle: FontStyle.normal,
-                                      fontSize: 12.sp.adjustedSp,
-                                      color: Color(0xff000000),
-                                    ),
-                                    decoration: InputDecoration(
-                                      disabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(
-                                            4.0.sp.adjustedSp),
-                                        borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
-                                            width: 1.sp.adjustedSp),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(
-                                            4.0.sp.adjustedSp),
-                                        borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
-                                            width: 1.sp.adjustedSp),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(
-                                            4.0.sp.adjustedSp),
-                                        borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
-                                            width: 1.sp.adjustedSp),
-                                      ),
-                                      labelText: "in.",
-                                      labelStyle: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontStyle: FontStyle.normal,
-                                        fontSize: 12.sp.adjustedSp,
-                                        color: Color(0xff000000),
-                                      ),
-                                      filled: false,
-                                      fillColor: Color(0xfff2f2f3),
-                                      isDense: false,
-                                      contentPadding: EdgeInsets.fromLTRB(
-                                          12.sp.adjustedSp,
-                                          8.sp.adjustedSp,
-                                          12.sp.adjustedSp,
-                                          8),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 8.sp.adjustedSp,
-                              width: 16.sp.adjustedSp,
-                            ),
-                            TextField(
-                              controller: getController.weightController,
-                              obscureText: false,
-                              textAlign: TextAlign.start,
-                              maxLines: 1,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontStyle: FontStyle.normal,
-                                fontSize: 12.sp.adjustedSp,
-                                color: Color(0xff000000),
-                              ),
-                              decoration: InputDecoration(
-                                disabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(4.0.sp.adjustedSp),
-                                  borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
-                                      width: 1.sp.adjustedSp),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(4.0.sp.adjustedSp),
-                                  borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
-                                      width: 1.sp.adjustedSp),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(4.0.sp.adjustedSp),
-                                  borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
-                                      width: 1.sp.adjustedSp),
-                                ),
-                                labelText: "Weight",
-                                labelStyle: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
-                                ),
-                                filled: false,
-                                fillColor: Color(0xfff2f2f3),
-                                isDense: false,
-                                contentPadding: EdgeInsets.fromLTRB(
-                                    12.sp.adjustedSp,
-                                    8.sp.adjustedSp,
-                                    12.sp.adjustedSp,
-                                    8),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 8.sp.adjustedSp,
-                              width: 16.sp.adjustedSp,
-                            ),
                             GestureDetector(
                               onTap: () {
                                 getController.selectedOptionIndex.value = 1;
@@ -229,7 +55,7 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                               },
                               child: TextField(
                                 enabled: false,
-                                controller: getController.bloodGroupController,
+                                controller: getController.ownHouseController,
                                 obscureText: false,
                                 textAlign: TextAlign.start,
                                 maxLines: 1,
@@ -261,7 +87,7 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                         color: Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
-                                  labelText: "Blood Group",
+                                  labelText: "Own House",
                                   labelStyle: TextStyle(
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
@@ -294,7 +120,7 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                               },
                               child: TextField(
                                 enabled: false,
-                                controller: getController.complexionController,
+                                controller: getController.ownCarController,
                                 obscureText: false,
                                 textAlign: TextAlign.start,
                                 maxLines: 1,
@@ -326,7 +152,7 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                         color: Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
-                                  labelText: "Complexion",
+                                  labelText: "Own Car",
                                   labelStyle: TextStyle(
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
@@ -359,7 +185,8 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                               },
                               child: TextField(
                                 enabled: false,
-                                controller: getController.bodyTypeController,
+                                controller:
+                                    getController.ownLandAgricultureController,
                                 obscureText: false,
                                 textAlign: TextAlign.start,
                                 maxLines: 1,
@@ -391,7 +218,7 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                         color: Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
-                                  labelText: "Body Type",
+                                  labelText: "Own Land Agriculture",
                                   labelStyle: TextStyle(
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
@@ -417,6 +244,7 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                               height: 8.sp.adjustedSp,
                               width: 16.sp.adjustedSp,
                             ),
+                            //own commercial land
                             GestureDetector(
                               onTap: () {
                                 getController.selectedOptionIndex.value = 4;
@@ -424,7 +252,8 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                               },
                               child: TextField(
                                 enabled: false,
-                                controller: getController.dietController,
+                                controller:
+                                    getController.ownCommercialLandController,
                                 obscureText: false,
                                 textAlign: TextAlign.start,
                                 maxLines: 1,
@@ -456,7 +285,7 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                         color: Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
-                                  labelText: "Diet",
+                                  labelText: "Own Land Commercial",
                                   labelStyle: TextStyle(
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
@@ -482,6 +311,7 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                               height: 8.sp.adjustedSp,
                               width: 16.sp.adjustedSp,
                             ),
+                            //own any business
                             GestureDetector(
                               onTap: () {
                                 getController.selectedOptionIndex.value = 5;
@@ -489,7 +319,8 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                               },
                               child: TextField(
                                 enabled: false,
-                                controller: getController.specialCaseController,
+                                controller:
+                                    getController.ownAnyBusinessController,
                                 obscureText: false,
                                 textAlign: TextAlign.start,
                                 maxLines: 1,
@@ -521,72 +352,7 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                         color: Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
-                                  labelText: "Special Case",
-                                  labelStyle: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
-                                  ),
-                                  filled: false,
-                                  fillColor: Color(0xfff2f2f3),
-                                  isDense: false,
-                                  suffixIcon: Icon(
-                                    Icons.chevron_right,
-                                    color: Color(0xff000000),
-                                  ),
-                                  contentPadding: EdgeInsets.fromLTRB(
-                                      12.sp.adjustedSp,
-                                      8.sp.adjustedSp,
-                                      12.sp.adjustedSp,
-                                      8),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 8.sp.adjustedSp,
-                              width: 16.sp.adjustedSp,
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                getController.selectedOptionIndex.value = 6;
-                                getController.animationController.forward();
-                              },
-                              child: TextField(
-                                enabled: false,
-                                controller: getController.disabilityController,
-                                obscureText: false,
-                                textAlign: TextAlign.start,
-                                maxLines: 1,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
-                                ),
-                                decoration: InputDecoration(
-                                  disabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
-                                    borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
-                                        width: 1.sp.adjustedSp),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
-                                    borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
-                                        width: 1.sp.adjustedSp),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
-                                    borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
-                                        width: 1.sp.adjustedSp),
-                                  ),
-                                  labelText: "Disability",
+                                  labelText: "Own Any Business",
                                   labelStyle: TextStyle(
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
@@ -614,12 +380,13 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                             ),
                             MaterialButton(
                               onPressed: () {
-                                getController.submitPhysicalAttributesAndEatingHabits();
+                                getController.submitAssetsAndProperties();
                               },
                               color: Color(0xffac0f11),
                               elevation: 0,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                                borderRadius:
+                                    BorderRadius.circular(4.0.sp.adjustedSp),
                               ),
                               padding: EdgeInsets.symmetric(
                                   horizontal: 16, vertical: 8),
@@ -654,63 +421,62 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                     switch (
                                         getController.selectedOptionIndex.value) {
                                       case 1:
-                                        //blood group
-                                        getController.selectedBloodGroup.value =
-                                            getController.bloodGroup[index];
-                                        getController.bloodGroupController.text =
-                                            getController
-                                                .selectedBloodGroup.value;
+                                        //own house
+                                        getController.selectedOwnHouse.value =
+                                            getController.ownHouse[index];
+                                        getController.ownHouseController.text =
+                                            getController.selectedOwnHouse.value;
                                         getController.animationController
                                             .reverse();
                                         break;
                                       case 2:
-                                        //complexion
-                                        getController.selectedComplexion.value =
-                                            getController.complexion[index];
-                                        getController.complexionController.text =
-                                            getController
-                                                .selectedComplexion.value;
+                                        //own car
+                                        getController.selectedOwnCar.value =
+                                            getController.ownCar[index];
+                                        getController.ownCarController.text =
+                                            getController.selectedOwnCar.value;
                                         getController.animationController
                                             .reverse();
                                         break;
                                       case 3:
-                                        // body type
-                                        getController.selectedBodyType.value =
-                                            getController.bodyType[index];
-                                        getController.bodyTypeController.text =
-                                            getController.selectedBodyType.value;
+                                        // own Land agriculture
+                                        getController.selectedOwnLandAgriculture
+                                                .value =
+                                            getController
+                                                .ownLandAgriculture[index];
+                                        getController.ownLandAgricultureController
+                                                .text =
+                                            getController
+                                                .selectedOwnLandAgriculture.value;
                                         getController.animationController
                                             .reverse();
                                         break;
                                       case 4:
-                                        //diet
-                                        getController.selectedDiet.value =
-                                            getController.diet[index];
-                                        getController.dietController.text =
-                                            getController.selectedDiet.value;
+                                        //own commercial land
+                                        getController
+                                                .selectedOwnCommercialLand.value =
+                                            getController
+                                                .ownCommercialLand[index];
+                                        getController.ownCommercialLandController
+                                                .text =
+                                            getController
+                                                .selectedOwnCommercialLand.value;
                                         getController.animationController
                                             .reverse();
                                         break;
                                       case 5:
-                                        //special case
-                                        getController.selectedSpecialCase.value =
-                                            getController.specialCase[index];
-                                        getController.specialCaseController.text =
+                                        //own any business
+                                        getController
+                                                .selectedOwnAnyBusiness.value =
+                                            getController.ownAnyBusiness[index];
+                                        getController
+                                                .ownAnyBusinessController.text =
                                             getController
-                                                .selectedSpecialCase.value;
+                                                .selectedOwnAnyBusiness.value;
                                         getController.animationController
                                             .reverse();
                                         break;
-                                      case 6:
-                                        //disability
-                                        getController.selectedDisability.value =
-                                            getController.disability[index];
-                                        getController.disabilityController.text =
-                                            getController
-                                                .selectedDisability.value;
-                                        getController.animationController
-                                            .reverse();
-                                        break;
+
                                       default:
                                         break;
                                     }
@@ -719,11 +485,18 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                           })
                     ],
                   ),
+                );
+              }
+              return Scaffold(
+                appBar: PreferredSize(
+                  preferredSize: Size.fromHeight(0),
+                  child: Container(
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
               );
-            }
-            return Scaffold();
-          }),
+            }),
+      ),
     );
   }
 }

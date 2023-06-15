@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/edit_information/ui/BasicEditPage.dart';
+import 'package:himachali_rishta/features/edit_information/ui/assets_and_properties_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/family_details_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/horoscope_social_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/physical_attributes_and_eating_habits_page.dart';
@@ -38,8 +39,7 @@ class MyProfilePage extends StatelessWidget {
               color: const Color(0xffffffff),
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.zero,
-              border:
-                  Border.all(color: const Color(0x4d9e9e9e), width: 1.sp),
+              border: Border.all(color: const Color(0x4d9e9e9e), width: 1.sp),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -58,8 +58,7 @@ class MyProfilePage extends StatelessWidget {
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                       ),
-                      child: Image.network(
-                          "https://picsum.photos/250?image=9",
+                      child: Image.network("https://picsum.photos/250?image=9",
                           fit: BoxFit.cover),
                     ),
                     SizedBox(
@@ -228,10 +227,8 @@ class MyProfilePage extends StatelessWidget {
                                 MatchData('Not Match', 62),
                                 MatchData('Match', 38),
                               ],
-                              xValueMapper: (MatchData data, _) =>
-                                  data.name,
-                              yValueMapper: (MatchData data, _) =>
-                                  data.value,
+                              xValueMapper: (MatchData data, _) => data.name,
+                              yValueMapper: (MatchData data, _) => data.value,
                               dataLabelMapper: (MatchData data, _) =>
                                   "${data.value}%",
                               radius: '80%',
@@ -271,8 +268,8 @@ class MyProfilePage extends StatelessWidget {
                     color: const Color(0xffffffff),
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(8.0.sp),
-                    border: Border.all(
-                        color: const Color(0xff01052e), width: 1.sp),
+                    border:
+                        Border.all(color: const Color(0xff01052e), width: 1.sp),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -309,8 +306,8 @@ class MyProfilePage extends StatelessWidget {
                                 Image(
                                   image: const NetworkImage(
                                       "https://picsum.photos/250?image=9"),
-                                  width: MediaQuery.of(context).size.width *
-                                      0.2,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.2,
                                   fit: BoxFit.cover,
                                 ),
                               ],
@@ -363,8 +360,7 @@ class MyProfilePage extends StatelessWidget {
                 color: const Color(0xffffffff),
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.zero,
-                border:
-                    Border.all(color: const Color(0x4d9e9e9e), width: 1.sp),
+                border: Border.all(color: const Color(0x4d9e9e9e), width: 1.sp),
               ),
               child: ListView(
                 scrollDirection: Axis.vertical,
@@ -863,8 +859,7 @@ class MyProfilePage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Get.to(() =>
-                              PhysicalAttributesAndEatingHabitsPage());
+                          Get.to(() => PhysicalAttributesAndEatingHabitsPage());
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -1113,8 +1108,7 @@ class MyProfilePage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Get.to(() =>
-                              FamilyDetailsEdit());
+                          Get.to(() => FamilyDetailsEdit());
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -1385,8 +1379,7 @@ class MyProfilePage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Get.to(() =>
-                              HoroscopeSocialEditPage());
+                          Get.to(() => HoroscopeSocialEditPage());
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -1583,6 +1576,189 @@ class MyProfilePage extends StatelessWidget {
                     children: [
                       Text(
                         "Mother Tongue:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            const Icon(
+                              Icons.add,
+                              color: Color(0xff212435),
+                              size: 24,
+                            ),
+                            SizedBox(
+                              height: 4.sp,
+                              width: 4,
+                            ),
+                            Text(
+                              "Assets and Properties",
+                              textAlign: TextAlign.start,
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontStyle: FontStyle.normal,
+                                fontSize: 12.sp,
+                                color: const Color(0xff000000),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(() => AssetsAndPropertiesEdit());
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            const Icon(
+                              Icons.edit,
+                              color: Color(0xff212435),
+                              size: 18,
+                            ),
+                            SizedBox(
+                              height: 4.sp,
+                              width: 4,
+                            ),
+                            Text(
+                              "Edit",
+                              textAlign: TextAlign.start,
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.normal,
+                                fontSize: 12.sp,
+                                color: const Color(0xff000000),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "Own House:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "Own Car:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "Own Land Agri:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "Own Commercial Land:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "Own any business:",
                         textAlign: TextAlign.start,
                         overflow: TextOverflow.clip,
                         style: TextStyle(
