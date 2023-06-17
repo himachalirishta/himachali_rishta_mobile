@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/edit_information/ui/BasicEditPage.dart';
 import 'package:himachali_rishta/features/edit_information/ui/assets_and_properties_edit.dart';
+import 'package:himachali_rishta/features/edit_information/ui/contact_details_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/family_details_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/horoscope_social_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/physical_attributes_and_eating_habits_page.dart';
@@ -1862,6 +1863,338 @@ class MyProfilePage extends StatelessWidget {
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
                           color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            const Icon(
+                              Icons.add,
+                              color: Color(0xff212435),
+                              size: 24,
+                            ),
+                            SizedBox(
+                              height: 4.sp,
+                              width: 4,
+                            ),
+                            Text(
+                              "Contact Details",
+                              textAlign: TextAlign.start,
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontStyle: FontStyle.normal,
+                                fontSize: 12.sp,
+                                color: const Color(0xff000000),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(() => ContactDetailsEdit());
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            const Icon(
+                              Icons.edit,
+                              color: Color(0xff212435),
+                              size: 18,
+                            ),
+                            SizedBox(
+                              height: 4.sp,
+                              width: 4,
+                            ),
+                            Text(
+                              "Edit",
+                              textAlign: TextAlign.start,
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.normal,
+                                fontSize: 12.sp,
+                                color: const Color(0xff000000),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  //mobile no
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "Mobile No.:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //alternate no
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "Alternate No.:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //whatsapp no
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "Whatsapp No.:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //email
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "Email:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //hometown
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "Hometown:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //Country
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "Country:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //State
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "State:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //City
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        "City:",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 10.sp,
+                          color: const Color(0xff000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //Living Country
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          "Living Country:",
+                          textAlign: TextAlign.start,
+                          overflow: TextOverflow.clip,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.sp,
+                            color: const Color(0xff000000),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //Living State
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          "Living State:",
+                          textAlign: TextAlign.start,
+                          overflow: TextOverflow.clip,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.sp,
+                            color: const Color(0xff000000),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //Living City
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          "Living City:",
+                          textAlign: TextAlign.start,
+                          overflow: TextOverflow.clip,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.sp,
+                            color: const Color(0xff000000),
+                          ),
                         ),
                       ),
                     ],
