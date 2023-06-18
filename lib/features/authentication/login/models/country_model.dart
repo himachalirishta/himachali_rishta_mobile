@@ -4,9 +4,11 @@
 
 import 'dart:convert';
 
-List<CountryModel> countryModelFromJson(String str) => List<CountryModel>.from(json.decode(str).map((x) => CountryModel.fromJson(x)));
+List<CountryModel> countryModelFromJson(String str) => List<CountryModel>.from(
+    json.decode(str).map((x) => CountryModel.fromJson(x)));
 
-String countryModelToJson(List<CountryModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String countryModelToJson(List<CountryModel> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class CountryModel {
   final int? id;
@@ -35,16 +37,23 @@ class CountryModel {
       );
 
   factory CountryModel.fromJson(Map<String, dynamic> json) => CountryModel(
-    id: json["id"],
-    sortname: json["sortname"],
-    name: json["name"],
-    phonecode: json["phonecode"],
-  );
+        id: json["id"],
+        sortname: json["sortname"],
+        name: json["name"],
+        phonecode: json["phonecode"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "sortname": sortname,
-    "name": name,
-    "phonecode": phonecode,
-  };
+        "id": id,
+        "sortname": sortname,
+        "name": name,
+        "phonecode": phonecode,
+      };
+
+  factory CountryModel.empty() => CountryModel(
+        id: 0,
+        sortname: '',
+        name: '',
+        phonecode: 0,
+      );
 }

@@ -11,6 +11,7 @@ import 'package:himachali_rishta/features/edit_information/ui/best_time_to_call_
 import 'package:himachali_rishta/features/edit_information/ui/contact_details_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/family_details_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/horoscope_social_edit.dart';
+import 'package:himachali_rishta/features/edit_information/ui/partner_preference_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/physical_attributes_and_eating_habits_page.dart';
 import 'package:himachali_rishta/features/edit_information/ui/profile_description_edit.dart';
 import 'package:sizer/sizer.dart';
@@ -2317,6 +2318,79 @@ class MyProfilePage extends StatelessWidget {
                             fontSize: 10.sp,
                             color: const Color(0xff000000),
                           ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            const Icon(
+                              Icons.add,
+                              color: Color(0xff212435),
+                              size: 24,
+                            ),
+                            SizedBox(
+                              height: 4.sp,
+                              width: 4,
+                            ),
+                            Text(
+                              "Partner Preference",
+                              textAlign: TextAlign.start,
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontStyle: FontStyle.normal,
+                                fontSize: 12.sp,
+                                color: const Color(0xff000000),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(() => PartnerPreferenceEdit());
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            const Icon(
+                              Icons.edit,
+                              color: Color(0xff212435),
+                              size: 18,
+                            ),
+                            SizedBox(
+                              height: 4.sp,
+                              width: 4,
+                            ),
+                            Text(
+                              "Edit",
+                              textAlign: TextAlign.start,
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.normal,
+                                fontSize: 12.sp,
+                                color: const Color(0xff000000),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
