@@ -10,9 +10,6 @@ import '../../authentication/login/models/login_response.dart';
 import '../models/best_time_to_call_request.dart';
 
 class BestTimeToCallGetController extends GetxController {
-  Rx<DateTime> from = DateTime.now().obs;
-  Rx<DateTime> to = DateTime.now().obs;
-
   TextEditingController fromController = TextEditingController();
   TextEditingController toController = TextEditingController();
 
