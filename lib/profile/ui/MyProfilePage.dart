@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/edit_information/ui/BasicEditPage.dart';
 import 'package:himachali_rishta/features/edit_information/ui/assets_and_properties_edit.dart';
+import 'package:himachali_rishta/features/edit_information/ui/best_time_to_call_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/contact_details_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/family_details_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/horoscope_social_edit.dart';
@@ -2187,6 +2188,127 @@ class MyProfilePage extends StatelessWidget {
                       Expanded(
                         child: Text(
                           "Living City:",
+                          textAlign: TextAlign.start,
+                          overflow: TextOverflow.clip,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.sp,
+                            color: const Color(0xff000000),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            const Icon(
+                              Icons.add,
+                              color: Color(0xff212435),
+                              size: 24,
+                            ),
+                            SizedBox(
+                              height: 4.sp,
+                              width: 4,
+                            ),
+                            Text(
+                              "Best Time to Call",
+                              textAlign: TextAlign.start,
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontStyle: FontStyle.normal,
+                                fontSize: 12.sp,
+                                color: const Color(0xff000000),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(() => BestTimeToCallEdit());
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            const Icon(
+                              Icons.edit,
+                              color: Color(0xff212435),
+                              size: 18,
+                            ),
+                            SizedBox(
+                              height: 4.sp,
+                              width: 4,
+                            ),
+                            Text(
+                              "Edit",
+                              textAlign: TextAlign.start,
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.normal,
+                                fontSize: 12.sp,
+                                color: const Color(0xff000000),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          "From:",
+                          textAlign: TextAlign.start,
+                          overflow: TextOverflow.clip,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.sp,
+                            color: const Color(0xff000000),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 4.sp,
+                    width: 16.sp,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          "To:",
                           textAlign: TextAlign.start,
                           overflow: TextOverflow.clip,
                           style: TextStyle(
