@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/LoginPage.dart';
 import 'package:himachali_rishta/features/dashboard/ui/all_tab.dart';
+import 'package:himachali_rishta/features/index/ui/index_page.dart';
 import 'package:himachali_rishta/features/interest/ui/InterestPage.dart';
 import 'package:himachali_rishta/features/membership/ui/MembershipPageFree.dart';
 import 'package:himachali_rishta/features/search/ui/SearchPage.dart';
@@ -216,6 +217,16 @@ class MainDashboardPage extends StatelessWidget {
                         'Profile',
                         style: TextStyle(fontSize: 18),
                       ),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.description),
+                      title: Text(
+                        'Index',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      onTap: () {
+                        Get.to(() => IndexPage());
+                      },
                     ),
                   ],
                 ),
