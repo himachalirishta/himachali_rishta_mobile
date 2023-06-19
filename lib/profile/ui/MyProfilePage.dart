@@ -14,6 +14,7 @@ import 'package:himachali_rishta/features/edit_information/ui/horoscope_social_e
 import 'package:himachali_rishta/features/edit_information/ui/partner_preference_edit.dart';
 import 'package:himachali_rishta/features/edit_information/ui/physical_attributes_and_eating_habits_page.dart';
 import 'package:himachali_rishta/features/edit_information/ui/profile_description_edit.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -21,13 +22,13 @@ import '../../features/edit_information/ui/education_occupation_edit.dart';
 import 'PartnerPreferenceTab.dart';
 
 class MyProfilePage extends StatelessWidget {
-  const MyProfilePage({super.key});
+  MyProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(0),
+        preferredSize: Size.fromHeight(0),
         child: Container(
           color: Theme.of(context).primaryColor,
         ),
@@ -40,87 +41,85 @@ class MyProfilePage extends StatelessWidget {
             padding: EdgeInsets.all(8.sp),
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              color: const Color(0xffffffff),
+              color: Color(0xffffffff),
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.zero,
-              border: Border.all(color: const Color(0x4d9e9e9e), width: 1.sp),
+              border: Border.all(color: Color(0x4d9e9e9e), width: 1.sp),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      height: 30.w,
-                      width: 30.w,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0.sp),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      CircleAvatar(
+                        radius: 35.sp,
+                        backgroundImage:
+                            NetworkImage("https://picsum.photos/250?image=9"),
                       ),
-                      child: Image.network("https://picsum.photos/250?image=9",
-                          fit: BoxFit.cover),
-                    ),
-                    SizedBox(
-                      height: 4.sp,
-                      width: 16.sp,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        const Text(
-                          "Neha Sharma",
-                          textAlign: TextAlign.start,
-                          overflow: TextOverflow.clip,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 16,
-                            color: Color(0xff000000),
+                      SizedBox(
+                        height: 8.sp,
+                        width: 16.sp,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            "Neha Sharma",
+                            textAlign: TextAlign.start,
+                            overflow: TextOverflow.clip,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontStyle: FontStyle.normal,
+                              fontSize: 16.sp,
+                              color: Theme.of(context).secondaryHeaderColor,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 4.sp,
-                          width: 16.sp,
-                        ),
-                        Text(
-                          "Matri ID:HPR345677",
-                          textAlign: TextAlign.start,
-                          overflow: TextOverflow.clip,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 10.sp,
-                            color: const Color(0xffac0f11),
+                          SizedBox(
+                            height: 8.sp,
+                            width: 16.sp,
                           ),
-                        ),
-                        SizedBox(
-                          height: 4.sp,
-                          width: 16.sp,
-                        ),
-                        Text(
-                          "Relationship Manager: ",
-                          textAlign: TextAlign.start,
-                          overflow: TextOverflow.clip,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                          Text(
+                            "Matri ID:HPR345677",
+                            textAlign: TextAlign.start,
+                            overflow: TextOverflow.clip,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontStyle: FontStyle.normal,
+                              fontSize: 10.sp,
+                              color: Color(0xffac0f11),
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                          SizedBox(
+                            height: 8.sp,
+                            width: 16.sp,
+                          ),
+                          Text(
+                            "Relationship Manager: ",
+                            textAlign: TextAlign.start,
+                            overflow: TextOverflow.clip,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontStyle: FontStyle.normal,
+                              fontSize: 10.sp,
+                              color: Color(0xff000000),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
-                  height: 4.sp,
+                  height: 8.sp,
                   width: 16.sp,
                 ),
                 Text(
@@ -131,11 +130,11 @@ class MyProfilePage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
                     fontSize: 12.sp,
-                    color: const Color(0xff000000),
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
                 SizedBox(
-                  height: 4.sp,
+                  height: 8.sp,
                   width: 16.sp,
                 ),
                 Text(
@@ -146,24 +145,24 @@ class MyProfilePage extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.normal,
                     fontSize: 12.sp,
-                    color: const Color(0xffac0f11),
+                    color: Theme.of(context).secondaryHeaderColor,
                   ),
                 ),
               ],
             ),
           ),
           SizedBox(
-            height: 4.sp,
+            height: 8.sp,
             width: 16.sp,
           ),
           Card(
-            margin: const EdgeInsets.all(4.0),
-            color: const Color(0xffffffff),
-            shadowColor: const Color(0xff000000),
+            margin: EdgeInsets.all(4.0),
+            color: Color(0xffffffff),
+            shadowColor: Color(0xff000000),
             elevation: 3,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(4.0),
-              side: BorderSide(color: const Color(0x4d9e9e9e), width: 1.sp),
+              side: BorderSide(color: Color(0x4d9e9e9e), width: 1.sp),
             ),
             child: Padding(
               padding: EdgeInsets.all(8.sp),
@@ -172,19 +171,26 @@ class MyProfilePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Text(
-                    "Your Profile is 62% Complete",
-                    textAlign: TextAlign.start,
-                    overflow: TextOverflow.clip,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontStyle: FontStyle.normal,
-                      fontSize: 12.sp,
-                      color: const Color(0xff000000),
-                    ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 16.sp,
+                      ),
+                      Text(
+                        "Your Profile is 62% Complete",
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 13.sp,
+                          color: Color(0xff000000),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 0.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -202,25 +208,10 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 4.sp,
-                        width: 16.sp,
-                      ),
-                      /*Container(
-                        height: 120.sp,
-                        width: 120.sp,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                            "https://picsum.photos/250?image=9",
-                            fit: BoxFit.cover),
-                      ),*/
                       SizedBox(
                         height: 20.h,
                         width: 20.h,
@@ -228,11 +219,21 @@ class MyProfilePage extends StatelessWidget {
                           series: <CircularSeries>[
                             DoughnutSeries<MatchData, String>(
                               dataSource: [
-                                MatchData('Not Match', 62),
-                                MatchData('Match', 38),
+                                MatchData(
+                                  'Not Match',
+                                  62,
+                                  Theme.of(context).primaryColor,
+                                ),
+                                MatchData(
+                                    'Match',
+                                    38,
+                                    //#eeeeee
+                                    Color(0xffeeeeee)),
                               ],
                               xValueMapper: (MatchData data, _) => data.name,
                               yValueMapper: (MatchData data, _) => data.value,
+                              pointColorMapper: (MatchData data, _) =>
+                                  data.color,
                               dataLabelMapper: (MatchData data, _) =>
                                   "${data.value}%",
                               radius: '80%',
@@ -254,104 +255,240 @@ class MyProfilePage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 4.sp,
+            height: 12.sp,
             width: 16.sp,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0.sp),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Container(
-                  width: 45.w,
-                  margin: EdgeInsets.zero,
-                  padding: EdgeInsets.all(4.sp),
-                  decoration: BoxDecoration(
-                    color: const Color(0xffffffff),
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(8.0.sp),
-                    border:
-                        Border.all(color: const Color(0xff01052e), width: 1.sp),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        "Upload your photos",
-                        textAlign: TextAlign.start,
-                        overflow: TextOverflow.clip,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                          fontSize: 10.sp,
-                          color: const Color(0xff000000),
-                        ),
+            child: SizedBox(
+              height: 80.sp,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 4.0.sp),
+                    child: Container(
+                      width: 50.w,
+                      margin: EdgeInsets.zero,
+                      padding: EdgeInsets.all(4.sp),
+                      decoration: BoxDecoration(
+                        color: Color(0xffffffff),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(8.0.sp),
+                        border: Border.all(
+                            color: Theme.of(context).secondaryHeaderColor,
+                            width: 0.5.sp),
                       ),
-                      SizedBox(
-                        height: 4.sp,
-                        width: 16.sp,
-                      ),
-                      Row(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Expanded(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                ///***If you have exported images you must have to copy those images in assets/images directory.
-                                Image(
-                                  image: const NetworkImage(
-                                      "https://picsum.photos/250?image=9"),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.2,
-                                  fit: BoxFit.cover,
+                          Row(
+                            children: [
+                              Text(
+                                "Upload your photos",
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.clip,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.sp,
+                                  color: Color(0xff000000),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                           SizedBox(
-                            height: 4.sp,
-                            width: 4,
+                            height: 2.sp,
+                            width: 16.sp,
                           ),
-                          IconButton(
-                            icon: const Icon(Icons.add_a_photo),
-                            onPressed: () {},
-                            color: const Color(0xffac0f11),
-                            iconSize: 24,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              /*Expanded(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Image(
+                                      image: NetworkImage(
+                                          "https://picsum.photos/250?image=9"),
+                                      width:
+                                          MediaQuery.of(context).size.width * 0.2,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ],
+                                ),
+                              ),*/
+                              ElevatedButton(
+                                onPressed: () {},
+                                child: Text("Upload Photo"),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor:
+                                      Theme.of(context).primaryColor,
+                                  // Sets the background color to red
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                        8.sp), // Sets the border radius
+                                  ),
+                                ),
+                              ),
+                              /*SizedBox(
+                                height: 2.sp,
+                                width: 2.sp,
+                              ),*/
+                              SizedBox(
+                                width: 8.sp,
+                              ),
+                              IconButton(
+                                icon: Icon(Icons.add_a_photo),
+                                onPressed: () {},
+                                color: Theme.of(context).secondaryHeaderColor,
+                                iconSize: 24,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 2.sp,
+                            width: 16.sp,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "Increase profile score by 30%",
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.sp,
+                                  color: Color(0xff000000),
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: 4.sp,
-                        width: 16.sp,
-                      ),
-                      Text(
-                        "Increase profile score by 30%",
-                        textAlign: TextAlign.start,
-                        overflow: TextOverflow.clip,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontStyle: FontStyle.normal,
-                          fontSize: 10.sp,
-                          color: const Color(0xff000000),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 4.0.sp),
+                    child: Container(
+                      width: 50.w,
+                      margin: EdgeInsets.zero,
+                      padding: EdgeInsets.all(4.sp),
+                      decoration: BoxDecoration(
+                        color: Color(0xffffffff),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(8.0.sp),
+                        border: Border.all(
+                            color: Theme.of(context).secondaryHeaderColor,
+                            width: 0.5.sp),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                "Upload ID Proof",
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.clip,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.sp,
+                                  color: Color(0xff000000),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 2.sp,
+                            width: 16.sp,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              /*Expanded(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Image(
+                                      image: NetworkImage(
+                                          "https://picsum.photos/250?image=9"),
+                                      width:
+                                          MediaQuery.of(context).size.width * 0.2,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ],
+                                ),
+                              ),*/
+                              ElevatedButton(
+                                onPressed: () {},
+                                child: Text("Upload Photo"),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor:
+                                      Theme.of(context).primaryColor,
+                                  // Sets the background color to red
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                        8.sp), // Sets the border radius
+                                  ),
+                                ),
+                              ),
+                              /*SizedBox(
+                                height: 2.sp,
+                                width: 2.sp,
+                              ),*/
+                              SizedBox(
+                                width: 8.sp,
+                              ),
+                              IconButton(
+                                icon: Icon(Icons.add_a_photo),
+                                onPressed: () {},
+                                color: Theme.of(context).secondaryHeaderColor,
+                                iconSize: 24,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 2.sp,
+                            width: 16.sp,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "Increase profile score by 30%",
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.sp,
+                                  color: Color(0xff000000),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(
-            height: 4.sp,
+            height: 12.sp,
             width: 16.sp,
           ),
           Expanded(
@@ -360,17 +497,12 @@ class MyProfilePage extends StatelessWidget {
               padding: EdgeInsets.zero,
               width: 100.w,
               height: 50.h,
-              decoration: BoxDecoration(
-                color: const Color(0xffffffff),
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.zero,
-                border: Border.all(color: const Color(0x4d9e9e9e), width: 1.sp),
-              ),
+              color: Colors.white,
               child: ListView(
                 scrollDirection: Axis.vertical,
                 padding: EdgeInsets.all(8.sp),
                 shrinkWrap: false,
-                //physics: const ScrollPhysics(),
+                //physics: ScrollPhysics(),
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -384,13 +516,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
-                              Icons.add,
+                            Icon(
+                              Icons.person,
                               color: Color(0xff212435),
                               size: 24,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -401,7 +533,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -416,13 +548,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.edit,
                               color: Color(0xff212435),
                               size: 18,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -433,7 +565,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -442,7 +574,7 @@ class MyProfilePage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -458,13 +590,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -480,13 +612,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -502,13 +634,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -524,13 +656,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -546,13 +678,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -568,13 +700,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -590,13 +722,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -612,7 +744,7 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
@@ -633,13 +765,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
-                              Icons.add,
+                            Icon(
+                              Icons.school,
                               color: Color(0xff212435),
                               size: 24,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -650,7 +782,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -665,13 +797,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.edit,
                               color: Color(0xff212435),
                               size: 18,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -682,7 +814,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -691,7 +823,7 @@ class MyProfilePage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -707,13 +839,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -729,13 +861,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -751,13 +883,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -773,13 +905,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -795,13 +927,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -817,7 +949,7 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
@@ -838,13 +970,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
-                              Icons.add,
+                            Icon(
+                              Icons.accessibility,
                               color: Color(0xff212435),
                               size: 24,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -855,7 +987,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -870,13 +1002,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.edit,
                               color: Color(0xff212435),
                               size: 18,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -887,7 +1019,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -896,7 +1028,7 @@ class MyProfilePage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -912,13 +1044,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -934,13 +1066,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -956,13 +1088,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -978,13 +1110,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1000,13 +1132,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1022,13 +1154,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1044,13 +1176,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1066,7 +1198,7 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
@@ -1087,13 +1219,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
-                              Icons.add,
+                            Icon(
+                              MdiIcons.accountMultiple,
                               color: Color(0xff212435),
                               size: 24,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -1104,7 +1236,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -1119,13 +1251,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.edit,
                               color: Color(0xff212435),
                               size: 18,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -1136,7 +1268,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -1145,7 +1277,7 @@ class MyProfilePage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1161,13 +1293,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1183,13 +1315,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1205,13 +1337,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1227,13 +1359,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1249,13 +1381,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1271,13 +1403,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1293,13 +1425,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1315,13 +1447,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1337,7 +1469,7 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
@@ -1358,13 +1490,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
-                              Icons.add,
+                            Icon(
+                              MdiIcons.googleCirclesCommunities,
                               color: Color(0xff212435),
                               size: 24,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -1375,7 +1507,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -1390,13 +1522,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.edit,
                               color: Color(0xff212435),
                               size: 18,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -1407,7 +1539,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -1416,7 +1548,7 @@ class MyProfilePage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1432,13 +1564,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1454,13 +1586,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1476,13 +1608,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1498,13 +1630,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1520,13 +1652,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1542,13 +1674,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1564,13 +1696,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1586,7 +1718,7 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
@@ -1607,13 +1739,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
-                              Icons.add,
+                            Icon(
+                              MdiIcons.homeCityOutline,
                               color: Color(0xff212435),
                               size: 24,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -1624,7 +1756,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -1639,13 +1771,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.edit,
                               color: Color(0xff212435),
                               size: 18,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -1656,7 +1788,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -1665,7 +1797,7 @@ class MyProfilePage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1681,13 +1813,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1703,13 +1835,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1725,13 +1857,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1747,13 +1879,13 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1769,7 +1901,7 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
@@ -1790,13 +1922,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
-                              Icons.add,
+                            Icon(
+                              Icons.perm_identity,
                               color: Color(0xff212435),
                               size: 24,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -1807,7 +1939,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -1822,13 +1954,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.edit,
                               color: Color(0xff212435),
                               size: 18,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -1839,7 +1971,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -1848,7 +1980,7 @@ class MyProfilePage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1864,7 +1996,7 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
@@ -1885,13 +2017,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
-                              Icons.add,
+                            Icon(
+                              Icons.phone,
                               color: Color(0xff212435),
                               size: 24,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -1902,7 +2034,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -1917,13 +2049,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.edit,
                               color: Color(0xff212435),
                               size: 18,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -1934,7 +2066,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -1944,7 +2076,7 @@ class MyProfilePage extends StatelessWidget {
                   ),
                   //mobile no
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1960,14 +2092,14 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   //alternate no
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -1983,14 +2115,14 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   //whatsapp no
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2006,14 +2138,14 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   //email
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2029,14 +2161,14 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   //hometown
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2052,14 +2184,14 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   //Country
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2075,14 +2207,14 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   //State
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2098,14 +2230,14 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   //City
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2121,14 +2253,14 @@ class MyProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 10.sp,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
                   ),
                   //Living Country
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2145,7 +2277,7 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
@@ -2153,7 +2285,7 @@ class MyProfilePage extends StatelessWidget {
                   ),
                   //Living State
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2170,7 +2302,7 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
@@ -2178,7 +2310,7 @@ class MyProfilePage extends StatelessWidget {
                   ),
                   //Living City
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2195,7 +2327,7 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
@@ -2217,13 +2349,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
-                              Icons.add,
+                            Icon(
+                              Icons.lock_clock,
                               color: Color(0xff212435),
                               size: 24,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -2234,7 +2366,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -2249,13 +2381,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.edit,
                               color: Color(0xff212435),
                               size: 18,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -2266,7 +2398,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -2275,7 +2407,7 @@ class MyProfilePage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2292,14 +2424,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2316,7 +2448,7 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
@@ -2338,13 +2470,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
-                              Icons.add,
+                            Icon(
+                              MdiIcons.humanMale,
                               color: Color(0xff212435),
                               size: 24,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -2355,7 +2487,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -2370,13 +2502,13 @@ class MyProfilePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.edit,
                               color: Color(0xff212435),
                               size: 18,
                             ),
                             SizedBox(
-                              height: 4.sp,
+                              height: 8.sp,
                               width: 4,
                             ),
                             Text(
@@ -2387,7 +2519,7 @@ class MyProfilePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ],
@@ -2396,7 +2528,7 @@ class MyProfilePage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2413,14 +2545,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2437,14 +2569,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2461,14 +2593,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2485,14 +2617,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2509,14 +2641,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2533,14 +2665,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2557,14 +2689,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2581,14 +2713,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2605,14 +2737,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2629,14 +2761,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2653,14 +2785,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2677,14 +2809,14 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 4.sp,
+                    height: 8.sp,
                     width: 16.sp,
                   ),
                   Row(
@@ -2701,7 +2833,7 @@ class MyProfilePage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),

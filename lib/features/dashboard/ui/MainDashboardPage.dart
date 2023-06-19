@@ -187,7 +187,7 @@ class MainDashboardPage extends StatelessWidget {
                         style: TextStyle(fontSize: 18),
                       ),
                       onTap: () {
-                        Get.to(() => const MyProfilePage());
+                        Get.to(() => MyProfilePage());
                       },
                     ),
                     ListTile(

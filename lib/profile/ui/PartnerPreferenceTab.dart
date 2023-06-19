@@ -77,8 +77,10 @@ class PartnerPreferenceTab extends StatelessWidget {
                           series: <CircularSeries>[
                             DoughnutSeries<MatchData, String>(
                               dataSource: [
-                                MatchData('Match', 80),
-                                MatchData('Not Match', 20)
+                                MatchData('Match', 80,
+                                    Theme.of(context).primaryColor),
+                                MatchData('Not Match', 20,
+                                    Theme.of(context).secondaryHeaderColor),
                               ],
                               xValueMapper: (MatchData data, _) => data.name,
                               yValueMapper: (MatchData data, _) => data.value,
@@ -378,6 +380,7 @@ class PartnerPreferenceTab extends StatelessWidget {
 class MatchData {
   final String name;
   final int value;
+  final Color color;
 
-  MatchData(this.name, this.value);
+  MatchData(this.name, this.value, this.color);
 }
