@@ -10,6 +10,7 @@ import 'package:himachali_rishta/features/membership/ui/MembershipPageFree.dart'
 import 'package:himachali_rishta/features/membership/ui/membership_page_paid.dart';
 import 'package:himachali_rishta/features/membership/ui/membership_plan_page.dart';
 import 'package:himachali_rishta/features/search/ui/SearchPage.dart';
+import 'package:himachali_rishta/features/upload_photo/ui/manage_photos_page.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../authentication/login/ui/SubmitInformationPage2.dart';
@@ -87,6 +88,12 @@ class IndexPage extends StatelessWidget {
         title: Text('Upload Photo Page', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
           Get.to(() => UploadPhotoScreen(accessToken: '',));
+        },
+      ),
+      ListTile(
+        title: Text('Manage Photo', style: TextStyle(fontSize: 12.sp)),
+        onTap: () {
+          Get.to(() => ManagePhotosPage());
         },
       ),
     ];

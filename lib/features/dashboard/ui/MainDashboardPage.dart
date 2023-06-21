@@ -12,7 +12,9 @@ import 'package:himachali_rishta/features/index/ui/index_page.dart';
 import 'package:himachali_rishta/features/interest/ui/InterestPage.dart';
 import 'package:himachali_rishta/features/membership/ui/MembershipPageFree.dart';
 import 'package:himachali_rishta/features/search/ui/SearchPage.dart';
+import 'package:himachali_rishta/features/upload_photo/ui/manage_photos_page.dart';
 import 'package:himachali_rishta/profile/ui/MyProfilePage.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sizer/sizer.dart';
 
 import '../get_controllers/main_dashboard_get_controller.dart';
@@ -226,6 +228,16 @@ class MainDashboardPage extends StatelessWidget {
                       ),
                       onTap: () {
                         Get.to(() => IndexPage());
+                      },
+                    ),
+                    ListTile(
+                      leading: Icon(MdiIcons.pictureInPictureBottomRight),
+                      title: Text(
+                        'Manage Photos',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      onTap: () {
+                        Get.to(() => ManagePhotosPage());
                       },
                     ),
                   ],
