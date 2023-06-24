@@ -15,6 +15,7 @@ import 'package:himachali_rishta/features/upload_photo/ui/manage_photos_page.dar
 import 'package:himachali_rishta/profile/ui/MyProfilePage.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../profile/ui/profile_page.dart';
 import '../../authentication/login/ui/SubmitInformationPage2.dart';
 import '../../profile_settings/ui/profile_settings_paid_page.dart';
 
@@ -123,6 +124,12 @@ class IndexPage extends StatelessWidget {
         title: Text('Profile Settings PAID', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
           Get.to(() => ProfileSettingsPaidPage());
+        },
+      ),
+      ListTile(
+        title: Text('Full Profile Page', style: TextStyle(fontSize: 12.sp)),
+        onTap: () {
+          Get.to(() => ProfilePage());
         },
       ),
     ];
