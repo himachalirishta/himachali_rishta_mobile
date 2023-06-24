@@ -237,7 +237,8 @@ class AboutPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: const Color(0xff018601),
                       shape: BoxShape.circle,
-                      border: Border.all(color: const Color(0x4d9e9e9e), width: 1),
+                      border:
+                          Border.all(color: const Color(0x4d9e9e9e), width: 1),
                     ),
                   ),
                 ],
@@ -1168,8 +1169,8 @@ class AboutPage extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4.0),
                       ),
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 8),
                       textColor: const Color(0xff000000),
                       height: 38.sp,
                       minWidth: 138.sp,
@@ -1192,61 +1193,74 @@ class AboutPage extends StatelessWidget {
       ),
     ];
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            pinned: false,
-            automaticallyImplyLeading: false,
-            expandedHeight: 50.h,
-            backgroundColor: Colors.transparent,
-            flexibleSpace: FlexibleSpaceBar(
-                background: CarouselSlider(
-              items: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.network(
-                        'https://picsum.photos/250?image=9',
-                        fit: BoxFit.cover,
+      body: StreamBuilder<bool>(
+          stream: Stream.periodic(Duration(milliseconds: 100), (_) {
+            return SizerUtil.orientation == Orientation.landscape;
+          }),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return ConstrainedBox(
+                constraints:
+                    BoxConstraints(maxWidth: snapshot.data! ? 700 : 100.w),
+                child: CustomScrollView(
+                  slivers: [
+                    SliverAppBar(
+                      pinned: false,
+                      automaticallyImplyLeading: false,
+                      expandedHeight: 50.h,
+                      backgroundColor: Colors.transparent,
+                      flexibleSpace: FlexibleSpaceBar(
+                          background: CarouselSlider(
+                        items: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  'https://picsum.photos/250?image=9',
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  'https://picsum.photos/250?image=9',
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  'https://picsum.photos/250?image=9',
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                        ],
+                        options: CarouselOptions(viewportFraction: 0.5),
                       )),
+                    ),
+                    SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 8.0),
+                            child: sliverItems[index],
+                          );
+                        },
+                        childCount: sliverItems.length,
+                      ),
+                    )
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.network(
-                        'https://picsum.photos/250?image=9',
-                        fit: BoxFit.cover,
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.network(
-                        'https://picsum.photos/250?image=9',
-                        fit: BoxFit.cover,
-                      )),
-                ),
-              ],
-              options: CarouselOptions(viewportFraction: 0.5),
-            )),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8.0),
-                  child: sliverItems[index],
-                );
-              },
-              childCount: sliverItems.length,
-            ),
-          )
-        ],
-      ),
+              );
+            }
+            return Container();
+          }),
     );
   }
 }
