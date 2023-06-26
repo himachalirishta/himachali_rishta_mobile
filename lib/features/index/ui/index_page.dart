@@ -5,6 +5,7 @@ import 'package:himachali_rishta/features/authentication/login/ui/OtpScreen.dart
 import 'package:himachali_rishta/features/authentication/login/ui/SubmitInformationPage.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/UploadPhotoScreen.dart';
 import 'package:himachali_rishta/features/dashboard/ui/MainDashboardPage.dart';
+import 'package:himachali_rishta/features/demo_screen/ui/demo_screen.dart';
 import 'package:himachali_rishta/features/interest/ui/InterestPage.dart';
 import 'package:himachali_rishta/features/membership/ui/MembershipPageFree.dart';
 import 'package:himachali_rishta/features/membership/ui/membership_page_paid.dart';
@@ -130,6 +131,12 @@ class IndexPage extends StatelessWidget {
         title: Text('Full Profile Page', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
           Get.to(() => ProfilePage());
+        },
+      ),
+      ListTile(
+        title: Text('Test Screen', style: TextStyle(fontSize: 12.sp)),
+        onTap: () {
+          Get.to(() => DemoScreen());
         },
       ),
     ];
