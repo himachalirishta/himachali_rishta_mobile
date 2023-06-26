@@ -18,6 +18,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../../profile/ui/profile_page.dart';
 import '../../authentication/login/ui/SubmitInformationPage2.dart';
+import '../../my_profile/ui/my_profile_page.dart';
 import '../../profile_settings/ui/profile_settings_paid_page.dart';
 
 class IndexPage extends StatelessWidget {
@@ -137,6 +138,12 @@ class IndexPage extends StatelessWidget {
         title: Text('Test Screen', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
           Get.to(() => DemoScreen());
+        },
+      ),
+      ListTile(
+        title: Text('My Profile', style: TextStyle(fontSize: 12.sp)),
+        onTap: () {
+          Get.to(() => MyAccountPage());
         },
       ),
     ];

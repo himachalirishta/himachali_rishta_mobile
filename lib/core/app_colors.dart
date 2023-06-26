@@ -92,4 +92,6 @@ class AppColors {
   static Color primaryBackground = const Color(0xfff4f6fc);
   static Color overlayColor = const Color(0xffb3ffff);
   static Color lineColor = const Color(0xffdbe2e7);
+  static Color orange = const Color(0xfffc5424);
+  static Color green = const Color(0xff0ca110);
 }
