@@ -5,11 +5,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
+import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sizer/sizer.dart';
 
 class AboutPage extends StatelessWidget {
-  const AboutPage({super.key});
+  AboutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +20,13 @@ class AboutPage extends StatelessWidget {
         padding: EdgeInsets.zero,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: const Color(0xffffffff),
+          color: Color(0xffffffff),
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.zero,
-          border: Border.all(color: const Color(0x4d9e9e9e), width: 1),
+          border: Border.all(color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(4),
+          padding: EdgeInsets.all(4.sp.adjustedSp),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -39,13 +40,13 @@ class AboutPage extends StatelessWidget {
                   ///***If you have exported images you must have to copy those images in assets/images directory.
                   CircleAvatar(
                     backgroundImage:
-                        const NetworkImage("https://picsum.photos/250?image=9"),
-                    radius: 40.sp,
+                        NetworkImage("https://picsum.photos/250?image=9"),
+                    radius: 40.sp.adjustedSp,
                   ),
 
                   SizedBox(
-                    height: 16.sp,
-                    width: 8.sp,
+                    height: 16.sp.adjustedSp,
+                    width: 8.sp.adjustedSp,
                   ),
                   Expanded(
                     flex: 1,
@@ -54,7 +55,7 @@ class AboutPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        const Text(
+                        Text(
                           "Neha Sharma",
                           textAlign: TextAlign.start,
                           overflow: TextOverflow.clip,
@@ -66,8 +67,8 @@ class AboutPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 8.sp,
-                          width: 16.sp,
+                          height: 8.sp.adjustedSp,
+                          width: 16.sp.adjustedSp,
                         ),
                         Text(
                           "Matri ID: HRP345677",
@@ -76,13 +77,13 @@ class AboutPage extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontStyle: FontStyle.normal,
-                            fontSize: 10.sp,
-                            color: const Color(0xffac0f11),
+                            fontSize: 10.sp.adjustedSp,
+                            color: Color(0xffac0f11),
                           ),
                         ),
                         SizedBox(
-                          height: 8.sp,
-                          width: 16.sp,
+                          height: 8.sp.adjustedSp,
+                          width: 16.sp.adjustedSp,
                         ),
                         Text(
                           "Relationship Manager:",
@@ -91,8 +92,8 @@ class AboutPage extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontStyle: FontStyle.normal,
-                            fontSize: 10.sp,
-                            color: const Color(0xff000000),
+                            fontSize: 10.sp.adjustedSp,
+                            color: Color(0xff000000),
                           ),
                         ),
                       ],
@@ -101,8 +102,8 @@ class AboutPage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 16.sp,
-                width: 16.sp,
+                height: 16.sp.adjustedSp,
+                width: 16.sp.adjustedSp,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -116,15 +117,15 @@ class AboutPage extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontStyle: FontStyle.normal,
-                      fontSize: 12.sp,
-                      color: const Color(0xffac0f11),
+                      fontSize: 12.sp.adjustedSp,
+                      color: Color(0xffac0f11),
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 8.sp,
-                width: 16.sp,
+                height: 8.sp.adjustedSp,
+                width: 16.sp.adjustedSp,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -138,8 +139,8 @@ class AboutPage extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
-                      fontSize: 10.sp,
-                      color: const Color(0xff000000),
+                      fontSize: 10.sp.adjustedSp,
+                      color: Color(0xff000000),
                     ),
                   ),
                 ],
@@ -149,21 +150,21 @@ class AboutPage extends StatelessWidget {
         ),
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Container(
         margin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: const Color(0xff01052e),
+          color: Color(0xff01052e),
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(16.0),
-          border: Border.all(color: const Color(0x4d9e9e9e), width: 1),
+          borderRadius: BorderRadius.circular(16.0.sp.adjustedSp),
+          border: Border.all(color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
         ),
         child: Padding(
-          padding: EdgeInsets.all(8.sp),
+          padding: EdgeInsets.all(8.sp.adjustedSp),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -183,14 +184,14 @@ class AboutPage extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontStyle: FontStyle.normal,
-                        fontSize: 12.sp,
-                        color: const Color(0xffffffff),
+                        fontSize: 12.sp.adjustedSp,
+                        color: Color(0xffffffff),
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: 16.sp,
-                    width: 8.sp,
+                    height: 16.sp.adjustedSp,
+                    width: 8.sp.adjustedSp,
                   ),
                   Expanded(
                     child: Row(
@@ -202,21 +203,21 @@ class AboutPage extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
-                            fontSize: 10.sp,
-                            color: const Color(0xffffffff),
+                            fontSize: 10.sp.adjustedSp,
+                            color: Color(0xffffffff),
                           ),
                         ),
                         Icon(
                           Icons.verified,
-                          color: const Color(0xffac0f11),
-                          size: 20.sp,
+                          color: Color(0xffac0f11),
+                          size: 20.sp.adjustedSp,
                         ),
                       ],
                     ),
                   ),
                   SizedBox(
-                    height: 16.sp,
-                    width: 8.sp,
+                    height: 16.sp.adjustedSp,
+                    width: 8.sp.adjustedSp,
                   ),
                   Text(
                     "Online Now",
@@ -225,27 +226,27 @@ class AboutPage extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
-                      fontSize: 12.sp,
-                      color: const Color(0xffffffff),
+                      fontSize: 12.sp.adjustedSp,
+                      color: Color(0xffffffff),
                     ),
                   ),
                   Container(
                     margin: EdgeInsets.zero,
                     padding: EdgeInsets.zero,
-                    width: 10.sp,
-                    height: 10.sp,
+                    width: 10.sp.adjustedSp,
+                    height: 10.sp.adjustedSp,
                     decoration: BoxDecoration(
-                      color: const Color(0xff018601),
+                      color: Color(0xff018601),
                       shape: BoxShape.circle,
-                      border:
-                          Border.all(color: const Color(0x4d9e9e9e), width: 1),
+                      border: Border.all(
+                          color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 16.sp,
-                width: 16.sp,
+                height: 16.sp.adjustedSp,
+                width: 16.sp.adjustedSp,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -261,8 +262,8 @@ class AboutPage extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
-                        fontSize: 10.sp,
-                        color: const Color(0xffffffff),
+                        fontSize: 10.sp.adjustedSp,
+                        color: Color(0xffffffff),
                       ),
                     ),
                   ),
@@ -273,8 +274,8 @@ class AboutPage extends StatelessWidget {
         ),
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -283,8 +284,8 @@ class AboutPage extends StatelessWidget {
         children: [
           Icon(
             Icons.account_circle,
-            color: const Color(0xffac0f11),
-            size: 20.sp,
+            color: Color(0xffac0f11),
+            size: 20.sp.adjustedSp,
           ),
           Text(
             "Basic Details",
@@ -293,18 +294,18 @@ class AboutPage extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
-              fontSize: 12.sp,
-              color: const Color(0xffac0f11),
+              fontSize: 12.sp.adjustedSp,
+              color: Color(0xffac0f11),
             ),
           ),
         ],
       ),
       SizedBox(
-        height: 8.sp,
-        width: 8.sp,
+        height: 8.sp.adjustedSp,
+        width: 8.sp.adjustedSp,
       ),
       Table(
-        children: const [
+        children: [
           TableRow(children: [
             Text(
               'Age',
@@ -358,8 +359,8 @@ class AboutPage extends StatelessWidget {
         ],
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -368,8 +369,8 @@ class AboutPage extends StatelessWidget {
         children: [
           Icon(
             Icons.school,
-            color: const Color(0xffac0f11),
-            size: 20.sp,
+            color: Color(0xffac0f11),
+            size: 20.sp.adjustedSp,
           ),
           Text(
             "Education and Occupation",
@@ -378,18 +379,18 @@ class AboutPage extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
-              fontSize: 12.sp,
-              color: const Color(0xffac0f11),
+              fontSize: 12.sp.adjustedSp,
+              color: Color(0xffac0f11),
             ),
           ),
         ],
       ),
       SizedBox(
-        height: 8.sp,
-        width: 8.sp,
+        height: 8.sp.adjustedSp,
+        width: 8.sp.adjustedSp,
       ),
       Table(
-        children: const [
+        children: [
           TableRow(children: [
             Text(
               'Education',
@@ -433,8 +434,8 @@ class AboutPage extends StatelessWidget {
         ],
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -443,8 +444,8 @@ class AboutPage extends StatelessWidget {
         children: [
           Icon(
             Icons.family_restroom,
-            color: const Color(0xffac0f11),
-            size: 20.sp,
+            color: Color(0xffac0f11),
+            size: 20.sp.adjustedSp,
           ),
           Text(
             "Family and information",
@@ -453,18 +454,18 @@ class AboutPage extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
-              fontSize: 12.sp,
-              color: const Color(0xffac0f11),
+              fontSize: 12.sp.adjustedSp,
+              color: Color(0xffac0f11),
             ),
           ),
         ],
       ),
       SizedBox(
-        height: 8.sp,
-        width: 8.sp,
+        height: 8.sp.adjustedSp,
+        width: 8.sp.adjustedSp,
       ),
       Table(
-        children: const [
+        children: [
           TableRow(children: [
             Text(
               'Father Occupation',
@@ -508,21 +509,21 @@ class AboutPage extends StatelessWidget {
         ],
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Container(
         margin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: const Color(0xff01052e),
+          color: Color(0xff01052e),
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(16.0),
-          border: Border.all(color: const Color(0x4d9e9e9e), width: 1),
+          borderRadius: BorderRadius.circular(16.0.sp.adjustedSp),
+          border: Border.all(color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
         ),
         child: Padding(
-          padding: EdgeInsets.all(8.sp),
+          padding: EdgeInsets.all(8.sp.adjustedSp),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -535,8 +536,8 @@ class AboutPage extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.person,
-                    color: const Color(0xffffffff),
-                    size: 20.sp,
+                    color: Color(0xffffffff),
+                    size: 20.sp.adjustedSp,
                   ),
                   Text(
                     "About her",
@@ -545,15 +546,15 @@ class AboutPage extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontStyle: FontStyle.normal,
-                      fontSize: 12.sp,
-                      color: const Color(0xffffffff),
+                      fontSize: 12.sp.adjustedSp,
+                      color: Color(0xffffffff),
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 8.sp,
-                width: 16.sp,
+                height: 8.sp.adjustedSp,
+                width: 16.sp.adjustedSp,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -569,8 +570,8 @@ class AboutPage extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
-                        fontSize: 10.sp,
-                        color: const Color(0xffffffff),
+                        fontSize: 10.sp.adjustedSp,
+                        color: Color(0xffffffff),
                       ),
                     ),
                   ),
@@ -581,8 +582,8 @@ class AboutPage extends StatelessWidget {
         ),
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -591,8 +592,8 @@ class AboutPage extends StatelessWidget {
         children: [
           Icon(
             Icons.phone,
-            color: const Color(0xffac0f11),
-            size: 20.sp,
+            color: Color(0xffac0f11),
+            size: 20.sp.adjustedSp,
           ),
           Text(
             "Contact Details",
@@ -601,18 +602,18 @@ class AboutPage extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
-              fontSize: 12.sp,
-              color: const Color(0xffac0f11),
+              fontSize: 12.sp.adjustedSp,
+              color: Color(0xffac0f11),
             ),
           ),
         ],
       ),
       SizedBox(
-        height: 8.sp,
-        width: 8.sp,
+        height: 8.sp.adjustedSp,
+        width: 8.sp.adjustedSp,
       ),
       Table(
-        children: const [
+        children: [
           TableRow(children: [
             Text(
               'Living City',
@@ -666,8 +667,8 @@ class AboutPage extends StatelessWidget {
         ],
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -676,8 +677,8 @@ class AboutPage extends StatelessWidget {
         children: [
           Icon(
             Icons.sunny,
-            color: const Color(0xffac0f11),
-            size: 20.sp,
+            color: Color(0xffac0f11),
+            size: 20.sp.adjustedSp,
           ),
           Text(
             "Assets and properties",
@@ -686,18 +687,18 @@ class AboutPage extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
-              fontSize: 12.sp,
-              color: const Color(0xffac0f11),
+              fontSize: 12.sp.adjustedSp,
+              color: Color(0xffac0f11),
             ),
           ),
         ],
       ),
       SizedBox(
-        height: 8.sp,
-        width: 8.sp,
+        height: 8.sp.adjustedSp,
+        width: 8.sp.adjustedSp,
       ),
       Table(
-        children: const [
+        children: [
           TableRow(children: [
             Text(
               'Living City',
@@ -751,8 +752,8 @@ class AboutPage extends StatelessWidget {
         ],
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -766,8 +767,8 @@ class AboutPage extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
-              fontSize: 12.sp,
-              color: const Color(0xffac0f11),
+              fontSize: 12.sp.adjustedSp,
+              color: Color(0xffac0f11),
             ),
           ),
         ],
@@ -786,16 +787,16 @@ class AboutPage extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontStyle: FontStyle.normal,
-                fontSize: 10.sp,
-                color: const Color(0xff000000),
+                fontSize: 10.sp.adjustedSp,
+                color: Color(0xff000000),
               ),
             ),
           ),
         ],
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -811,8 +812,8 @@ class AboutPage extends StatelessWidget {
               children: [
                 Icon(
                   Icons.favorite_border,
-                  color: const Color(0xffac0f11),
-                  size: 20.sp,
+                  color: Color(0xffac0f11),
+                  size: 20.sp.adjustedSp,
                 ),
                 Text(
                   "Send Interest",
@@ -822,8 +823,8 @@ class AboutPage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    fontSize: 10.sp,
-                    color: const Color(0xff000000),
+                    fontSize: 10.sp.adjustedSp,
+                    color: Color(0xff000000),
                   ),
                 ),
               ],
@@ -838,8 +839,8 @@ class AboutPage extends StatelessWidget {
               children: [
                 Icon(
                   Icons.bookmark_border,
-                  color: const Color(0xffac0f11),
-                  size: 20.sp,
+                  color: Color(0xffac0f11),
+                  size: 20.sp.adjustedSp,
                 ),
                 Text(
                   "Shortlist",
@@ -848,8 +849,8 @@ class AboutPage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    fontSize: 10.sp,
-                    color: const Color(0xff000000),
+                    fontSize: 10.sp.adjustedSp,
+                    color: Color(0xff000000),
                   ),
                 ),
               ],
@@ -865,7 +866,7 @@ class AboutPage extends StatelessWidget {
                 Icon(
                   MdiIcons.whatsapp,
                   color: AppColors.alternate,
-                  size: 20.sp,
+                  size: 20.sp.adjustedSp,
                 ),
                 Text(
                   "Whatsapp",
@@ -874,8 +875,8 @@ class AboutPage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    fontSize: 10.sp,
-                    color: const Color(0xff000000),
+                    fontSize: 10.sp.adjustedSp,
+                    color: Color(0xff000000),
                   ),
                 ),
               ],
@@ -890,8 +891,8 @@ class AboutPage extends StatelessWidget {
               children: [
                 Icon(
                   MdiIcons.chatProcessingOutline,
-                  color: const Color(0xff212435),
-                  size: 20.sp,
+                  color: Color(0xff212435),
+                  size: 20.sp.adjustedSp,
                 ),
                 Text(
                   "Chat Now",
@@ -900,8 +901,8 @@ class AboutPage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    fontSize: 10.sp,
-                    color: const Color(0xff000000),
+                    fontSize: 10.sp.adjustedSp,
+                    color: Color(0xff000000),
                   ),
                 ),
               ],
@@ -910,8 +911,8 @@ class AboutPage extends StatelessWidget {
         ],
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -925,13 +926,13 @@ class AboutPage extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.normal,
-              fontSize: 12.sp,
-              color: const Color(0xff000000),
+              fontSize: 12.sp.adjustedSp,
+              color: Color(0xff000000),
             ),
           ),
           SizedBox(
-            height: 16.sp,
-            width: 16.sp,
+            height: 16.sp.adjustedSp,
+            width: 16.sp.adjustedSp,
           ),
           Text(
             "View All ",
@@ -940,15 +941,15 @@ class AboutPage extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.normal,
-              fontSize: 10.sp,
-              color: const Color(0xffac0f11),
+              fontSize: 10.sp.adjustedSp,
+              color: Color(0xffac0f11),
             ),
           ),
         ],
       ),
       SizedBox(
-        height: 8.sp,
-        width: 16.sp,
+        height: 8.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -962,15 +963,15 @@ class AboutPage extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w400,
               fontStyle: FontStyle.normal,
-              fontSize: 10.sp,
-              color: const Color(0xff000000),
+              fontSize: 10.sp.adjustedSp,
+              color: Color(0xff000000),
             ),
           ),
         ],
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -978,20 +979,20 @@ class AboutPage extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0.sp.adjustedSp),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: [
                 CircleAvatar(
-                  radius: 30.sp,
+                  radius: 30.sp.adjustedSp,
                   backgroundImage:
-                      const NetworkImage("https://picsum.photos/250?image=9"),
+                      NetworkImage("https://picsum.photos/250?image=9"),
                 ),
                 SizedBox(
-                  height: 8.sp,
-                  width: 8.sp,
+                  height: 8.sp.adjustedSp,
+                  width: 8.sp.adjustedSp,
                 ),
                 Text(
                   "HPR123456",
@@ -1000,8 +1001,8 @@ class AboutPage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.normal,
-                    fontSize: 12.sp,
-                    color: const Color(0xff000000),
+                    fontSize: 12.sp.adjustedSp,
+                    color: Color(0xff000000),
                   ),
                 ),
                 Text(
@@ -1011,28 +1012,28 @@ class AboutPage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    fontSize: 10.sp,
-                    color: const Color(0xff000000),
+                    fontSize: 10.sp.adjustedSp,
+                    color: Color(0xff000000),
                   ),
                 ),
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0.sp.adjustedSp),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: [
                 CircleAvatar(
-                  radius: 30.sp,
+                  radius: 30.sp.adjustedSp,
                   backgroundImage:
-                      const NetworkImage("https://picsum.photos/250?image=9"),
+                      NetworkImage("https://picsum.photos/250?image=9"),
                 ),
                 SizedBox(
-                  height: 8.sp,
-                  width: 8.sp,
+                  height: 8.sp.adjustedSp,
+                  width: 8.sp.adjustedSp,
                 ),
                 Text(
                   "HPR123456",
@@ -1041,8 +1042,8 @@ class AboutPage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.normal,
-                    fontSize: 12.sp,
-                    color: const Color(0xff000000),
+                    fontSize: 12.sp.adjustedSp,
+                    color: Color(0xff000000),
                   ),
                 ),
                 Text(
@@ -1052,8 +1053,8 @@ class AboutPage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    fontSize: 10.sp,
-                    color: const Color(0xff000000),
+                    fontSize: 10.sp.adjustedSp,
+                    color: Color(0xff000000),
                   ),
                 ),
               ],
@@ -1062,17 +1063,17 @@ class AboutPage extends StatelessWidget {
         ],
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Card(
-        margin: const EdgeInsets.all(4.0),
-        color: const Color(0xffffffff),
-        shadowColor: const Color(0xff000000),
+        margin: EdgeInsets.all(4.0.sp.adjustedSp),
+        color: Color(0xffffffff),
+        shadowColor: Color(0xff000000),
         elevation: 3,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4.0),
-          side: const BorderSide(color: Color(0x4d9e9e9e), width: 1),
+          borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+          side: BorderSide(color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -1080,7 +1081,7 @@ class AboutPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsets.all(8.sp),
+              padding: EdgeInsets.all(8.sp.adjustedSp),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -1093,31 +1094,32 @@ class AboutPage extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontStyle: FontStyle.normal,
-                      fontSize: 12.sp,
-                      color: const Color(0xff000000),
+                      fontSize: 12.sp.adjustedSp,
+                      color: Color(0xff000000),
                     ),
                   ),
                 ],
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(4),
+              margin: EdgeInsets.all(4.sp.adjustedSp),
               padding: EdgeInsets.zero,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                color: const Color(0xffffffff),
+                color: Color(0xffffffff),
                 shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(8.0),
-                border: Border.all(color: const Color(0x4d9e9e9e), width: 1),
+                borderRadius: BorderRadius.circular(8.0.sp.adjustedSp),
+                border: Border.all(
+                    color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
               ),
               child: Padding(
-                padding: EdgeInsets.all(8.sp),
+                padding: EdgeInsets.all(8.sp.adjustedSp),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    const Text(
+                    Text(
                       "Up to 55% off",
                       textAlign: TextAlign.start,
                       overflow: TextOverflow.clip,
@@ -1129,8 +1131,8 @@ class AboutPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 8.sp,
-                      width: 16.sp,
+                      height: 8.sp.adjustedSp,
+                      width: 16.sp.adjustedSp,
                     ),
                     Text(
                       "Ending in 02:00:55 hrs",
@@ -1139,13 +1141,13 @@ class AboutPage extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
-                        fontSize: 12.sp,
-                        color: const Color(0xffac0f11),
+                        fontSize: 12.sp.adjustedSp,
+                        color: Color(0xffac0f11),
                       ),
                     ),
                     SizedBox(
-                      height: 8.sp,
-                      width: 16.sp,
+                      height: 8.sp.adjustedSp,
+                      width: 16.sp.adjustedSp,
                     ),
                     Text(
                       "Upgrade your membership and get 55% discount",
@@ -1154,30 +1156,30 @@ class AboutPage extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
-                        fontSize: 10.sp,
-                        color: const Color(0xff000000),
+                        fontSize: 10.sp.adjustedSp,
+                        color: Color(0xff000000),
                       ),
                     ),
                     SizedBox(
-                      height: 16.sp,
-                      width: 16.sp,
+                      height: 16.sp.adjustedSp,
+                      width: 16.sp.adjustedSp,
                     ),
                     MaterialButton(
                       onPressed: () {},
-                      color: const Color(0xff018601),
+                      color: Color(0xff018601),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4.0),
+                        borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                       ),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 8),
-                      textColor: const Color(0xff000000),
-                      height: 38.sp,
-                      minWidth: 138.sp,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      textColor: Color(0xff000000),
+                      height: 38.sp.adjustedSp,
+                      minWidth: 138.sp.adjustedSp,
                       child: Text(
                         "Upgrade Now",
                         style: TextStyle(
-                          fontSize: 12.sp,
+                          fontSize: 12.sp.adjustedSp,
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           color: Colors.white,
@@ -1199,64 +1201,73 @@ class AboutPage extends StatelessWidget {
           }),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return ConstrainedBox(
-                constraints:
-                    BoxConstraints(maxWidth: snapshot.data! ? 700 : 100.w),
-                child: CustomScrollView(
-                  slivers: [
-                    SliverAppBar(
-                      pinned: false,
-                      automaticallyImplyLeading: false,
-                      expandedHeight: 50.h,
-                      backgroundColor: Colors.transparent,
-                      flexibleSpace: FlexibleSpaceBar(
-                          background: CarouselSlider(
-                        items: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.network(
-                                  'https://picsum.photos/250?image=9',
-                                  fit: BoxFit.cover,
-                                )),
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ConstrainedBox(
+                    constraints:
+                        BoxConstraints(maxWidth: snapshot.data! ? 700 : 100.w),
+                    child: CustomScrollView(
+                      slivers: [
+                        SliverAppBar(
+                          pinned: false,
+                          automaticallyImplyLeading: false,
+                          expandedHeight: 50.h,
+                          backgroundColor: Colors.transparent,
+                          flexibleSpace: FlexibleSpaceBar(
+                              background: CarouselSlider(
+                            items: [
+                              Padding(
+                                padding: EdgeInsets.all(8.0.sp.adjustedSp),
+                                child: ClipRRect(
+                                    borderRadius:
+                                        BorderRadius.circular(8.0.sp.adjustedSp),
+                                    child: Image.network(
+                                      'https://picsum.photos/250?image=9',
+                                      fit: BoxFit.cover,
+                                    )),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(8.0.sp.adjustedSp),
+                                child: ClipRRect(
+                                    borderRadius:
+                                        BorderRadius.circular(8.0.sp.adjustedSp),
+                                    child: Image.network(
+                                      'https://picsum.photos/250?image=9',
+                                      fit: BoxFit.cover,
+                                    )),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(8.0.sp.adjustedSp),
+                                child: ClipRRect(
+                                    borderRadius:
+                                        BorderRadius.circular(8.0.sp.adjustedSp),
+                                    child: Image.network(
+                                      'https://picsum.photos/250?image=9',
+                                      fit: BoxFit.cover,
+                                    )),
+                              ),
+                            ],
+                            options: CarouselOptions(viewportFraction: 0.5),
+                          )),
+                        ),
+                        SliverList(
+                          delegate: SliverChildBuilderDelegate(
+                            (BuildContext context, int index) {
+                              return Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 16.sp.adjustedSp,
+                                    vertical: 8.0.sp.adjustedSp),
+                                child: sliverItems[index],
+                              );
+                            },
+                            childCount: sliverItems.length,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.network(
-                                  'https://picsum.photos/250?image=9',
-                                  fit: BoxFit.cover,
-                                )),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.network(
-                                  'https://picsum.photos/250?image=9',
-                                  fit: BoxFit.cover,
-                                )),
-                          ),
-                        ],
-                        options: CarouselOptions(viewportFraction: 0.5),
-                      )),
+                        )
+                      ],
                     ),
-                    SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (BuildContext context, int index) {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 8.0),
-                            child: sliverItems[index],
-                          );
-                        },
-                        childCount: sliverItems.length,
-                      ),
-                    )
-                  ],
-                ),
+                  ),
+                ],
               );
             }
             return Container();

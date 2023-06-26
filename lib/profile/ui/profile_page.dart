@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
+import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:himachali_rishta/profile/ui/AboutPage.dart';
 import 'package:himachali_rishta/profile/ui/PartnerPreferenceTab.dart';
 import 'package:sizer/sizer.dart';
@@ -34,7 +35,7 @@ class ProfilePage extends StatelessWidget {
                         )),
                     Text(
                       "HRP123456",
-                      style: TextStyle(fontSize: 16.sp),
+                      style: TextStyle(fontSize: 16.sp.adjustedSp),
                     ),
                     Expanded(
                       child: Row(
@@ -58,18 +59,20 @@ class ProfilePage extends StatelessWidget {
                   child: Text(
                     'About',
                     style: TextStyle(
-                        color: Theme.of(context).primaryColor, fontSize: 16.sp),
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 16.sp.adjustedSp),
                   ),
                 ),
                 Tab(
                   child: Text(
                     'Partner Preference',
                     style: TextStyle(
-                        color: Theme.of(context).primaryColor, fontSize: 13.sp),
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 13.sp.adjustedSp),
                   ),
                 ),
               ]),
-              const Expanded(
+              Expanded(
                 child: TabBarView(
                   children: [
                     AboutPage(),
@@ -84,16 +87,16 @@ class ProfilePage extends StatelessWidget {
             children: [
               Expanded(
                 child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 32.sp, vertical: 8.sp),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 32.sp.adjustedSp, vertical: 8.sp.adjustedSp),
                   child: MaterialButton(
                     onPressed: () {},
                     color: AppColors.alternate,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4.0.sp),
+                      borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                     ),
-                    height: 38.sp,
-                    minWidth: 138.sp,
+                    height: 38.sp.adjustedSp,
+                    minWidth: 138.sp.adjustedSp,
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -113,5 +116,6 @@ class ProfilePage extends StatelessWidget {
             ],
           ),
         ));
+    ;
   }
 }
