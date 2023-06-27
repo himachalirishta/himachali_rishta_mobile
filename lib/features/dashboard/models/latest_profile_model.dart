@@ -39,6 +39,21 @@ class LatestProfileModel {
     required this.total,
   });
 
+  LatestProfileModel.empty() :
+        currentPage = 0,
+        data = [],
+        firstPageUrl = '',
+        from = 0,
+        lastPage = 0,
+        lastPageUrl = '',
+        links = [],
+        nextPageUrl = '',
+        path = '',
+        perPage = 0,
+        prevPageUrl = '',
+        to = 0,
+        total = 0;
+
   LatestProfileModel copyWith({
     int? currentPage,
     List<Datum>? data,
@@ -128,6 +143,18 @@ class Datum {
     this.image,
   });
 
+  Datum.empty() :
+        matriId = '',
+        name = '',
+        hometown = '',
+        age = '',
+        martialStatus = MartialStatus.UNMARRID,
+        gender = Gender.MALE,
+        education = '',
+        occupation = '',
+        livingCityName = '',
+        image = '';
+
   Datum copyWith({
     String? matriId,
     String? name,
@@ -206,6 +233,11 @@ class Link {
     required this.label,
     required this.active,
   });
+
+  Link.empty() :
+        url = '',
+        label = '',
+        active = false;
 
   Link copyWith({
     String? url,

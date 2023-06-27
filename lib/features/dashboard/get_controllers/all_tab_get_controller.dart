@@ -3,6 +3,11 @@ import 'package:himachali_rishta/features/dashboard/models/latest_profile_model.
 import 'package:http/http.dart' as http;
 
 class AllTabGetController extends GetxController {
+  final String accessToken;
+  Rx<LatestProfileModel> latestProfileModel = LatestProfileModel.empty().obs;
+
+  AllTabGetController(this.accessToken);
+
   Future<LatestProfileModel> getLatestProfiles(String accessToken) async {
     var headers = {
       'Authorization': 'Bearer $accessToken',
@@ -16,13 +21,20 @@ class AllTabGetController extends GetxController {
 
     if (response.statusCode == 200) {
       print("Response Code 200");
-      LatestProfileModel latestProfileModel =
+      latestProfileModel.value =
           latestProfileModelFromJson(await response.stream.bytesToString());
+
       print("Latest Profiles number");
-      print(latestProfileModel.data.length);
-      return latestProfileModel;
+      print(latestProfileModel.value.data.length);
+      return latestProfileModel.value;
     } else {
       throw response.reasonPhrase.toString();
     }
+  }
+
+  @override
+  void onInit() {
+    getLatestProfiles(accessToken);
+    super.onInit();
   }
 }
