@@ -13,6 +13,7 @@ import 'package:himachali_rishta/features/membership/ui/membership_plan_page.dar
 import 'package:himachali_rishta/features/profile_settings/ui/profile_settings_free_page.dart';
 import 'package:himachali_rishta/features/search/ui/SearchPage.dart';
 import 'package:himachali_rishta/features/upload_photo/ui/manage_photos_page.dart';
+import 'package:himachali_rishta/features/verify_profile/ui/verify_profile_page.dart';
 import 'package:himachali_rishta/profile/ui/MyProfilePage.dart';
 import 'package:sizer/sizer.dart';
 
@@ -144,6 +145,12 @@ class IndexPage extends StatelessWidget {
         title: Text('My Profile', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
           Get.to(() => MyAccountPage());
+        },
+      ),
+      ListTile(
+        title: Text('Verify Profile', style: TextStyle(fontSize: 12.sp)),
+        onTap: () {
+          Get.to(() => VerifyProfilePage());
         },
       ),
     ];
