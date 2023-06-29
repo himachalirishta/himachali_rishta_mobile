@@ -20,12 +20,12 @@ class SideOptionDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 100.h,
-        width: 75.w,
+        width: 75.w.adjustedW,
         color: Colors.white,
         child: Column(
           children: [
             Container(
-              width: 75.w,
+              width: 75.w.adjustedW,
               height: 10.h,
               alignment: Alignment.center,
               child: Image.asset("assets/images/homepagelogo.jpg"),
@@ -33,27 +33,27 @@ class SideOptionDrawer extends StatelessWidget {
             Divider(
               thickness: 2,
               color: AppColors.secondaryLight,
-              indent: 15.sp,
-              endIndent: 15.sp,
+              indent: 15.sp.adjustedSp,
+              endIndent: 15.sp.adjustedSp,
             ),
             SizedBox(
-              height: 2.h,
+              height: 2.sp.adjustedSp,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.0.sp),
+              padding: EdgeInsets.symmetric(horizontal: 8.0.sp.adjustedSp),
               child: TextFormField(
                 controller: getController.searchController.value,
                 decoration: InputDecoration(
                   hintText: "Search",
                   prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.sp),
+                    borderRadius: BorderRadius.circular(10.sp.adjustedSp),
                   ),
                 ),
               ),
             ),
             SizedBox(
-              height: 2.h,
+              height: 2.sp.adjustedSp,
             ),
             Expanded(
               child: ListView.builder(
@@ -72,7 +72,7 @@ class SideOptionDrawer extends StatelessWidget {
                               child: Text(
                                 options[index],
                                 style: TextStyle(
-                                    fontSize: 12.sp,
+                                    fontSize: 12.sp.adjustedSp,
                                     color: Colors.black,
                                     fontWeight: FontWeight.w500),
                               ),
@@ -84,8 +84,8 @@ class SideOptionDrawer extends StatelessWidget {
                           Divider(
                             color: AppColors.infoLight.withOpacity(0.3),
                             thickness: 1,
-                            indent: 15.sp,
-                            endIndent: 15.sp,
+                            indent: 15.sp.adjustedSp,
+                            endIndent: 15.sp.adjustedSp,
                           ),
                         ],
                       ),
