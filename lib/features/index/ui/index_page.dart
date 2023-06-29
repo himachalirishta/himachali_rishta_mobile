@@ -153,6 +153,12 @@ class IndexPage extends StatelessWidget {
           Get.to(() => VerifyProfilePage());
         },
       ),
+      ListTile(
+        title: Text('Search', style: TextStyle(fontSize: 12.sp)),
+        onTap: () {
+          Get.to(() => SearchPage());
+        },
+      ),
     ];
     return Scaffold(
         appBar: AppBar(
