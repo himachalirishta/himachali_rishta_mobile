@@ -49,230 +49,249 @@ class MainDashboardPage extends StatelessWidget {
                   children: [
                     ConstrainedBox(
                       constraints: BoxConstraints(
-
-                          maxWidth: snapshot.data!? 700: 100.w),
-                      child: Padding(
-                        padding: EdgeInsets.all(8),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            SizedBox(
-                              height: 50.sp.adjustedSp,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
+                        maxWidth: snapshot.data! ? 700 : 100.w,
+                      ),
+                      child: Scaffold(
+                          body: Padding(
+                            padding: EdgeInsets.all(8.sp.adjustedSp),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                SizedBox(
+                                  height: 50.sp.adjustedSp,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Builder(builder: (context) {
-                                        return GestureDetector(
-                                          onTap: () {
-                                            Scaffold.of(context).openDrawer();
-                                          },
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              Icon(
-                                                Icons.menu,
+                                      Row(
+                                        children: [
+                                          Builder(builder: (context) {
+                                            return GestureDetector(
+                                              onTap: () {
+                                                Scaffold.of(context)
+                                                    .openDrawer();
+                                              },
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  Icon(
+                                                    Icons.menu,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 4.sp.adjustedSp,
+                                                  ),
+                                                  Text('Menu'),
+                                                ],
                                               ),
-                                              SizedBox(
-                                                height: 4.sp.adjustedSp,
-                                              ),
-                                              Text('Menu'),
-                                            ],
+                                            );
+                                          }),
+                                          SizedBox(
+                                            width: 8.sp.adjustedSp,
                                           ),
-                                        );
-                                      }),
-                                      SizedBox(
-                                        width: 8,
+                                          Image.asset(
+                                              'assets/images/homepagelogo.jpg'),
+                                          SizedBox(
+                                            width: 8.sp.adjustedSp,
+                                          ),
+                                        ],
                                       ),
-                                      Image.asset('assets/images/homepagelogo.jpg'),
-                                      SizedBox(
-                                        width: 8,
+                                      GestureDetector(
+                                        onTap: () {
+                                          Get.to(() => SearchPage());
+                                        },
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Icon(
+                                              Icons.search,
+                                            ),
+                                            SizedBox(
+                                              height: 4.sp.adjustedSp,
+                                            ),
+                                            Text('Search'),
+                                          ],
+                                        ),
                                       ),
                                     ],
                                   ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Get.to(() => SearchPage());
-                                    },
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Icon(
-                                          Icons.search,
-                                        ),
-                                        SizedBox(
-                                          height: 4.sp.adjustedSp,
-                                        ),
-                                        Text('Search'),
-                                      ],
+                                ),
+                                Container(
+                                  color: Theme.of(context).primaryColor,
+                                  child: TabBar(tabs: [
+                                    Tab(
+                                      text: 'All',
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              color: Theme.of(context).primaryColor,
-                              child: TabBar(tabs: [
-                                Tab(
-                                  text: 'All',
+                                    Tab(
+                                      text: 'Active',
+                                    ),
+                                    Tab(
+                                      text: 'Cold Calls',
+                                    ),
+                                  ]),
                                 ),
-                                Tab(
-                                  text: 'Active',
+                                Expanded(
+                                  flex: 1,
+                                  child: TabBarView(
+                                    children: [
+                                      AllTab(
+                                        accessToken: accessToken,
+                                      ),
+                                      AllTab(
+                                        accessToken: accessToken,
+                                      ),
+                                      AllTab(
+                                        accessToken: accessToken,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                                Tab(
-                                  text: 'Cold Calls',
+                              ],
+                            ),
+                          ),
+                          drawer: Drawer(
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: ListView(
+                                    children: [
+                                      Container(
+                                        height: 50.sp.adjustedSp,
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                      SizedBox(
+                                        height: 2.sp.adjustedSp,
+                                      ),
+                                      CircleAvatar(
+                                        radius: 70.sp.adjustedSp,
+                                        backgroundImage: NetworkImage(
+                                            'https://picsum.photos/250?image=9'),
+                                      ),
+                                      SizedBox(
+                                        height: 20.sp.adjustedSp,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 8.sp.adjustedSp),
+                                        child: Container(
+                                          height: 25.sp.adjustedSp,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(5),
+                                            color: AppColors.lineColor,
+                                          ),
+                                          child: TextFormField(
+                                            decoration: InputDecoration(
+                                                prefixIcon: Icon(Icons.search),
+                                                border: InputBorder.none,
+                                                hintText: 'Search',
+                                                hintStyle: TextStyle(
+                                                    fontSize:
+                                                        18.sp.adjustedSp)),
+                                          ),
+                                        ),
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.home),
+                                        title: Text(
+                                          'My Home',
+                                          style: TextStyle(
+                                              fontSize: 18.sp.adjustedSp),
+                                        ),
+                                      ),
+                                      ListTile(
+                                        leading:
+                                            Icon(Icons.account_tree_outlined),
+                                        title: Text(
+                                          'My Account',
+                                          style: TextStyle(
+                                              fontSize: 18.sp.adjustedSp),
+                                        ),
+                                        onTap: () {
+                                          Get.to(() => MyProfilePage());
+                                        },
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.inbox),
+                                        title: Text(
+                                          'Inbox',
+                                          style: TextStyle(
+                                              fontSize: 18.sp.adjustedSp),
+                                        ),
+                                        onTap: () {
+                                          Get.to(() => InterestPage());
+                                        },
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.home_work),
+                                        title: Text(
+                                          'Membership Plans',
+                                          style: TextStyle(
+                                              fontSize: 18.sp.adjustedSp),
+                                        ),
+                                        onTap: () {
+                                          Get.to(() => MembershipPageFree());
+                                        },
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.person),
+                                        title: Text(
+                                          'Profile',
+                                          style: TextStyle(
+                                              fontSize: 18.sp.adjustedSp),
+                                        ),
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.description),
+                                        title: Text(
+                                          'Index',
+                                          style: TextStyle(
+                                              fontSize: 18.sp.adjustedSp),
+                                        ),
+                                        onTap: () {
+                                          Get.to(() => IndexPage());
+                                        },
+                                      ),
+                                      ListTile(
+                                        leading: Icon(MdiIcons
+                                            .pictureInPictureBottomRight),
+                                        title: Text(
+                                          'Manage Photos',
+                                          style: TextStyle(
+                                              fontSize: 18.sp.adjustedSp),
+                                        ),
+                                        onTap: () {
+                                          Get.to(() => ManagePhotosPage());
+                                        },
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ]),
+                                Divider(
+                                  thickness: 1.5.sp.adjustedSp,
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                                ListTile(
+                                  leading: Icon(Icons.logout),
+                                  title: Text(
+                                    'Logout',
+                                    style:
+                                        TextStyle(fontSize: 18.sp.adjustedSp),
+                                  ),
+                                  onTap: () {
+                                    FirebaseAuth.instance
+                                        .signOut()
+                                        .then((value) {
+                                      Get.offAll(() => LoginPage());
+                                    });
+                                  },
+                                ),
+                              ],
                             ),
-                            Expanded(
-                              flex: 1,
-                              child: TabBarView(
-                                children: [
-                                  AllTab(
-                                    accessToken: accessToken,
-                                  ),
-                                  AllTab(
-                                    accessToken: accessToken,
-                                  ),
-                                  AllTab(
-                                    accessToken: accessToken,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                          )),
                     ),
                   ],
-                ),
-                drawer: Drawer(
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 3.5.h.adjustedH,
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            SizedBox(
-                              height: 2.sp.adjustedSp,
-                            ),
-                            CircleAvatar(
-                              radius: 8.h.adjustedH,
-                              backgroundImage: NetworkImage(
-                                  'https://picsum.photos/250?image=9'),
-                            ),
-                            SizedBox(
-                              height: 1.5.h.adjustedH,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 5.w),
-                              child: Container(
-                                height: 5.h.adjustedH,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  color: AppColors.lineColor,
-                                ),
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                      prefixIcon: Icon(Icons.search),
-                                      border: InputBorder.none,
-                                      hintText: 'Search',
-                                      hintStyle: TextStyle(fontSize: 18)),
-                                ),
-                              ),
-                            ),
-                            ListTile(
-                              leading: Icon(Icons.home),
-                              title: Text(
-                                'My Home',
-                                style: TextStyle(fontSize: 18),
-                              ),
-                            ),
-                            ListTile(
-                              leading: Icon(Icons.account_tree_outlined),
-                              title: Text(
-                                'My Account',
-                                style: TextStyle(fontSize: 18),
-                              ),
-                              onTap: () {
-                                Get.to(() => MyProfilePage());
-                              },
-                            ),
-                            ListTile(
-                              leading: Icon(Icons.inbox),
-                              title: Text(
-                                'Inbox',
-                                style: TextStyle(fontSize: 18),
-                              ),
-                              onTap: () {
-                                Get.to(() => InterestPage());
-                              },
-                            ),
-                            ListTile(
-                              leading: Icon(Icons.home_work),
-                              title: Text(
-                                'Membership Plans',
-                                style: TextStyle(fontSize: 18),
-                              ),
-                              onTap: () {
-                                Get.to(() => MembershipPageFree());
-                              },
-                            ),
-                            ListTile(
-                              leading: Icon(Icons.person),
-                              title: Text(
-                                'Profile',
-                                style: TextStyle(fontSize: 18),
-                              ),
-                            ),
-                            ListTile(
-                              leading: Icon(Icons.description),
-                              title: Text(
-                                'Index',
-                                style: TextStyle(fontSize: 18),
-                              ),
-                              onTap: () {
-                                Get.to(() => IndexPage());
-                              },
-                            ),
-                            ListTile(
-                              leading:
-                                  Icon(MdiIcons.pictureInPictureBottomRight),
-                              title: Text(
-                                'Manage Photos',
-                                style: TextStyle(fontSize: 18),
-                              ),
-                              onTap: () {
-                                Get.to(() => ManagePhotosPage());
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
-                      Divider(
-                        thickness: 2,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.logout),
-                        title: Text(
-                          'Logout',
-                          style: TextStyle(fontSize: 18),
-                        ),
-                        onTap: () {
-                          FirebaseAuth.instance.signOut().then((value) {
-                            Get.offAll(() => LoginPage());
-                          });
-                        },
-                      ),
-                    ],
-                  ),
                 ),
               );
             }
