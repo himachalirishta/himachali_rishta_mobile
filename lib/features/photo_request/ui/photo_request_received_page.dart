@@ -156,11 +156,24 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                                     children: [
                                       Row(
                                         children: [
-                                          CircleAvatar(
-                                            radius: 30.sp.adjustedSp,
-                                            backgroundImage: AssetImage(
-                                              'assets/images/femaledefault.jpg',
-                                            ),
+                                          Stack(
+                                            children: [
+                                              CircleAvatar(
+                                                radius: 30.sp.adjustedSp,
+                                                backgroundImage: AssetImage(
+                                                  'assets/images/femaledefault.jpg',
+                                                ),
+                                              ),
+                                              Positioned(
+                                                bottom: 0,
+                                                right: 0,
+                                                child: CircleAvatar(
+                                                  radius: 8.sp.adjustedSp,
+                                                  backgroundColor:
+                                                      AppColors.green,
+                                                ),
+                                              )
+                                            ],
                                           ),
                                           SizedBox(
                                             width: 8.sp.adjustedSp,
