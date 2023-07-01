@@ -15,6 +15,7 @@ import 'package:himachali_rishta/features/search/ui/SearchPage.dart';
 import 'package:himachali_rishta/features/upload_photo/ui/manage_photos_page.dart';
 import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:himachali_rishta/profile/ui/MyProfilePage.dart';
+import 'package:himachali_rishta/widgets/dashboard_app_bar.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sizer/sizer.dart';
 
@@ -59,64 +60,7 @@ class MainDashboardPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                SizedBox(
-                                  height: 50.sp.adjustedSp,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Builder(builder: (context) {
-                                            return GestureDetector(
-                                              onTap: () {
-                                                Scaffold.of(context)
-                                                    .openDrawer();
-                                              },
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [
-                                                  Icon(
-                                                    Icons.menu,
-                                                  ),
-                                                  SizedBox(
-                                                    height: 4.sp.adjustedSp,
-                                                  ),
-                                                  Text('Menu'),
-                                                ],
-                                              ),
-                                            );
-                                          }),
-                                          SizedBox(
-                                            width: 8.sp.adjustedSp,
-                                          ),
-                                          Image.asset(
-                                              'assets/images/homepagelogo.jpg'),
-                                          SizedBox(
-                                            width: 8.sp.adjustedSp,
-                                          ),
-                                        ],
-                                      ),
-                                      GestureDetector(
-                                        onTap: () {
-                                          Get.to(() => SearchPage());
-                                        },
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Icon(
-                                              Icons.search,
-                                            ),
-                                            SizedBox(
-                                              height: 4.sp.adjustedSp,
-                                            ),
-                                            Text('Search'),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                DashboardAppBar(),
                                 Container(
                                   color: Theme.of(context).primaryColor,
                                   child: TabBar(tabs: [
