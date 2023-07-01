@@ -10,6 +10,7 @@ import 'package:himachali_rishta/features/interest/ui/InterestPage.dart';
 import 'package:himachali_rishta/features/membership/ui/MembershipPageFree.dart';
 import 'package:himachali_rishta/features/membership/ui/membership_page_paid.dart';
 import 'package:himachali_rishta/features/membership/ui/membership_plan_page.dart';
+import 'package:himachali_rishta/features/photo_request/ui/photo_request_received_page.dart';
 import 'package:himachali_rishta/features/profile_settings/ui/profile_settings_free_page.dart';
 import 'package:himachali_rishta/features/search/ui/SearchPage.dart';
 import 'package:himachali_rishta/features/upload_photo/ui/manage_photos_page.dart';
@@ -157,6 +158,12 @@ class IndexPage extends StatelessWidget {
         title: Text('Search', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
           Get.to(() => SearchPage());
+        },
+      ),
+      ListTile(
+        title: Text('Photo Request', style: TextStyle(fontSize: 12.sp)),
+        onTap: () {
+          Get.to(() => PhotoRequestReceivedPage());
         },
       ),
     ];
