@@ -11,7 +11,6 @@ import 'package:himachali_rishta/features/dashboard/ui/all_tab.dart';
 import 'package:himachali_rishta/features/index/ui/index_page.dart';
 import 'package:himachali_rishta/features/interest/ui/InterestPage.dart';
 import 'package:himachali_rishta/features/membership/ui/MembershipPageFree.dart';
-import 'package:himachali_rishta/features/search/ui/SearchPage.dart';
 import 'package:himachali_rishta/features/upload_photo/ui/manage_photos_page.dart';
 import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:himachali_rishta/profile/ui/MyProfilePage.dart';
@@ -100,15 +99,11 @@ class MainDashboardPage extends StatelessWidget {
                                 Expanded(
                                   child: ListView(
                                     children: [
-                                      Container(
-                                        height: 50.sp.adjustedSp,
-                                        color: Theme.of(context).primaryColor,
-                                      ),
                                       SizedBox(
                                         height: 2.sp.adjustedSp,
                                       ),
                                       CircleAvatar(
-                                        radius: 70.sp.adjustedSp,
+                                        radius: 50.sp.adjustedSp,
                                         backgroundImage: NetworkImage(
                                             'https://picsum.photos/250?image=9'),
                                       ),
@@ -118,21 +113,25 @@ class MainDashboardPage extends StatelessWidget {
                                       Padding(
                                         padding: EdgeInsets.symmetric(
                                             horizontal: 8.sp.adjustedSp),
-                                        child: Container(
-                                          height: 25.sp.adjustedSp,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(5),
-                                            color: AppColors.lineColor,
-                                          ),
-                                          child: TextFormField(
-                                            decoration: InputDecoration(
-                                                prefixIcon: Icon(Icons.search),
-                                                border: InputBorder.none,
-                                                hintText: 'Search',
-                                                hintStyle: TextStyle(
-                                                    fontSize:
-                                                        18.sp.adjustedSp)),
+                                        child: TextFormField(
+                                          decoration: InputDecoration(
+                                            prefixIcon: Icon(Icons.search),
+                                            border: OutlineInputBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      8.sp.adjustedSp),
+                                              borderSide: BorderSide.none,
+                                            ),
+                                            contentPadding:
+                                                EdgeInsets.symmetric(
+                                                    vertical: 12.0,
+                                                    horizontal: 16.0),
+                                            hintText: 'Search',
+                                            hintStyle: TextStyle(
+                                                fontSize: 14.0.sp.adjustedSp,
+                                                fontWeight: FontWeight.w500),
+                                            fillColor: AppColors.lineColor,
+                                            filled: true,
                                           ),
                                         ),
                                       ),
@@ -141,7 +140,7 @@ class MainDashboardPage extends StatelessWidget {
                                         title: Text(
                                           'My Home',
                                           style: TextStyle(
-                                              fontSize: 18.sp.adjustedSp),
+                                              fontSize: 16.sp.adjustedSp),
                                         ),
                                       ),
                                       ListTile(
@@ -150,7 +149,7 @@ class MainDashboardPage extends StatelessWidget {
                                         title: Text(
                                           'My Account',
                                           style: TextStyle(
-                                              fontSize: 18.sp.adjustedSp),
+                                              fontSize: 16.sp.adjustedSp),
                                         ),
                                         onTap: () {
                                           Get.to(() => MyProfilePage());
@@ -161,7 +160,7 @@ class MainDashboardPage extends StatelessWidget {
                                         title: Text(
                                           'Inbox',
                                           style: TextStyle(
-                                              fontSize: 18.sp.adjustedSp),
+                                              fontSize: 16.sp.adjustedSp),
                                         ),
                                         onTap: () {
                                           Get.to(() => InterestPage());
@@ -172,7 +171,7 @@ class MainDashboardPage extends StatelessWidget {
                                         title: Text(
                                           'Membership Plans',
                                           style: TextStyle(
-                                              fontSize: 18.sp.adjustedSp),
+                                              fontSize: 16.sp.adjustedSp),
                                         ),
                                         onTap: () {
                                           Get.to(() => MembershipPageFree());
@@ -183,7 +182,7 @@ class MainDashboardPage extends StatelessWidget {
                                         title: Text(
                                           'Profile',
                                           style: TextStyle(
-                                              fontSize: 18.sp.adjustedSp),
+                                              fontSize: 16.sp.adjustedSp),
                                         ),
                                       ),
                                       ListTile(
@@ -191,7 +190,7 @@ class MainDashboardPage extends StatelessWidget {
                                         title: Text(
                                           'Index',
                                           style: TextStyle(
-                                              fontSize: 18.sp.adjustedSp),
+                                              fontSize: 16.sp.adjustedSp),
                                         ),
                                         onTap: () {
                                           Get.to(() => IndexPage());
@@ -203,7 +202,7 @@ class MainDashboardPage extends StatelessWidget {
                                         title: Text(
                                           'Manage Photos',
                                           style: TextStyle(
-                                              fontSize: 18.sp.adjustedSp),
+                                              fontSize: 16.sp.adjustedSp),
                                         ),
                                         onTap: () {
                                           Get.to(() => ManagePhotosPage());
@@ -221,7 +220,7 @@ class MainDashboardPage extends StatelessWidget {
                                   title: Text(
                                     'Logout',
                                     style:
-                                        TextStyle(fontSize: 18.sp.adjustedSp),
+                                        TextStyle(fontSize: 16.sp.adjustedSp),
                                   ),
                                   onTap: () {
                                     FirebaseAuth.instance
