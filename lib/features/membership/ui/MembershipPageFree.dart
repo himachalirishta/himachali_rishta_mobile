@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/membership/ui/membership_plan_page.dart';
+import 'package:himachali_rishta/widgets/profile_card.dart';
 import 'package:sizer/sizer.dart';
 
 class MembershipPageFree extends StatelessWidget {
@@ -58,125 +59,7 @@ class MembershipPageFree extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Container(
-                      margin: EdgeInsets.zero,
-                      padding: EdgeInsets.zero,
-                      width: 100.w,
-                      decoration: const BoxDecoration(
-                        color: Color(0xffffffff),
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.zero,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                CircleAvatar(
-                                  radius: 30.sp,
-                                  backgroundImage: const NetworkImage(
-                                      "https://picsum.photos/250?image=9"),
-                                ),
-                                SizedBox(
-                                  height: 16.sp,
-                                  width: 16.sp,
-                                ),
-                                Expanded(
-                                  flex: 1,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Text(
-                                        "Neha Sharma",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.clip,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle: FontStyle.normal,
-                                          fontSize: 18.sp,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 8.sp,
-                                        width: 16.sp,
-                                      ),
-                                      Text(
-                                        "Matri ID: HPR345677",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.clip,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle: FontStyle.normal,
-                                          fontSize: 10.sp,
-                                          color: const Color(0xffac0f11),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 8.sp,
-                                        width: 16.sp,
-                                      ),
-                                      Text(
-                                        "Relationship Manager:",
-                                        textAlign: TextAlign.start,
-                                        overflow: TextOverflow.clip,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w400,
-                                          fontStyle: FontStyle.normal,
-                                          fontSize: 10.sp,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 16.sp,
-                              width: 16.sp,
-                            ),
-                            Text(
-                              "My Profile's Relationship Manager:",
-                              textAlign: TextAlign.start,
-                              overflow: TextOverflow.clip,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FontStyle.normal,
-                                fontSize: 12.sp,
-                                color: const Color(0xffac0f11),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 8.sp,
-                              width: 16.sp,
-                            ),
-                            Text(
-                              "Miss Priya Chaudhary (Mob. 9876543210)",
-                              textAlign: TextAlign.start,
-                              overflow: TextOverflow.clip,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontStyle: FontStyle.normal,
-                                fontSize: 10.sp,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 8.sp,
-                              width: 16.sp,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    ProfileCard(),
                     SizedBox(
                       height: 16.sp,
                       width: 16.sp,

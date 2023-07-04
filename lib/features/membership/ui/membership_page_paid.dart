@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:himachali_rishta/widgets/profile_card.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/app_colors.dart';
@@ -53,7 +54,8 @@ class MembershipPagePaid extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Container(
+                    ProfileCard(),
+                    /*Container(
                       margin: EdgeInsets.zero,
                       padding: EdgeInsets.zero,
                       width: 100.w,
@@ -171,7 +173,7 @@ class MembershipPagePaid extends StatelessWidget {
                           ],
                         ),
                       ),
-                    ),
+                    ),*/
                     SizedBox(
                       height: 16.sp,
                       width: 16.sp,
