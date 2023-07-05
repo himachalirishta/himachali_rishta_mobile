@@ -2,10 +2,10 @@
 
 ///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
 
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/helpers/dimension_helper.dart';
+import 'package:himachali_rishta/widgets/profile_card.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sizer/sizer.dart';
 
@@ -15,141 +15,7 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> sliverItems = [
-      Container(
-        margin: EdgeInsets.zero,
-        padding: EdgeInsets.zero,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          color: Color(0xffffffff),
-          shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.zero,
-          border: Border.all(color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(8.sp.adjustedSp),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  ///***If you have exported images you must have to copy those images in assets/images directory.
-                  CircleAvatar(
-                    backgroundImage:
-                        NetworkImage("https://picsum.photos/250?image=9"),
-                    radius: 40.sp.adjustedSp,
-                  ),
-
-                  SizedBox(
-                    height: 4.sp.adjustedSp,
-                    width: 8.sp.adjustedSp,
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Text(
-                          "Neha Sharma",
-                          textAlign: TextAlign.start,
-                          overflow: TextOverflow.clip,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 18,
-                            color: Color(0xff000000),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 4.sp.adjustedSp,
-                          width: 16.sp.adjustedSp,
-                        ),
-                        Text(
-                          "Matri ID: HRP345677",
-                          textAlign: TextAlign.start,
-                          overflow: TextOverflow.clip,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 12.sp.adjustedSp,
-                            color: Color(0xffac0f11),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 4.sp.adjustedSp,
-                          width: 16.sp.adjustedSp,
-                        ),
-                        Text(
-                          "Relationship Manager:",
-                          textAlign: TextAlign.start,
-                          overflow: TextOverflow.clip,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 12.sp.adjustedSp,
-                            color: Color(0xff000000),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 4.sp.adjustedSp,
-                width: 16.sp.adjustedSp,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Text(
-                    "My Profile's Relationship Manager:",
-                    textAlign: TextAlign.start,
-                    overflow: TextOverflow.clip,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontStyle: FontStyle.normal,
-                      fontSize: 14.sp.adjustedSp,
-                      color: Color(0xffac0f11),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 4.sp.adjustedSp,
-                width: 16.sp.adjustedSp,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Text(
-                    "Miss Priya Choudhary (Mob. 9876543210)",
-                    textAlign: TextAlign.start,
-                    overflow: TextOverflow.clip,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.normal,
-                      fontSize: 12.sp.adjustedSp,
-                      color: Color(0xff000000),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-      
+      ProfileCard(),
       Container(
         margin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
@@ -270,7 +136,6 @@ class AboutPage extends StatelessWidget {
           ),
         ),
       ),
-      
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -299,56 +164,65 @@ class AboutPage extends StatelessWidget {
           TableRow(children: [
             Text(
               'Age',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               '24 yrs',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Marital Status',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'Unmarried',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Height',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               '5ft 4inch',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Religion',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'Hindu',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Profile managed by',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'Parents',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
         ],
       ),
-      
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -377,46 +251,53 @@ class AboutPage extends StatelessWidget {
           TableRow(children: [
             Text(
               'Education',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'B.Tech',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Occupation',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'Software Developer',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Employed in',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'Private Company',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Occupation Type',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'Private Job',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
         ],
       ),
-      
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -445,46 +326,53 @@ class AboutPage extends StatelessWidget {
           TableRow(children: [
             Text(
               'Father Occupation',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'Retired Govt. Employee',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Mother Occupation',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'House Wife',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Brothers',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               '2 elders, 2 younger',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Sisters',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               '1 younger',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
         ],
       ),
-      
       Container(
         margin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
@@ -554,7 +442,6 @@ class AboutPage extends StatelessWidget {
           ),
         ),
       ),
-      
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -583,56 +470,65 @@ class AboutPage extends StatelessWidget {
           TableRow(children: [
             Text(
               'Living City',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'Mumbai',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Home Town',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'Delhi',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Mobile Number',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               '+919876543210',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Whatsapp Number',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               '+919876543210',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Email Address',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'email@gmail.com',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
         ],
       ),
-      
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -661,56 +557,65 @@ class AboutPage extends StatelessWidget {
           TableRow(children: [
             Text(
               'Living City',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'Mumbai',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Home Town',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'Delhi',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Mobile Number',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               '+919876543210',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Whatsapp Number',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               '+919876543210',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
           TableRow(children: [
             Text(
               'Email Address',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
             Text(
               'email@gmail.com',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
+              style: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 12.sp.adjustedSp),
             ),
           ]),
         ],
       ),
-      
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -750,7 +655,6 @@ class AboutPage extends StatelessWidget {
           ),
         ],
       ),
-      
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -863,7 +767,6 @@ class AboutPage extends StatelessWidget {
           ),
         ],
       ),
-      
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -897,7 +800,6 @@ class AboutPage extends StatelessWidget {
           ),
         ],
       ),
-      
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -916,7 +818,6 @@ class AboutPage extends StatelessWidget {
           ),
         ],
       ),
-      
       Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -1006,7 +907,6 @@ class AboutPage extends StatelessWidget {
           ),
         ],
       ),
-      
       Card(
         margin: EdgeInsets.all(4.0.sp.adjustedSp),
         color: Color(0xffffffff),
@@ -1136,83 +1036,22 @@ class AboutPage extends StatelessWidget {
       ),
     ];
     return Scaffold(
-      body: StreamBuilder<bool>(
-          stream: Stream.periodic(Duration(milliseconds: 100), (_) {
-            return SizerUtil.orientation == Orientation.landscape;
-          }),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ConstrainedBox(
-                    constraints:
-                        BoxConstraints(maxWidth: snapshot.data! ? 700 : 100.w),
-                    child: CustomScrollView(
-                      slivers: [
-                        SliverAppBar(
-                          pinned: false,
-                          automaticallyImplyLeading: false,
-                          expandedHeight: 35.h,
-                          backgroundColor: Colors.transparent,
-                          flexibleSpace: FlexibleSpaceBar(
-                              background: CarouselSlider(
-                            items: [
-                              Padding(
-                                padding: EdgeInsets.all(8.0.sp.adjustedSp),
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(
-                                        8.0.sp.adjustedSp),
-                                    child: Image.network(
-                                      'https://picsum.photos/250?image=9',
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(8.0.sp.adjustedSp),
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(
-                                        8.0.sp.adjustedSp),
-                                    child: Image.network(
-                                      'https://picsum.photos/250?image=9',
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(8.0.sp.adjustedSp),
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(
-                                        8.0.sp.adjustedSp),
-                                    child: Image.network(
-                                      'https://picsum.photos/250?image=9',
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                            ],
-                            options: CarouselOptions(viewportFraction: 0.5),
-                          )),
-                        ),
-                        SliverList(
-                          delegate: SliverChildBuilderDelegate(
-                            (BuildContext context, int index) {
-                              return Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 16.sp.adjustedSp,
-                                    vertical: 8.0.sp.adjustedSp),
-                                child: sliverItems[index],
-                              );
-                            },
-                            childCount: sliverItems.length,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              );
-            }
-            return Container();
-          }),
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: 16.sp.adjustedSp, vertical: 2.0.sp.adjustedSp),
+        child: ListView(
+          children: [
+            ...sliverItems.map((e) => Column(
+              children: [
+                e,
+                SizedBox(
+                  height: 12.sp.adjustedSp,
+                ),
+              ],
+            )).toList(),
+          ],
+        ),
+      ),
     );
   }
 }
