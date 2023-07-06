@@ -134,7 +134,7 @@ class IndexPage extends StatelessWidget {
       ListTile(
         title: Text('Full Profile Page', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => ProfilePage());
+          Get.toNamed('/full_profile/my_profile');
         },
       ),
       ListTile(
