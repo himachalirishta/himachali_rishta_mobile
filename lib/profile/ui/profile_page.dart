@@ -51,73 +51,71 @@ class ProfilePage extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Expanded(
-                            child: SliverList(
-                              delegate: SliverChildBuilderDelegate(
-                                (BuildContext context, int index) {
-                                  return index == 0
-                                      ? SizedBox(
-                                          height: 100.h,
-                                          child: TabBarView(
-                                            children: [
-                                              AboutPage(),
-                                              PartnerPreferenceTab(),
-                                            ],
-                                          ),
-                                        )
-                                      : ConstrainedBox(
-                                          constraints:
-                                              BoxConstraints(maxWidth: 700),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Expanded(
-                                                child: Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                      horizontal:
-                                                          32.sp.adjustedSp,
-                                                      vertical:
-                                                          8.sp.adjustedSp),
-                                                  child: MaterialButton(
-                                                    onPressed: () {},
-                                                    color: AppColors.alternate,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              4.0
-                                                                  .sp
-                                                                  .adjustedSp),
-                                                    ),
-                                                    height: 38.sp.adjustedSp,
-                                                    minWidth: 138.sp.adjustedSp,
-                                                    child: const Row(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Icon(
-                                                          Icons.call,
-                                                          color: Colors.white,
-                                                        ),
-                                                        Text(
-                                                          'Call/Chat',
-                                                          style: TextStyle(
-                                                              color:
-                                                                  Colors.white),
-                                                        ),
-                                                      ],
-                                                    ),
+                          SliverList(
+                            delegate: SliverChildBuilderDelegate(
+                              (BuildContext context, int index) {
+                                return index == 0
+                                    ? SizedBox(
+                                        height: 100.h,
+                                        child: TabBarView(
+                                          children: [
+                                            AboutPage(),
+                                            PartnerPreferenceTab(),
+                                          ],
+                                        ),
+                                      )
+                                    : ConstrainedBox(
+                                        constraints:
+                                            BoxConstraints(maxWidth: 700),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Expanded(
+                                              child: Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal:
+                                                        32.sp.adjustedSp,
+                                                    vertical:
+                                                        8.sp.adjustedSp),
+                                                child: MaterialButton(
+                                                  onPressed: () {},
+                                                  color: AppColors.alternate,
+                                                  shape:
+                                                      RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            4.0
+                                                                .sp
+                                                                .adjustedSp),
+                                                  ),
+                                                  height: 38.sp.adjustedSp,
+                                                  minWidth: 138.sp.adjustedSp,
+                                                  child: const Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Icon(
+                                                        Icons.call,
+                                                        color: Colors.white,
+                                                      ),
+                                                      Text(
+                                                        'Call/Chat',
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.white),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
-                                              )
-                                            ],
-                                          ),
-                                        );
-                                },
-                                childCount: 2,
-                              ),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      );
+                              },
+                              childCount: 2,
                             ),
                           ),
                         ],
