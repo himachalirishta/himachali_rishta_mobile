@@ -5,7 +5,6 @@
 import 'package:flutter/material.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/helpers/dimension_helper.dart';
-import 'package:himachali_rishta/widgets/profile_card.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sizer/sizer.dart';
 
@@ -15,7 +14,6 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> sliverItems = [
-      ProfileCard(),
       Container(
         margin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
@@ -680,7 +678,7 @@ class AboutPage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    fontSize: 10.sp.adjustedSp,
+                    fontSize: 8.sp.adjustedSp,
                     color: Color(0xff000000),
                   ),
                 ),
@@ -706,7 +704,7 @@ class AboutPage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    fontSize: 12.sp.adjustedSp,
+                    fontSize: 10.sp.adjustedSp,
                     color: Color(0xff000000),
                   ),
                 ),
@@ -732,7 +730,7 @@ class AboutPage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    fontSize: 12.sp.adjustedSp,
+                    fontSize: 10.sp.adjustedSp,
                     color: Color(0xff000000),
                   ),
                 ),
@@ -753,6 +751,32 @@ class AboutPage extends StatelessWidget {
                 ),
                 Text(
                   "Chat Now",
+                  textAlign: TextAlign.start,
+                  overflow: TextOverflow.clip,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 10.sp.adjustedSp,
+                    color: Color(0xff000000),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Icon(
+                  MdiIcons.shareOutline,
+                  color: Color(0xff212435),
+                  size: 20.sp.adjustedSp,
+                ),
+                Text(
+                  "Share",
                   textAlign: TextAlign.start,
                   overflow: TextOverflow.clip,
                   style: TextStyle(
@@ -1041,14 +1065,16 @@ class AboutPage extends StatelessWidget {
             horizontal: 16.sp.adjustedSp, vertical: 2.0.sp.adjustedSp),
         child: ListView(
           children: [
-            ...sliverItems.map((e) => Column(
-              children: [
-                e,
-                SizedBox(
-                  height: 12.sp.adjustedSp,
-                ),
-              ],
-            )).toList(),
+            ...sliverItems
+                .map((e) => Column(
+                      children: [
+                        e,
+                        SizedBox(
+                          height: 12.sp.adjustedSp,
+                        ),
+                      ],
+                    ))
+                .toList(),
           ],
         ),
       ),

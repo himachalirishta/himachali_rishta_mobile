@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/helpers/dimension_helper.dart';
@@ -32,12 +33,31 @@ class ProfilePage extends StatelessWidget {
                             pinned: true,
                             snap: false,
                             floating: true,
-                            expandedHeight: 150.sp.adjustedSp,
+                            expandedHeight: 200.sp.adjustedSp,
                             automaticallyImplyLeading: false,
                             flexibleSpace: FlexibleSpaceBar(
-                              background: Image.asset(
-                                'assets/images/femaledefault.jpg',
-                                fit: BoxFit.cover,
+                              background: CarouselSlider(
+                                items: [
+                                  Image.asset(
+                                    'assets/images/femaledefault.jpg',
+                                    fit: BoxFit.cover,
+                                  )
+                                ], options: CarouselOptions(
+                                  autoPlay: true,
+                                  autoPlayInterval: Duration(seconds: 3),
+                                  autoPlayAnimationDuration:
+                                      Duration(milliseconds: 800),
+                                  autoPlayCurve: Curves.fastOutSlowIn,
+                                  pauseAutoPlayOnTouch: true,
+                                  aspectRatio: 0.5,
+                                  viewportFraction: 0.7,
+                                  onPageChanged: (index, reason) {
+                                    // setState(() {
+                                    //   _current = index;
+                                    // });
+                                  },
+                                )
+
                               ),
                             ),
                             bottom: TabBar(
