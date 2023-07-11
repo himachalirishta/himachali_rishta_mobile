@@ -19,7 +19,7 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<bool>(
-        stream: Stream.periodic(Duration(milliseconds: 100), (_) {
+        stream: Stream.periodic(const Duration(milliseconds: 100), (_) {
           return SizerUtil.orientation == Orientation.landscape;
         }),
         builder: (context, snapshot) {
@@ -28,7 +28,8 @@ class SearchPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: snapshot.data! ? 700 : 100.w),
+                  constraints:
+                      BoxConstraints(maxWidth: snapshot.data! ? 700 : 100.w),
                   child: WillPopScope(
                     onWillPop: () {
                       if (getController.animationController.isCompleted) {
@@ -60,8 +61,8 @@ class SearchPage extends StatelessWidget {
                                   shadowColor: const Color(0xff000000),
                                   elevation: 3,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(16.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        16.0.sp.adjustedSp),
                                     side: BorderSide(
                                         color: const Color(0x4d9e9e9e),
                                         width: 1.sp.adjustedSp),
@@ -82,22 +83,28 @@ class SearchPage extends StatelessWidget {
                                           ),
                                           decoration: InputDecoration(
                                             disabledBorder: OutlineInputBorder(
-                                              borderRadius: BorderRadius.circular(
-                                                  16.0.sp.adjustedSp),
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      16.0.sp.adjustedSp),
                                               borderSide: const BorderSide(
-                                                  color: Color(0xffffffff), width: 0),
+                                                  color: Color(0xffffffff),
+                                                  width: 0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderRadius: BorderRadius.circular(
-                                                  16.0.sp.adjustedSp),
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      16.0.sp.adjustedSp),
                                               borderSide: const BorderSide(
-                                                  color: Color(0xffffffff), width: 0),
+                                                  color: Color(0xffffffff),
+                                                  width: 0),
                                             ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderRadius: BorderRadius.circular(
-                                                  16.0.sp.adjustedSp),
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      16.0.sp.adjustedSp),
                                               borderSide: const BorderSide(
-                                                  color: Color(0xffffffff), width: 0),
+                                                  color: Color(0xffffffff),
+                                                  width: 0),
                                             ),
                                             hintText: "Enter Matri ID",
                                             hintStyle: TextStyle(
@@ -121,7 +128,8 @@ class SearchPage extends StatelessWidget {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.all(4.0.sp.adjustedSp),
+                                        padding:
+                                            EdgeInsets.all(4.0.sp.adjustedSp),
                                         child: MaterialButton(
                                           onPressed: () {},
                                           color: AppColors.secondaryLight,
@@ -142,8 +150,8 @@ class SearchPage extends StatelessWidget {
                                                 fontSize: 14.sp.adjustedSp,
                                                 fontWeight: FontWeight.bold,
                                                 fontStyle: FontStyle.normal,
-                                                color:
-                                                    AppColors.primaryTextColorDark),
+                                                color: AppColors
+                                                    .primaryTextColorDark),
                                           ),
                                         ),
                                       )
@@ -163,16 +171,18 @@ class SearchPage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       color: const Color(0xffffffff),
                                       shape: BoxShape.rectangle,
-                                      borderRadius:
-                                          BorderRadius.circular(8.0.sp.adjustedSp),
+                                      borderRadius: BorderRadius.circular(
+                                          8.0.sp.adjustedSp),
                                       border: Border.all(
                                           color: const Color(0x4d9e9e9e),
                                           width: 1.sp.adjustedSp),
                                     ),
                                     child: SingleChildScrollView(
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
@@ -191,7 +201,8 @@ class SearchPage extends StatelessWidget {
                                             width: 16.sp.adjustedSp,
                                           ),
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             mainAxisSize: MainAxisSize.max,
@@ -204,13 +215,15 @@ class SearchPage extends StatelessWidget {
                                                   fontWeight: FontWeight.w600,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: const Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
                                           ),
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             mainAxisSize: MainAxisSize.max,
@@ -218,26 +231,33 @@ class SearchPage extends StatelessWidget {
                                               Expanded(
                                                 flex: 1,
                                                 child: Container(
-                                                    padding: EdgeInsets.symmetric(
-                                                        horizontal: 8.sp.adjustedSp,
-                                                        vertical: 4.sp.adjustedSp),
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                            horizontal:
+                                                                8.sp.adjustedSp,
+                                                            vertical: 4
+                                                                .sp
+                                                                .adjustedSp),
                                                     decoration: BoxDecoration(
-                                                      color: const Color(0xffffffff),
+                                                      color: const Color(
+                                                          0xffffffff),
                                                       border: Border.all(
-                                                          color:
-                                                              const Color(0xff616161),
-                                                          width: 1.sp.adjustedSp),
+                                                          color: const Color(
+                                                              0xff616161),
+                                                          width:
+                                                              1.sp.adjustedSp),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               8.sp.adjustedSp),
                                                     ),
-                                                    child: DropdownButtonHideUnderline(
+                                                    child:
+                                                        DropdownButtonHideUnderline(
                                                       child: DropdownButton(
                                                         value: "22",
-                                                        items: [
-                                                          "22"
-                                                        ].map<DropdownMenuItem<String>>(
-                                                            (String value) {
+                                                        items: ["22"].map<
+                                                            DropdownMenuItem<
+                                                                String>>((String
+                                                            value) {
                                                           return DropdownMenuItem<
                                                               String>(
                                                             value: value,
@@ -245,11 +265,14 @@ class SearchPage extends StatelessWidget {
                                                           );
                                                         }).toList(),
                                                         style: TextStyle(
-                                                          color:
-                                                              const Color(0xff000000),
-                                                          fontSize: 12.sp.adjustedSp,
-                                                          fontWeight: FontWeight.w400,
-                                                          fontStyle: FontStyle.normal,
+                                                          color: const Color(
+                                                              0xff000000),
+                                                          fontSize:
+                                                              12.sp.adjustedSp,
+                                                          fontWeight:
+                                                              FontWeight.w400,
+                                                          fontStyle:
+                                                              FontStyle.normal,
                                                         ),
                                                         onChanged: (value) {},
                                                         elevation: 8,
@@ -269,7 +292,8 @@ class SearchPage extends StatelessWidget {
                                                   fontWeight: FontWeight.w500,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: const Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                               SizedBox(
@@ -279,26 +303,33 @@ class SearchPage extends StatelessWidget {
                                               Expanded(
                                                 flex: 1,
                                                 child: Container(
-                                                    padding: EdgeInsets.symmetric(
-                                                        horizontal: 8.sp.adjustedSp,
-                                                        vertical: 4.sp.adjustedSp),
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                            horizontal:
+                                                                8.sp.adjustedSp,
+                                                            vertical: 4
+                                                                .sp
+                                                                .adjustedSp),
                                                     decoration: BoxDecoration(
-                                                      color: const Color(0xffffffff),
+                                                      color: const Color(
+                                                          0xffffffff),
                                                       border: Border.all(
-                                                          color:
-                                                              const Color(0xff616161),
-                                                          width: 1.sp.adjustedSp),
+                                                          color: const Color(
+                                                              0xff616161),
+                                                          width:
+                                                              1.sp.adjustedSp),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               8.sp.adjustedSp),
                                                     ),
-                                                    child: DropdownButtonHideUnderline(
+                                                    child:
+                                                        DropdownButtonHideUnderline(
                                                       child: DropdownButton(
                                                         value: "55",
-                                                        items: [
-                                                          "55"
-                                                        ].map<DropdownMenuItem<String>>(
-                                                            (String value) {
+                                                        items: ["55"].map<
+                                                            DropdownMenuItem<
+                                                                String>>((String
+                                                            value) {
                                                           return DropdownMenuItem<
                                                               String>(
                                                             value: value,
@@ -306,11 +337,14 @@ class SearchPage extends StatelessWidget {
                                                           );
                                                         }).toList(),
                                                         style: TextStyle(
-                                                          color:
-                                                              const Color(0xff000000),
-                                                          fontSize: 12.sp.adjustedSp,
-                                                          fontWeight: FontWeight.w400,
-                                                          fontStyle: FontStyle.normal,
+                                                          color: const Color(
+                                                              0xff000000),
+                                                          fontSize:
+                                                              12.sp.adjustedSp,
+                                                          fontWeight:
+                                                              FontWeight.w400,
+                                                          fontStyle:
+                                                              FontStyle.normal,
                                                         ),
                                                         onChanged: (value) {},
                                                         elevation: 8,
@@ -325,7 +359,8 @@ class SearchPage extends StatelessWidget {
                                             width: 16.sp.adjustedSp,
                                           ),
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             mainAxisSize: MainAxisSize.max,
@@ -338,13 +373,15 @@ class SearchPage extends StatelessWidget {
                                                   fontWeight: FontWeight.w600,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: const Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
                                           ),
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             mainAxisSize: MainAxisSize.max,
@@ -352,26 +389,33 @@ class SearchPage extends StatelessWidget {
                                               Expanded(
                                                 flex: 1,
                                                 child: Container(
-                                                    padding: EdgeInsets.symmetric(
-                                                        horizontal: 8.sp.adjustedSp,
-                                                        vertical: 4.sp.adjustedSp),
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                            horizontal:
+                                                                8.sp.adjustedSp,
+                                                            vertical: 4
+                                                                .sp
+                                                                .adjustedSp),
                                                     decoration: BoxDecoration(
-                                                      color: const Color(0xffffffff),
+                                                      color: const Color(
+                                                          0xffffffff),
                                                       border: Border.all(
-                                                          color:
-                                                              const Color(0xff616161),
-                                                          width: 1.sp.adjustedSp),
+                                                          color: const Color(
+                                                              0xff616161),
+                                                          width:
+                                                              1.sp.adjustedSp),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               8.sp.adjustedSp),
                                                     ),
-                                                    child: DropdownButtonHideUnderline(
+                                                    child:
+                                                        DropdownButtonHideUnderline(
                                                       child: DropdownButton(
                                                         value: "4ft 0in",
-                                                        items: [
-                                                          "4ft 0in"
-                                                        ].map<DropdownMenuItem<String>>(
-                                                            (String value) {
+                                                        items: ["4ft 0in"].map<
+                                                            DropdownMenuItem<
+                                                                String>>((String
+                                                            value) {
                                                           return DropdownMenuItem<
                                                               String>(
                                                             value: value,
@@ -379,11 +423,14 @@ class SearchPage extends StatelessWidget {
                                                           );
                                                         }).toList(),
                                                         style: TextStyle(
-                                                          color:
-                                                              const Color(0xff000000),
-                                                          fontSize: 12.sp.adjustedSp,
-                                                          fontWeight: FontWeight.w400,
-                                                          fontStyle: FontStyle.normal,
+                                                          color: const Color(
+                                                              0xff000000),
+                                                          fontSize:
+                                                              12.sp.adjustedSp,
+                                                          fontWeight:
+                                                              FontWeight.w400,
+                                                          fontStyle:
+                                                              FontStyle.normal,
                                                         ),
                                                         onChanged: (value) {},
                                                         elevation: 8,
@@ -403,7 +450,8 @@ class SearchPage extends StatelessWidget {
                                                   fontWeight: FontWeight.w500,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: const Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                               SizedBox(
@@ -413,26 +461,33 @@ class SearchPage extends StatelessWidget {
                                               Expanded(
                                                 flex: 1,
                                                 child: Container(
-                                                    padding: EdgeInsets.symmetric(
-                                                        horizontal: 8.sp.adjustedSp,
-                                                        vertical: 4.sp.adjustedSp),
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                            horizontal:
+                                                                8.sp.adjustedSp,
+                                                            vertical: 4
+                                                                .sp
+                                                                .adjustedSp),
                                                     decoration: BoxDecoration(
-                                                      color: const Color(0xffffffff),
+                                                      color: const Color(
+                                                          0xffffffff),
                                                       border: Border.all(
-                                                          color:
-                                                              const Color(0xff616161),
-                                                          width: 1.sp.adjustedSp),
+                                                          color: const Color(
+                                                              0xff616161),
+                                                          width:
+                                                              1.sp.adjustedSp),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               8.sp.adjustedSp),
                                                     ),
-                                                    child: DropdownButtonHideUnderline(
+                                                    child:
+                                                        DropdownButtonHideUnderline(
                                                       child: DropdownButton(
                                                         value: "6ft 0in",
-                                                        items: [
-                                                          "6ft 0in"
-                                                        ].map<DropdownMenuItem<String>>(
-                                                            (String value) {
+                                                        items: ["6ft 0in"].map<
+                                                            DropdownMenuItem<
+                                                                String>>((String
+                                                            value) {
                                                           return DropdownMenuItem<
                                                               String>(
                                                             value: value,
@@ -440,11 +495,14 @@ class SearchPage extends StatelessWidget {
                                                           );
                                                         }).toList(),
                                                         style: TextStyle(
-                                                          color:
-                                                              const Color(0xff000000),
-                                                          fontSize: 12.sp.adjustedSp,
-                                                          fontWeight: FontWeight.w400,
-                                                          fontStyle: FontStyle.normal,
+                                                          color: const Color(
+                                                              0xff000000),
+                                                          fontSize:
+                                                              12.sp.adjustedSp,
+                                                          fontWeight:
+                                                              FontWeight.w400,
+                                                          fontStyle:
+                                                              FontStyle.normal,
                                                         ),
                                                         onChanged: (value) {},
                                                         elevation: 8,
@@ -462,19 +520,22 @@ class SearchPage extends StatelessWidget {
                                             onTap: () {
                                               getController.animationController
                                                   .forward();
-                                              getController.selectedOptionIndex.value =
-                                                  1;
+                                              getController.selectedOptionIndex
+                                                  .value = 1;
                                             },
                                             child: Container(
                                               margin: EdgeInsets.zero,
-                                              padding: EdgeInsets.all(6.sp.adjustedSp),
+                                              padding: EdgeInsets.all(
+                                                  6.sp.adjustedSp),
                                               decoration: BoxDecoration(
                                                 color: const Color(0xffffffff),
                                                 shape: BoxShape.rectangle,
-                                                borderRadius: BorderRadius.circular(
-                                                    8.0.sp.adjustedSp),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        8.0.sp.adjustedSp),
                                                 border: Border.all(
-                                                    color: const Color(0xff616161),
+                                                    color:
+                                                        const Color(0xff616161),
                                                     width: 1.sp.adjustedSp),
                                               ),
                                               child: Row(
@@ -488,32 +549,42 @@ class SearchPage extends StatelessWidget {
                                                     flex: 1,
                                                     child: Column(
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment.start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                       crossAxisAlignment:
-                                                          CrossAxisAlignment.center,
-                                                      mainAxisSize: MainAxisSize.max,
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
                                                       children: [
                                                         Row(
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment.start,
+                                                              MainAxisAlignment
+                                                                  .start,
                                                           crossAxisAlignment:
-                                                              CrossAxisAlignment.center,
+                                                              CrossAxisAlignment
+                                                                  .center,
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           children: [
                                                             Text(
                                                               "Select Religion",
                                                               textAlign:
-                                                                  TextAlign.start,
+                                                                  TextAlign
+                                                                      .start,
                                                               overflow:
-                                                                  TextOverflow.clip,
+                                                                  TextOverflow
+                                                                      .clip,
                                                               style: TextStyle(
                                                                 fontWeight:
-                                                                    FontWeight.w400,
+                                                                    FontWeight
+                                                                        .w400,
                                                                 fontStyle:
-                                                                    FontStyle.normal,
-                                                                fontSize:
-                                                                    10.sp.adjustedSp,
+                                                                    FontStyle
+                                                                        .normal,
+                                                                fontSize: 10
+                                                                    .sp
+                                                                    .adjustedSp,
                                                                 color: const Color(
                                                                     0xff000000),
                                                               ),
@@ -522,9 +593,11 @@ class SearchPage extends StatelessWidget {
                                                         ),
                                                         Row(
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment.start,
+                                                              MainAxisAlignment
+                                                                  .start,
                                                           crossAxisAlignment:
-                                                              CrossAxisAlignment.center,
+                                                              CrossAxisAlignment
+                                                                  .center,
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           children: [
@@ -534,16 +607,22 @@ class SearchPage extends StatelessWidget {
                                                                     .selectedReligion
                                                                     .value,
                                                                 textAlign:
-                                                                    TextAlign.start,
+                                                                    TextAlign
+                                                                        .start,
                                                                 overflow:
-                                                                    TextOverflow.clip,
-                                                                style: TextStyle(
+                                                                    TextOverflow
+                                                                        .clip,
+                                                                style:
+                                                                    TextStyle(
                                                                   fontWeight:
-                                                                      FontWeight.w500,
+                                                                      FontWeight
+                                                                          .w500,
                                                                   fontStyle:
-                                                                      FontStyle.normal,
-                                                                  fontSize:
-                                                                      12.sp.adjustedSp,
+                                                                      FontStyle
+                                                                          .normal,
+                                                                  fontSize: 12
+                                                                      .sp
+                                                                      .adjustedSp,
                                                                   color: const Color(
                                                                       0xff000000),
                                                                 ),
@@ -570,19 +649,22 @@ class SearchPage extends StatelessWidget {
                                             onTap: () {
                                               getController.animationController
                                                   .forward();
-                                              getController.selectedOptionIndex.value =
-                                                  2;
+                                              getController.selectedOptionIndex
+                                                  .value = 2;
                                             },
                                             child: Container(
                                               margin: EdgeInsets.zero,
-                                              padding: EdgeInsets.all(6.sp.adjustedSp),
+                                              padding: EdgeInsets.all(
+                                                  6.sp.adjustedSp),
                                               decoration: BoxDecoration(
                                                 color: const Color(0xffffffff),
                                                 shape: BoxShape.rectangle,
-                                                borderRadius: BorderRadius.circular(
-                                                    8.0.sp.adjustedSp),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        8.0.sp.adjustedSp),
                                                 border: Border.all(
-                                                    color: const Color(0xff616161),
+                                                    color:
+                                                        const Color(0xff616161),
                                                     width: 1.sp.adjustedSp),
                                               ),
                                               child: Row(
@@ -596,32 +678,42 @@ class SearchPage extends StatelessWidget {
                                                     flex: 1,
                                                     child: Column(
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment.start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                       crossAxisAlignment:
-                                                          CrossAxisAlignment.center,
-                                                      mainAxisSize: MainAxisSize.max,
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
                                                       children: [
                                                         Row(
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment.start,
+                                                              MainAxisAlignment
+                                                                  .start,
                                                           crossAxisAlignment:
-                                                              CrossAxisAlignment.center,
+                                                              CrossAxisAlignment
+                                                                  .center,
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           children: [
                                                             Text(
                                                               "Select Caste",
                                                               textAlign:
-                                                                  TextAlign.start,
+                                                                  TextAlign
+                                                                      .start,
                                                               overflow:
-                                                                  TextOverflow.clip,
+                                                                  TextOverflow
+                                                                      .clip,
                                                               style: TextStyle(
                                                                 fontWeight:
-                                                                    FontWeight.w400,
+                                                                    FontWeight
+                                                                        .w400,
                                                                 fontStyle:
-                                                                    FontStyle.normal,
-                                                                fontSize:
-                                                                    10.sp.adjustedSp,
+                                                                    FontStyle
+                                                                        .normal,
+                                                                fontSize: 10
+                                                                    .sp
+                                                                    .adjustedSp,
                                                                 color: const Color(
                                                                     0xff000000),
                                                               ),
@@ -630,9 +722,11 @@ class SearchPage extends StatelessWidget {
                                                         ),
                                                         Row(
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment.start,
+                                                              MainAxisAlignment
+                                                                  .start,
                                                           crossAxisAlignment:
-                                                              CrossAxisAlignment.center,
+                                                              CrossAxisAlignment
+                                                                  .center,
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           children: [
@@ -642,16 +736,22 @@ class SearchPage extends StatelessWidget {
                                                                     .selectedCaste
                                                                     .value,
                                                                 textAlign:
-                                                                    TextAlign.start,
+                                                                    TextAlign
+                                                                        .start,
                                                                 overflow:
-                                                                    TextOverflow.clip,
-                                                                style: TextStyle(
+                                                                    TextOverflow
+                                                                        .clip,
+                                                                style:
+                                                                    TextStyle(
                                                                   fontWeight:
-                                                                      FontWeight.w500,
+                                                                      FontWeight
+                                                                          .w500,
                                                                   fontStyle:
-                                                                      FontStyle.normal,
-                                                                  fontSize:
-                                                                      12.sp.adjustedSp,
+                                                                      FontStyle
+                                                                          .normal,
+                                                                  fontSize: 12
+                                                                      .sp
+                                                                      .adjustedSp,
                                                                   color: const Color(
                                                                       0xff000000),
                                                                 ),
@@ -678,19 +778,22 @@ class SearchPage extends StatelessWidget {
                                             onTap: () {
                                               getController.animationController
                                                   .forward();
-                                              getController.selectedOptionIndex.value =
-                                                  3;
+                                              getController.selectedOptionIndex
+                                                  .value = 3;
                                             },
                                             child: Container(
                                               margin: EdgeInsets.zero,
-                                              padding: EdgeInsets.all(6.sp.adjustedSp),
+                                              padding: EdgeInsets.all(
+                                                  6.sp.adjustedSp),
                                               decoration: BoxDecoration(
                                                 color: const Color(0xffffffff),
                                                 shape: BoxShape.rectangle,
-                                                borderRadius: BorderRadius.circular(
-                                                    8.0.sp.adjustedSp),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        8.0.sp.adjustedSp),
                                                 border: Border.all(
-                                                    color: const Color(0xff616161),
+                                                    color:
+                                                        const Color(0xff616161),
                                                     width: 1.sp.adjustedSp),
                                               ),
                                               child: Row(
@@ -704,32 +807,42 @@ class SearchPage extends StatelessWidget {
                                                     flex: 1,
                                                     child: Column(
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment.start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                       crossAxisAlignment:
-                                                          CrossAxisAlignment.center,
-                                                      mainAxisSize: MainAxisSize.max,
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
                                                       children: [
                                                         Row(
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment.start,
+                                                              MainAxisAlignment
+                                                                  .start,
                                                           crossAxisAlignment:
-                                                              CrossAxisAlignment.center,
+                                                              CrossAxisAlignment
+                                                                  .center,
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           children: [
                                                             Text(
                                                               "Marital Status",
                                                               textAlign:
-                                                                  TextAlign.start,
+                                                                  TextAlign
+                                                                      .start,
                                                               overflow:
-                                                                  TextOverflow.clip,
+                                                                  TextOverflow
+                                                                      .clip,
                                                               style: TextStyle(
                                                                 fontWeight:
-                                                                    FontWeight.w400,
+                                                                    FontWeight
+                                                                        .w400,
                                                                 fontStyle:
-                                                                    FontStyle.normal,
-                                                                fontSize:
-                                                                    10.sp.adjustedSp,
+                                                                    FontStyle
+                                                                        .normal,
+                                                                fontSize: 10
+                                                                    .sp
+                                                                    .adjustedSp,
                                                                 color: const Color(
                                                                     0xff000000),
                                                               ),
@@ -738,9 +851,11 @@ class SearchPage extends StatelessWidget {
                                                         ),
                                                         Row(
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment.start,
+                                                              MainAxisAlignment
+                                                                  .start,
                                                           crossAxisAlignment:
-                                                              CrossAxisAlignment.center,
+                                                              CrossAxisAlignment
+                                                                  .center,
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           children: [
@@ -750,16 +865,22 @@ class SearchPage extends StatelessWidget {
                                                                     .selectedMaritalStatus
                                                                     .value,
                                                                 textAlign:
-                                                                    TextAlign.start,
+                                                                    TextAlign
+                                                                        .start,
                                                                 overflow:
-                                                                    TextOverflow.clip,
-                                                                style: TextStyle(
+                                                                    TextOverflow
+                                                                        .clip,
+                                                                style:
+                                                                    TextStyle(
                                                                   fontWeight:
-                                                                      FontWeight.w500,
+                                                                      FontWeight
+                                                                          .w500,
                                                                   fontStyle:
-                                                                      FontStyle.normal,
-                                                                  fontSize:
-                                                                      12.sp.adjustedSp,
+                                                                      FontStyle
+                                                                          .normal,
+                                                                  fontSize: 12
+                                                                      .sp
+                                                                      .adjustedSp,
                                                                   color: const Color(
                                                                       0xff000000),
                                                                 ),
@@ -791,29 +912,37 @@ class SearchPage extends StatelessWidget {
                               builder: (context, widget) {
                                 return Positioned(
                                     right: -75.w.adjustedW *
-                                        (1 - getController.animationController.value),
+                                        (1 -
+                                            getController
+                                                .animationController.value),
                                     child: SideOptionDrawer(
                                       options: getController
-                                          .selectedOption[
-                                              getController.selectedOptionIndex.value]!
+                                          .selectedOption[getController
+                                              .selectedOptionIndex.value]!
                                           .value,
                                       onOptionSelected: (index) {
-                                        switch (
-                                            getController.selectedOptionIndex.value) {
+                                        switch (getController
+                                            .selectedOptionIndex.value) {
                                           case 1:
-                                            getController.selectedReligion.value =
+                                            getController
+                                                    .selectedReligion.value =
                                                 getController.religion[index];
-                                            getController.animationController.reverse();
+                                            getController.animationController
+                                                .reverse();
                                             break;
                                           case 2:
                                             getController.selectedCaste.value =
                                                 getController.caste[index];
-                                            getController.animationController.reverse();
+                                            getController.animationController
+                                                .reverse();
                                             break;
                                           case 3:
-                                            getController.selectedMaritalStatus.value =
-                                                getController.maritalStatus[index];
-                                            getController.animationController.reverse();
+                                            getController.selectedMaritalStatus
+                                                    .value =
+                                                getController
+                                                    .maritalStatus[index];
+                                            getController.animationController
+                                                .reverse();
                                             break;
 
                                           default:
@@ -864,7 +993,7 @@ class SearchPage extends StatelessWidget {
               ],
             );
           }
-          return Scaffold();
+          return const Scaffold();
         });
   }
 }

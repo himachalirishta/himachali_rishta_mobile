@@ -25,7 +25,7 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
       },
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(0),
+          preferredSize: const Size.fromHeight(0),
           child: Container(
             color: Theme.of(context).primaryColor,
           ),
@@ -63,28 +63,28 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Own House",
@@ -92,12 +92,12 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
-                                  suffixIcon: Icon(
+                                  suffixIcon: const Icon(
                                     Icons.chevron_right,
                                     color: Color(0xff000000),
                                   ),
@@ -128,28 +128,28 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Own Car",
@@ -157,12 +157,12 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
-                                  suffixIcon: Icon(
+                                  suffixIcon: const Icon(
                                     Icons.chevron_right,
                                     color: Color(0xff000000),
                                   ),
@@ -194,28 +194,28 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Own Land Agriculture",
@@ -223,12 +223,12 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
-                                  suffixIcon: Icon(
+                                  suffixIcon: const Icon(
                                     Icons.chevron_right,
                                     color: Color(0xff000000),
                                   ),
@@ -261,28 +261,28 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Own Land Commercial",
@@ -290,12 +290,12 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
-                                  suffixIcon: Icon(
+                                  suffixIcon: const Icon(
                                     Icons.chevron_right,
                                     color: Color(0xff000000),
                                   ),
@@ -328,28 +328,28 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Own Any Business",
@@ -357,12 +357,12 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
-                                  suffixIcon: Icon(
+                                  suffixIcon: const Icon(
                                     Icons.chevron_right,
                                     color: Color(0xff000000),
                                   ),
@@ -382,14 +382,17 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                               onPressed: () {
                                 getController.submitAssetsAndProperties();
                               },
-                              color: Color(0xffac0f11),
+                              color: const Color(0xffac0f11),
                               elevation: 0,
                               shape: RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.circular(4.0.sp.adjustedSp),
                               ),
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 16, vertical: 8),
+                              textColor: const Color(0xff000000),
+                              height: 38.sp.adjustedSp,
+                              minWidth: 138.sp.adjustedSp,
                               child: Text(
                                 "Submit",
                                 style: TextStyle(
@@ -399,9 +402,6 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                               ),
-                              textColor: Color(0xff000000),
-                              height: 38.sp.adjustedSp,
-                              minWidth: 138.sp.adjustedSp,
                             ),
                           ],
                         ),
@@ -411,21 +411,24 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                           builder: (context, widget) {
                             return Positioned(
                                 right: -75.w *
-                                    (1 - getController.animationController.value),
+                                    (1 -
+                                        getController
+                                            .animationController.value),
                                 child: SideOptionDrawer(
                                   options: getController
                                       .selectedOption[getController
                                           .selectedOptionIndex.value]!
                                       .value,
                                   onOptionSelected: (index) {
-                                    switch (
-                                        getController.selectedOptionIndex.value) {
+                                    switch (getController
+                                        .selectedOptionIndex.value) {
                                       case 1:
                                         //own house
                                         getController.selectedOwnHouse.value =
                                             getController.ownHouse[index];
                                         getController.ownHouseController.text =
-                                            getController.selectedOwnHouse.value;
+                                            getController
+                                                .selectedOwnHouse.value;
                                         getController.animationController
                                             .reverse();
                                         break;
@@ -444,23 +447,27 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
                                                 .value =
                                             getController
                                                 .ownLandAgriculture[index];
-                                        getController.ownLandAgricultureController
+                                        getController
+                                                .ownLandAgricultureController
                                                 .text =
                                             getController
-                                                .selectedOwnLandAgriculture.value;
+                                                .selectedOwnLandAgriculture
+                                                .value;
                                         getController.animationController
                                             .reverse();
                                         break;
                                       case 4:
                                         //own commercial land
-                                        getController
-                                                .selectedOwnCommercialLand.value =
+                                        getController.selectedOwnCommercialLand
+                                                .value =
                                             getController
                                                 .ownCommercialLand[index];
-                                        getController.ownCommercialLandController
+                                        getController
+                                                .ownCommercialLandController
                                                 .text =
                                             getController
-                                                .selectedOwnCommercialLand.value;
+                                                .selectedOwnCommercialLand
+                                                .value;
                                         getController.animationController
                                             .reverse();
                                         break;
@@ -489,7 +496,7 @@ class AssetsAndPropertiesEdit extends StatelessWidget {
               }
               return Scaffold(
                 appBar: PreferredSize(
-                  preferredSize: Size.fromHeight(0),
+                  preferredSize: const Size.fromHeight(0),
                   child: Container(
                     color: Theme.of(context).primaryColor,
                   ),

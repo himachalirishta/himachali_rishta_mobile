@@ -19,7 +19,7 @@ class ProfilePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             StreamBuilder<bool>(
-                stream: Stream.periodic(Duration(milliseconds: 100), (_) {
+                stream: Stream.periodic(const Duration(milliseconds: 100), (_) {
                   return SizerUtil.orientation == Orientation.landscape;
                 }),
                 builder: (context, snapshot) {
@@ -37,30 +37,30 @@ class ProfilePage extends StatelessWidget {
                             automaticallyImplyLeading: false,
                             flexibleSpace: FlexibleSpaceBar(
                               background: CarouselSlider(
-                                items: [
-                                  Image.asset(
-                                    'assets/images/femaledefault.jpg',
-                                    fit: BoxFit.cover,
-                                  )
-                                ], options: CarouselOptions(
-                                  autoPlay: true,
-                                  autoPlayInterval: Duration(seconds: 3),
-                                  autoPlayAnimationDuration:
-                                      Duration(milliseconds: 800),
-                                  autoPlayCurve: Curves.fastOutSlowIn,
-                                  pauseAutoPlayOnTouch: true,
-                                  aspectRatio: 0.5,
-                                  viewportFraction: 0.7,
-                                  onPageChanged: (index, reason) {
-                                    // setState(() {
-                                    //   _current = index;
-                                    // });
-                                  },
-                                )
-
-                              ),
+                                  items: [
+                                    Image.asset(
+                                      'assets/images/femaledefault.jpg',
+                                      fit: BoxFit.cover,
+                                    )
+                                  ],
+                                  options: CarouselOptions(
+                                    autoPlay: true,
+                                    autoPlayInterval:
+                                        const Duration(seconds: 3),
+                                    autoPlayAnimationDuration:
+                                        const Duration(milliseconds: 800),
+                                    autoPlayCurve: Curves.fastOutSlowIn,
+                                    pauseAutoPlayOnTouch: true,
+                                    aspectRatio: 0.5,
+                                    viewportFraction: 0.7,
+                                    onPageChanged: (index, reason) {
+                                      // setState(() {
+                                      //   _current = index;
+                                      // });
+                                    },
+                                  )),
                             ),
-                            bottom: TabBar(
+                            bottom: const TabBar(
                               tabs: [
                                 Tab(
                                   text: 'About',
@@ -77,7 +77,7 @@ class ProfilePage extends StatelessWidget {
                                 return index == 0
                                     ? SizedBox(
                                         height: 100.h,
-                                        child: TabBarView(
+                                        child: const TabBarView(
                                           children: [
                                             AboutPage(),
                                             PartnerPreferenceTab(),
@@ -86,7 +86,7 @@ class ProfilePage extends StatelessWidget {
                                       )
                                     : ConstrainedBox(
                                         constraints:
-                                            BoxConstraints(maxWidth: 700),
+                                            const BoxConstraints(maxWidth: 700),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -96,18 +96,14 @@ class ProfilePage extends StatelessWidget {
                                                 padding: EdgeInsets.symmetric(
                                                     horizontal:
                                                         32.sp.adjustedSp,
-                                                    vertical:
-                                                        8.sp.adjustedSp),
+                                                    vertical: 8.sp.adjustedSp),
                                                 child: MaterialButton(
                                                   onPressed: () {},
                                                   color: AppColors.alternate,
-                                                  shape:
-                                                      RoundedRectangleBorder(
+                                                  shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            4.0
-                                                                .sp
-                                                                .adjustedSp),
+                                                            4.0.sp.adjustedSp),
                                                   ),
                                                   height: 38.sp.adjustedSp,
                                                   minWidth: 138.sp.adjustedSp,
@@ -148,6 +144,5 @@ class ProfilePage extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

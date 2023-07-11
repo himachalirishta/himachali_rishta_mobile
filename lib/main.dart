@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
                 GetPage(name: '/', page: () => SplashPage()),
                 GetPage(
                   name: "/full_profile/:id",
-                  page: () => ProfilePage(),
+                  page: () => const ProfilePage(),
                 )
               ],
             );

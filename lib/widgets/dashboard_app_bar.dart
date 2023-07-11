@@ -11,27 +11,25 @@ class DashboardAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment:
-      MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
           children: [
             Builder(builder: (context) {
               return GestureDetector(
                 onTap: () {
-                  Scaffold.of(context)
-                      .openDrawer();
+                  Scaffold.of(context).openDrawer();
                 },
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.menu,
                     ),
                     SizedBox(
                       height: 4.sp.adjustedSp,
                     ),
-                    Text('Menu'),
+                    const Text('Menu'),
                   ],
                 ),
               );
@@ -40,7 +38,9 @@ class DashboardAppBar extends StatelessWidget {
               width: 8.sp.adjustedSp,
             ),
             Image.asset(
-                'assets/images/homepagelogo.jpg', width: 100.sp.adjustedSp,),
+              'assets/images/homepagelogo.jpg',
+              width: 100.sp.adjustedSp,
+            ),
             SizedBox(
               width: 8.sp.adjustedSp,
             ),
@@ -53,13 +53,13 @@ class DashboardAppBar extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
+              const Icon(
                 Icons.search,
               ),
               SizedBox(
                 height: 4.sp.adjustedSp,
               ),
-              Text('Search'),
+              const Text('Search'),
             ],
           ),
         ),

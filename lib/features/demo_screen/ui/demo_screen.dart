@@ -8,7 +8,7 @@ class DemoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 700),
+        constraints: const BoxConstraints(maxWidth: 700),
         child: Container(
           width: double.infinity,
           color: AppColors.primaryBackground,

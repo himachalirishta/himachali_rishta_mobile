@@ -16,7 +16,7 @@ class StandardAppBar extends StatelessWidget {
             onPressed: () {
               Get.back();
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)),
         SizedBox(
           width: 4.sp.adjustedSp,
         ),
@@ -24,7 +24,7 @@ class StandardAppBar extends StatelessWidget {
           title,
           style: TextStyle(fontSize: 14.sp.adjustedSp),
         ),
-        Spacer(),
+        const Spacer(),
         Image.asset(
           'assets/images/homepagelogo.jpg',
           width: 100.sp.adjustedSp,
@@ -32,7 +32,7 @@ class StandardAppBar extends StatelessWidget {
         SizedBox(
           width: 8.sp.adjustedSp,
         ),
-        IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
+        IconButton(onPressed: () {}, icon: const Icon(Icons.notifications)),
       ],
     );
   }

@@ -59,7 +59,7 @@ class MembershipPageFree extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    ProfileCard(),
+                    const ProfileCard(),
                     SizedBox(
                       height: 16.sp,
                       width: 16.sp,

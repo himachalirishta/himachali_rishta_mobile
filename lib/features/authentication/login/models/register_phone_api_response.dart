@@ -4,9 +4,13 @@
 
 import 'dart:convert';
 
-RegisterPhoneNumberApiResponse registerPhoneNumberApiResponseFromJson(String str) => RegisterPhoneNumberApiResponse.fromJson(json.decode(str));
+RegisterPhoneNumberApiResponse registerPhoneNumberApiResponseFromJson(
+        String str) =>
+    RegisterPhoneNumberApiResponse.fromJson(json.decode(str));
 
-String registerPhoneNumberApiResponseToJson(RegisterPhoneNumberApiResponse data) => json.encode(data.toJson());
+String registerPhoneNumberApiResponseToJson(
+        RegisterPhoneNumberApiResponse data) =>
+    json.encode(data.toJson());
 
 class RegisterPhoneNumberApiResponse {
   final String? accessToken;
@@ -34,19 +38,22 @@ class RegisterPhoneNumberApiResponse {
         userdata: userdata ?? this.userdata,
       );
 
-  factory RegisterPhoneNumberApiResponse.fromJson(Map<String, dynamic> json) => RegisterPhoneNumberApiResponse(
-    accessToken: json["access_token"],
-    tokenType: json["token_type"],
-    expiresIn: json["expires_in"],
-    userdata: json["userdata"] == null ? null : Userdata.fromJson(json["userdata"]),
-  );
+  factory RegisterPhoneNumberApiResponse.fromJson(Map<String, dynamic> json) =>
+      RegisterPhoneNumberApiResponse(
+        accessToken: json["access_token"],
+        tokenType: json["token_type"],
+        expiresIn: json["expires_in"],
+        userdata: json["userdata"] == null
+            ? null
+            : Userdata.fromJson(json["userdata"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "access_token": accessToken,
-    "token_type": tokenType,
-    "expires_in": expiresIn,
-    "userdata": userdata?.toJson(),
-  };
+        "access_token": accessToken,
+        "token_type": tokenType,
+        "expires_in": expiresIn,
+        "userdata": userdata?.toJson(),
+      };
 }
 
 class Userdata {
@@ -84,20 +91,20 @@ class Userdata {
       );
 
   factory Userdata.fromJson(Map<String, dynamic> json) => Userdata(
-    id: json["id"],
-    oldId: json["old_id"],
-    name: json["name"],
-    email: json["email"],
-    phone: json["phone"],
-    stepScreen: json["step_screen"],
-  );
+        id: json["id"],
+        oldId: json["old_id"],
+        name: json["name"],
+        email: json["email"],
+        phone: json["phone"],
+        stepScreen: json["step_screen"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "old_id": oldId,
-    "name": name,
-    "email": email,
-    "phone": phone,
-    "step_screen": stepScreen,
-  };
+        "id": id,
+        "old_id": oldId,
+        "name": name,
+        "email": email,
+        "phone": phone,
+        "step_screen": stepScreen,
+      };
 }

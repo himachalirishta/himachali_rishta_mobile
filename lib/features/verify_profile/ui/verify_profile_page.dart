@@ -12,7 +12,7 @@ class VerifyProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(0),
+        preferredSize: const Size.fromHeight(0),
         child: Container(
           color: Theme.of(context).primaryColor,
         ),
@@ -47,7 +47,7 @@ class VerifyProfilePage extends StatelessWidget {
                       color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.w600),
                 ),
-                Spacer(),
+                const Spacer(),
                 Image.asset(
                   'assets/images/homepagelogo.jpg',
                   width: 100.sp.adjustedSp,
@@ -99,13 +99,13 @@ class VerifyProfilePage extends StatelessWidget {
                         ],
                       ),
                       Table(
-                        columnWidths: {
+                        columnWidths: const {
                           0: FlexColumnWidth(0.1),
                           1: FlexColumnWidth(0.9),
                         },
                         children: [
                           TableRow(children: [
-                            Icon(Icons.star, color: Colors.white),
+                            const Icon(Icons.star, color: Colors.white),
                             Padding(
                               padding: EdgeInsets.symmetric(
                                   vertical: 2.0.sp.adjustedSp),
@@ -116,7 +116,7 @@ class VerifyProfilePage extends StatelessWidget {
                             ),
                           ]),
                           TableRow(children: [
-                            Icon(Icons.star, color: Colors.white),
+                            const Icon(Icons.star, color: Colors.white),
                             Padding(
                               padding: EdgeInsets.symmetric(
                                   vertical: 2.0.sp.adjustedSp),
@@ -127,7 +127,7 @@ class VerifyProfilePage extends StatelessWidget {
                             ),
                           ]),
                           TableRow(children: [
-                            Icon(Icons.star, color: Colors.white),
+                            const Icon(Icons.star, color: Colors.white),
                             Padding(
                               padding: EdgeInsets.symmetric(
                                   vertical: 2.0.sp.adjustedSp),
@@ -138,7 +138,7 @@ class VerifyProfilePage extends StatelessWidget {
                             ),
                           ]),
                           TableRow(children: [
-                            Icon(Icons.star, color: Colors.white),
+                            const Icon(Icons.star, color: Colors.white),
                             Padding(
                               padding: EdgeInsets.symmetric(
                                   vertical: 2.0.sp.adjustedSp),
@@ -231,13 +231,13 @@ class VerifyProfilePage extends StatelessWidget {
                                 children: [
                                   FloatingActionButton.extended(
                                     onPressed: () {},
-                                    label: Text('Upload ID Proof'),
+                                    label: const Text('Upload ID Proof'),
                                     backgroundColor: AppColors.green,
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
                                   FloatingActionButton.extended(
                                     onPressed: () {},
-                                    label: Text('Save Changes'),
+                                    label: const Text('Save Changes'),
                                     backgroundColor: AppColors.infoLight,
                                   ),
                                 ],
@@ -246,8 +246,7 @@ class VerifyProfilePage extends StatelessWidget {
                                 height: 10.sp.adjustedSp,
                               ),
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(Icons.check_circle_outline,
                                       color: AppColors.green),

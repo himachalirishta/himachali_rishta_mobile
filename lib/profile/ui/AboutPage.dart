@@ -9,7 +9,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:sizer/sizer.dart';
 
 class AboutPage extends StatelessWidget {
-  AboutPage({super.key});
+  const AboutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +19,11 @@ class AboutPage extends StatelessWidget {
         padding: EdgeInsets.zero,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: Color(0xff01052e),
+          color: const Color(0xff01052e),
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(16.0.sp.adjustedSp),
-          border: Border.all(color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
+          border: Border.all(
+              color: const Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
         ),
         child: Padding(
           padding: EdgeInsets.all(8.sp.adjustedSp),
@@ -46,7 +47,7 @@ class AboutPage extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         fontStyle: FontStyle.normal,
                         fontSize: 14.sp.adjustedSp,
-                        color: Color(0xffffffff),
+                        color: const Color(0xffffffff),
                       ),
                     ),
                   ),
@@ -65,12 +66,12 @@ class AboutPage extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 12.sp.adjustedSp,
-                            color: Color(0xffffffff),
+                            color: const Color(0xffffffff),
                           ),
                         ),
                         Icon(
                           Icons.verified,
-                          color: Color(0xffac0f11),
+                          color: const Color(0xffac0f11),
                           size: 20.sp.adjustedSp,
                         ),
                       ],
@@ -88,7 +89,7 @@ class AboutPage extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 14.sp.adjustedSp,
-                      color: Color(0xffffffff),
+                      color: const Color(0xffffffff),
                     ),
                   ),
                   Container(
@@ -97,10 +98,11 @@ class AboutPage extends StatelessWidget {
                     width: 10.sp.adjustedSp,
                     height: 10.sp.adjustedSp,
                     decoration: BoxDecoration(
-                      color: Color(0xff018601),
+                      color: const Color(0xff018601),
                       shape: BoxShape.circle,
                       border: Border.all(
-                          color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
+                          color: const Color(0x4d9e9e9e),
+                          width: 1.sp.adjustedSp),
                     ),
                   ),
                 ],
@@ -124,7 +126,7 @@ class AboutPage extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp.adjustedSp,
-                        color: Color(0xffffffff),
+                        color: const Color(0xffffffff),
                       ),
                     ),
                   ),
@@ -141,7 +143,7 @@ class AboutPage extends StatelessWidget {
         children: [
           Icon(
             Icons.account_circle,
-            color: Color(0xffac0f11),
+            color: const Color(0xffac0f11),
             size: 20.sp.adjustedSp,
           ),
           Text(
@@ -152,7 +154,7 @@ class AboutPage extends StatelessWidget {
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
               fontSize: 14.sp.adjustedSp,
-              color: Color(0xffac0f11),
+              color: const Color(0xffac0f11),
             ),
           ),
         ],
@@ -228,7 +230,7 @@ class AboutPage extends StatelessWidget {
         children: [
           Icon(
             Icons.school,
-            color: Color(0xffac0f11),
+            color: const Color(0xffac0f11),
             size: 20.sp.adjustedSp,
           ),
           Text(
@@ -239,7 +241,7 @@ class AboutPage extends StatelessWidget {
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
               fontSize: 14.sp.adjustedSp,
-              color: Color(0xffac0f11),
+              color: const Color(0xffac0f11),
             ),
           ),
         ],
@@ -303,7 +305,7 @@ class AboutPage extends StatelessWidget {
         children: [
           Icon(
             Icons.family_restroom,
-            color: Color(0xffac0f11),
+            color: const Color(0xffac0f11),
             size: 20.sp.adjustedSp,
           ),
           Text(
@@ -314,7 +316,7 @@ class AboutPage extends StatelessWidget {
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
               fontSize: 14.sp.adjustedSp,
-              color: Color(0xffac0f11),
+              color: const Color(0xffac0f11),
             ),
           ),
         ],
@@ -376,10 +378,11 @@ class AboutPage extends StatelessWidget {
         padding: EdgeInsets.zero,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: Color(0xff01052e),
+          color: const Color(0xff01052e),
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(16.0.sp.adjustedSp),
-          border: Border.all(color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
+          border: Border.all(
+              color: const Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
         ),
         child: Padding(
           padding: EdgeInsets.all(8.sp.adjustedSp),
@@ -395,7 +398,7 @@ class AboutPage extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.person,
-                    color: Color(0xffffffff),
+                    color: const Color(0xffffffff),
                     size: 20.sp.adjustedSp,
                   ),
                   Text(
@@ -406,7 +409,7 @@ class AboutPage extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       fontStyle: FontStyle.normal,
                       fontSize: 14.sp.adjustedSp,
-                      color: Color(0xffffffff),
+                      color: const Color(0xffffffff),
                     ),
                   ),
                 ],
@@ -430,7 +433,7 @@ class AboutPage extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp.adjustedSp,
-                        color: Color(0xffffffff),
+                        color: const Color(0xffffffff),
                       ),
                     ),
                   ),
@@ -447,7 +450,7 @@ class AboutPage extends StatelessWidget {
         children: [
           Icon(
             Icons.phone,
-            color: Color(0xffac0f11),
+            color: const Color(0xffac0f11),
             size: 20.sp.adjustedSp,
           ),
           Text(
@@ -458,7 +461,7 @@ class AboutPage extends StatelessWidget {
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
               fontSize: 14.sp.adjustedSp,
-              color: Color(0xffac0f11),
+              color: const Color(0xffac0f11),
             ),
           ),
         ],
@@ -534,7 +537,7 @@ class AboutPage extends StatelessWidget {
         children: [
           Icon(
             Icons.sunny,
-            color: Color(0xffac0f11),
+            color: const Color(0xffac0f11),
             size: 20.sp.adjustedSp,
           ),
           Text(
@@ -545,7 +548,7 @@ class AboutPage extends StatelessWidget {
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
               fontSize: 14.sp.adjustedSp,
-              color: Color(0xffac0f11),
+              color: const Color(0xffac0f11),
             ),
           ),
         ],
@@ -627,7 +630,7 @@ class AboutPage extends StatelessWidget {
               fontWeight: FontWeight.w600,
               fontStyle: FontStyle.normal,
               fontSize: 14.sp.adjustedSp,
-              color: Color(0xffac0f11),
+              color: const Color(0xffac0f11),
             ),
           ),
         ],
@@ -647,7 +650,7 @@ class AboutPage extends StatelessWidget {
                 fontWeight: FontWeight.w400,
                 fontStyle: FontStyle.normal,
                 fontSize: 12.sp.adjustedSp,
-                color: Color(0xff000000),
+                color: const Color(0xff000000),
               ),
             ),
           ),
@@ -667,7 +670,7 @@ class AboutPage extends StatelessWidget {
               children: [
                 Icon(
                   Icons.favorite_border,
-                  color: Color(0xffac0f11),
+                  color: const Color(0xffac0f11),
                   size: 20.sp.adjustedSp,
                 ),
                 Text(
@@ -679,7 +682,7 @@ class AboutPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
                     fontSize: 8.sp.adjustedSp,
-                    color: Color(0xff000000),
+                    color: const Color(0xff000000),
                   ),
                 ),
               ],
@@ -694,7 +697,7 @@ class AboutPage extends StatelessWidget {
               children: [
                 Icon(
                   Icons.bookmark_border,
-                  color: Color(0xffac0f11),
+                  color: const Color(0xffac0f11),
                   size: 20.sp.adjustedSp,
                 ),
                 Text(
@@ -705,7 +708,7 @@ class AboutPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
                     fontSize: 10.sp.adjustedSp,
-                    color: Color(0xff000000),
+                    color: const Color(0xff000000),
                   ),
                 ),
               ],
@@ -731,7 +734,7 @@ class AboutPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
                     fontSize: 10.sp.adjustedSp,
-                    color: Color(0xff000000),
+                    color: const Color(0xff000000),
                   ),
                 ),
               ],
@@ -746,7 +749,7 @@ class AboutPage extends StatelessWidget {
               children: [
                 Icon(
                   MdiIcons.chatProcessingOutline,
-                  color: Color(0xff212435),
+                  color: const Color(0xff212435),
                   size: 20.sp.adjustedSp,
                 ),
                 Text(
@@ -757,7 +760,7 @@ class AboutPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
                     fontSize: 10.sp.adjustedSp,
-                    color: Color(0xff000000),
+                    color: const Color(0xff000000),
                   ),
                 ),
               ],
@@ -772,7 +775,7 @@ class AboutPage extends StatelessWidget {
               children: [
                 Icon(
                   MdiIcons.shareOutline,
-                  color: Color(0xff212435),
+                  color: const Color(0xff212435),
                   size: 20.sp.adjustedSp,
                 ),
                 Text(
@@ -783,7 +786,7 @@ class AboutPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
                     fontSize: 12.sp.adjustedSp,
-                    color: Color(0xff000000),
+                    color: const Color(0xff000000),
                   ),
                 ),
               ],
@@ -804,7 +807,7 @@ class AboutPage extends StatelessWidget {
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.normal,
               fontSize: 14.sp.adjustedSp,
-              color: Color(0xff000000),
+              color: const Color(0xff000000),
             ),
           ),
           SizedBox(
@@ -819,7 +822,7 @@ class AboutPage extends StatelessWidget {
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.normal,
               fontSize: 12.sp.adjustedSp,
-              color: Color(0xffac0f11),
+              color: const Color(0xffac0f11),
             ),
           ),
         ],
@@ -837,7 +840,7 @@ class AboutPage extends StatelessWidget {
               fontWeight: FontWeight.w400,
               fontStyle: FontStyle.normal,
               fontSize: 12.sp.adjustedSp,
-              color: Color(0xff000000),
+              color: const Color(0xff000000),
             ),
           ),
         ],
@@ -857,7 +860,7 @@ class AboutPage extends StatelessWidget {
                 CircleAvatar(
                   radius: 30.sp.adjustedSp,
                   backgroundImage:
-                      NetworkImage("https://picsum.photos/250?image=9"),
+                      const NetworkImage("https://picsum.photos/250?image=9"),
                 ),
                 SizedBox(
                   height: 4.sp.adjustedSp,
@@ -871,7 +874,7 @@ class AboutPage extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.normal,
                     fontSize: 14.sp.adjustedSp,
-                    color: Color(0xff000000),
+                    color: const Color(0xff000000),
                   ),
                 ),
                 Text(
@@ -882,7 +885,7 @@ class AboutPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
                     fontSize: 12.sp.adjustedSp,
-                    color: Color(0xff000000),
+                    color: const Color(0xff000000),
                   ),
                 ),
               ],
@@ -898,7 +901,7 @@ class AboutPage extends StatelessWidget {
                 CircleAvatar(
                   radius: 30.sp.adjustedSp,
                   backgroundImage:
-                      NetworkImage("https://picsum.photos/250?image=9"),
+                      const NetworkImage("https://picsum.photos/250?image=9"),
                 ),
                 SizedBox(
                   height: 4.sp.adjustedSp,
@@ -912,7 +915,7 @@ class AboutPage extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.normal,
                     fontSize: 14.sp.adjustedSp,
-                    color: Color(0xff000000),
+                    color: const Color(0xff000000),
                   ),
                 ),
                 Text(
@@ -923,7 +926,7 @@ class AboutPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
                     fontSize: 12.sp.adjustedSp,
-                    color: Color(0xff000000),
+                    color: const Color(0xff000000),
                   ),
                 ),
               ],
@@ -933,12 +936,13 @@ class AboutPage extends StatelessWidget {
       ),
       Card(
         margin: EdgeInsets.all(4.0.sp.adjustedSp),
-        color: Color(0xffffffff),
-        shadowColor: Color(0xff000000),
+        color: const Color(0xffffffff),
+        shadowColor: const Color(0xff000000),
         elevation: 3,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-          side: BorderSide(color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
+          side: BorderSide(
+              color: const Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -960,7 +964,7 @@ class AboutPage extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       fontStyle: FontStyle.normal,
                       fontSize: 14.sp.adjustedSp,
-                      color: Color(0xff000000),
+                      color: const Color(0xff000000),
                     ),
                   ),
                 ],
@@ -971,11 +975,11 @@ class AboutPage extends StatelessWidget {
               padding: EdgeInsets.zero,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                color: Color(0xffffffff),
+                color: const Color(0xffffffff),
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(8.0.sp.adjustedSp),
                 border: Border.all(
-                    color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
+                    color: const Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
               ),
               child: Padding(
                 padding: EdgeInsets.all(8.sp.adjustedSp),
@@ -984,7 +988,7 @@ class AboutPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Text(
+                    const Text(
                       "Up to 55% off",
                       textAlign: TextAlign.start,
                       overflow: TextOverflow.clip,
@@ -1007,7 +1011,7 @@ class AboutPage extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
                         fontSize: 14.sp.adjustedSp,
-                        color: Color(0xffac0f11),
+                        color: const Color(0xffac0f11),
                       ),
                     ),
                     SizedBox(
@@ -1022,7 +1026,7 @@ class AboutPage extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp.adjustedSp,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                     ),
                     SizedBox(
@@ -1031,14 +1035,14 @@ class AboutPage extends StatelessWidget {
                     ),
                     MaterialButton(
                       onPressed: () {},
-                      color: Color(0xff018601),
+                      color: const Color(0xff018601),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                       ),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      textColor: Color(0xff000000),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 8),
+                      textColor: const Color(0xff000000),
                       height: 38.sp.adjustedSp,
                       minWidth: 138.sp.adjustedSp,
                       child: Text(

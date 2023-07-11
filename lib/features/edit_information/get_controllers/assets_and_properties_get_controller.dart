@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/edit_information/models/assets_and_properties_request.dart';
@@ -55,8 +54,8 @@ class AssetsAndPropertiesGetController extends GetxController
 
   @override
   void onInit() {
-    animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+    animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 500));
     selectedOption.value = {
       0: <String>[].obs,
       1: ownHouse,

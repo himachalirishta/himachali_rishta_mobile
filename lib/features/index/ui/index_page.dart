@@ -5,6 +5,7 @@ import 'package:himachali_rishta/features/authentication/login/ui/OtpScreen.dart
 import 'package:himachali_rishta/features/authentication/login/ui/SubmitInformationPage.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/UploadPhotoScreen.dart';
 import 'package:himachali_rishta/features/dashboard/ui/MainDashboardPage.dart';
+import 'package:himachali_rishta/features/delete_profile/ui/delete_profile_page.dart';
 import 'package:himachali_rishta/features/demo_screen/ui/demo_screen.dart';
 import 'package:himachali_rishta/features/interest/ui/InterestPage.dart';
 import 'package:himachali_rishta/features/membership/ui/MembershipPageFree.dart';
@@ -19,7 +20,6 @@ import 'package:himachali_rishta/features/verify_profile/ui/verify_profile_page.
 import 'package:himachali_rishta/profile/ui/MyProfilePage.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../profile/ui/profile_page.dart';
 import '../../authentication/login/ui/SubmitInformationPage2.dart';
 import '../../my_profile/ui/my_profile_page.dart';
 import '../../profile_settings/ui/profile_settings_paid_page.dart';
@@ -116,19 +116,19 @@ class IndexPage extends StatelessWidget {
       ListTile(
         title: Text('Manage Photo', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => ManagePhotosPage());
+          Get.to(() => const ManagePhotosPage());
         },
       ),
       ListTile(
         title: Text('Profile Settings FREE', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => ProfileSettingsFreePage());
+          Get.to(() => const ProfileSettingsFreePage());
         },
       ),
       ListTile(
         title: Text('Profile Settings PAID', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => ProfileSettingsPaidPage());
+          Get.to(() => const ProfileSettingsPaidPage());
         },
       ),
       ListTile(
@@ -140,19 +140,19 @@ class IndexPage extends StatelessWidget {
       ListTile(
         title: Text('Test Screen', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => DemoScreen());
+          Get.to(() => const DemoScreen());
         },
       ),
       ListTile(
         title: Text('My Profile', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => MyAccountPage());
+          Get.to(() => const MyAccountPage());
         },
       ),
       ListTile(
         title: Text('Verify Profile', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => VerifyProfilePage());
+          Get.to(() => const VerifyProfilePage());
         },
       ),
       ListTile(
@@ -164,13 +164,19 @@ class IndexPage extends StatelessWidget {
       ListTile(
         title: Text('Photo Request', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => PhotoRequestReceivedPage());
+          Get.to(() => const PhotoRequestReceivedPage());
         },
       ),
       ListTile(
         title: Text('Payment Page', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => PaymentPage());
+          Get.to(() => const PaymentPage());
+        },
+      ),
+      ListTile(
+        title: Text('Delete Profile', style: TextStyle(fontSize: 12.sp)),
+        onTap: () {
+          Get.to(() => const DeleteProfilePage());
         },
       ),
     ];

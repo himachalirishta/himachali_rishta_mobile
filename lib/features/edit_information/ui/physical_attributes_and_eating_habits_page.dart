@@ -31,7 +31,7 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
             if (snapshot.hasData) {
               return Scaffold(
                 appBar: PreferredSize(
-                  preferredSize: Size.fromHeight(0),
+                  preferredSize: const Size.fromHeight(0),
                   child: Container(
                     color: Theme.of(context).primaryColor,
                   ),
@@ -65,28 +65,28 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                       fontWeight: FontWeight.w400,
                                       fontStyle: FontStyle.normal,
                                       fontSize: 12.sp.adjustedSp,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
                                     decoration: InputDecoration(
                                       disabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
+                                            color: const Color(0xffe0e0e0),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
+                                            color: const Color(0xffe0e0e0),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       enabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
+                                            color: const Color(0xffe0e0e0),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       labelText: "ft.",
@@ -94,10 +94,10 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                         fontWeight: FontWeight.w400,
                                         fontStyle: FontStyle.normal,
                                         fontSize: 12.sp.adjustedSp,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                       filled: false,
-                                      fillColor: Color(0xfff2f2f3),
+                                      fillColor: const Color(0xfff2f2f3),
                                       isDense: false,
                                       contentPadding: EdgeInsets.fromLTRB(
                                           12.sp.adjustedSp,
@@ -120,28 +120,28 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                       fontWeight: FontWeight.w400,
                                       fontStyle: FontStyle.normal,
                                       fontSize: 12.sp.adjustedSp,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
                                     decoration: InputDecoration(
                                       disabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
+                                            color: const Color(0xffe0e0e0),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
+                                            color: const Color(0xffe0e0e0),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       enabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
+                                            color: const Color(0xffe0e0e0),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       labelText: "in.",
@@ -149,10 +149,10 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                         fontWeight: FontWeight.w400,
                                         fontStyle: FontStyle.normal,
                                         fontSize: 12.sp.adjustedSp,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                       filled: false,
-                                      fillColor: Color(0xfff2f2f3),
+                                      fillColor: const Color(0xfff2f2f3),
                                       isDense: false,
                                       contentPadding: EdgeInsets.fromLTRB(
                                           12.sp.adjustedSp,
@@ -177,28 +177,28 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp.adjustedSp,
-                                color: Color(0xff000000),
+                                color: const Color(0xff000000),
                               ),
                               decoration: InputDecoration(
                                 disabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.circular(4.0.sp.adjustedSp),
                                   borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
+                                      color: const Color(0xffe0e0e0),
                                       width: 1.sp.adjustedSp),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.circular(4.0.sp.adjustedSp),
                                   borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
+                                      color: const Color(0xffe0e0e0),
                                       width: 1.sp.adjustedSp),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.circular(4.0.sp.adjustedSp),
                                   borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
+                                      color: const Color(0xffe0e0e0),
                                       width: 1.sp.adjustedSp),
                                 ),
                                 labelText: "Weight",
@@ -206,10 +206,10 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 filled: false,
-                                fillColor: Color(0xfff2f2f3),
+                                fillColor: const Color(0xfff2f2f3),
                                 isDense: false,
                                 contentPadding: EdgeInsets.fromLTRB(
                                     12.sp.adjustedSp,
@@ -237,28 +237,28 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Blood Group",
@@ -266,12 +266,12 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
-                                  suffixIcon: Icon(
+                                  suffixIcon: const Icon(
                                     Icons.chevron_right,
                                     color: Color(0xff000000),
                                   ),
@@ -302,28 +302,28 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Complexion",
@@ -331,12 +331,12 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
-                                  suffixIcon: Icon(
+                                  suffixIcon: const Icon(
                                     Icons.chevron_right,
                                     color: Color(0xff000000),
                                   ),
@@ -367,28 +367,28 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Body Type",
@@ -396,12 +396,12 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
-                                  suffixIcon: Icon(
+                                  suffixIcon: const Icon(
                                     Icons.chevron_right,
                                     color: Color(0xff000000),
                                   ),
@@ -432,28 +432,28 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Diet",
@@ -461,12 +461,12 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
-                                  suffixIcon: Icon(
+                                  suffixIcon: const Icon(
                                     Icons.chevron_right,
                                     color: Color(0xff000000),
                                   ),
@@ -497,28 +497,28 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Special Case",
@@ -526,12 +526,12 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
-                                  suffixIcon: Icon(
+                                  suffixIcon: const Icon(
                                     Icons.chevron_right,
                                     color: Color(0xff000000),
                                   ),
@@ -562,28 +562,28 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(4.0.sp.adjustedSp),
+                                    borderRadius: BorderRadius.circular(
+                                        4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Disability",
@@ -591,12 +591,12 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
-                                  suffixIcon: Icon(
+                                  suffixIcon: const Icon(
                                     Icons.chevron_right,
                                     color: Color(0xff000000),
                                   ),
@@ -614,15 +614,20 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                             ),
                             MaterialButton(
                               onPressed: () {
-                                getController.submitPhysicalAttributesAndEatingHabits();
+                                getController
+                                    .submitPhysicalAttributesAndEatingHabits();
                               },
-                              color: Color(0xffac0f11),
+                              color: const Color(0xffac0f11),
                               elevation: 0,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                                borderRadius:
+                                    BorderRadius.circular(4.0.sp.adjustedSp),
                               ),
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 16, vertical: 8),
+                              textColor: const Color(0xff000000),
+                              height: 38.sp.adjustedSp,
+                              minWidth: 138.sp.adjustedSp,
                               child: Text(
                                 "Submit",
                                 style: TextStyle(
@@ -632,9 +637,6 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                               ),
-                              textColor: Color(0xff000000),
-                              height: 38.sp.adjustedSp,
-                              minWidth: 138.sp.adjustedSp,
                             ),
                           ],
                         ),
@@ -644,20 +646,23 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                           builder: (context, widget) {
                             return Positioned(
                                 right: -75.w *
-                                    (1 - getController.animationController.value),
+                                    (1 -
+                                        getController
+                                            .animationController.value),
                                 child: SideOptionDrawer(
                                   options: getController
                                       .selectedOption[getController
                                           .selectedOptionIndex.value]!
                                       .value,
                                   onOptionSelected: (index) {
-                                    switch (
-                                        getController.selectedOptionIndex.value) {
+                                    switch (getController
+                                        .selectedOptionIndex.value) {
                                       case 1:
                                         //blood group
                                         getController.selectedBloodGroup.value =
                                             getController.bloodGroup[index];
-                                        getController.bloodGroupController.text =
+                                        getController
+                                                .bloodGroupController.text =
                                             getController
                                                 .selectedBloodGroup.value;
                                         getController.animationController
@@ -667,7 +672,8 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                         //complexion
                                         getController.selectedComplexion.value =
                                             getController.complexion[index];
-                                        getController.complexionController.text =
+                                        getController
+                                                .complexionController.text =
                                             getController
                                                 .selectedComplexion.value;
                                         getController.animationController
@@ -678,7 +684,8 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                         getController.selectedBodyType.value =
                                             getController.bodyType[index];
                                         getController.bodyTypeController.text =
-                                            getController.selectedBodyType.value;
+                                            getController
+                                                .selectedBodyType.value;
                                         getController.animationController
                                             .reverse();
                                         break;
@@ -693,9 +700,11 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                         break;
                                       case 5:
                                         //special case
-                                        getController.selectedSpecialCase.value =
+                                        getController
+                                                .selectedSpecialCase.value =
                                             getController.specialCase[index];
-                                        getController.specialCaseController.text =
+                                        getController
+                                                .specialCaseController.text =
                                             getController
                                                 .selectedSpecialCase.value;
                                         getController.animationController
@@ -705,7 +714,8 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                                         //disability
                                         getController.selectedDisability.value =
                                             getController.disability[index];
-                                        getController.disabilityController.text =
+                                        getController
+                                                .disabilityController.text =
                                             getController
                                                 .selectedDisability.value;
                                         getController.animationController
@@ -722,7 +732,7 @@ class PhysicalAttributesAndEatingHabitsPage extends StatelessWidget {
                 ),
               );
             }
-            return Scaffold();
+            return const Scaffold();
           }),
     );
   }

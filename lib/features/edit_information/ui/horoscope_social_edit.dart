@@ -16,7 +16,7 @@ class HoroscopeSocialEditPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(0),
+          preferredSize: const Size.fromHeight(0),
           child: Container(
             color: Theme.of(context).primaryColor,
           ),
@@ -43,38 +43,41 @@ class HoroscopeSocialEditPage extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp.adjustedSp,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                       decoration: InputDecoration(
                         disabledBorder: OutlineInputBorder(
                           borderRadius:
                               BorderRadius.circular(4.0.sp.adjustedSp),
                           borderSide: BorderSide(
-                              color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                              color: const Color(0xffe0e0e0),
+                              width: 1.sp.adjustedSp),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius:
                               BorderRadius.circular(4.0.sp.adjustedSp),
                           borderSide: BorderSide(
-                              color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                              color: const Color(0xffe0e0e0),
+                              width: 1.sp.adjustedSp),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius:
                               BorderRadius.circular(4.0.sp.adjustedSp),
                           borderSide: BorderSide(
-                              color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                              color: const Color(0xffe0e0e0),
+                              width: 1.sp.adjustedSp),
                         ),
                         labelText: "Manglik",
                         labelStyle: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 12.sp.adjustedSp,
-                          color: Color(0xff000000),
+                          color: const Color(0xff000000),
                         ),
                         filled: false,
-                        fillColor: Color(0xfff2f2f3),
+                        fillColor: const Color(0xfff2f2f3),
                         isDense: false,
-                        suffixIcon: Icon(
+                        suffixIcon: const Icon(
                           Icons.chevron_right,
                           color: Color(0xff000000),
                         ),
@@ -95,33 +98,36 @@ class HoroscopeSocialEditPage extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 12.sp.adjustedSp,
-                      color: Color(0xff000000),
+                      color: const Color(0xff000000),
                     ),
                     decoration: InputDecoration(
                       disabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       labelText: "Birth Place",
                       labelStyle: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp.adjustedSp,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                       filled: false,
-                      fillColor: Color(0xfff2f2f3),
+                      fillColor: const Color(0xfff2f2f3),
                       isDense: false,
                       contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
                           8.sp.adjustedSp, 12.sp.adjustedSp, 8),
@@ -151,38 +157,41 @@ class HoroscopeSocialEditPage extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp.adjustedSp,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                       decoration: InputDecoration(
                         disabledBorder: OutlineInputBorder(
                           borderRadius:
                               BorderRadius.circular(4.0.sp.adjustedSp),
                           borderSide: BorderSide(
-                              color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                              color: const Color(0xffe0e0e0),
+                              width: 1.sp.adjustedSp),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius:
                               BorderRadius.circular(4.0.sp.adjustedSp),
                           borderSide: BorderSide(
-                              color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                              color: const Color(0xffe0e0e0),
+                              width: 1.sp.adjustedSp),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius:
                               BorderRadius.circular(4.0.sp.adjustedSp),
                           borderSide: BorderSide(
-                              color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                              color: const Color(0xffe0e0e0),
+                              width: 1.sp.adjustedSp),
                         ),
                         labelText: "Birth Time",
                         labelStyle: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 12.sp.adjustedSp,
-                          color: Color(0xff000000),
+                          color: const Color(0xff000000),
                         ),
                         filled: false,
-                        fillColor: Color(0xfff2f2f3),
+                        fillColor: const Color(0xfff2f2f3),
                         isDense: false,
-                        suffixIcon: Icon(
+                        suffixIcon: const Icon(
                           Icons.chevron_right,
                           color: Color(0xff000000),
                         ),
@@ -203,33 +212,36 @@ class HoroscopeSocialEditPage extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 12.sp.adjustedSp,
-                      color: Color(0xff000000),
+                      color: const Color(0xff000000),
                     ),
                     decoration: InputDecoration(
                       disabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       labelText: "Paternal Subcaste",
                       labelStyle: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp.adjustedSp,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                       filled: false,
-                      fillColor: Color(0xfff2f2f3),
+                      fillColor: const Color(0xfff2f2f3),
                       isDense: false,
                       contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
                           8.sp.adjustedSp, 12.sp.adjustedSp, 8),
@@ -247,33 +259,36 @@ class HoroscopeSocialEditPage extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 12.sp.adjustedSp,
-                      color: Color(0xff000000),
+                      color: const Color(0xff000000),
                     ),
                     decoration: InputDecoration(
                       disabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       labelText: "Maternal Subcaste",
                       labelStyle: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp.adjustedSp,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                       filled: false,
-                      fillColor: Color(0xfff2f2f3),
+                      fillColor: const Color(0xfff2f2f3),
                       isDense: false,
                       contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
                           8.sp.adjustedSp, 12.sp.adjustedSp, 8),
@@ -291,33 +306,36 @@ class HoroscopeSocialEditPage extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 12.sp.adjustedSp,
-                      color: Color(0xff000000),
+                      color: const Color(0xff000000),
                     ),
                     decoration: InputDecoration(
                       disabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       labelText: "Gotra",
                       labelStyle: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp.adjustedSp,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                       filled: false,
-                      fillColor: Color(0xfff2f2f3),
+                      fillColor: const Color(0xfff2f2f3),
                       isDense: false,
                       contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
                           8.sp.adjustedSp, 12.sp.adjustedSp, 8),
@@ -335,33 +353,36 @@ class HoroscopeSocialEditPage extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 12.sp.adjustedSp,
-                      color: Color(0xff000000),
+                      color: const Color(0xff000000),
                     ),
                     decoration: InputDecoration(
                       disabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       labelText: "Rashi",
                       labelStyle: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp.adjustedSp,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                       filled: false,
-                      fillColor: Color(0xfff2f2f3),
+                      fillColor: const Color(0xfff2f2f3),
                       isDense: false,
                       contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
                           8.sp.adjustedSp, 12.sp.adjustedSp, 8),
@@ -379,33 +400,36 @@ class HoroscopeSocialEditPage extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                       fontSize: 12.sp.adjustedSp,
-                      color: Color(0xff000000),
+                      color: const Color(0xff000000),
                     ),
                     decoration: InputDecoration(
                       disabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                         borderSide: BorderSide(
-                            color: Color(0xffe0e0e0), width: 1.sp.adjustedSp),
+                            color: const Color(0xffe0e0e0),
+                            width: 1.sp.adjustedSp),
                       ),
                       labelText: "Mother Tongue",
                       labelStyle: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
                         fontSize: 12.sp.adjustedSp,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                       filled: false,
-                      fillColor: Color(0xfff2f2f3),
+                      fillColor: const Color(0xfff2f2f3),
                       isDense: false,
                       contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
                           8.sp.adjustedSp, 12.sp.adjustedSp, 8),
@@ -419,12 +443,16 @@ class HoroscopeSocialEditPage extends StatelessWidget {
                     onPressed: () {
                       getController.submitHoroscopeSocial();
                     },
-                    color: Color(0xffac0f11),
+                    color: const Color(0xffac0f11),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    textColor: const Color(0xff000000),
+                    height: 38.sp.adjustedSp,
+                    minWidth: 138.sp.adjustedSp,
                     child: Text(
                       "Submit",
                       style: TextStyle(
@@ -434,9 +462,6 @@ class HoroscopeSocialEditPage extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    textColor: Color(0xff000000),
-                    height: 38.sp.adjustedSp,
-                    minWidth: 138.sp.adjustedSp,
                   ),
                 ],
               ),

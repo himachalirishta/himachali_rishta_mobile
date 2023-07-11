@@ -4,9 +4,11 @@
 
 import 'dart:convert';
 
-EducationOccupationRequest educationOccupationRequestFromJson(String str) => EducationOccupationRequest.fromJson(json.decode(str));
+EducationOccupationRequest educationOccupationRequestFromJson(String str) =>
+    EducationOccupationRequest.fromJson(json.decode(str));
 
-String educationOccupationRequestToJson(EducationOccupationRequest data) => json.encode(data.toJson());
+String educationOccupationRequestToJson(EducationOccupationRequest data) =>
+    json.encode(data.toJson());
 
 class EducationOccupationRequest {
   String education;
@@ -42,28 +44,31 @@ class EducationOccupationRequest {
         annualIncome: annualIncome ?? this.annualIncome,
       );
 
-  factory EducationOccupationRequest.fromJson(Map<String, dynamic> json) => EducationOccupationRequest(
-    education: json["education"],
-    educationDetails: json["education_details"],
-    empType: json["emp_type"],
-    occupation: json["occupation"],
-    occupationDetail: json["occupation_detail"],
-    annualIncome: json["annual_income"],
-  );
+  factory EducationOccupationRequest.fromJson(Map<String, dynamic> json) =>
+      EducationOccupationRequest(
+        education: json["education"],
+        educationDetails: json["education_details"],
+        empType: json["emp_type"],
+        occupation: json["occupation"],
+        occupationDetail: json["occupation_detail"],
+        annualIncome: json["annual_income"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "education": education,
-    "education_details": educationDetails,
-    "emp_type": empType,
-    "occupation": occupation,
-    "occupation_detail": occupationDetail,
-    "annual_income": annualIncome,
-  };
+        "education": education,
+        "education_details": educationDetails,
+        "emp_type": empType,
+        "occupation": occupation,
+        "occupation_detail": occupationDetail,
+        "annual_income": annualIncome,
+      };
 }
 
-EducationOccupationResponse educationOccupationResponseFromJson(String str) => EducationOccupationResponse.fromJson(json.decode(str));
+EducationOccupationResponse educationOccupationResponseFromJson(String str) =>
+    EducationOccupationResponse.fromJson(json.decode(str));
 
-String educationOccupationResponseToJson(EducationOccupationResponse data) => json.encode(data.toJson());
+String educationOccupationResponseToJson(EducationOccupationResponse data) =>
+    json.encode(data.toJson());
 
 class EducationOccupationResponse {
   String message;
@@ -79,12 +84,12 @@ class EducationOccupationResponse {
         message: message ?? this.message,
       );
 
-  factory EducationOccupationResponse.fromJson(Map<String, dynamic> json) => EducationOccupationResponse(
-    message: json["message"],
-  );
+  factory EducationOccupationResponse.fromJson(Map<String, dynamic> json) =>
+      EducationOccupationResponse(
+        message: json["message"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "message": message,
-  };
+        "message": message,
+      };
 }
-

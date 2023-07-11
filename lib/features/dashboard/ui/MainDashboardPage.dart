@@ -32,14 +32,14 @@ class MainDashboardPage extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: StreamBuilder<bool>(
-          stream: Stream.periodic(Duration(milliseconds: 100), (_) {
+          stream: Stream.periodic(const Duration(milliseconds: 100), (_) {
             return SizerUtil.orientation == Orientation.landscape;
           }),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Scaffold(
                 appBar: PreferredSize(
-                  preferredSize: Size.fromHeight(0),
+                  preferredSize: const Size.fromHeight(0),
                   child: Container(
                     color: Theme.of(context).primaryColor,
                   ),
@@ -59,10 +59,10 @@ class MainDashboardPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                DashboardAppBar(),
+                                const DashboardAppBar(),
                                 Container(
                                   color: Theme.of(context).primaryColor,
-                                  child: TabBar(tabs: [
+                                  child: const TabBar(tabs: [
                                     Tab(
                                       text: 'All',
                                     ),
@@ -104,7 +104,7 @@ class MainDashboardPage extends StatelessWidget {
                                       ),
                                       CircleAvatar(
                                         radius: 50.sp.adjustedSp,
-                                        backgroundImage: NetworkImage(
+                                        backgroundImage: const NetworkImage(
                                             'https://picsum.photos/250?image=9'),
                                       ),
                                       SizedBox(
@@ -115,7 +115,8 @@ class MainDashboardPage extends StatelessWidget {
                                             horizontal: 8.sp.adjustedSp),
                                         child: TextFormField(
                                           decoration: InputDecoration(
-                                            prefixIcon: Icon(Icons.search),
+                                            prefixIcon:
+                                                const Icon(Icons.search),
                                             border: OutlineInputBorder(
                                               borderRadius:
                                                   BorderRadius.circular(
@@ -123,7 +124,7 @@ class MainDashboardPage extends StatelessWidget {
                                               borderSide: BorderSide.none,
                                             ),
                                             contentPadding:
-                                                EdgeInsets.symmetric(
+                                                const EdgeInsets.symmetric(
                                                     vertical: 12.0,
                                                     horizontal: 16.0),
                                             hintText: 'Search',
@@ -136,7 +137,7 @@ class MainDashboardPage extends StatelessWidget {
                                         ),
                                       ),
                                       ListTile(
-                                        leading: Icon(Icons.home),
+                                        leading: const Icon(Icons.home),
                                         title: Text(
                                           'My Home',
                                           style: TextStyle(
@@ -144,8 +145,8 @@ class MainDashboardPage extends StatelessWidget {
                                         ),
                                       ),
                                       ListTile(
-                                        leading:
-                                            Icon(Icons.account_tree_outlined),
+                                        leading: const Icon(
+                                            Icons.account_tree_outlined),
                                         title: Text(
                                           'My Account',
                                           style: TextStyle(
@@ -156,29 +157,30 @@ class MainDashboardPage extends StatelessWidget {
                                         },
                                       ),
                                       ListTile(
-                                        leading: Icon(Icons.inbox),
+                                        leading: const Icon(Icons.inbox),
                                         title: Text(
                                           'Inbox',
                                           style: TextStyle(
                                               fontSize: 16.sp.adjustedSp),
                                         ),
                                         onTap: () {
-                                          Get.to(() => InterestPage());
+                                          Get.to(() => const InterestPage());
                                         },
                                       ),
                                       ListTile(
-                                        leading: Icon(Icons.home_work),
+                                        leading: const Icon(Icons.home_work),
                                         title: Text(
                                           'Membership Plans',
                                           style: TextStyle(
                                               fontSize: 16.sp.adjustedSp),
                                         ),
                                         onTap: () {
-                                          Get.to(() => MembershipPageFree());
+                                          Get.to(
+                                              () => const MembershipPageFree());
                                         },
                                       ),
                                       ListTile(
-                                        leading: Icon(Icons.person),
+                                        leading: const Icon(Icons.person),
                                         title: Text(
                                           'Profile',
                                           style: TextStyle(
@@ -186,18 +188,18 @@ class MainDashboardPage extends StatelessWidget {
                                         ),
                                       ),
                                       ListTile(
-                                        leading: Icon(Icons.description),
+                                        leading: const Icon(Icons.description),
                                         title: Text(
                                           'Index',
                                           style: TextStyle(
                                               fontSize: 16.sp.adjustedSp),
                                         ),
                                         onTap: () {
-                                          Get.to(() => IndexPage());
+                                          Get.to(() => const IndexPage());
                                         },
                                       ),
                                       ListTile(
-                                        leading: Icon(MdiIcons
+                                        leading: const Icon(MdiIcons
                                             .pictureInPictureBottomRight),
                                         title: Text(
                                           'Manage Photos',
@@ -205,7 +207,8 @@ class MainDashboardPage extends StatelessWidget {
                                               fontSize: 16.sp.adjustedSp),
                                         ),
                                         onTap: () {
-                                          Get.to(() => ManagePhotosPage());
+                                          Get.to(
+                                              () => const ManagePhotosPage());
                                         },
                                       ),
                                     ],
@@ -216,7 +219,7 @@ class MainDashboardPage extends StatelessWidget {
                                   color: Theme.of(context).primaryColor,
                                 ),
                                 ListTile(
-                                  leading: Icon(Icons.logout),
+                                  leading: const Icon(Icons.logout),
                                   title: Text(
                                     'Logout',
                                     style:
@@ -238,7 +241,7 @@ class MainDashboardPage extends StatelessWidget {
                 ),
               );
             }
-            return Scaffold();
+            return const Scaffold();
           }),
     );
   }

@@ -11,7 +11,7 @@ class PhotoRequestReceivedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(0),
+        preferredSize: const Size.fromHeight(0),
         child: Container(
           color: Theme.of(context).primaryColor,
         ),
@@ -20,7 +20,7 @@ class PhotoRequestReceivedPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           StreamBuilder<bool>(
-              stream: Stream.periodic(Duration(milliseconds: 100), (_) {
+              stream: Stream.periodic(const Duration(milliseconds: 100), (_) {
                 return SizerUtil.orientation == Orientation.landscape;
               }),
               builder: (context, snapshot) {
@@ -31,7 +31,7 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        StandardAppBar(title: 'Photo Request'),
+                        const StandardAppBar(title: 'Photo Request'),
                         Row(
                           children: [
                             Expanded(
@@ -55,11 +55,12 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                         Container(
                           decoration: BoxDecoration(
                             border: Border.all(
-                                color: AppColors.infoLight, width: 1.sp.adjustedSp),
+                                color: AppColors.infoLight,
+                                width: 1.sp.adjustedSp),
                           ),
                           child: Padding(
-                            padding:
-                                EdgeInsets.symmetric(vertical: 8.0.sp.adjustedSp),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 8.0.sp.adjustedSp),
                             child: Row(
                               children: [
                                 SizedBox(
@@ -70,6 +71,11 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                                     padding: EdgeInsets.all(4.0.sp.adjustedSp),
                                     child: Container(
                                       alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                              4.sp.adjustedSp),
+                                          border: Border.all(
+                                              color: AppColors.infoLight)),
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
                                             horizontal: 8.0.sp.adjustedSp,
@@ -81,11 +87,6 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                                               fontWeight: FontWeight.w500),
                                         ),
                                       ),
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                              4.sp.adjustedSp),
-                                          border: Border.all(
-                                              color: AppColors.infoLight)),
                                     ),
                                   ),
                                 ),
@@ -94,6 +95,11 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                                     padding: EdgeInsets.all(4.0.sp.adjustedSp),
                                     child: Container(
                                       alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                              4.sp.adjustedSp),
+                                          border: Border.all(
+                                              color: AppColors.infoLight)),
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
                                             horizontal: 8.0.sp.adjustedSp,
@@ -105,11 +111,6 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                                               fontWeight: FontWeight.w500),
                                         ),
                                       ),
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                              4.sp.adjustedSp),
-                                          border: Border.all(
-                                              color: AppColors.infoLight)),
                                     ),
                                   ),
                                 ),
@@ -118,6 +119,11 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                                     padding: EdgeInsets.all(4.0.sp.adjustedSp),
                                     child: Container(
                                       alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                              4.sp.adjustedSp),
+                                          border: Border.all(
+                                              color: AppColors.infoLight)),
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
                                             horizontal: 8.0.sp.adjustedSp,
@@ -129,11 +135,6 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                                               fontWeight: FontWeight.w500),
                                         ),
                                       ),
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                              4.sp.adjustedSp),
-                                          border: Border.all(
-                                              color: AppColors.infoLight)),
                                     ),
                                   ),
                                 ),
@@ -151,9 +152,11 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                                 return Column(
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.all(8.0.sp.adjustedSp),
+                                      padding:
+                                          EdgeInsets.all(8.0.sp.adjustedSp),
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
                                         children: [
@@ -163,7 +166,8 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                                                 children: [
                                                   CircleAvatar(
                                                     radius: 30.sp.adjustedSp,
-                                                    backgroundImage: AssetImage(
+                                                    backgroundImage:
+                                                        const AssetImage(
                                                       'assets/images/femaledefault.jpg',
                                                     ),
                                                   ),
@@ -190,28 +194,34 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                                                   Text(
                                                     'HPR123456',
                                                     style: TextStyle(
-                                                        fontWeight: FontWeight.w600,
-                                                        fontSize: 12.sp.adjustedSp),
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontSize:
+                                                            12.sp.adjustedSp),
                                                   ),
                                                   Text(
                                                     '21 Yrs,Unmarried',
                                                     style: TextStyle(
-                                                        fontSize: 10.sp.adjustedSp),
+                                                        fontSize:
+                                                            10.sp.adjustedSp),
                                                   ),
                                                   Text(
                                                     'B Tech',
                                                     style: TextStyle(
-                                                        fontSize: 10.sp.adjustedSp),
+                                                        fontSize:
+                                                            10.sp.adjustedSp),
                                                   ),
                                                   Text(
                                                     'Hindu,Choudhary Girth',
                                                     style: TextStyle(
-                                                        fontSize: 10.sp.adjustedSp),
+                                                        fontSize:
+                                                            10.sp.adjustedSp),
                                                   ),
                                                   Text(
                                                     'From : Kangra Himachal Pradesh',
                                                     style: TextStyle(
-                                                        fontSize: 10.sp.adjustedSp),
+                                                        fontSize:
+                                                            10.sp.adjustedSp),
                                                   ),
                                                 ],
                                               )
@@ -238,10 +248,11 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               8.sp.adjustedSp)),
-                                                  backgroundColor: AppColors.green,
+                                                  backgroundColor:
+                                                      AppColors.green,
                                                   onPressed: () {},
-                                                  icon: Icon(Icons.check),
-                                                  label: Text('Accept')),
+                                                  icon: const Icon(Icons.check),
+                                                  label: const Text('Accept')),
                                               FloatingActionButton.extended(
                                                   elevation: 2,
                                                   shape: RoundedRectangleBorder(
@@ -249,8 +260,8 @@ class PhotoRequestReceivedPage extends StatelessWidget {
                                                           BorderRadius.circular(
                                                               8.sp.adjustedSp)),
                                                   onPressed: () {},
-                                                  icon: Icon(Icons.close),
-                                                  label: Text('Reject')),
+                                                  icon: const Icon(Icons.close),
+                                                  label: const Text('Reject')),
                                             ],
                                           )
                                         ],

@@ -9,7 +9,7 @@ import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class PartnerPreferenceTab extends StatelessWidget {
-  PartnerPreferenceTab({super.key});
+  const PartnerPreferenceTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class PartnerPreferenceTab extends StatelessWidget {
               children: [
                 Icon(
                   Icons.family_restroom,
-                  color: Color(0xffac0f11),
+                  color: const Color(0xffac0f11),
                   size: 22.sp.adjustedSp,
                 ),
                 SizedBox(
@@ -44,7 +44,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     fontStyle: FontStyle.normal,
                     fontSize: 18.sp.adjustedSp,
-                    color: Color(0xffac0f11),
+                    color: const Color(0xffac0f11),
                   ),
                 ),
               ],
@@ -64,7 +64,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       fontStyle: FontStyle.normal,
                       fontSize: 16.sp.adjustedSp,
-                      color: Color(0xff000000),
+                      color: const Color(0xff000000),
                     ),
                   ),
                   Row(
@@ -81,7 +81,8 @@ class PartnerPreferenceTab extends StatelessWidget {
                               dataSource: [
                                 MatchData('Match', 80,
                                     Theme.of(context).primaryColor),
-                                MatchData('Not Match', 20, Color(0xffeeeeee)),
+                                MatchData(
+                                    'Not Match', 20, const Color(0xffeeeeee)),
                               ],
                               xValueMapper: (MatchData data, _) => data.name,
                               yValueMapper: (MatchData data, _) => data.value,
@@ -111,8 +112,8 @@ class PartnerPreferenceTab extends StatelessWidget {
 
                             ///***If you have exported images you must have to copy those images in assets/images directory.
                             Image(
-                          image:
-                              NetworkImage("https://picsum.photos/250?image=9"),
+                          image: const NetworkImage(
+                              "https://picsum.photos/250?image=9"),
                           height: 100.sp.adjustedSp,
                           width: 100.sp.adjustedSp,
                           fit: BoxFit.cover,
@@ -133,7 +134,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                 scrollDirection: Axis.vertical,
                 padding: EdgeInsets.all(8.sp.adjustedSp),
                 shrinkWrap: false,
-                physics: ScrollPhysics(),
+                physics: const ScrollPhysics(),
                 children: [
                   Padding(
                     padding: EdgeInsets.all(8.sp.adjustedSp),
@@ -157,7 +158,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 14.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                               Text(
@@ -168,7 +169,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ],
@@ -204,7 +205,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 14.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                               Text(
@@ -215,7 +216,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ],
@@ -251,7 +252,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 14.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                               Text(
@@ -262,7 +263,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ],
@@ -298,7 +299,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 14.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                               Text(
@@ -309,7 +310,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ],
@@ -345,7 +346,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 14.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                               Text(
@@ -356,7 +357,7 @@ class PartnerPreferenceTab extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ],

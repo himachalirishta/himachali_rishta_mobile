@@ -15,6 +15,8 @@ class BasicEditPage extends StatelessWidget {
   BasicInformationGetController getController =
       Get.put(BasicInformationGetController());
 
+  BasicEditPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<bool>(
@@ -58,28 +60,28 @@ class BasicEditPage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp.adjustedSp,
-                                color: Color(0xff000000),
+                                color: const Color(0xff000000),
                               ),
                               decoration: InputDecoration(
                                 disabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.circular(4.0.sp.adjustedSp),
                                   borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
+                                      color: const Color(0xffe0e0e0),
                                       width: 1.sp.adjustedSp),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.circular(4.0.sp.adjustedSp),
                                   borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
+                                      color: const Color(0xffe0e0e0),
                                       width: 1.sp.adjustedSp),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.circular(4.0.sp.adjustedSp),
                                   borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
+                                      color: const Color(0xffe0e0e0),
                                       width: 1.sp.adjustedSp),
                                 ),
                                 labelText: "Name",
@@ -87,10 +89,10 @@ class BasicEditPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 filled: false,
-                                fillColor: Color(0xfff2f2f3),
+                                fillColor: const Color(0xfff2f2f3),
                                 isDense: false,
                                 contentPadding: EdgeInsets.fromLTRB(
                                     12.sp.adjustedSp,
@@ -119,28 +121,28 @@ class BasicEditPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Marital Status",
@@ -148,10 +150,10 @@ class BasicEditPage extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
                                   contentPadding: EdgeInsets.fromLTRB(
                                       12.sp.adjustedSp,
@@ -159,7 +161,7 @@ class BasicEditPage extends StatelessWidget {
                                       12.sp.adjustedSp,
                                       8),
                                   suffixIcon: Icon(Icons.chevron_right,
-                                      color: Color(0xff212435),
+                                      color: const Color(0xff212435),
                                       size: 20.sp.adjustedSp),
                                 ),
                               ),
@@ -183,28 +185,28 @@ class BasicEditPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Religion",
@@ -212,10 +214,10 @@ class BasicEditPage extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
                                   contentPadding: EdgeInsets.fromLTRB(
                                       12.sp.adjustedSp,
@@ -223,7 +225,7 @@ class BasicEditPage extends StatelessWidget {
                                       12.sp.adjustedSp,
                                       8),
                                   suffixIcon: Icon(Icons.chevron_right,
-                                      color: Color(0xff212435),
+                                      color: const Color(0xff212435),
                                       size: 20.sp.adjustedSp),
                                 ),
                               ),
@@ -247,28 +249,28 @@ class BasicEditPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Caste",
@@ -276,10 +278,10 @@ class BasicEditPage extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
                                   contentPadding: EdgeInsets.fromLTRB(
                                       12.sp.adjustedSp,
@@ -287,7 +289,7 @@ class BasicEditPage extends StatelessWidget {
                                       12.sp.adjustedSp,
                                       8),
                                   suffixIcon: Icon(Icons.chevron_right,
-                                      color: Color(0xff212435),
+                                      color: const Color(0xff212435),
                                       size: 20.sp.adjustedSp),
                                 ),
                               ),
@@ -319,28 +321,28 @@ class BasicEditPage extends StatelessWidget {
                                       fontWeight: FontWeight.w400,
                                       fontStyle: FontStyle.normal,
                                       fontSize: 12.sp.adjustedSp,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
                                     decoration: InputDecoration(
                                       disabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
+                                            color: const Color(0xffe0e0e0),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
+                                            color: const Color(0xffe0e0e0),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       enabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
+                                            color: const Color(0xffe0e0e0),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       labelText: "ft",
@@ -348,10 +350,10 @@ class BasicEditPage extends StatelessWidget {
                                         fontWeight: FontWeight.w400,
                                         fontStyle: FontStyle.normal,
                                         fontSize: 12.sp.adjustedSp,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                       filled: false,
-                                      fillColor: Color(0xfff2f2f3),
+                                      fillColor: const Color(0xfff2f2f3),
                                       isDense: false,
                                       contentPadding: EdgeInsets.fromLTRB(
                                           12.sp.adjustedSp,
@@ -375,28 +377,28 @@ class BasicEditPage extends StatelessWidget {
                                       fontWeight: FontWeight.w400,
                                       fontStyle: FontStyle.normal,
                                       fontSize: 12.sp.adjustedSp,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
                                     decoration: InputDecoration(
                                       disabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
+                                            color: const Color(0xffe0e0e0),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
+                                            color: const Color(0xffe0e0e0),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       enabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(
                                             4.0.sp.adjustedSp),
                                         borderSide: BorderSide(
-                                            color: Color(0xffe0e0e0),
+                                            color: const Color(0xffe0e0e0),
                                             width: 1.sp.adjustedSp),
                                       ),
                                       labelText: "in.",
@@ -404,10 +406,10 @@ class BasicEditPage extends StatelessWidget {
                                         fontWeight: FontWeight.w400,
                                         fontStyle: FontStyle.normal,
                                         fontSize: 12.sp.adjustedSp,
-                                        color: Color(0xff000000),
+                                        color: const Color(0xff000000),
                                       ),
                                       filled: false,
-                                      fillColor: Color(0xfff2f2f3),
+                                      fillColor: const Color(0xfff2f2f3),
                                       isDense: false,
                                       contentPadding: EdgeInsets.fromLTRB(
                                           12.sp.adjustedSp,
@@ -449,28 +451,28 @@ class BasicEditPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 decoration: InputDecoration(
                                   disabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(
                                         4.0.sp.adjustedSp),
                                     borderSide: BorderSide(
-                                        color: Color(0xffe0e0e0),
+                                        color: const Color(0xffe0e0e0),
                                         width: 1.sp.adjustedSp),
                                   ),
                                   labelText: "Date Of Birth",
@@ -478,10 +480,10 @@ class BasicEditPage extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 12.sp.adjustedSp,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                   filled: false,
-                                  fillColor: Color(0xfff2f2f3),
+                                  fillColor: const Color(0xfff2f2f3),
                                   isDense: false,
                                   contentPadding: EdgeInsets.fromLTRB(
                                       12.sp.adjustedSp,
@@ -489,7 +491,7 @@ class BasicEditPage extends StatelessWidget {
                                       12.sp.adjustedSp,
                                       8),
                                   suffixIcon: Icon(Icons.chevron_right,
-                                      color: Color(0xff212435),
+                                      color: const Color(0xff212435),
                                       size: 20.sp.adjustedSp),
                                 ),
                               ),
@@ -509,28 +511,28 @@ class BasicEditPage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp.adjustedSp,
-                                color: Color(0xff000000),
+                                color: const Color(0xff000000),
                               ),
                               decoration: InputDecoration(
                                 disabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.circular(4.0.sp.adjustedSp),
                                   borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
+                                      color: const Color(0xffe0e0e0),
                                       width: 1.sp.adjustedSp),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.circular(4.0.sp.adjustedSp),
                                   borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
+                                      color: const Color(0xffe0e0e0),
                                       width: 1.sp.adjustedSp),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.circular(4.0.sp.adjustedSp),
                                   borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
+                                      color: const Color(0xffe0e0e0),
                                       width: 1.sp.adjustedSp),
                                 ),
                                 labelText: "Number of children",
@@ -538,10 +540,10 @@ class BasicEditPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 filled: false,
-                                fillColor: Color(0xfff2f2f3),
+                                fillColor: const Color(0xfff2f2f3),
                                 isDense: false,
                                 contentPadding: EdgeInsets.fromLTRB(
                                     12.sp.adjustedSp,
@@ -564,28 +566,28 @@ class BasicEditPage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
                                 fontSize: 12.sp.adjustedSp,
-                                color: Color(0xff000000),
+                                color: const Color(0xff000000),
                               ),
                               decoration: InputDecoration(
                                 disabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.circular(4.0.sp.adjustedSp),
                                   borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
+                                      color: const Color(0xffe0e0e0),
                                       width: 1.sp.adjustedSp),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.circular(4.0.sp.adjustedSp),
                                   borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
+                                      color: const Color(0xffe0e0e0),
                                       width: 1.sp.adjustedSp),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.circular(4.0.sp.adjustedSp),
                                   borderSide: BorderSide(
-                                      color: Color(0xffe0e0e0),
+                                      color: const Color(0xffe0e0e0),
                                       width: 1.sp.adjustedSp),
                                 ),
                                 labelText: "Children living with",
@@ -593,10 +595,10 @@ class BasicEditPage extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.sp.adjustedSp,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 filled: false,
-                                fillColor: Color(0xfff2f2f3),
+                                fillColor: const Color(0xfff2f2f3),
                                 isDense: false,
                                 contentPadding: EdgeInsets.fromLTRB(
                                     12.sp.adjustedSp,
@@ -613,14 +615,17 @@ class BasicEditPage extends StatelessWidget {
                               onPressed: () {
                                 getController.submitBasicInformation();
                               },
-                              color: Color(0xffac0f11),
+                              color: const Color(0xffac0f11),
                               elevation: 0,
                               shape: RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.circular(4.0.sp.adjustedSp),
                               ),
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 16, vertical: 8),
+                              textColor: const Color(0xff000000),
+                              height: 38.sp.adjustedSp,
+                              minWidth: 138.sp.adjustedSp,
                               child: Text(
                                 "Submit",
                                 style: TextStyle(
@@ -630,9 +635,6 @@ class BasicEditPage extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                               ),
-                              textColor: Color(0xff000000),
-                              height: 38.sp.adjustedSp,
-                              minWidth: 138.sp.adjustedSp,
                             ),
                           ],
                         ),
@@ -696,7 +698,7 @@ class BasicEditPage extends StatelessWidget {
               ),
             );
           }
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         });

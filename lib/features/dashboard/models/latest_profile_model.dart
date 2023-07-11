@@ -4,9 +4,11 @@
 
 import 'dart:convert';
 
-LatestProfileModel latestProfileModelFromJson(String str) => LatestProfileModel.fromJson(json.decode(str));
+LatestProfileModel latestProfileModelFromJson(String str) =>
+    LatestProfileModel.fromJson(json.decode(str));
 
-String latestProfileModelToJson(LatestProfileModel data) => json.encode(data.toJson());
+String latestProfileModelToJson(LatestProfileModel data) =>
+    json.encode(data.toJson());
 
 class LatestProfileModel {
   int currentPage;
@@ -39,8 +41,8 @@ class LatestProfileModel {
     required this.total,
   });
 
-  LatestProfileModel.empty() :
-        currentPage = 0,
+  LatestProfileModel.empty()
+      : currentPage = 0,
         data = [],
         firstPageUrl = '',
         from = 0,
@@ -85,37 +87,38 @@ class LatestProfileModel {
         total: total ?? this.total,
       );
 
-  factory LatestProfileModel.fromJson(Map<String, dynamic> json) => LatestProfileModel(
-    currentPage: json["current_page"],
-    data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
-    firstPageUrl: json["first_page_url"],
-    from: json["from"],
-    lastPage: json["last_page"],
-    lastPageUrl: json["last_page_url"],
-    links: List<Link>.from(json["links"].map((x) => Link.fromJson(x))),
-    nextPageUrl: json["next_page_url"],
-    path: json["path"],
-    perPage: json["per_page"],
-    prevPageUrl: json["prev_page_url"],
-    to: json["to"],
-    total: json["total"],
-  );
+  factory LatestProfileModel.fromJson(Map<String, dynamic> json) =>
+      LatestProfileModel(
+        currentPage: json["current_page"],
+        data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+        firstPageUrl: json["first_page_url"],
+        from: json["from"],
+        lastPage: json["last_page"],
+        lastPageUrl: json["last_page_url"],
+        links: List<Link>.from(json["links"].map((x) => Link.fromJson(x))),
+        nextPageUrl: json["next_page_url"],
+        path: json["path"],
+        perPage: json["per_page"],
+        prevPageUrl: json["prev_page_url"],
+        to: json["to"],
+        total: json["total"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "current_page": currentPage,
-    "data": List<dynamic>.from(data.map((x) => x.toJson())),
-    "first_page_url": firstPageUrl,
-    "from": from,
-    "last_page": lastPage,
-    "last_page_url": lastPageUrl,
-    "links": List<dynamic>.from(links.map((x) => x.toJson())),
-    "next_page_url": nextPageUrl,
-    "path": path,
-    "per_page": perPage,
-    "prev_page_url": prevPageUrl,
-    "to": to,
-    "total": total,
-  };
+        "current_page": currentPage,
+        "data": List<dynamic>.from(data.map((x) => x.toJson())),
+        "first_page_url": firstPageUrl,
+        "from": from,
+        "last_page": lastPage,
+        "last_page_url": lastPageUrl,
+        "links": List<dynamic>.from(links.map((x) => x.toJson())),
+        "next_page_url": nextPageUrl,
+        "path": path,
+        "per_page": perPage,
+        "prev_page_url": prevPageUrl,
+        "to": to,
+        "total": total,
+      };
 }
 
 class Datum {
@@ -143,8 +146,8 @@ class Datum {
     this.image,
   });
 
-  Datum.empty() :
-        matriId = '',
+  Datum.empty()
+      : matriId = '',
         name = '',
         hometown = '',
         age = '',
@@ -181,39 +184,36 @@ class Datum {
       );
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
-    matriId: json["matri_id"],
-    name: json["name"],
-    hometown: json["hometown"],
-    age: json["age"],
-    martialStatus: martialStatusValues.map[json["martial_status"]]!,
-    gender: genderValues.map[json["gender"]]!,
-    education: json["education"],
-    occupation: json["occupation"],
-    livingCityName: json["living_city_name"],
-    image: json["image"],
-  );
+        matriId: json["matri_id"],
+        name: json["name"],
+        hometown: json["hometown"],
+        age: json["age"],
+        martialStatus: martialStatusValues.map[json["martial_status"]]!,
+        gender: genderValues.map[json["gender"]]!,
+        education: json["education"],
+        occupation: json["occupation"],
+        livingCityName: json["living_city_name"],
+        image: json["image"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "matri_id": matriId,
-    "name": name,
-    "hometown": hometown,
-    "age": age,
-    "martial_status": martialStatusValues.reverse[martialStatus],
-    "gender": genderValues.reverse[gender],
-    "education": education,
-    "occupation": occupation,
-    "living_city_name": livingCityName,
-    "image": image,
-  };
+        "matri_id": matriId,
+        "name": name,
+        "hometown": hometown,
+        "age": age,
+        "martial_status": martialStatusValues.reverse[martialStatus],
+        "gender": genderValues.reverse[gender],
+        "education": education,
+        "occupation": occupation,
+        "living_city_name": livingCityName,
+        "image": image,
+      };
 }
 
 enum Gender { MALE, FEMALE, GENDER_MALE }
 
-final genderValues = EnumValues({
-  "Female": Gender.FEMALE,
-  "Male": Gender.GENDER_MALE,
-  "male": Gender.MALE
-});
+final genderValues = EnumValues(
+    {"Female": Gender.FEMALE, "Male": Gender.GENDER_MALE, "male": Gender.MALE});
 
 enum MartialStatus { UNMARRID, UNMARRIED, DIVORCED }
 
@@ -234,8 +234,8 @@ class Link {
     required this.active,
   });
 
-  Link.empty() :
-        url = '',
+  Link.empty()
+      : url = '',
         label = '',
         active = false;
 
@@ -251,16 +251,16 @@ class Link {
       );
 
   factory Link.fromJson(Map<String, dynamic> json) => Link(
-    url: json["url"],
-    label: json["label"],
-    active: json["active"],
-  );
+        url: json["url"],
+        label: json["label"],
+        active: json["active"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "url": url,
-    "label": label,
-    "active": active,
-  };
+        "url": url,
+        "label": label,
+        "active": active,
+      };
 }
 
 class EnumValues<T> {

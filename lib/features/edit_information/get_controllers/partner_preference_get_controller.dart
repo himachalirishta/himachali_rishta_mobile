@@ -152,8 +152,8 @@ class PartnerPreferenceGetController extends GetxController
 
   @override
   void onInit() {
-    animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+    animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 500));
     selectedOption.value = {
       0: <String>[].obs,
       1: religion,
@@ -293,7 +293,7 @@ class PartnerPreferenceGetController extends GetxController
 
   Future<void> loadLivingCities() async {
     int indexWhere = allStates.indexWhere((element) =>
-        element.name!.toLowerCase().toString() ==
+        element.name.toLowerCase().toString() ==
         selectedLivingState.value.toLowerCase().toString());
     var request = http.Request(
         'GET',

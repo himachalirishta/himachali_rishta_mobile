@@ -4,9 +4,13 @@
 
 import 'dart:convert';
 
-PhysicalAttributesAndEatingHabitsRequest physicalAttributesAndEatingHabitsRequestFromJson(String str) => PhysicalAttributesAndEatingHabitsRequest.fromJson(json.decode(str));
+PhysicalAttributesAndEatingHabitsRequest
+    physicalAttributesAndEatingHabitsRequestFromJson(String str) =>
+        PhysicalAttributesAndEatingHabitsRequest.fromJson(json.decode(str));
 
-String physicalAttributesAndEatingHabitsRequestToJson(PhysicalAttributesAndEatingHabitsRequest data) => json.encode(data.toJson());
+String physicalAttributesAndEatingHabitsRequestToJson(
+        PhysicalAttributesAndEatingHabitsRequest data) =>
+    json.encode(data.toJson());
 
 class PhysicalAttributesAndEatingHabitsRequest {
   String height;
@@ -50,32 +54,38 @@ class PhysicalAttributesAndEatingHabitsRequest {
         disablity: disablity ?? this.disablity,
       );
 
-  factory PhysicalAttributesAndEatingHabitsRequest.fromJson(Map<String, dynamic> json) => PhysicalAttributesAndEatingHabitsRequest(
-    height: json["height"],
-    weight: json["weight"],
-    bloodGroup: json["blood_group"],
-    complexion: json["complexion"],
-    bodyType: json["body_type"],
-    diet: json["diet"],
-    specialCase: json["special_case"],
-    disablity: json["disablity"],
-  );
+  factory PhysicalAttributesAndEatingHabitsRequest.fromJson(
+          Map<String, dynamic> json) =>
+      PhysicalAttributesAndEatingHabitsRequest(
+        height: json["height"],
+        weight: json["weight"],
+        bloodGroup: json["blood_group"],
+        complexion: json["complexion"],
+        bodyType: json["body_type"],
+        diet: json["diet"],
+        specialCase: json["special_case"],
+        disablity: json["disablity"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "height": height,
-    "weight": weight,
-    "blood_group": bloodGroup,
-    "complexion": complexion,
-    "body_type": bodyType,
-    "diet": diet,
-    "special_case": specialCase,
-    "disablity": disablity,
-  };
+        "height": height,
+        "weight": weight,
+        "blood_group": bloodGroup,
+        "complexion": complexion,
+        "body_type": bodyType,
+        "diet": diet,
+        "special_case": specialCase,
+        "disablity": disablity,
+      };
 }
 
-PhysicalAttributesAndEatingHabitsResponse physicalAttributesAndEatingHabitsResponseFromJson(String str) => PhysicalAttributesAndEatingHabitsResponse.fromJson(json.decode(str));
+PhysicalAttributesAndEatingHabitsResponse
+    physicalAttributesAndEatingHabitsResponseFromJson(String str) =>
+        PhysicalAttributesAndEatingHabitsResponse.fromJson(json.decode(str));
 
-String physicalAttributesAndEatingHabitsResponseToJson(PhysicalAttributesAndEatingHabitsResponse data) => json.encode(data.toJson());
+String physicalAttributesAndEatingHabitsResponseToJson(
+        PhysicalAttributesAndEatingHabitsResponse data) =>
+    json.encode(data.toJson());
 
 class PhysicalAttributesAndEatingHabitsResponse {
   String message;
@@ -91,11 +101,13 @@ class PhysicalAttributesAndEatingHabitsResponse {
         message: message ?? this.message,
       );
 
-  factory PhysicalAttributesAndEatingHabitsResponse.fromJson(Map<String, dynamic> json) => PhysicalAttributesAndEatingHabitsResponse(
-    message: json["message"],
-  );
+  factory PhysicalAttributesAndEatingHabitsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      PhysicalAttributesAndEatingHabitsResponse(
+        message: json["message"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "message": message,
-  };
+        "message": message,
+      };
 }

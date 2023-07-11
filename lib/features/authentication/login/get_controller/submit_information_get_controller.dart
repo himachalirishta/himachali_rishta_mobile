@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/authentication/login/models/caste_model.dart';
+import 'package:himachali_rishta/features/authentication/login/models/registration_step_1_request.dart';
 import 'package:himachali_rishta/features/authentication/login/models/religion_model.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/SubmitInformationPage2.dart';
-import 'package:himachali_rishta/features/authentication/login/models/registration_step_1_request.dart';
 import 'package:http/http.dart' as http;
 
 class SubmitInformationGetController extends GetxController
@@ -82,8 +82,7 @@ class SubmitInformationGetController extends GetxController
       caste.clear();
       caste.value = castes.map((e) => e.name).toList().obs;
       selectedCaste.value = caste.first;
-    } else {
-    }
+    } else {}
   }
 
   Future<void> getReligions() async {
@@ -98,8 +97,7 @@ class SubmitInformationGetController extends GetxController
       religion.value = religions.map((e) => e.name).toList().obs;
       selectedReligion.value = religion.first;
       allReligions = religions;
-    } else {
-    }
+    } else {}
   }
 
   Future<void> submitFirstStepRegistration(String accessToken) async {
@@ -134,6 +132,31 @@ class SubmitInformationGetController extends GetxController
       Get.to(() => SubmitInformationPage2(accessToken: accessToken));
     } else {
       throw Exception(response.reasonPhrase);
+    }
+  }
+
+  void selectDateOfBirth(BuildContext context) async {
+    DateTime now = DateTime.now();
+    DateTime firstDate = DateTime(now.year - 100, now.month, now.day);
+    DateTime lastDate = DateTime(now.year - 21, now.month, now.day);
+
+    if (selectedGender.value == 'Male') {
+      lastDate = DateTime(now.year - 21, now.month, now.day);
+    } else if (selectedGender.value == 'Female') {
+      lastDate = DateTime(now.year - 18, now.month, now.day);
+    }
+
+    final pickedDate = await showDatePicker(
+      context: context,
+      initialDate: lastDate.subtract(const Duration()),
+      firstDate: firstDate,
+      lastDate: lastDate,
+    );
+
+    if (pickedDate != null) {
+      dayController.text = pickedDate.day.toString();
+      monthController.text = pickedDate.month.toString();
+      yearController.text = pickedDate.year.toString();
     }
   }
 }

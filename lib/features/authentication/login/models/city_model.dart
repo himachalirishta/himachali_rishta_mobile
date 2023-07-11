@@ -4,9 +4,11 @@
 
 import 'dart:convert';
 
-List<CityModel> cityModelFromJson(String str) => List<CityModel>.from(json.decode(str).map((x) => CityModel.fromJson(x)));
+List<CityModel> cityModelFromJson(String str) =>
+    List<CityModel>.from(json.decode(str).map((x) => CityModel.fromJson(x)));
 
-String cityModelToJson(List<CityModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String cityModelToJson(List<CityModel> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class CityModel {
   final int? id;
@@ -31,14 +33,14 @@ class CityModel {
       );
 
   factory CityModel.fromJson(Map<String, dynamic> json) => CityModel(
-    id: json["id"],
-    name: json["name"],
-    stateId: json["state_id"],
-  );
+        id: json["id"],
+        name: json["name"],
+        stateId: json["state_id"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "name": name,
-    "state_id": stateId,
-  };
+        "id": id,
+        "name": name,
+        "state_id": stateId,
+      };
 }

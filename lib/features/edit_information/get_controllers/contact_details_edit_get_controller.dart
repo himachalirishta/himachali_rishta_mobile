@@ -102,8 +102,8 @@ class ContactDetailsEditGetController extends GetxController
   void onInit() {
     loadCountries();
     loadLivingCountries();
-    animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+    animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 500));
     selectedOption.value = {
       0: <String>[].obs,
       1: country,

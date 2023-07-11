@@ -9,7 +9,7 @@ class ProfileSettingsFreePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(0),
+        preferredSize: const Size.fromHeight(0),
         child: Container(
           color: Theme.of(context).primaryColor,
         ),
@@ -32,7 +32,7 @@ class ProfileSettingsFreePage extends StatelessWidget {
                     onPressed: () {
                       Get.back();
                     },
-                    icon: Icon(Icons.arrow_back)),
+                    icon: const Icon(Icons.arrow_back)),
                 SizedBox(
                   width: 5.sp,
                 ),
@@ -41,7 +41,7 @@ class ProfileSettingsFreePage extends StatelessWidget {
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w500,
                     )),
-                Spacer(),
+                const Spacer(),
                 Padding(
                   padding:
                       EdgeInsets.symmetric(horizontal: 16.sp, vertical: 2.0.sp),
@@ -222,12 +222,12 @@ class ProfileSettingsFreePage extends StatelessWidget {
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
                         )),
-                    subtitle:
-                        Text('Your contact will be visible to paid members onlyl',
-                            style: TextStyle(
-                              fontSize: 8.sp,
-                              fontWeight: FontWeight.w500,
-                            )),
+                    subtitle: Text(
+                        'Your contact will be visible to paid members onlyl',
+                        style: TextStyle(
+                          fontSize: 8.sp,
+                          fontWeight: FontWeight.w500,
+                        )),
                     trailing: Switch(
                       value: true,
                       onChanged: (value) {},

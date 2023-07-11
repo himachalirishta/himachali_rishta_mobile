@@ -52,8 +52,8 @@ class FamilyDetailsGetController extends GetxController
 
   @override
   void onInit() {
-    animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+    animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 500));
     selectedOption.value = {
       0: <String>[].obs,
       1: familyType,

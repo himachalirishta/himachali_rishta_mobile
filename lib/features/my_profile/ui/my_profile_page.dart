@@ -13,7 +13,7 @@ class MyAccountPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         StreamBuilder<bool>(
-            stream: Stream.periodic(Duration(milliseconds: 100), (_) {
+            stream: Stream.periodic(const Duration(milliseconds: 100), (_) {
               return SizerUtil.orientation == Orientation.landscape;
             }),
             builder: (context, snapshot) {
@@ -24,7 +24,7 @@ class MyAccountPage extends StatelessWidget {
                   child: Scaffold(
                       backgroundColor: AppColors.primaryBackground,
                       appBar: PreferredSize(
-                        preferredSize: Size.fromHeight(0),
+                        preferredSize: const Size.fromHeight(0),
                         child: Container(
                           color: Theme.of(context).primaryColor,
                         ),
@@ -40,7 +40,7 @@ class MyAccountPage extends StatelessWidget {
                                 children: [
                                   IconButton(
                                       onPressed: () {},
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.menu,
                                         color: Colors.white,
                                       )),
@@ -51,10 +51,10 @@ class MyAccountPage extends StatelessWidget {
                                     children: [
                                       CircleAvatar(
                                         radius: 30.sp.adjustedSp,
-                                        backgroundImage: AssetImage(
+                                        backgroundImage: const AssetImage(
                                             'assets/images/user.png'),
                                       ),
-                                      Text(
+                                      const Text(
                                         'Manage Photos',
                                         style: TextStyle(
                                             color: Colors.white,
@@ -211,12 +211,6 @@ class MyAccountPage extends StatelessWidget {
                                         Expanded(
                                           child: ElevatedButton(
                                               onPressed: () {},
-                                              child: Text(
-                                                'Upgrade',
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 12.sp.adjustedSp),
-                                              ),
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor:
                                                     AppColors.green,
@@ -224,6 +218,12 @@ class MyAccountPage extends StatelessWidget {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             5.sp.adjustedSp)),
+                                              ),
+                                              child: Text(
+                                                'Upgrade',
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 12.sp.adjustedSp),
                                               )),
                                         ),
                                       ],
@@ -285,6 +285,17 @@ class MyAccountPage extends StatelessWidget {
                                         Expanded(
                                           child: ElevatedButton(
                                               onPressed: () {},
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.white,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.sp.adjustedSp)),
+                                                side: BorderSide(
+                                                    color: AppColors
+                                                        .secondaryLight,
+                                                    width: 0.5.sp.adjustedSp),
+                                              ),
                                               child: Padding(
                                                 padding: EdgeInsets.all(
                                                     8.0.sp.adjustedSp),
@@ -296,17 +307,6 @@ class MyAccountPage extends StatelessWidget {
                                                       fontSize:
                                                           12.sp.adjustedSp),
                                                 ),
-                                              ),
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor: Colors.white,
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5.sp.adjustedSp)),
-                                                side: BorderSide(
-                                                    color: AppColors
-                                                        .secondaryLight,
-                                                    width: 0.5.sp.adjustedSp),
                                               )),
                                         ),
                                       ],
@@ -323,6 +323,17 @@ class MyAccountPage extends StatelessWidget {
                                         Expanded(
                                           child: ElevatedButton(
                                               onPressed: () {},
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.white,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.sp.adjustedSp)),
+                                                side: BorderSide(
+                                                    color: AppColors
+                                                        .secondaryLight,
+                                                    width: 0.5.sp.adjustedSp),
+                                              ),
                                               child: Padding(
                                                 padding: EdgeInsets.all(
                                                     8.0.sp.adjustedSp),
@@ -334,17 +345,6 @@ class MyAccountPage extends StatelessWidget {
                                                       fontSize:
                                                           12.sp.adjustedSp),
                                                 ),
-                                              ),
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor: Colors.white,
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5.sp.adjustedSp)),
-                                                side: BorderSide(
-                                                    color: AppColors
-                                                        .secondaryLight,
-                                                    width: 0.5.sp.adjustedSp),
                                               )),
                                         ),
                                       ],
@@ -361,6 +361,17 @@ class MyAccountPage extends StatelessWidget {
                                         Expanded(
                                           child: ElevatedButton(
                                               onPressed: () {},
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.white,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.sp.adjustedSp)),
+                                                side: BorderSide(
+                                                    color: AppColors
+                                                        .secondaryLight,
+                                                    width: 0.5.sp.adjustedSp),
+                                              ),
                                               child: Padding(
                                                 padding: EdgeInsets.all(
                                                     8.0.sp.adjustedSp),
@@ -372,17 +383,6 @@ class MyAccountPage extends StatelessWidget {
                                                       fontSize:
                                                           12.sp.adjustedSp),
                                                 ),
-                                              ),
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor: Colors.white,
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5.sp.adjustedSp)),
-                                                side: BorderSide(
-                                                    color: AppColors
-                                                        .secondaryLight,
-                                                    width: 0.5.sp.adjustedSp),
                                               )),
                                         ),
                                       ],
@@ -399,6 +399,17 @@ class MyAccountPage extends StatelessWidget {
                                         Expanded(
                                           child: ElevatedButton(
                                               onPressed: () {},
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.white,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.sp.adjustedSp)),
+                                                side: BorderSide(
+                                                    color: AppColors
+                                                        .secondaryLight,
+                                                    width: 0.5.sp.adjustedSp),
+                                              ),
                                               child: Padding(
                                                 padding: EdgeInsets.all(
                                                     8.0.sp.adjustedSp),
@@ -410,17 +421,6 @@ class MyAccountPage extends StatelessWidget {
                                                       fontSize:
                                                           12.sp.adjustedSp),
                                                 ),
-                                              ),
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor: Colors.white,
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5.sp.adjustedSp)),
-                                                side: BorderSide(
-                                                    color: AppColors
-                                                        .secondaryLight,
-                                                    width: 0.5.sp.adjustedSp),
                                               )),
                                         ),
                                       ],
@@ -437,6 +437,17 @@ class MyAccountPage extends StatelessWidget {
                                         Expanded(
                                           child: ElevatedButton(
                                               onPressed: () {},
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.white,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.sp.adjustedSp)),
+                                                side: BorderSide(
+                                                    color: AppColors
+                                                        .secondaryLight,
+                                                    width: 0.5.sp.adjustedSp),
+                                              ),
                                               child: Padding(
                                                 padding: EdgeInsets.all(
                                                     8.0.sp.adjustedSp),
@@ -448,17 +459,6 @@ class MyAccountPage extends StatelessWidget {
                                                       fontSize:
                                                           12.sp.adjustedSp),
                                                 ),
-                                              ),
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor: Colors.white,
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5.sp.adjustedSp)),
-                                                side: BorderSide(
-                                                    color: AppColors
-                                                        .secondaryLight,
-                                                    width: 0.5.sp.adjustedSp),
                                               )),
                                         ),
                                       ],
@@ -475,6 +475,17 @@ class MyAccountPage extends StatelessWidget {
                                         Expanded(
                                           child: ElevatedButton(
                                               onPressed: () {},
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.white,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.sp.adjustedSp)),
+                                                side: BorderSide(
+                                                    color: AppColors
+                                                        .secondaryLight,
+                                                    width: 0.5.sp.adjustedSp),
+                                              ),
                                               child: Padding(
                                                 padding: EdgeInsets.all(
                                                     8.0.sp.adjustedSp),
@@ -486,17 +497,6 @@ class MyAccountPage extends StatelessWidget {
                                                       fontSize:
                                                           12.sp.adjustedSp),
                                                 ),
-                                              ),
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor: Colors.white,
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5.sp.adjustedSp)),
-                                                side: BorderSide(
-                                                    color: AppColors
-                                                        .secondaryLight,
-                                                    width: 0.5.sp.adjustedSp),
                                               )),
                                         ),
                                       ],
@@ -513,6 +513,17 @@ class MyAccountPage extends StatelessWidget {
                                         Expanded(
                                           child: ElevatedButton(
                                               onPressed: () {},
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.white,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.sp.adjustedSp)),
+                                                side: BorderSide(
+                                                    color: AppColors
+                                                        .secondaryLight,
+                                                    width: 0.5.sp.adjustedSp),
+                                              ),
                                               child: Padding(
                                                 padding: EdgeInsets.all(
                                                     8.0.sp.adjustedSp),
@@ -524,17 +535,6 @@ class MyAccountPage extends StatelessWidget {
                                                       fontSize:
                                                           12.sp.adjustedSp),
                                                 ),
-                                              ),
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor: Colors.white,
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5.sp.adjustedSp)),
-                                                side: BorderSide(
-                                                    color: AppColors
-                                                        .secondaryLight,
-                                                    width: 0.5.sp.adjustedSp),
                                               )),
                                         ),
                                       ],
@@ -687,6 +687,17 @@ class MyAccountPage extends StatelessWidget {
                                         Expanded(
                                           child: ElevatedButton(
                                               onPressed: () {},
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.white,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.sp.adjustedSp)),
+                                                side: BorderSide(
+                                                    color: AppColors
+                                                        .secondaryLight,
+                                                    width: 0.5.sp.adjustedSp),
+                                              ),
                                               child: Padding(
                                                 padding: EdgeInsets.all(
                                                     8.0.sp.adjustedSp),
@@ -698,17 +709,6 @@ class MyAccountPage extends StatelessWidget {
                                                       fontSize:
                                                           12.sp.adjustedSp),
                                                 ),
-                                              ),
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor: Colors.white,
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5.sp.adjustedSp)),
-                                                side: BorderSide(
-                                                    color: AppColors
-                                                        .secondaryLight,
-                                                    width: 0.5.sp.adjustedSp),
                                               )),
                                         ),
                                       ],
@@ -735,7 +735,7 @@ class MyAccountPage extends StatelessWidget {
               return Scaffold(
                 backgroundColor: AppColors.primaryBackground,
                 appBar: PreferredSize(
-                  preferredSize: Size.fromHeight(0),
+                  preferredSize: const Size.fromHeight(0),
                   child: Container(
                     color: Theme.of(context).primaryColor,
                   ),

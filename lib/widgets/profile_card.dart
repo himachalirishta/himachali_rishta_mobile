@@ -12,10 +12,11 @@ class ProfileCard extends StatelessWidget {
       padding: EdgeInsets.all(8.sp.adjustedSp),
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-        color: Color(0xffffffff),
+        color: const Color(0xffffffff),
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.zero,
-        border: Border.all(color: Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
+        border:
+            Border.all(color: const Color(0x4d9e9e9e), width: 1.sp.adjustedSp),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -32,7 +33,7 @@ class ProfileCard extends StatelessWidget {
                 CircleAvatar(
                   radius: 35.sp.adjustedSp,
                   backgroundImage:
-                      NetworkImage("https://picsum.photos/250?image=9"),
+                      const NetworkImage("https://picsum.photos/250?image=9"),
                 ),
                 SizedBox(
                   height: 8.sp.adjustedSp,
@@ -66,7 +67,7 @@ class ProfileCard extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
                         fontSize: 10.sp.adjustedSp,
-                        color: Color(0xffac0f11),
+                        color: const Color(0xffac0f11),
                       ),
                     ),
                     SizedBox(
@@ -81,7 +82,7 @@ class ProfileCard extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
                         fontSize: 10.sp.adjustedSp,
-                        color: Color(0xff000000),
+                        color: const Color(0xff000000),
                       ),
                     ),
                   ],

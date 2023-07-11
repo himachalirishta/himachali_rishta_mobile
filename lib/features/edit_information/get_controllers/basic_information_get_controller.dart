@@ -86,8 +86,7 @@ class BasicInformationGetController extends GetxController
       caste.clear();
       caste.value = castes.map((e) => e.name).toList().obs;
       selectedCaste.value = caste.first;
-    } else {
-    }
+    } else {}
   }
 
   Future<void> getReligions() async {
@@ -102,8 +101,7 @@ class BasicInformationGetController extends GetxController
       religion.value = religions.map((e) => e.name).toList().obs;
       selectedReligion.value = religion.first;
       allReligions = religions;
-    } else {
-    }
+    } else {}
   }
 
   Future<void> submitBasicInformation() async {

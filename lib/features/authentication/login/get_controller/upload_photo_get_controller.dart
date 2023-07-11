@@ -35,7 +35,6 @@ class UploadPhotoGetController extends GetxController {
     http.StreamedResponse response = await request.send();
 
     if (response.statusCode == 200) {
-    } else {
-    }
+    } else {}
   }
 }

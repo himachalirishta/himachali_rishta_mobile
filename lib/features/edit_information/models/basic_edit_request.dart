@@ -6,9 +6,11 @@ import 'dart:convert';
 
 import 'package:himachali_rishta/helpers/date_time_helper.dart';
 
-BasicEditRequest basicEditRequestFromJson(String str) => BasicEditRequest.fromJson(json.decode(str));
+BasicEditRequest basicEditRequestFromJson(String str) =>
+    BasicEditRequest.fromJson(json.decode(str));
 
-String basicEditRequestToJson(BasicEditRequest data) => json.encode(data.toJson());
+String basicEditRequestToJson(BasicEditRequest data) =>
+    json.encode(data.toJson());
 
 class BasicEditRequest {
   String name;
@@ -52,32 +54,35 @@ class BasicEditRequest {
         childrenLivingWith: childrenLivingWith ?? this.childrenLivingWith,
       );
 
-  factory BasicEditRequest.fromJson(Map<String, dynamic> json) => BasicEditRequest(
-    name: json["name"],
-    maritalStatus: json["marital_status"],
-    religion: json["religion"],
-    cast: json["cast"],
-    height: json["height"],
-    dob: DateTime.parse(json["dob"]),
-    numberOfChilds: json["number_of_childs"],
-    childrenLivingWith: json["children_living_with"],
-  );
+  factory BasicEditRequest.fromJson(Map<String, dynamic> json) =>
+      BasicEditRequest(
+        name: json["name"],
+        maritalStatus: json["marital_status"],
+        religion: json["religion"],
+        cast: json["cast"],
+        height: json["height"],
+        dob: DateTime.parse(json["dob"]),
+        numberOfChilds: json["number_of_childs"],
+        childrenLivingWith: json["children_living_with"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "name": name,
-    "marital_status": maritalStatus,
-    "religion": religion,
-    "cast": cast,
-    "height": height,
-    "dob": dob.toApiFormat,
-    "number_of_childs": numberOfChilds,
-    "children_living_with": childrenLivingWith,
-  };
+        "name": name,
+        "marital_status": maritalStatus,
+        "religion": religion,
+        "cast": cast,
+        "height": height,
+        "dob": dob.toApiFormat,
+        "number_of_childs": numberOfChilds,
+        "children_living_with": childrenLivingWith,
+      };
 }
 
-BasicEditRequestResponse basicEditRequestResponseFromJson(String str) => BasicEditRequestResponse.fromJson(json.decode(str));
+BasicEditRequestResponse basicEditRequestResponseFromJson(String str) =>
+    BasicEditRequestResponse.fromJson(json.decode(str));
 
-String basicEditRequestResponseToJson(BasicEditRequestResponse data) => json.encode(data.toJson());
+String basicEditRequestResponseToJson(BasicEditRequestResponse data) =>
+    json.encode(data.toJson());
 
 class BasicEditRequestResponse {
   String message;
@@ -93,12 +98,12 @@ class BasicEditRequestResponse {
         message: message ?? this.message,
       );
 
-  factory BasicEditRequestResponse.fromJson(Map<String, dynamic> json) => BasicEditRequestResponse(
-    message: json["message"],
-  );
+  factory BasicEditRequestResponse.fromJson(Map<String, dynamic> json) =>
+      BasicEditRequestResponse(
+        message: json["message"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "message": message,
-  };
+        "message": message,
+      };
 }
-

@@ -4,9 +4,11 @@
 
 import 'dart:convert';
 
-List<CasteModel> casteModelFromJson(String str) => List<CasteModel>.from(json.decode(str).map((x) => CasteModel.fromJson(x)));
+List<CasteModel> casteModelFromJson(String str) =>
+    List<CasteModel>.from(json.decode(str).map((x) => CasteModel.fromJson(x)));
 
-String casteModelToJson(List<CasteModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String casteModelToJson(List<CasteModel> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class CasteModel {
   final int id;
@@ -39,27 +41,25 @@ class CasteModel {
       );
 
   factory CasteModel.fromJson(Map<String, dynamic> json) => CasteModel(
-    id: json["id"],
-    name: json["name"],
-    religion: json["religion"],
-    sortorder: json["sortorder"],
-    status: statusValues.map[json["status"]]!,
-  );
+        id: json["id"],
+        name: json["name"],
+        religion: json["religion"],
+        sortorder: json["sortorder"],
+        status: statusValues.map[json["status"]]!,
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "name": name,
-    "religion": religion,
-    "sortorder": sortorder,
-    "status": statusValues.reverse[status],
-  };
+        "id": id,
+        "name": name,
+        "religion": religion,
+        "sortorder": sortorder,
+        "status": statusValues.reverse[status],
+      };
 }
 
 enum Status { ACTIVE }
 
-final statusValues = EnumValues({
-  "Active": Status.ACTIVE
-});
+final statusValues = EnumValues({"Active": Status.ACTIVE});
 
 class EnumValues<T> {
   Map<String, T> map;

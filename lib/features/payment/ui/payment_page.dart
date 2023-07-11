@@ -9,7 +9,7 @@ class PaymentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<bool>(
-        stream: Stream.periodic(Duration(milliseconds: 100), (_) {
+        stream: Stream.periodic(const Duration(milliseconds: 100), (_) {
           return SizerUtil.orientation == Orientation.landscape;
         }),
         builder: (context, snapshot) {
@@ -29,7 +29,7 @@ class PaymentPage extends StatelessWidget {
                       width: snapshot.data! ? 700 : 100.w,
                       child: Column(
                         children: [
-                          StandardAppBar(title: 'Payment'),
+                          const StandardAppBar(title: 'Payment'),
                           SizedBox(
                             height: 4.sp.adjustedSp,
                           ),
@@ -52,15 +52,16 @@ class PaymentPage extends StatelessWidget {
                                   Container(
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius:
-                                          BorderRadius.circular(8.sp.adjustedSp),
+                                      borderRadius: BorderRadius.circular(
+                                          8.sp.adjustedSp),
                                       border: Border.all(
                                           color: Theme.of(context)
                                               .secondaryHeaderColor,
                                           width: 0.5.sp.adjustedSp),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(8.0.sp.adjustedSp),
+                                      padding:
+                                          EdgeInsets.all(8.0.sp.adjustedSp),
                                       child: Column(
                                         children: [
                                           Text(
@@ -78,14 +79,16 @@ class PaymentPage extends StatelessWidget {
                                                 Text(
                                                   'Bank Name',
                                                   style: TextStyle(
-                                                      fontSize: 10.sp.adjustedSp,
+                                                      fontSize:
+                                                          10.sp.adjustedSp,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
                                                 Text(
                                                   'HDFC Bank',
                                                   style: TextStyle(
-                                                      fontSize: 10.sp.adjustedSp,
+                                                      fontSize:
+                                                          10.sp.adjustedSp,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
@@ -102,14 +105,16 @@ class PaymentPage extends StatelessWidget {
                                                 Text(
                                                   'Account Name',
                                                   style: TextStyle(
-                                                      fontSize: 10.sp.adjustedSp,
+                                                      fontSize:
+                                                          10.sp.adjustedSp,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
                                                 Text(
                                                   'Shukri Digisol Services Pvt Ltd.',
                                                   style: TextStyle(
-                                                      fontSize: 10.sp.adjustedSp,
+                                                      fontSize:
+                                                          10.sp.adjustedSp,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
@@ -126,14 +131,16 @@ class PaymentPage extends StatelessWidget {
                                                 Text(
                                                   'Account Number',
                                                   style: TextStyle(
-                                                      fontSize: 10.sp.adjustedSp,
+                                                      fontSize:
+                                                          10.sp.adjustedSp,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
                                                 Text(
                                                   '50200054503996',
                                                   style: TextStyle(
-                                                      fontSize: 10.sp.adjustedSp,
+                                                      fontSize:
+                                                          10.sp.adjustedSp,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
@@ -150,14 +157,16 @@ class PaymentPage extends StatelessWidget {
                                                 Text(
                                                   'IFSC Code',
                                                   style: TextStyle(
-                                                      fontSize: 10.sp.adjustedSp,
+                                                      fontSize:
+                                                          10.sp.adjustedSp,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
                                                 Text(
                                                   'HDFC0000020',
                                                   style: TextStyle(
-                                                      fontSize: 10.sp.adjustedSp,
+                                                      fontSize:
+                                                          10.sp.adjustedSp,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
@@ -174,14 +183,16 @@ class PaymentPage extends StatelessWidget {
                                                 Text(
                                                   'Account Type',
                                                   style: TextStyle(
-                                                      fontSize: 10.sp.adjustedSp,
+                                                      fontSize:
+                                                          10.sp.adjustedSp,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
                                                 Text(
                                                   'Current Account',
                                                   style: TextStyle(
-                                                      fontSize: 10.sp.adjustedSp,
+                                                      fontSize:
+                                                          10.sp.adjustedSp,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
@@ -198,14 +209,16 @@ class PaymentPage extends StatelessWidget {
                                                 Text(
                                                   'Branch',
                                                   style: TextStyle(
-                                                      fontSize: 10.sp.adjustedSp,
+                                                      fontSize:
+                                                          10.sp.adjustedSp,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),
                                                 Text(
                                                   'Kalkaji, New Delhi',
                                                   style: TextStyle(
-                                                      fontSize: 10.sp.adjustedSp,
+                                                      fontSize:
+                                                          10.sp.adjustedSp,
                                                       fontWeight:
                                                           FontWeight.w500),
                                                 ),

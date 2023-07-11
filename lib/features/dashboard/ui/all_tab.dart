@@ -11,12 +11,12 @@ import '../get_controllers/all_tab_get_controller.dart';
 class AllTab extends StatelessWidget {
   final String accessToken;
 
-  AllTab({Key? key, required this.accessToken}) : super(key: key);
-
+  const AllTab({Key? key, required this.accessToken}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    AllTabGetController getController = Get.put(AllTabGetController(accessToken));
+    AllTabGetController getController =
+        Get.put(AllTabGetController(accessToken));
     return Scaffold(body: Obx(() {
       return ListView.builder(
         itemBuilder: (context, index) {

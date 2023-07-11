@@ -35,14 +35,14 @@ class MyProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(0),
+        preferredSize: const Size.fromHeight(0),
         child: Container(
           color: Theme.of(context).primaryColor,
         ),
       ),
       backgroundColor: AppColors.primaryBackground,
       body: StreamBuilder<bool>(
-          stream: Stream.periodic(Duration(milliseconds: 500), (_) {
+          stream: Stream.periodic(const Duration(milliseconds: 500), (_) {
             return SizerUtil.orientation == Orientation.landscape;
           }),
           builder: (context, snapshot) {
@@ -58,21 +58,21 @@ class MyProfilePage extends StatelessWidget {
                         height: 150.h,
                         child: Column(
                           children: [
-                            ProfileCard(),
+                            const ProfileCard(),
                             SizedBox(
                               height: 8.sp.adjustedSp,
                               width: 16.sp.adjustedSp,
                             ),
                             Card(
-                              margin: EdgeInsets.all(4.0),
-                              color: Color(0xffffffff),
-                              shadowColor: Color(0xff000000),
+                              margin: const EdgeInsets.all(4.0),
+                              color: const Color(0xffffffff),
+                              shadowColor: const Color(0xff000000),
                               elevation: 3,
                               shape: RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.circular(10.0.sp.adjustedSp),
                                 side: BorderSide(
-                                    color: Color(0x4d9e9e9e),
+                                    color: const Color(0x4d9e9e9e),
                                     width: 1.sp.adjustedSp),
                               ),
                               child: Padding(
@@ -95,7 +95,7 @@ class MyProfilePage extends StatelessWidget {
                                             fontWeight: FontWeight.w600,
                                             fontStyle: FontStyle.normal,
                                             fontSize: 13.sp.adjustedSp,
-                                            color: Color(0xff000000),
+                                            color: const Color(0xff000000),
                                           ),
                                         ),
                                       ],
@@ -121,7 +121,7 @@ class MyProfilePage extends StatelessWidget {
                                               fontWeight: FontWeight.w400,
                                               fontStyle: FontStyle.normal,
                                               fontSize: 10.sp.adjustedSp,
-                                              color: Color(0xff000000),
+                                              color: const Color(0xff000000),
                                             ),
                                           ),
                                         ),
@@ -142,7 +142,7 @@ class MyProfilePage extends StatelessWidget {
                                                       'Match',
                                                       38,
                                                       //#eeeeee
-                                                      Color(0xffeeeeee)),
+                                                      const Color(0xffeeeeee)),
                                                 ],
                                                 xValueMapper:
                                                     (MatchData data, _) =>
@@ -201,7 +201,7 @@ class MyProfilePage extends StatelessWidget {
                                         padding:
                                             EdgeInsets.all(4.sp.adjustedSp),
                                         decoration: BoxDecoration(
-                                          color: Color(0xffffffff),
+                                          color: const Color(0xffffffff),
                                           shape: BoxShape.rectangle,
                                           borderRadius: BorderRadius.circular(
                                               8.0.sp.adjustedSp),
@@ -227,7 +227,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w600,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ],
@@ -261,7 +262,6 @@ class MyProfilePage extends StatelessWidget {
                                               ),*/
                                                 ElevatedButton(
                                                   onPressed: () {},
-                                                  child: Text("Upload Photo"),
                                                   style:
                                                       ElevatedButton.styleFrom(
                                                     backgroundColor:
@@ -276,6 +276,8 @@ class MyProfilePage extends StatelessWidget {
                                                               .adjustedSp), // Sets the border radius
                                                     ),
                                                   ),
+                                                  child: const Text(
+                                                      "Upload Photo"),
                                                 ),
                                                 /*SizedBox(
                                                 height: 2.sp.adjustedSp,
@@ -285,7 +287,8 @@ class MyProfilePage extends StatelessWidget {
                                                   width: 8.sp.adjustedSp,
                                                 ),
                                                 IconButton(
-                                                  icon: Icon(Icons.add_a_photo),
+                                                  icon: const Icon(
+                                                      Icons.add_a_photo),
                                                   onPressed: () {},
                                                   color: Theme.of(context)
                                                       .secondaryHeaderColor,
@@ -306,7 +309,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ],
@@ -324,7 +328,7 @@ class MyProfilePage extends StatelessWidget {
                                         padding:
                                             EdgeInsets.all(4.sp.adjustedSp),
                                         decoration: BoxDecoration(
-                                          color: Color(0xffffffff),
+                                          color: const Color(0xffffffff),
                                           shape: BoxShape.rectangle,
                                           borderRadius: BorderRadius.circular(
                                               8.0.sp.adjustedSp),
@@ -350,7 +354,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w600,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ],
@@ -384,7 +389,6 @@ class MyProfilePage extends StatelessWidget {
                                               ),*/
                                                 ElevatedButton(
                                                   onPressed: () {},
-                                                  child: Text("Upload Photo"),
                                                   style:
                                                       ElevatedButton.styleFrom(
                                                     backgroundColor:
@@ -399,6 +403,8 @@ class MyProfilePage extends StatelessWidget {
                                                               .adjustedSp), // Sets the border radius
                                                     ),
                                                   ),
+                                                  child: const Text(
+                                                      "Upload Photo"),
                                                 ),
                                                 /*SizedBox(
                                                 height: 2.sp.adjustedSp,
@@ -408,7 +414,8 @@ class MyProfilePage extends StatelessWidget {
                                                   width: 8.sp.adjustedSp,
                                                 ),
                                                 IconButton(
-                                                  icon: Icon(Icons.add_a_photo),
+                                                  icon: const Icon(
+                                                      Icons.add_a_photo),
                                                   onPressed: () {},
                                                   color: Theme.of(context)
                                                       .secondaryHeaderColor,
@@ -429,7 +436,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ],
@@ -483,7 +491,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.person,
                                                         color:
                                                             Color(0xff212435),
@@ -506,8 +514,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -527,7 +535,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.edit,
                                                         color:
                                                             Color(0xff212435),
@@ -550,8 +558,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -578,10 +586,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.basic.name)
                                               ],
                                             ),
@@ -604,10 +613,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.basic.martialStatus)
                                               ],
                                             ),
@@ -630,10 +640,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.basic.religion)
                                               ],
                                             ),
@@ -656,10 +667,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.basic.caste)
                                               ],
                                             ),
@@ -682,10 +694,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.basic.height)
                                               ],
                                             ),
@@ -708,10 +721,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .basic.dob.toDisplayFormat)
                                               ],
@@ -735,10 +749,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.basic.numberOfChilds)
                                               ],
                                             ),
@@ -761,10 +776,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .basic.childrenLivingWith)
                                               ],
@@ -791,7 +807,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.school,
                                                         color:
                                                             Color(0xff212435),
@@ -814,8 +830,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -835,7 +851,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.edit,
                                                         color:
                                                             Color(0xff212435),
@@ -858,8 +874,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -886,10 +902,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.educationOccupation
                                                     .education)
                                               ],
@@ -913,10 +930,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.educationOccupation
                                                     .educationDetails)
                                               ],
@@ -940,10 +958,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.educationOccupation
                                                     .educationDetailsStatus)
                                               ],
@@ -967,10 +986,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.educationOccupation
                                                     .occupation)
                                               ],
@@ -994,10 +1014,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.educationOccupation
                                                     .occupationDetails)
                                               ],
@@ -1021,10 +1042,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.educationOccupation
                                                     .annualIncome)
                                               ],
@@ -1051,7 +1073,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.accessibility,
                                                         color:
                                                             Color(0xff212435),
@@ -1074,8 +1096,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -1095,7 +1117,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.edit,
                                                         color:
                                                             Color(0xff212435),
@@ -1118,8 +1140,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -1146,10 +1168,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .physicalAttributes.height)
                                               ],
@@ -1173,10 +1196,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .physicalAttributes.weight)
                                               ],
@@ -1200,10 +1224,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.physicalAttributes
                                                     .bloodGroup)
                                               ],
@@ -1227,10 +1252,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.physicalAttributes
                                                     .complexion)
                                               ],
@@ -1254,10 +1280,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.physicalAttributes
                                                     .bodyType)
                                               ],
@@ -1281,10 +1308,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .physicalAttributes.diet)
                                               ],
@@ -1308,10 +1336,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.physicalAttributes
                                                     .specialCase)
                                               ],
@@ -1335,10 +1364,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.physicalAttributes
                                                     .disablity)
                                               ],
@@ -1365,7 +1395,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         MdiIcons
                                                             .accountMultiple,
                                                         color:
@@ -1389,8 +1419,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -1410,7 +1440,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.edit,
                                                         color:
                                                             Color(0xff212435),
@@ -1433,8 +1463,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -1461,10 +1491,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.familyDetails
                                                     .fatherOccupation)
                                               ],
@@ -1488,10 +1519,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.familyDetails
                                                     .motherOccupation)
                                               ],
@@ -1515,10 +1547,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .familyDetails.familyType)
                                               ],
@@ -1542,10 +1575,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.familyDetails
                                                     .elderBrothers)
                                               ],
@@ -1569,10 +1603,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.familyDetails
                                                     .youngerBrothers)
                                               ],
@@ -1596,10 +1631,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.familyDetails
                                                     .marriedBrothers)
                                               ],
@@ -1623,10 +1659,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .familyDetails.elderSister)
                                               ],
@@ -1650,10 +1687,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.familyDetails
                                                     .youngerSister)
                                               ],
@@ -1677,10 +1715,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.familyDetails
                                                     .marriedSister)
                                               ],
@@ -1707,7 +1746,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         MdiIcons
                                                             .googleCirclesCommunities,
                                                         color:
@@ -1731,8 +1770,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -1752,7 +1791,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.edit,
                                                         color:
                                                             Color(0xff212435),
@@ -1775,8 +1814,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -1803,10 +1842,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .horoscopeSocial.manglik)
                                               ],
@@ -1830,10 +1870,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .horoscopeSocial.birthPlace)
                                               ],
@@ -1857,10 +1898,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .horoscopeSocial.birthTime)
                                               ],
@@ -1884,10 +1926,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.horoscopeSocial
                                                     .paternalSubcast)
                                               ],
@@ -1911,10 +1954,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.horoscopeSocial
                                                     .maternalSubcast)
                                               ],
@@ -1938,10 +1982,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.horoscopeSocial.gotra)
                                               ],
                                             ),
@@ -1964,10 +2009,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.horoscopeSocial.rashi)
                                               ],
                                             ),
@@ -1990,10 +2036,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.horoscopeSocial
                                                     .motherTongue)
                                               ],
@@ -2020,7 +2067,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         MdiIcons
                                                             .homeCityOutline,
                                                         color:
@@ -2044,8 +2091,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -2065,7 +2112,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.edit,
                                                         color:
                                                             Color(0xff212435),
@@ -2088,8 +2135,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -2116,10 +2163,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .assetsProperties.ownHouse)
                                               ],
@@ -2143,10 +2191,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .assetsProperties.ownCar)
                                               ],
@@ -2170,10 +2219,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.assetsProperties
                                                     .ownAgriculturalLand)
                                               ],
@@ -2197,10 +2247,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.assetsProperties
                                                     .ownCommericialLand)
                                               ],
@@ -2224,10 +2275,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.assetsProperties
                                                     .ownAnyBusiness)
                                               ],
@@ -2254,7 +2306,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.perm_identity,
                                                         color:
                                                             Color(0xff212435),
@@ -2277,8 +2329,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -2298,7 +2350,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.edit,
                                                         color:
                                                             Color(0xff212435),
@@ -2321,8 +2373,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -2349,10 +2401,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.profileDescription
                                                     .description)
                                               ],
@@ -2379,7 +2432,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.phone,
                                                         color:
                                                             Color(0xff212435),
@@ -2402,8 +2455,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -2423,7 +2476,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.edit,
                                                         color:
                                                             Color(0xff212435),
@@ -2446,8 +2499,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -2475,10 +2528,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.contactDetails.phone)
                                               ],
                                             ),
@@ -2502,10 +2556,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.contactDetails.altNo)
                                               ],
                                             ),
@@ -2529,10 +2584,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .contactDetails.whatsapp)
                                               ],
@@ -2557,10 +2613,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.contactDetails.email)
                                               ],
                                             ),
@@ -2584,10 +2641,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .contactDetails.hometown)
                                               ],
@@ -2612,10 +2670,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.contactDetails
                                                     .homeTownCountry)
                                               ],
@@ -2640,10 +2699,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.contactDetails
                                                     .homeTownState)
                                               ],
@@ -2668,10 +2728,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.contactDetails
                                                     .homeTownCity)
                                               ],
@@ -2696,10 +2757,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.contactDetails
                                                     .livingCountry)
                                               ],
@@ -2724,10 +2786,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .contactDetails.livingState)
                                               ],
@@ -2752,10 +2815,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .contactDetails.livingCity)
                                               ],
@@ -2782,7 +2846,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.lock_clock,
                                                         color:
                                                             Color(0xff212435),
@@ -2805,8 +2869,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -2826,7 +2890,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.edit,
                                                         color:
                                                             Color(0xff212435),
@@ -2849,8 +2913,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -2877,10 +2941,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.suitableTimeToCall
                                                     .callTimeFrom)
                                               ],
@@ -2904,10 +2969,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.suitableTimeToCall
                                                     .callTimeTo)
                                               ],
@@ -2934,7 +3000,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         MdiIcons.humanMale,
                                                         color:
                                                             Color(0xff212435),
@@ -2957,8 +3023,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -2978,7 +3044,7 @@ class MyProfilePage extends StatelessWidget {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.edit,
                                                         color:
                                                             Color(0xff212435),
@@ -3001,8 +3067,8 @@ class MyProfilePage extends StatelessWidget {
                                                               FontStyle.normal,
                                                           fontSize:
                                                               12.sp.adjustedSp,
-                                                          color:
-                                                              Color(0xff000000),
+                                                          color: const Color(
+                                                              0xff000000),
                                                         ),
                                                       ),
                                                     ],
@@ -3029,10 +3095,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.partnerPreference.age)
                                               ],
                                             ),
@@ -3055,10 +3122,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .partnerPreference.relgion)
                                               ],
@@ -3082,10 +3150,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(
                                                     data.partnerPreference.cast)
                                               ],
@@ -3109,10 +3178,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .partnerPreference.height)
                                               ],
@@ -3136,10 +3206,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.partnerPreference
                                                     .lookingFor)
                                               ],
@@ -3163,10 +3234,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.partnerPreference
                                                     .education)
                                               ],
@@ -3190,10 +3262,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .partnerPreference.empType)
                                               ],
@@ -3217,10 +3290,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.partnerPreference
                                                     .occupation)
                                               ],
@@ -3244,10 +3318,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .partnerPreference.income)
                                               ],
@@ -3271,10 +3346,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data
                                                     .partnerPreference.manglik)
                                               ],
@@ -3298,10 +3374,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.partnerPreference
                                                     .livingCountry)
                                               ],
@@ -3325,10 +3402,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.partnerPreference
                                                     .livingState)
                                               ],
@@ -3352,10 +3430,11 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
-                                                Spacer(),
+                                                const Spacer(),
                                                 Text(data.partnerPreference
                                                     .livingCity)
                                               ],
@@ -3396,7 +3475,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.person,
                                                       color: Color(0xff212435),
                                                       size: 24,
@@ -3418,8 +3497,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -3437,7 +3516,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.edit,
                                                       color: Color(0xff212435),
                                                       size: 18,
@@ -3459,8 +3538,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -3487,7 +3566,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3511,7 +3591,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3535,7 +3616,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3559,7 +3641,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3583,7 +3666,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3607,7 +3691,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3631,7 +3716,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3655,7 +3741,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3681,7 +3768,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.school,
                                                       color: Color(0xff212435),
                                                       size: 24,
@@ -3703,8 +3790,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -3723,7 +3810,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.edit,
                                                       color: Color(0xff212435),
                                                       size: 18,
@@ -3745,8 +3832,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -3773,7 +3860,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3797,7 +3885,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3821,7 +3910,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3845,7 +3935,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3869,7 +3960,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3893,7 +3985,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -3919,7 +4012,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.accessibility,
                                                       color: Color(0xff212435),
                                                       size: 24,
@@ -3941,8 +4034,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -3961,7 +4054,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.edit,
                                                       color: Color(0xff212435),
                                                       size: 18,
@@ -3983,8 +4076,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -4011,7 +4104,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4035,7 +4129,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4059,7 +4154,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4083,7 +4179,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4107,7 +4204,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4131,7 +4229,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4155,7 +4254,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4179,7 +4279,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4205,7 +4306,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       MdiIcons.accountMultiple,
                                                       color: Color(0xff212435),
                                                       size: 24,
@@ -4227,8 +4328,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -4247,7 +4348,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.edit,
                                                       color: Color(0xff212435),
                                                       size: 18,
@@ -4269,8 +4370,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -4297,7 +4398,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4321,7 +4423,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4345,7 +4448,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4369,7 +4473,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4393,7 +4498,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4417,7 +4523,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4441,7 +4548,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4465,7 +4573,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4489,7 +4598,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4515,7 +4625,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       MdiIcons
                                                           .googleCirclesCommunities,
                                                       color: Color(0xff212435),
@@ -4538,8 +4648,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -4558,7 +4668,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.edit,
                                                       color: Color(0xff212435),
                                                       size: 18,
@@ -4580,8 +4690,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -4608,7 +4718,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4632,7 +4743,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4656,7 +4768,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4680,7 +4793,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4704,7 +4818,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4728,7 +4843,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4752,7 +4868,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4776,7 +4893,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4802,7 +4920,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       MdiIcons.homeCityOutline,
                                                       color: Color(0xff212435),
                                                       size: 24,
@@ -4824,8 +4942,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -4844,7 +4962,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.edit,
                                                       color: Color(0xff212435),
                                                       size: 18,
@@ -4866,8 +4984,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -4894,7 +5012,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4918,7 +5037,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4942,7 +5062,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4966,7 +5087,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -4990,7 +5112,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -5016,7 +5139,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.perm_identity,
                                                       color: Color(0xff212435),
                                                       size: 24,
@@ -5038,8 +5161,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -5058,7 +5181,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.edit,
                                                       color: Color(0xff212435),
                                                       size: 18,
@@ -5080,8 +5203,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -5108,7 +5231,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -5134,7 +5258,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.phone,
                                                       color: Color(0xff212435),
                                                       size: 24,
@@ -5156,8 +5280,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -5176,7 +5300,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.edit,
                                                       color: Color(0xff212435),
                                                       size: 18,
@@ -5198,8 +5322,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -5227,7 +5351,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -5252,7 +5377,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -5277,7 +5403,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -5302,7 +5429,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -5327,7 +5455,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -5352,7 +5481,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -5377,7 +5507,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -5402,7 +5533,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -5428,7 +5560,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5455,7 +5588,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5482,7 +5616,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5509,7 +5644,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.lock_clock,
                                                       color: Color(0xff212435),
                                                       size: 24,
@@ -5531,8 +5666,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -5551,7 +5686,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.edit,
                                                       color: Color(0xff212435),
                                                       size: 18,
@@ -5573,8 +5708,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -5602,7 +5737,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5628,7 +5764,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5655,7 +5792,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       MdiIcons.humanMale,
                                                       color: Color(0xff212435),
                                                       size: 24,
@@ -5677,8 +5814,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -5697,7 +5834,7 @@ class MyProfilePage extends StatelessWidget {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Icon(
+                                                    const Icon(
                                                       Icons.edit,
                                                       color: Color(0xff212435),
                                                       size: 18,
@@ -5719,8 +5856,8 @@ class MyProfilePage extends StatelessWidget {
                                                             FontStyle.normal,
                                                         fontSize:
                                                             12.sp.adjustedSp,
-                                                        color:
-                                                            Color(0xff000000),
+                                                        color: const Color(
+                                                            0xff000000),
                                                       ),
                                                     ),
                                                   ],
@@ -5747,7 +5884,8 @@ class MyProfilePage extends StatelessWidget {
                                                   fontWeight: FontWeight.w400,
                                                   fontStyle: FontStyle.normal,
                                                   fontSize: 10.sp.adjustedSp,
-                                                  color: Color(0xff000000),
+                                                  color:
+                                                      const Color(0xff000000),
                                                 ),
                                               ),
                                             ],
@@ -5772,7 +5910,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5798,7 +5937,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5824,7 +5964,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5850,7 +5991,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5876,7 +6018,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5902,7 +6045,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5928,7 +6072,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5954,7 +6099,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -5980,7 +6126,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -6006,7 +6153,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -6032,7 +6180,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -6058,7 +6207,8 @@ class MyProfilePage extends StatelessWidget {
                                                     fontWeight: FontWeight.w400,
                                                     fontStyle: FontStyle.normal,
                                                     fontSize: 10.sp.adjustedSp,
-                                                    color: Color(0xff000000),
+                                                    color:
+                                                        const Color(0xff000000),
                                                   ),
                                                 ),
                                               ),
@@ -6079,7 +6229,7 @@ class MyProfilePage extends StatelessWidget {
             }
             return Scaffold(
               appBar: PreferredSize(
-                preferredSize: Size.fromHeight(0),
+                preferredSize: const Size.fromHeight(0),
                 child: Container(
                   color: Theme.of(context).primaryColor,
                 ),

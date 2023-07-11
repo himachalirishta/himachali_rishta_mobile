@@ -4,9 +4,11 @@
 
 import 'dart:convert';
 
-RegistrationStep2Request registrationStep2RequestFromJson(String str) => RegistrationStep2Request.fromJson(json.decode(str));
+RegistrationStep2Request registrationStep2RequestFromJson(String str) =>
+    RegistrationStep2Request.fromJson(json.decode(str));
 
-String registrationStep2RequestToJson(RegistrationStep2Request data) => json.encode(data.toJson());
+String registrationStep2RequestToJson(RegistrationStep2Request data) =>
+    json.encode(data.toJson());
 
 class RegistrationStep2Request {
   final String height;
@@ -54,41 +56,41 @@ class RegistrationStep2Request {
         birthTime: birthTime ?? this.birthTime,
       );
 
-  factory RegistrationStep2Request.fromJson(Map<String, dynamic> json) => RegistrationStep2Request(
-    height: json["height"],
-    occupationType: json["occupation_type"],
-    education: json["education"],
-    livingCountry: json["living_country"],
-    livingState: json["living_state"],
-    livingCity: json["living_city"],
-    homeTown: json["home_town"],
-    birthPlace: json["birth_place"],
-    birthTime: json["birth_time"],
-  );
+  factory RegistrationStep2Request.fromJson(Map<String, dynamic> json) =>
+      RegistrationStep2Request(
+        height: json["height"],
+        occupationType: json["occupation_type"],
+        education: json["education"],
+        livingCountry: json["living_country"],
+        livingState: json["living_state"],
+        livingCity: json["living_city"],
+        homeTown: json["home_town"],
+        birthPlace: json["birth_place"],
+        birthTime: json["birth_time"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "height": height,
-    "occupation_type": occupationType,
-    "education": education,
-    "living_country": livingCountry,
-    "living_state": livingState,
-    "living_city": livingCity,
-    "home_town": homeTown,
-    "birth_place": birthPlace,
-    "birth_time": birthTime,
-  };
+        "height": height,
+        "occupation_type": occupationType,
+        "education": education,
+        "living_country": livingCountry,
+        "living_state": livingState,
+        "living_city": livingCity,
+        "home_town": homeTown,
+        "birth_place": birthPlace,
+        "birth_time": birthTime,
+      };
 }
-
 
 // To parse this JSON data, do
 //
 //     final registrationStep2Response = registrationStep2ResponseFromJson(jsonString);
 
+RegistrationStep2Response registrationStep2ResponseFromJson(String str) =>
+    RegistrationStep2Response.fromJson(json.decode(str));
 
-
-RegistrationStep2Response registrationStep2ResponseFromJson(String str) => RegistrationStep2Response.fromJson(json.decode(str));
-
-String registrationStep2ResponseToJson(RegistrationStep2Response data) => json.encode(data.toJson());
+String registrationStep2ResponseToJson(RegistrationStep2Response data) =>
+    json.encode(data.toJson());
 
 class RegistrationStep2Response {
   final String message;
@@ -104,11 +106,12 @@ class RegistrationStep2Response {
         message: message ?? this.message,
       );
 
-  factory RegistrationStep2Response.fromJson(Map<String, dynamic> json) => RegistrationStep2Response(
-    message: json["message"],
-  );
+  factory RegistrationStep2Response.fromJson(Map<String, dynamic> json) =>
+      RegistrationStep2Response(
+        message: json["message"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "message": message,
-  };
+        "message": message,
+      };
 }

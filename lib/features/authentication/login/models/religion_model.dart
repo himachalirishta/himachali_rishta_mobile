@@ -4,9 +4,12 @@
 
 import 'dart:convert';
 
-List<ReligionModel> religionModelFromJson(String str) => List<ReligionModel>.from(json.decode(str).map((x) => ReligionModel.fromJson(x)));
+List<ReligionModel> religionModelFromJson(String str) =>
+    List<ReligionModel>.from(
+        json.decode(str).map((x) => ReligionModel.fromJson(x)));
 
-String religionModelToJson(List<ReligionModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String religionModelToJson(List<ReligionModel> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class ReligionModel {
   final int id;
@@ -35,23 +38,23 @@ class ReligionModel {
       );
 
   factory ReligionModel.fromJson(Map<String, dynamic> json) => ReligionModel(
-    id: json["id"],
-    name: json["name"],
-    sortorder: json["sortorder"],
-    status: json["status"],
-  );
+        id: json["id"],
+        name: json["name"],
+        sortorder: json["sortorder"],
+        status: json["status"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "name": name,
-    "sortorder": sortorder,
-    "status": status,
-  };
+        "id": id,
+        "name": name,
+        "sortorder": sortorder,
+        "status": status,
+      };
 
   factory ReligionModel.empty() => ReligionModel(
-    id: -1,
-    name: '',
-    sortorder: 0,
-    status: '',
-  );
+        id: -1,
+        name: '',
+        sortorder: 0,
+        status: '',
+      );
 }

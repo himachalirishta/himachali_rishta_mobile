@@ -41,6 +41,7 @@ class SubmitInformationPage extends StatelessWidget {
                   return Future.value(false);
                 },
                 child: Scaffold(
+                  backgroundColor: Colors.white,
                   appBar: PreferredSize(
                     preferredSize: const Size.fromHeight(0),
                     child: Container(
@@ -54,18 +55,18 @@ class SubmitInformationPage extends StatelessWidget {
                         child: Column(
                           children: [
                             Container(
-                              height: 8.h,
+                              height: 35.sp.adjustedSp,
                               width: 100.w,
                               decoration: BoxDecoration(
                                   color: Theme.of(context).primaryColor,
-                                  borderRadius: const BorderRadius.only(
-                                      bottomLeft: Radius.circular(20),
-                                      bottomRight: Radius.circular(20))),
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(8.sp),
+                                      bottomRight: Radius.circular(8.sp))),
                               child: Center(
                                 child: Text(
-                                  'Submit Bride/Groom Information',
+                                  'Enter Bride/Groom Information',
                                   style: TextStyle(
-                                    fontSize: 16.sp.adjustedSp,
+                                    fontSize: 14.sp.adjustedSp,
                                     color: AppColors.primaryTextColorDark,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -184,18 +185,18 @@ class SubmitInformationPage extends StatelessWidget {
         decoration: InputDecoration(
           disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: const Color(0x55757575), width: 1.sp.adjustedSp),
+            borderSide: BorderSide(
+                color: const Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: const Color(0x55757575), width: 1.sp.adjustedSp),
+            borderSide: BorderSide(
+                color: const Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            borderSide:
-                BorderSide(color: const Color(0x55757575), width: 1.sp.adjustedSp),
+            borderSide: BorderSide(
+                color: const Color(0x55757575), width: 1.sp.adjustedSp),
           ),
           labelText: "Bride/Groom's Name",
           labelStyle: TextStyle(
@@ -227,8 +228,8 @@ class SubmitInformationPage extends StatelessWidget {
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: const Color(0xffffffff),
-              border:
-                  Border.all(color: const Color(0x54757575), width: 1.sp.adjustedSp),
+              border: Border.all(
+                  color: const Color(0x54757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -263,8 +264,8 @@ class SubmitInformationPage extends StatelessWidget {
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: const Color(0xffffffff),
-              border:
-                  Border.all(color: const Color(0x55757575), width: 1.sp.adjustedSp),
+              border: Border.all(
+                  color: const Color(0x55757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -299,8 +300,8 @@ class SubmitInformationPage extends StatelessWidget {
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: const Color(0xffffffff),
-              border:
-                  Border.all(color: const Color(0x55757575), width: 1.sp.adjustedSp),
+              border: Border.all(
+                  color: const Color(0x55757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -335,8 +336,8 @@ class SubmitInformationPage extends StatelessWidget {
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: const Color(0xffffffff),
-              border:
-                  Border.all(color: const Color(0x53757575), width: 1.sp.adjustedSp),
+              border: Border.all(
+                  color: const Color(0x53757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -419,8 +420,8 @@ class SubmitInformationPage extends StatelessWidget {
                 horizontal: 8.sp.adjustedSp, vertical: 4.sp.adjustedSp),
             decoration: BoxDecoration(
               color: const Color(0xffffffff),
-              border:
-                  Border.all(color: const Color(0x53757575), width: 1.sp.adjustedSp),
+              border: Border.all(
+                  color: const Color(0x53757575), width: 1.sp.adjustedSp),
               borderRadius: BorderRadius.circular(4.sp.adjustedSp),
             ),
             child: Row(
@@ -461,182 +462,187 @@ class SubmitInformationPage extends StatelessWidget {
           ),
         ],
       ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Expanded(
-            flex: 1,
-            child: TextField(
-              controller: getController.dayController,
-              obscureText: false,
-              textAlign: TextAlign.start,
-              maxLines: 1,
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontStyle: FontStyle.normal,
-                fontSize: 12.sp.adjustedSp,
-                color: const Color(0xff000000),
-              ),
-              decoration: InputDecoration(
-                disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(
-                      color: const Color(0x54757575), width: 1.sp.adjustedSp),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(
-                      color: const Color(0x54757575), width: 1.sp.adjustedSp),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(
-                      color: const Color(0x54757575), width: 1.sp.adjustedSp),
-                ),
-                labelText: "Day",
-                labelStyle: TextStyle(
+      GestureDetector(
+        onTap: () {
+          getController.selectDateOfBirth(context);
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Expanded(
+              flex: 1,
+              child: TextField(
+                enabled: false,
+                controller: getController.dayController,
+                obscureText: false,
+                textAlign: TextAlign.start,
+                maxLines: 1,
+                style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontStyle: FontStyle.normal,
                   fontSize: 12.sp.adjustedSp,
                   color: const Color(0xff000000),
                 ),
-                filled: false,
-                fillColor: const Color(0xfff2f2f3),
-                isDense: false,
-                contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
-                    8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
+                decoration: InputDecoration(
+                  disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                    borderSide: BorderSide(
+                        color: const Color(0x54757575), width: 1.sp.adjustedSp),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                    borderSide: BorderSide(
+                        color: const Color(0x54757575), width: 1.sp.adjustedSp),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                    borderSide: BorderSide(
+                        color: const Color(0x54757575), width: 1.sp.adjustedSp),
+                  ),
+                  labelText: "Day",
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 12.sp.adjustedSp,
+                    color: const Color(0xff000000),
+                  ),
+                  filled: false,
+                  fillColor: const Color(0xfff2f2f3),
+                  isDense: false,
+                  contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
+                      8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 16.sp.adjustedSp,
-            width: 16.sp.adjustedSp,
-          ),
-          Expanded(
-            flex: 1,
-            child: TextField(
-              controller: getController.monthController,
-              obscureText: false,
-              textAlign: TextAlign.start,
-              maxLines: 1,
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontStyle: FontStyle.normal,
-                fontSize: 12.sp.adjustedSp,
-                color: const Color(0xff000000),
-              ),
-              decoration: InputDecoration(
-                disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(
-                      color: const Color(0x53757575), width: 1.sp.adjustedSp),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(
-                      color: const Color(0x53757575), width: 1.sp.adjustedSp),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(
-                      color: const Color(0x53757575), width: 1.sp.adjustedSp),
-                ),
-                labelText: "Month",
-                labelStyle: TextStyle(
+            SizedBox(
+              height: 16.sp.adjustedSp,
+              width: 16.sp.adjustedSp,
+            ),
+            Expanded(
+              flex: 1,
+              child: TextField(
+                enabled: false,
+                controller: getController.monthController,
+                obscureText: false,
+                textAlign: TextAlign.start,
+                maxLines: 1,
+                style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontStyle: FontStyle.normal,
                   fontSize: 12.sp.adjustedSp,
                   color: const Color(0xff000000),
                 ),
-                filled: false,
-                fillColor: const Color(0xfff2f2f3),
-                isDense: false,
-                contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
-                    8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
+                decoration: InputDecoration(
+                  disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                    borderSide: BorderSide(
+                        color: const Color(0x53757575), width: 1.sp.adjustedSp),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                    borderSide: BorderSide(
+                        color: const Color(0x53757575), width: 1.sp.adjustedSp),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                    borderSide: BorderSide(
+                        color: const Color(0x53757575), width: 1.sp.adjustedSp),
+                  ),
+                  labelText: "Month",
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 12.sp.adjustedSp,
+                    color: const Color(0xff000000),
+                  ),
+                  filled: false,
+                  fillColor: const Color(0xfff2f2f3),
+                  isDense: false,
+                  contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
+                      8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 16.sp.adjustedSp,
-            width: 16.sp.adjustedSp,
-          ),
-          Expanded(
-            flex: 1,
-            child: TextField(
-              controller: getController.yearController,
-              obscureText: false,
-              textAlign: TextAlign.start,
-              maxLines: 1,
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontStyle: FontStyle.normal,
-                fontSize: 12.sp.adjustedSp,
-                color: const Color(0xff000000),
-              ),
-              decoration: InputDecoration(
-                disabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(
-                      color: const Color(0x53757575), width: 1.sp.adjustedSp),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(
-                      color: const Color(0x53757575), width: 1.sp.adjustedSp),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-                  borderSide: BorderSide(
-                      color: const Color(0x53757575), width: 1.sp.adjustedSp),
-                ),
-                labelText: "Year",
-                labelStyle: TextStyle(
+            SizedBox(
+              height: 16.sp.adjustedSp,
+              width: 16.sp.adjustedSp,
+            ),
+            Expanded(
+              flex: 1,
+              child: TextField(
+                enabled: false,
+                controller: getController.yearController,
+                obscureText: false,
+                textAlign: TextAlign.start,
+                maxLines: 1,
+                style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontStyle: FontStyle.normal,
                   fontSize: 12.sp.adjustedSp,
                   color: const Color(0xff000000),
                 ),
-                filled: false,
-                fillColor: const Color(0xfff2f2f3),
-                isDense: false,
-                contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
-                    8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
+                decoration: InputDecoration(
+                  disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                    borderSide: BorderSide(
+                        color: const Color(0x53757575), width: 1.sp.adjustedSp),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                    borderSide: BorderSide(
+                        color: const Color(0x53757575), width: 1.sp.adjustedSp),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+                    borderSide: BorderSide(
+                        color: const Color(0x53757575), width: 1.sp.adjustedSp),
+                  ),
+                  labelText: "Year",
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 12.sp.adjustedSp,
+                    color: const Color(0xff000000),
+                  ),
+                  filled: false,
+                  fillColor: const Color(0xfff2f2f3),
+                  isDense: false,
+                  contentPadding: EdgeInsets.fromLTRB(12.sp.adjustedSp,
+                      8.sp.adjustedSp, 12.sp.adjustedSp, 8.sp.adjustedSp),
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       SizedBox(
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
       ),
       Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32.0),
-        child: MaterialButton(
-          onPressed: () {
-            getController.submitFirstStepRegistration(accessToken);
-          },
-          color: const Color(0xffac0f11),
-          elevation: 4,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0.sp.adjustedSp),
-          ),
-          padding: EdgeInsets.symmetric(
-              horizontal: 16.sp.adjustedSp, vertical: 8.sp.adjustedSp),
-          textColor: const Color(0xff000000),
-          height: 38.sp.adjustedSp,
-          minWidth: 138.sp.adjustedSp,
-          child: Text(
-            "Next",
-            style: TextStyle(
-                fontSize: 16.sp.adjustedSp,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.normal,
-                color: AppColors.primaryTextColorDark),
-          ),
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 4.0.sp.adjustedSp),
+        child: ElevatedButton(
+            onPressed: () {
+              getController.submitFirstStepRegistration(accessToken);
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.green,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+              ),
+              padding: EdgeInsets.symmetric(
+                  horizontal: 16.sp.adjustedSp, vertical: 4.sp.adjustedSp),
+            ),
+            child: Text(
+              "Next",
+              style: TextStyle(
+                  fontSize: 16.sp.adjustedSp,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.normal,
+                  color: AppColors.primaryTextColorDark),
+            )),
       ),
     ];
   }
