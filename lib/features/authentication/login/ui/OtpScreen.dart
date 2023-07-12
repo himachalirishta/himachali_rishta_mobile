@@ -3,6 +3,7 @@
 ///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
 
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:sizer/sizer.dart';
@@ -63,292 +64,19 @@ class OtpScreen extends StatelessWidget {
                             height: 16.sp.adjustedSp,
                             width: 16.sp.adjustedSp,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                flex: 1,
-                                child: TextFormField(
-                                  controller: getController.controller1,
-                                  keyboardType: TextInputType.number,
-                                  obscureText: false,
-                                  textAlign: TextAlign.start,
-                                  maxLines: 1,
-                                  onChanged: (text) =>
-                                      FocusScope.of(context).nextFocus(),
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 14.sp.adjustedSp,
-                                    color: const Color(0xff000000),
-                                  ),
-                                  decoration: InputDecoration(
-                                    disabledBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    focusedBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    filled: false,
-                                    fillColor: const Color(0x00f2f2f3),
-                                    isDense: false,
-                                    contentPadding:
-                                        const EdgeInsets.fromLTRB(12, 8, 12, 8),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 16.sp.adjustedSp,
-                                width: 16.sp.adjustedSp,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: TextFormField(
-                                  controller: getController.controller2,
-                                  keyboardType: TextInputType.number,
-                                  obscureText: false,
-                                  textAlign: TextAlign.start,
-                                  maxLines: 1,
-                                  onChanged: (text) =>
-                                      FocusScope.of(context).nextFocus(),
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 14.sp.adjustedSp,
-                                    color: const Color(0xff000000),
-                                  ),
-                                  decoration: InputDecoration(
-                                    disabledBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    focusedBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    filled: false,
-                                    fillColor: const Color(0xfff2f2f3),
-                                    isDense: false,
-                                    contentPadding:
-                                        const EdgeInsets.fromLTRB(12, 8, 12, 8),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 16.sp.adjustedSp,
-                                width: 16.sp.adjustedSp,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: TextFormField(
-                                  controller: getController.controller3,
-                                  keyboardType: TextInputType.number,
-                                  onChanged: (text) =>
-                                      FocusScope.of(context).nextFocus(),
-                                  obscureText: false,
-                                  textAlign: TextAlign.start,
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 14.sp.adjustedSp,
-                                    color: const Color(0xff000000),
-                                  ),
-                                  decoration: InputDecoration(
-                                    disabledBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    focusedBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    filled: false,
-                                    fillColor: const Color(0xfff2f2f3),
-                                    isDense: false,
-                                    contentPadding:
-                                        const EdgeInsets.fromLTRB(12, 8, 12, 8),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 16.sp.adjustedSp,
-                                width: 16.sp.adjustedSp,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: TextFormField(
-                                  controller: getController.controller4,
-                                  keyboardType: TextInputType.number,
-                                  onChanged: (text) =>
-                                      FocusScope.of(context).nextFocus(),
-                                  obscureText: false,
-                                  textAlign: TextAlign.start,
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 14.sp.adjustedSp,
-                                    color: const Color(0xff000000),
-                                  ),
-                                  decoration: InputDecoration(
-                                    disabledBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    focusedBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    filled: false,
-                                    fillColor: const Color(0xfff2f2f3),
-                                    isDense: false,
-                                    contentPadding:
-                                        const EdgeInsets.fromLTRB(12, 8, 12, 8),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 16.sp.adjustedSp,
-                                width: 16.sp.adjustedSp,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: TextFormField(
-                                  controller: getController.controller5,
-                                  keyboardType: TextInputType.number,
-                                  onChanged: (text) =>
-                                      FocusScope.of(context).nextFocus(),
-                                  obscureText: false,
-                                  textAlign: TextAlign.start,
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 14.sp.adjustedSp,
-                                    color: const Color(0xff000000),
-                                  ),
-                                  decoration: InputDecoration(
-                                    disabledBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    focusedBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    filled: false,
-                                    fillColor: const Color(0xfff2f2f3),
-                                    isDense: false,
-                                    contentPadding: EdgeInsets.fromLTRB(
-                                        12.sp.adjustedSp,
-                                        8.sp.adjustedSp,
-                                        12.sp.adjustedSp,
-                                        8.sp.adjustedSp),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 16.sp.adjustedSp,
-                                width: 16.sp.adjustedSp,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: TextFormField(
-                                  controller: getController.controller6,
-                                  keyboardType: TextInputType.number,
-                                  onChanged: (text) {},
-                                  obscureText: false,
-                                  textAlign: TextAlign.start,
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 14.sp.adjustedSp,
-                                    color: const Color(0xff000000),
-                                  ),
-                                  decoration: InputDecoration(
-                                    disabledBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    focusedBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      borderSide: BorderSide(
-                                          color: const Color(0xff000000),
-                                          width: 1.sp.adjustedSp),
-                                    ),
-                                    filled: false,
-                                    fillColor: const Color(0xfff2f2f3),
-                                    isDense: false,
-                                    contentPadding:
-                                        const EdgeInsets.fromLTRB(12, 8, 12, 8),
-                                  ),
-                                ),
-                              ),
-                            ],
+                          OtpTextField(
+                            numberOfFields: 4,
+                            borderColor: Color(0xFF512DA8),
+                            //set to true to show as box or false to show as dash
+                            showFieldAsBox: false,
+                            //runs when a code is typed in
+                            onCodeChanged: (String code) {
+                              //handle validation or checks here
+                            },
+                            //runs when every textfield is filled
+                            onSubmit: (String verificationCode) {
+                              getController.otpEntered = verificationCode;
+                            }, // end onSubmit
                           ),
                           SizedBox(
                             height: 32.sp.adjustedSp,
@@ -356,12 +84,7 @@ class OtpScreen extends StatelessWidget {
                           ),
                           MaterialButton(
                             onPressed: () {
-                              otpEntered(getController.controller1.text +
-                                  getController.controller2.text +
-                                  getController.controller3.text +
-                                  getController.controller4.text +
-                                  getController.controller5.text +
-                                  getController.controller6.text);
+                              otpEntered(getController.otpEntered);
                             },
                             color: const Color(0xffac0f11),
                             elevation: 0,
