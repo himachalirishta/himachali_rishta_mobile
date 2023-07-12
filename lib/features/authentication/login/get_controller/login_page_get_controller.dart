@@ -15,6 +15,7 @@ import '../ui/SubmitInformationPage.dart';
 
 class LoginPageGetController extends GetxController {
   TextEditingController mobileNumberController = TextEditingController();
+  TextEditingController phoneCodeController = TextEditingController();
 
   RxBool showLoader = false.obs;
 
