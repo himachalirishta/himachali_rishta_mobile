@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/authentication/login/models/login_request.dart';
 import 'package:himachali_rishta/features/authentication/login/models/login_response.dart';
+import 'package:himachali_rishta/features/authentication/login/models/phone_otp_request.dart';
 import 'package:himachali_rishta/features/authentication/login/models/register_phone_api_response.dart';
+import 'package:himachali_rishta/features/authentication/login/models/verify_phone_request.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/OtpScreen.dart';
 import 'package:himachali_rishta/features/dashboard/ui/MainDashboardPage.dart';
 import 'package:http/http.dart' as http;
-
-import '../ui/SubmitInformationPage.dart';
 
 class LoginPageGetController extends GetxController {
   TextEditingController mobileNumberController = TextEditingController();
@@ -26,7 +26,7 @@ class LoginPageGetController extends GetxController {
       return;
     }
     showLoader.value = true;
-    await FirebaseAuth.instance.verifyPhoneNumber(
+    /*await FirebaseAuth.instance.verifyPhoneNumber(
         phoneNumber:
             "+${selectedCountry.value.phoneCode}${mobileNumberController.text}",
         verificationCompleted: (PhoneAuthCredential credential) async {
@@ -83,7 +83,67 @@ class LoginPageGetController extends GetxController {
                 });
               }));
         },
-        codeAutoRetrievalTimeout: (String verificationId) {});
+        codeAutoRetrievalTimeout: (String verificationId) {});*/
+    var headers = {'Content-Type': 'application/json'};
+    var request = http.Request('POST',
+        Uri.parse('https://hr72.rishtaguru.com/api/register/Register2Factor'));
+
+    PhoneOtpRequest phoneOtpRequest = PhoneOtpRequest(
+        countrycode: "+${selectedCountry.value.phoneCode}",
+        phone: mobileNumberController.text);
+    request.body = json.encode(phoneOtpRequest.toJson());
+    request.headers.addAll(headers);
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      PhoneOtpResponse phoneOtpResponse = PhoneOtpResponse.fromJson(
+          jsonDecode(await response.stream.bytesToString()));
+      Get.to(() => OtpScreen(
+          phoneNumber:
+              "+${selectedCountry.value.phoneCode}${mobileNumberController.text}",
+          otpEntered: (otpEntered) async {
+            var headers = {'Content-Type': 'application/json'};
+            var request = http.Request(
+                'POST',
+                Uri.parse(
+                    'https://hr72.rishtaguru.com/api/register/VerifyPhone'));
+            VerifyPhoneRequest verifyPhoneRequest = VerifyPhoneRequest(
+                countrycode: "+${selectedCountry.value.phoneCode}",
+                phone: mobileNumberController.text,
+                otp: otpEntered);
+            request.body = json.encode(verifyPhoneRequest.toJson());
+            request.headers.addAll(headers);
+
+            http.StreamedResponse response = await request.send();
+
+            if (response.statusCode == 200) {
+              VerifyPhoneResponse verifyPhoneResponse =
+                  VerifyPhoneResponse.fromJson(
+                      jsonDecode(await response.stream.bytesToString()));
+
+              if (verifyPhoneResponse.message == 'Something wrong') {
+                Get.snackbar('Error', 'Something went wrong',
+                    backgroundColor: Colors.red, colorText: Colors.white);
+                throw 'Something went wrong';
+              } else {
+                if (phoneOtpResponse.accessToken != null) {
+                  Get.offAll(() => MainDashboardPage(
+                      accessToken: phoneOtpResponse.accessToken!));
+                }
+              }
+            } else {
+              Get.snackbar('Error', response.reasonPhrase.toString(),
+                  backgroundColor: Colors.red, colorText: Colors.white);
+              throw response.reasonPhrase.toString();
+            }
+          }));
+    } else {
+      Get.snackbar('Error', response.reasonPhrase.toString(),
+          backgroundColor: Colors.red, colorText: Colors.white);
+      throw response.reasonPhrase.toString();
+    }
+
     showLoader.value = false;
   }
 
