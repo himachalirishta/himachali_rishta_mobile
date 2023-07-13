@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
+import 'package:himachali_rishta/features/view_photo/ui/view_photo_page.dart';
 import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:sizer/sizer.dart';
 
@@ -36,30 +38,44 @@ class ProfilePage extends StatelessWidget {
                             expandedHeight: 200.sp.adjustedSp,
                             automaticallyImplyLeading: false,
                             flexibleSpace: FlexibleSpaceBar(
-                              background: CarouselSlider(
-                                  items: [
-                                    Image.asset(
-                                      'assets/images/femaledefault.jpg',
-                                      fit: BoxFit.cover,
-                                    )
-                                  ],
-                                  options: CarouselOptions(
-                                    autoPlay: true,
-                                    autoPlayInterval:
-                                        const Duration(seconds: 3),
-                                    autoPlayAnimationDuration:
-                                        const Duration(milliseconds: 800),
-                                    autoPlayCurve: Curves.fastOutSlowIn,
-                                    pauseAutoPlayOnTouch: true,
-                                    aspectRatio: 0.5,
-                                    viewportFraction: 0.7,
-                                    onPageChanged: (index, reason) {
-                                      // setState(() {
-                                      //   _current = index;
-                                      // });
+                                background: CarouselSlider(
+                                    items: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.to(() => ViewPhotoPage(
+                                            url:
+                                                'assets/images/femaledefault.jpg',
+                                            networkImage: false,
+                                            heroTag:
+                                                'assets/images/femaledefault.jpg',
+                                          ));
                                     },
-                                  )),
-                            ),
+                                    child: Hero(
+                                      tag: 'assets/images/femaledefault.jpg',
+                                      child: Image.asset(
+                                        'assets/images/femaledefault.jpg',
+                                        fit: BoxFit.cover,
+                                        width: 100.w,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                                    options: CarouselOptions(
+                                      autoPlay: true,
+                                      autoPlayInterval:
+                                          const Duration(seconds: 3),
+                                      autoPlayAnimationDuration:
+                                          const Duration(milliseconds: 800),
+                                      autoPlayCurve: Curves.fastOutSlowIn,
+                                      pauseAutoPlayOnTouch: true,
+                                      viewportFraction: 1,
+                                      onPageChanged: (index, reason) {
+                                        // setState(() {
+                                        //   _current = index;
+                                        // });
+                                      },
+                                      enlargeCenterPage: true,
+                                    ))),
                             bottom: const TabBar(
                               tabs: [
                                 Tab(
