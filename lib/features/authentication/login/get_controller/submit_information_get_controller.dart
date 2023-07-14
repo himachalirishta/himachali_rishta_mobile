@@ -1,12 +1,15 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/authentication/login/models/caste_model.dart';
 import 'package:himachali_rishta/features/authentication/login/models/registration_step_1_request.dart';
 import 'package:himachali_rishta/features/authentication/login/models/religion_model.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/SubmitInformationPage2.dart';
+import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:http/http.dart' as http;
+import 'package:sizer/sizer.dart';
 
 class SubmitInformationGetController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -146,7 +149,32 @@ class SubmitInformationGetController extends GetxController
       lastDate = DateTime(now.year - 18, now.month, now.day);
     }
 
-    final pickedDate = await showDatePicker(
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            content: SizedBox(
+              height: 40.h.adjustedH,
+              width: 40.w.adjustedW,
+              child: CupertinoDatePicker(
+                initialDateTime: lastDate.subtract(const Duration()),
+                minimumDate: firstDate,
+                maximumDate: lastDate,
+                mode: CupertinoDatePickerMode.date,
+                use24hFormat: true,
+                // This shows day of week alongside day of month
+                showDayOfWeek: false,
+                // This is called when the user changes the date.
+                onDateTimeChanged: (DateTime newDate) {
+                  dayController.text = newDate.day.toString();
+                  monthController.text = newDate.month.toString();
+                  yearController.text = newDate.year.toString();
+                },
+              ),
+            ),
+          );
+        });
+    /*final pickedDate = await showDatePicker(
       context: context,
       initialDate: lastDate.subtract(const Duration()),
       firstDate: firstDate,
@@ -157,6 +185,6 @@ class SubmitInformationGetController extends GetxController
       dayController.text = pickedDate.day.toString();
       monthController.text = pickedDate.month.toString();
       yearController.text = pickedDate.year.toString();
-    }
+    }*/
   }
 }

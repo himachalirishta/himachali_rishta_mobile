@@ -28,135 +28,146 @@ class SubmitInformationPage extends StatelessWidget {
         }),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return ConstrainedBox(
-              constraints: BoxConstraints(
-                  maxWidth: snapshot.data! ? 700 : 100.w.adjustedW),
-              child: WillPopScope(
-                onWillPop: () {
-                  if (getController.animationController.isCompleted) {
-                    getController.animationController.reverse();
-                  } else {
-                    Get.back();
-                  }
-                  return Future.value(false);
-                },
-                child: Scaffold(
-                  backgroundColor: Colors.white,
-                  appBar: PreferredSize(
-                    preferredSize: const Size.fromHeight(0),
-                    child: Container(
-                      color: Theme.of(context).primaryColor,
-                    ),
+            return WillPopScope(
+              onWillPop: () {
+                if (getController.animationController.isCompleted) {
+                  getController.animationController.reverse();
+                } else {
+                  Get.back();
+                }
+                return Future.value(false);
+              },
+              child: Scaffold(
+                backgroundColor: Colors.white,
+                appBar: PreferredSize(
+                  preferredSize: const Size.fromHeight(0),
+                  child: Container(
+                    color: Theme.of(context).primaryColor,
                   ),
-                  body: Stack(
-                    children: [
-                      SizedBox(
-                        height: 100.h,
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 35.sp.adjustedSp,
-                              width: 100.w,
-                              decoration: BoxDecoration(
-                                  color: Theme.of(context).primaryColor,
-                                  borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(8.sp),
-                                      bottomRight: Radius.circular(8.sp))),
-                              child: Center(
-                                child: Text(
-                                  'Enter Bride/Groom Information',
-                                  style: TextStyle(
-                                    fontSize: 14.sp.adjustedSp,
-                                    color: AppColors.primaryTextColorDark,
-                                    fontWeight: FontWeight.bold,
+                ),
+                body: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+                          maxWidth: snapshot.data! ? 700 : 100.w.adjustedW),
+                      child: Stack(
+                        children: [
+                          SizedBox(
+                            height: 100.h,
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 35.sp.adjustedSp,
+                                  width: 100.w,
+                                  decoration: BoxDecoration(
+                                      color: Theme.of(context).primaryColor,
+                                      borderRadius: BorderRadius.only(
+                                          bottomLeft:
+                                              Radius.circular(8.sp.adjustedSp),
+                                          bottomRight: Radius.circular(
+                                              8.sp.adjustedSp))),
+                                  child: Center(
+                                    child: Text(
+                                      'Enter Bride/Groom Information',
+                                      style: TextStyle(
+                                        fontSize: 14.sp.adjustedSp,
+                                        color: AppColors.primaryTextColorDark,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
+                                Expanded(
+                                    child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 16.sp.adjustedSp,
+                                      vertical: 8.sp.adjustedSp),
+                                  child: ListView.builder(
+                                    itemBuilder: (context, index) {
+                                      return formData(context)[index];
+                                    },
+                                    itemCount: formData(context).length,
+                                  ),
+                                )),
+                              ],
                             ),
-                            Expanded(
-                                child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 16.sp.adjustedSp,
-                                  vertical: 8.sp.adjustedSp),
-                              child: ListView.builder(
-                                itemBuilder: (context, index) {
-                                  return formData(context)[index];
-                                },
-                                itemCount: formData(context).length,
-                              ),
-                            )),
-                          ],
-                        ),
-                      ),
-                      AnimatedBuilder(
-                          animation: getController.animationController,
-                          builder: (context, widget) {
-                            return Positioned(
-                                right: -75.w *
-                                    (1 -
-                                        getController
-                                            .animationController.value),
-                                child: SideOptionDrawer(
-                                  options: getController
-                                      .selectedOption[getController
-                                          .selectedOptionIndex.value]!
-                                      .value,
-                                  onOptionSelected: (index) {
-                                    switch (getController
-                                        .selectedOptionIndex.value) {
-                                      //gender, religion, caste, marital status, posting this profile for
-                                      case 1:
-                                        getController.selectedGender.value =
-                                            getController.gender[index];
-                                        getController.animationController
-                                            .reverse();
-                                        break;
-                                      case 2:
-                                        getController.selectedReligion.value =
-                                            getController.religion[index];
-                                        getController.getCastes();
-                                        getController.animationController
-                                            .reverse();
-
-                                        break;
-                                      case 3:
-                                        getController.selectedCaste.value =
-                                            getController.caste[index];
-                                        getController.animationController
-                                            .reverse();
-                                        break;
-                                      case 4:
-                                        getController
-                                                .selectedMaritalStatus.value =
-                                            getController.maritalStatus[index];
-                                        getController.animationController
-                                            .reverse();
-                                        break;
-                                      case 5:
-                                        getController
-                                                .selectedNoOfChildren.value =
-                                            getController.noOfChildren[index];
-                                        getController.animationController
-                                            .reverse();
-                                        break;
-                                      case 6:
-                                        getController
-                                                .selectedPostingThisProfileFor
-                                                .value =
+                          ),
+                          AnimatedBuilder(
+                              animation: getController.animationController,
+                              builder: (context, widget) {
+                                return Positioned(
+                                    right: -75.w *
+                                        (1 -
                                             getController
-                                                .postingThisProfileFor[index];
-                                        getController.animationController
-                                            .reverse();
-                                        break;
+                                                .animationController.value),
+                                    child: SideOptionDrawer(
+                                      options: getController
+                                          .selectedOption[getController
+                                              .selectedOptionIndex.value]!
+                                          .value,
+                                      onOptionSelected: (index) {
+                                        switch (getController
+                                            .selectedOptionIndex.value) {
+                                          //gender, religion, caste, marital status, posting this profile for
+                                          case 1:
+                                            getController.selectedGender.value =
+                                                getController.gender[index];
+                                            getController.animationController
+                                                .reverse();
+                                            break;
+                                          case 2:
+                                            getController
+                                                    .selectedReligion.value =
+                                                getController.religion[index];
+                                            getController.getCastes();
+                                            getController.animationController
+                                                .reverse();
 
-                                      default:
-                                        break;
-                                    }
-                                  },
-                                ));
-                          })
-                    ],
-                  ),
+                                            break;
+                                          case 3:
+                                            getController.selectedCaste.value =
+                                                getController.caste[index];
+                                            getController.animationController
+                                                .reverse();
+                                            break;
+                                          case 4:
+                                            getController.selectedMaritalStatus
+                                                    .value =
+                                                getController
+                                                    .maritalStatus[index];
+                                            getController.animationController
+                                                .reverse();
+                                            break;
+                                          case 5:
+                                            getController.selectedNoOfChildren
+                                                    .value =
+                                                getController
+                                                    .noOfChildren[index];
+                                            getController.animationController
+                                                .reverse();
+                                            break;
+                                          case 6:
+                                            getController
+                                                    .selectedPostingThisProfileFor
+                                                    .value =
+                                                getController
+                                                        .postingThisProfileFor[
+                                                    index];
+                                            getController.animationController
+                                                .reverse();
+                                            break;
+
+                                          default:
+                                            break;
+                                        }
+                                      },
+                                    ));
+                              })
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             );
@@ -237,7 +248,7 @@ class SubmitInformationPage extends StatelessWidget {
                 Expanded(child: Obx(() {
                   return Text(
                     getController.selectedGender.value,
-                    style: TextStyle(fontSize: 10.sp.adjustedSp),
+                    style: TextStyle(fontSize: 12.sp.adjustedSp),
                   );
                 })),
                 Icon(
@@ -273,7 +284,7 @@ class SubmitInformationPage extends StatelessWidget {
                 Expanded(child: Obx(() {
                   return Text(
                     getController.selectedReligion.value,
-                    style: TextStyle(fontSize: 10.sp.adjustedSp),
+                    style: TextStyle(fontSize: 12.sp.adjustedSp),
                   );
                 })),
                 Icon(
@@ -309,7 +320,7 @@ class SubmitInformationPage extends StatelessWidget {
                 Expanded(child: Obx(() {
                   return Text(
                     getController.selectedCaste.value,
-                    style: TextStyle(fontSize: 10.sp.adjustedSp),
+                    style: TextStyle(fontSize: 12.sp.adjustedSp),
                   );
                 })),
                 Icon(
@@ -345,7 +356,7 @@ class SubmitInformationPage extends StatelessWidget {
                 Expanded(child: Obx(() {
                   return Text(
                     getController.selectedMaritalStatus.value,
-                    style: TextStyle(fontSize: 10.sp.adjustedSp),
+                    style: TextStyle(fontSize: 12.sp.adjustedSp),
                   );
                 })),
                 Icon(
@@ -391,7 +402,7 @@ class SubmitInformationPage extends StatelessWidget {
                     Expanded(child: Obx(() {
                       return Text(
                         getController.selectedNoOfChildren.value,
-                        style: TextStyle(fontSize: 10.sp.adjustedSp),
+                        style: TextStyle(fontSize: 12.sp.adjustedSp),
                       );
                     })),
                     Icon(
@@ -429,7 +440,7 @@ class SubmitInformationPage extends StatelessWidget {
                 Expanded(child: Obx(() {
                   return Text(
                     getController.selectedPostingThisProfileFor.value,
-                    style: TextStyle(fontSize: 10.sp.adjustedSp),
+                    style: TextStyle(fontSize: 12.sp.adjustedSp),
                   );
                 })),
                 Icon(

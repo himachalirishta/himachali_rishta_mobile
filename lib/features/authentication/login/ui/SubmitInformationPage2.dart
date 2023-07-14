@@ -24,125 +24,130 @@ class SubmitInformationPage2 extends StatelessWidget {
         }),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return ConstrainedBox(
-              constraints: BoxConstraints(
-                  maxWidth: snapshot.data! ? 700 : 100.w.adjustedW),
-              child: WillPopScope(
-                onWillPop: () {
-                  if (getController.animationController.isCompleted) {
-                    getController.animationController.reverse();
-                  } else {
-                    Get.back();
-                  }
-                  return Future.value(false);
-                },
-                child: Scaffold(
-                  appBar: PreferredSize(
-                    preferredSize: const Size.fromHeight(0),
-                    child: Container(
-                      color: Theme.of(context).primaryColor,
-                    ),
+            return WillPopScope(
+              onWillPop: () {
+                if (getController.animationController.isCompleted) {
+                  getController.animationController.reverse();
+                } else {
+                  Get.back();
+                }
+                return Future.value(false);
+              },
+              child: Scaffold(
+                appBar: PreferredSize(
+                  preferredSize: const Size.fromHeight(0),
+                  child: Container(
+                    color: Theme.of(context).primaryColor,
                   ),
-                  body: Stack(
-                    children: [
-                      SizedBox(
-                        height: 100.h,
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 8.h,
-                              width: 100.w,
-                              decoration: BoxDecoration(
-                                  color: Theme.of(context).primaryColor,
-                                  borderRadius: const BorderRadius.only(
-                                      bottomLeft: Radius.circular(20),
-                                      bottomRight: Radius.circular(20))),
-                              child: Center(
-                                child: Text(
-                                  'Submit Bride/Groom Information',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: AppColors.primaryTextColorDark,
-                                    fontWeight: FontWeight.bold,
+                ),
+                body: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+                          maxWidth: snapshot.data! ? 700 : 100.w.adjustedW),
+                      child: Stack(
+                        children: [
+                          SizedBox(
+                            height: 100.h,
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 35.sp.adjustedSp,
+                                  width: 100.w,
+                                  decoration: BoxDecoration(
+                                      color: Theme.of(context).primaryColor,
+                                      borderRadius: const BorderRadius.only(
+                                          bottomLeft: Radius.circular(20),
+                                          bottomRight: Radius.circular(20))),
+                                  child: Center(
+                                    child: Text(
+                                      'Submit Bride/Groom Information',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: AppColors.primaryTextColorDark,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
+                                Expanded(
+                                    child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 16.sp.adjustedSp,
+                                      vertical: 8.0.sp.adjustedSp),
+                                  child: ListView.builder(
+                                    itemBuilder: (context, index) {
+                                      return formData(context)[index];
+                                    },
+                                    itemCount: formData(context).length,
+                                  ),
+                                )),
+                              ],
                             ),
-                            Expanded(
-                                child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 16.sp.adjustedSp,
-                                  vertical: 8.0.sp.adjustedSp),
-                              child: ListView.builder(
-                                itemBuilder: (context, index) {
-                                  return formData(context)[index];
-                                },
-                                itemCount: formData(context).length,
-                              ),
-                            )),
-                          ],
-                        ),
+                          ),
+                          AnimatedBuilder(
+                              animation: getController.animationController,
+                              builder: (context, widget) {
+                                return Positioned(
+                                    right: -75.w *
+                                        (1 -
+                                            getController
+                                                .animationController.value),
+                                    child: SideOptionDrawer(
+                                      options: getController
+                                          .selectedOption[getController
+                                              .selectedOptionIndex.value]!
+                                          .value,
+                                      onOptionSelected: (index) {
+                                        switch (getController
+                                            .selectedOptionIndex.value) {
+                                          //gender, religion, caste, marital status, posting this profile for
+                                          case 1:
+                                            getController
+                                                    .selectedOccupationType.value =
+                                                getController.occupationType[index];
+                                            getController.animationController
+                                                .reverse();
+                                            break;
+                                          case 2:
+                                            getController.selectedEducation.value =
+                                                getController.education[index];
+                                            getController.animationController
+                                                .reverse();
+                                            break;
+
+                                          case 3:
+                                            getController.selectedCountry.value =
+                                                getController.country[index];
+                                            getController.loadStates();
+                                            getController.animationController
+                                                .reverse();
+                                            break;
+                                          case 4:
+                                            getController.selectedState.value =
+                                                getController.state[index];
+                                            getController.loadCities();
+                                            getController.animationController
+                                                .reverse();
+                                            break;
+                                          case 5:
+                                            getController.selectedCity.value =
+                                                getController.city[index];
+                                            getController.animationController
+                                                .reverse();
+                                            break;
+
+                                          default:
+                                            break;
+                                        }
+                                      },
+                                    ));
+                              }),
+                        ],
                       ),
-                      AnimatedBuilder(
-                          animation: getController.animationController,
-                          builder: (context, widget) {
-                            return Positioned(
-                                right: -75.w *
-                                    (1 -
-                                        getController
-                                            .animationController.value),
-                                child: SideOptionDrawer(
-                                  options: getController
-                                      .selectedOption[getController
-                                          .selectedOptionIndex.value]!
-                                      .value,
-                                  onOptionSelected: (index) {
-                                    switch (getController
-                                        .selectedOptionIndex.value) {
-                                      //gender, religion, caste, marital status, posting this profile for
-                                      case 1:
-                                        getController
-                                                .selectedOccupationType.value =
-                                            getController.occupationType[index];
-                                        getController.animationController
-                                            .reverse();
-                                        break;
-                                      case 2:
-                                        getController.selectedEducation.value =
-                                            getController.education[index];
-                                        getController.animationController
-                                            .reverse();
-                                        break;
-
-                                      case 3:
-                                        getController.selectedCountry.value =
-                                            getController.country[index];
-                                        getController.loadStates();
-                                        getController.animationController
-                                            .reverse();
-                                        break;
-                                      case 4:
-                                        getController.selectedState.value =
-                                            getController.state[index];
-                                        getController.loadCities();
-                                        getController.animationController
-                                            .reverse();
-                                        break;
-                                      case 5:
-                                        getController.selectedCity.value =
-                                            getController.city[index];
-                                        getController.animationController
-                                            .reverse();
-                                        break;
-
-                                      default:
-                                        break;
-                                    }
-                                  },
-                                ));
-                          }),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             );
@@ -154,13 +159,13 @@ class SubmitInformationPage2 extends StatelessWidget {
   List<Widget> formData(BuildContext context) {
     return [
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Text(
         'Height',
         style: TextStyle(
-          fontSize: 12.sp,
+          fontSize: 12.sp.adjustedSp,
           color: AppColors.secondaryLight,
           fontWeight: FontWeight.bold,
         ),
@@ -212,7 +217,7 @@ class SubmitInformationPage2 extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 8.sp,
+            width: 8.sp.adjustedSp,
           ),
           Expanded(
             child: TextFormField(
@@ -297,8 +302,8 @@ class SubmitInformationPage2 extends StatelessWidget {
             )),
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       GestureDetector(
         onTap: () {
@@ -333,8 +338,8 @@ class SubmitInformationPage2 extends StatelessWidget {
             )),
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       GestureDetector(
         onTap: () {
@@ -369,8 +374,8 @@ class SubmitInformationPage2 extends StatelessWidget {
             )),
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       GestureDetector(
         onTap: () {
@@ -405,8 +410,8 @@ class SubmitInformationPage2 extends StatelessWidget {
             )),
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       GestureDetector(
         onTap: () {
@@ -441,8 +446,8 @@ class SubmitInformationPage2 extends StatelessWidget {
             )),
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       TextFormField(
         controller: getController.homeTownController,
@@ -485,8 +490,8 @@ class SubmitInformationPage2 extends StatelessWidget {
         ),
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Row(
         children: [
@@ -533,7 +538,7 @@ class SubmitInformationPage2 extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 16.sp,
+            width: 16.sp.adjustedSp,
           ),
           Expanded(
             child: GestureDetector(
@@ -592,25 +597,23 @@ class SubmitInformationPage2 extends StatelessWidget {
         ],
       ),
       SizedBox(
-        height: 16.sp,
-        width: 16.sp,
+        height: 16.sp.adjustedSp,
+        width: 16.sp.adjustedSp,
       ),
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 32.0),
-        child: MaterialButton(
+        child: ElevatedButton(
           onPressed: () {
             getController.submitSecondStepRegistration(accessToken);
           },
-          color: const Color(0xffac0f11),
-          elevation: 4,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0.sp.adjustedSp),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.green,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
+            ),
+            padding: EdgeInsets.symmetric(
+                horizontal: 16.sp.adjustedSp, vertical: 4.sp.adjustedSp),
           ),
-          padding: EdgeInsets.symmetric(
-              horizontal: 16.sp.adjustedSp, vertical: 8.sp.adjustedSp),
-          textColor: const Color(0xff000000),
-          height: 30.sp.adjustedSp,
-          minWidth: 130.sp.adjustedSp,
           child: Text(
             "Proceed",
             style: TextStyle(
