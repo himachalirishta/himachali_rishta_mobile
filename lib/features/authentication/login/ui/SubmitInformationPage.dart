@@ -90,6 +90,42 @@ class SubmitInformationPage extends StatelessWidget {
                                     itemCount: formData(context).length,
                                   ),
                                 )),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 16.0.sp.adjustedSp),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: ElevatedButton(
+                                            onPressed: () {
+                                              getController
+                                                  .submitFirstStepRegistration(
+                                                      accessToken);
+                                            },
+                                            style: ElevatedButton.styleFrom(
+                                              backgroundColor: AppColors.green,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        4.0.sp.adjustedSp),
+                                              ),
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 16.sp.adjustedSp,
+                                                  vertical: 4.sp.adjustedSp),
+                                            ),
+                                            child: Text(
+                                              "Next",
+                                              style: TextStyle(
+                                                  fontSize: 16.sp.adjustedSp,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontStyle: FontStyle.normal,
+                                                  color: AppColors
+                                                      .primaryTextColorDark),
+                                            )),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -182,6 +218,15 @@ class SubmitInformationPage extends StatelessWidget {
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
       ),
+      Row(
+        children: [
+          Text(
+            'Bride/Groom\'s Name',
+            style: TextStyle(
+                fontWeight: FontWeight.w500, fontSize: 10.sp.adjustedSp),
+          )
+        ],
+      ),
       TextField(
         controller: getController.nameController,
         obscureText: false,
@@ -209,13 +254,13 @@ class SubmitInformationPage extends StatelessWidget {
             borderSide: BorderSide(
                 color: const Color(0x55757575), width: 1.sp.adjustedSp),
           ),
-          labelText: "Bride/Groom's Name",
+          /*labelText: "Bride/Groom's Name",
           labelStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
             fontSize: 12.sp.adjustedSp,
             color: const Color(0xff000000),
-          ),
+          ),*/
           filled: false,
           fillColor: const Color(0xfff2f2f3),
           isDense: false,
@@ -226,6 +271,15 @@ class SubmitInformationPage extends StatelessWidget {
       SizedBox(
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
+      ),
+      Row(
+        children: [
+          Text(
+            'Select Gender',
+            style: TextStyle(
+                fontWeight: FontWeight.w500, fontSize: 10.sp.adjustedSp),
+          )
+        ],
       ),
       GestureDetector(
         onTap: () {
@@ -263,6 +317,15 @@ class SubmitInformationPage extends StatelessWidget {
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
       ),
+      Row(
+        children: [
+          Text(
+            'Select Religion',
+            style: TextStyle(
+                fontWeight: FontWeight.w500, fontSize: 10.sp.adjustedSp),
+          )
+        ],
+      ),
       GestureDetector(
         onTap: () {
           getController.selectedOptionIndex.value = 2;
@@ -299,6 +362,15 @@ class SubmitInformationPage extends StatelessWidget {
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
       ),
+      Row(
+        children: [
+          Text(
+            'Select Caste',
+            style: TextStyle(
+                fontWeight: FontWeight.w500, fontSize: 10.sp.adjustedSp),
+          )
+        ],
+      ),
       GestureDetector(
         onTap: () {
           getController.selectedOptionIndex.value = 3;
@@ -334,6 +406,15 @@ class SubmitInformationPage extends StatelessWidget {
       SizedBox(
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
+      ),
+      Row(
+        children: [
+          Text(
+            'Select Marital Status',
+            style: TextStyle(
+                fontWeight: FontWeight.w500, fontSize: 10.sp.adjustedSp),
+          )
+        ],
       ),
       GestureDetector(
         onTap: () {
@@ -381,6 +462,21 @@ class SubmitInformationPage extends StatelessWidget {
         return Visibility(
           visible: getController.selectedMaritalStatus.value !=
               getController.maritalStatus[1],
+          child: Row(
+            children: [
+              Text(
+                'Number of Children',
+                style: TextStyle(
+                    fontWeight: FontWeight.w500, fontSize: 10.sp.adjustedSp),
+              )
+            ],
+          ),
+        );
+      }),
+      Obx(() {
+        return Visibility(
+          visible: getController.selectedMaritalStatus.value !=
+              getController.maritalStatus[1],
           child: GestureDetector(
             onTap: () {
               getController.selectedOptionIndex.value = 5;
@@ -418,6 +514,15 @@ class SubmitInformationPage extends StatelessWidget {
       SizedBox(
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
+      ),
+      Row(
+        children: [
+          Text(
+            'Posting this Profile for',
+            style: TextStyle(
+                fontWeight: FontWeight.w500, fontSize: 10.sp.adjustedSp),
+          )
+        ],
       ),
       GestureDetector(
         onTap: () {
@@ -631,29 +736,6 @@ class SubmitInformationPage extends StatelessWidget {
       SizedBox(
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
-      ),
-      Padding(
-        padding: EdgeInsets.symmetric(horizontal: 4.0.sp.adjustedSp),
-        child: ElevatedButton(
-            onPressed: () {
-              getController.submitFirstStepRegistration(accessToken);
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.green,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-              ),
-              padding: EdgeInsets.symmetric(
-                  horizontal: 16.sp.adjustedSp, vertical: 4.sp.adjustedSp),
-            ),
-            child: Text(
-              "Next",
-              style: TextStyle(
-                  fontSize: 16.sp.adjustedSp,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.normal,
-                  color: AppColors.primaryTextColorDark),
-            )),
       ),
     ];
   }

@@ -24,20 +24,20 @@ class SideOptionDrawer extends StatelessWidget {
         color: Colors.white,
         child: Column(
           children: [
-            Container(
+            /*Container(
               width: 75.w.adjustedW,
               height: 10.h,
               alignment: Alignment.center,
               child: Image.asset("assets/images/homepagelogo.jpg"),
-            ),
-            Divider(
+            ),*/
+            /*Divider(
               thickness: 2,
               color: AppColors.secondaryLight,
               indent: 15.sp.adjustedSp,
               endIndent: 15.sp.adjustedSp,
-            ),
+            ),*/
             SizedBox(
-              height: 2.sp.adjustedSp,
+              height: 8.sp.adjustedSp,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0.sp.adjustedSp),
@@ -66,7 +66,28 @@ class SideOptionDrawer extends StatelessWidget {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          ListTile(
+                          GestureDetector(
+                            onTap: () {
+                              onOptionSelected(index);
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16.0.sp.adjustedSp,
+                                  vertical: 8.sp.adjustedSp),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    options[index],
+                                    style: TextStyle(
+                                        fontSize: 12.sp.adjustedSp,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          /*ListTile(
                             title: Padding(
                               padding: EdgeInsets.only(left: 8.0.sp.adjustedSp),
                               child: Text(
@@ -80,7 +101,7 @@ class SideOptionDrawer extends StatelessWidget {
                             onTap: () {
                               onOptionSelected(index);
                             },
-                          ),
+                          ),*/
                           Divider(
                             color: AppColors.infoLight.withOpacity(0.3),
                             thickness: 1,

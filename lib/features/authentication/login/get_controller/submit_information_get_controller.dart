@@ -149,42 +149,59 @@ class SubmitInformationGetController extends GetxController
       lastDate = DateTime(now.year - 18, now.month, now.day);
     }
 
-    showDialog(
+    showCupertinoModalPopup(
+      context: context,
+      builder: (context) => CupertinoActionSheet(
+        message: SizedBox(
+          height: 30.h.adjustedH,
+          child: CupertinoDatePicker(
+            initialDateTime: lastDate.subtract(const Duration()),
+            minimumDate: firstDate,
+            maximumDate: lastDate,
+            mode: CupertinoDatePickerMode.date,
+            use24hFormat: true,
+            dateOrder: DatePickerDateOrder.dmy,
+            // This shows day of week alongside day of month
+            showDayOfWeek: false,
+            // This is called when the user changes the date.
+            onDateTimeChanged: (DateTime newDate) {
+              dayController.text = newDate.day.toString();
+              monthController.text = newDate.month.toString();
+              yearController.text = newDate.year.toString();
+            },
+          ),
+        ),
+        actions: [
+          TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('OK'))
+        ],
+      ),
+    );
+    /*showDialog(
         context: context,
         builder: (context) {
-          return AlertDialog(
-            content: SizedBox(
-              height: 40.h.adjustedH,
-              width: 40.w.adjustedW,
-              child: CupertinoDatePicker(
-                initialDateTime: lastDate.subtract(const Duration()),
-                minimumDate: firstDate,
-                maximumDate: lastDate,
-                mode: CupertinoDatePickerMode.date,
-                use24hFormat: true,
-                // This shows day of week alongside day of month
-                showDayOfWeek: false,
-                // This is called when the user changes the date.
-                onDateTimeChanged: (DateTime newDate) {
-                  dayController.text = newDate.day.toString();
-                  monthController.text = newDate.month.toString();
-                  yearController.text = newDate.year.toString();
-                },
-              ),
+          return Container(
+            color: Colors.white,
+            child: CupertinoDatePicker(
+              initialDateTime: lastDate.subtract(const Duration()),
+              minimumDate: firstDate,
+              maximumDate: lastDate,
+              mode: CupertinoDatePickerMode.date,
+              use24hFormat: true,
+              dateOrder: DatePickerDateOrder.dmy,
+              // This shows day of week alongside day of month
+              showDayOfWeek: false,
+              // This is called when the user changes the date.
+              onDateTimeChanged: (DateTime newDate) {
+                dayController.text = newDate.day.toString();
+                monthController.text = newDate.month.toString();
+                yearController.text = newDate.year.toString();
+              },
             ),
           );
-        });
-    /*final pickedDate = await showDatePicker(
-      context: context,
-      initialDate: lastDate.subtract(const Duration()),
-      firstDate: firstDate,
-      lastDate: lastDate,
-    );
-
-    if (pickedDate != null) {
-      dayController.text = pickedDate.day.toString();
-      monthController.text = pickedDate.month.toString();
-      yearController.text = pickedDate.year.toString();
-    }*/
+        });*/
   }
 }
