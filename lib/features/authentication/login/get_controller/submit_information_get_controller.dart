@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/authentication/login/models/caste_model.dart';
+import 'package:himachali_rishta/features/authentication/login/models/gender_list_model.dart';
+import 'package:himachali_rishta/features/authentication/login/models/profile_for_model.dart';
 import 'package:himachali_rishta/features/authentication/login/models/registration_step_1_request.dart';
 import 'package:himachali_rishta/features/authentication/login/models/religion_model.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/SubmitInformationPage2.dart';
@@ -50,6 +52,8 @@ class SubmitInformationGetController extends GetxController
 
   @override
   void onInit() {
+    getGenders();
+    getProfileFor();
     getReligions().then((value) {
       getCastes();
     });
@@ -203,5 +207,41 @@ class SubmitInformationGetController extends GetxController
             ),
           );
         });*/
+  }
+
+  Future<void> getGenders() async {
+    var request = http.Request(
+        'GET', Uri.parse('https://hr72.rishtaguru.com/api/Gender'));
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      GenderListModel genderListModel =
+          genderListModelFromJson(await response.stream.bytesToString());
+      gender.clear();
+      gender.value = genderListModel.data.map((e) => e).toList();
+      selectedGender.value = gender.first;
+    } else {
+      print(response.reasonPhrase);
+    }
+  }
+
+  Future<void> getProfileFor() async {
+    var request = http.Request(
+        'GET', Uri.parse('https://hr72.rishtaguru.com/api/ProfileFor'));
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      ProfileForModel profileForListModel =
+          profileForModelFromJson(await response.stream.bytesToString());
+
+      postingThisProfileFor.clear();
+      postingThisProfileFor.value =
+          profileForListModel.data.map((e) => e.name).toList();
+      selectedPostingThisProfileFor.value = postingThisProfileFor.first;
+    } else {
+      print(response.reasonPhrase);
+    }
   }
 }

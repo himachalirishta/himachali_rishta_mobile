@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/authentication/login/models/city_model.dart';
 import 'package:himachali_rishta/features/authentication/login/models/country_model.dart';
+import 'package:himachali_rishta/features/authentication/login/models/education_list_model.dart';
 import 'package:himachali_rishta/features/authentication/login/models/registration_step_2_request.dart';
 import 'package:himachali_rishta/features/authentication/login/models/state_model.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/UploadPhotoScreen.dart';
 import 'package:http/http.dart' as http;
+
+import '../models/occupation_list_model.dart';
 
 class SubmitInformation2GetController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -51,6 +54,8 @@ class SubmitInformation2GetController extends GetxController
 
   @override
   void onInit() {
+    loadEducation();
+    loadOccupations();
     loadCountries().then((value) {
       loadStates().then((value) {
         loadCities();
@@ -169,6 +174,41 @@ class SubmitInformation2GetController extends GetxController
       Get.to(() => UploadPhotoScreen(accessToken: accessToken));
     } else {
       throw Exception(response.reasonPhrase);
+    }
+  }
+
+  Future<void> loadEducation() async {
+    var request = http.Request(
+        'GET', Uri.parse('https://hr72.rishtaguru.com/api/educations'));
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      List<EducationListModel> educationListModel =
+          educationListModelFromJson(await response.stream.bytesToString());
+      education.clear();
+      education.value = educationListModel.map((e) => e.name ?? '').toList();
+      selectedEducation.value = education.first;
+    } else {
+      print(response.reasonPhrase);
+    }
+  }
+
+  Future<void> loadOccupations() async {
+    var request = http.Request(
+        'GET', Uri.parse('https://hr72.rishtaguru.com/api/cast?id=5'));
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      List<OccupationListModel> occupationListModel =
+          occupationListModelFromJson(await response.stream.bytesToString());
+      occupationType.clear();
+      occupationType.value =
+          occupationListModel.map((e) => e.name ?? '').toList();
+      selectedOccupationType.value = occupationType.first;
+    } else {
+      print(response.reasonPhrase);
     }
   }
 }

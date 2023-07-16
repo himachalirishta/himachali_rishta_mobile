@@ -34,6 +34,7 @@ class SubmitInformationPage2 extends StatelessWidget {
                 return Future.value(false);
               },
               child: Scaffold(
+                backgroundColor: Colors.white,
                 appBar: PreferredSize(
                   preferredSize: const Size.fromHeight(0),
                   child: Container(
@@ -57,9 +58,11 @@ class SubmitInformationPage2 extends StatelessWidget {
                                   width: 100.w,
                                   decoration: BoxDecoration(
                                       color: Theme.of(context).primaryColor,
-                                      borderRadius: const BorderRadius.only(
-                                          bottomLeft: Radius.circular(20),
-                                          bottomRight: Radius.circular(20))),
+                                      borderRadius: BorderRadius.only(
+                                          bottomLeft:
+                                              Radius.circular(8.sp.adjustedSp),
+                                          bottomRight: Radius.circular(
+                                              8.sp.adjustedSp))),
                                   child: Center(
                                     child: Text(
                                       'Submit Bride/Groom Information',
@@ -83,6 +86,43 @@ class SubmitInformationPage2 extends StatelessWidget {
                                     itemCount: formData(context).length,
                                   ),
                                 )),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 32.0),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: ElevatedButton(
+                                          onPressed: () {
+                                            getController
+                                                .submitSecondStepRegistration(
+                                                    accessToken);
+                                          },
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: AppColors.green,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      4.0.sp.adjustedSp),
+                                            ),
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 16.sp.adjustedSp,
+                                                vertical: 4.sp.adjustedSp),
+                                          ),
+                                          child: Text(
+                                            "Proceed",
+                                            style: TextStyle(
+                                                fontSize: 14.sp.adjustedSp,
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle: FontStyle.normal,
+                                                color: AppColors
+                                                    .primaryTextColorDark),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -104,21 +144,24 @@ class SubmitInformationPage2 extends StatelessWidget {
                                             .selectedOptionIndex.value) {
                                           //gender, religion, caste, marital status, posting this profile for
                                           case 1:
-                                            getController
-                                                    .selectedOccupationType.value =
-                                                getController.occupationType[index];
+                                            getController.selectedOccupationType
+                                                    .value =
+                                                getController
+                                                    .occupationType[index];
                                             getController.animationController
                                                 .reverse();
                                             break;
                                           case 2:
-                                            getController.selectedEducation.value =
+                                            getController
+                                                    .selectedEducation.value =
                                                 getController.education[index];
                                             getController.animationController
                                                 .reverse();
                                             break;
 
                                           case 3:
-                                            getController.selectedCountry.value =
+                                            getController
+                                                    .selectedCountry.value =
                                                 getController.country[index];
                                             getController.loadStates();
                                             getController.animationController
@@ -165,7 +208,7 @@ class SubmitInformationPage2 extends StatelessWidget {
       Text(
         'Height',
         style: TextStyle(
-          fontSize: 12.sp.adjustedSp,
+          fontSize: 10.sp.adjustedSp,
           color: AppColors.secondaryLight,
           fontWeight: FontWeight.bold,
         ),
@@ -269,6 +312,14 @@ class SubmitInformationPage2 extends StatelessWidget {
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
       ),
+      Text(
+        'Occupation',
+        style: TextStyle(
+          fontSize: 10.sp.adjustedSp,
+          color: AppColors.secondaryLight,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       GestureDetector(
         onTap: () {
           getController.selectedOptionIndex.value = 1;
@@ -304,6 +355,14 @@ class SubmitInformationPage2 extends StatelessWidget {
       SizedBox(
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
+      ),
+      Text(
+        'Education',
+        style: TextStyle(
+          fontSize: 10.sp.adjustedSp,
+          color: AppColors.secondaryLight,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       GestureDetector(
         onTap: () {
@@ -341,6 +400,14 @@ class SubmitInformationPage2 extends StatelessWidget {
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
       ),
+      Text(
+        'Country',
+        style: TextStyle(
+          fontSize: 10.sp.adjustedSp,
+          color: AppColors.secondaryLight,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       GestureDetector(
         onTap: () {
           getController.selectedOptionIndex.value = 3;
@@ -376,6 +443,14 @@ class SubmitInformationPage2 extends StatelessWidget {
       SizedBox(
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
+      ),
+      Text(
+        'State',
+        style: TextStyle(
+          fontSize: 10.sp.adjustedSp,
+          color: AppColors.secondaryLight,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       GestureDetector(
         onTap: () {
@@ -413,6 +488,14 @@ class SubmitInformationPage2 extends StatelessWidget {
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
       ),
+      Text(
+        'City',
+        style: TextStyle(
+          fontSize: 10.sp.adjustedSp,
+          color: AppColors.secondaryLight,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       GestureDetector(
         onTap: () {
           getController.selectedOptionIndex.value = 5;
@@ -449,6 +532,14 @@ class SubmitInformationPage2 extends StatelessWidget {
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
       ),
+      Text(
+        'Home Town',
+        style: TextStyle(
+          fontSize: 10.sp.adjustedSp,
+          color: AppColors.secondaryLight,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       TextFormField(
         controller: getController.homeTownController,
         obscureText: false,
@@ -476,13 +567,13 @@ class SubmitInformationPage2 extends StatelessWidget {
             borderSide: BorderSide(
                 color: const Color(0x55757575), width: 1.sp.adjustedSp),
           ),
-          labelText: "Home Town",
+          /*labelText: "Home Town",
           labelStyle: TextStyle(
             fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
             fontSize: 12.sp.adjustedSp,
             color: const Color(0xff000000),
-          ),
+          ),*/
           filled: false,
           fillColor: const Color(0xfff2f2f3),
           isDense: false,
@@ -492,6 +583,14 @@ class SubmitInformationPage2 extends StatelessWidget {
       SizedBox(
         height: 16.sp.adjustedSp,
         width: 16.sp.adjustedSp,
+      ),
+      Text(
+        'Birth Place and Time',
+        style: TextStyle(
+          fontSize: 10.sp.adjustedSp,
+          color: AppColors.secondaryLight,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       Row(
         children: [
@@ -595,34 +694,6 @@ class SubmitInformationPage2 extends StatelessWidget {
             ),
           ),
         ],
-      ),
-      SizedBox(
-        height: 16.sp.adjustedSp,
-        width: 16.sp.adjustedSp,
-      ),
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32.0),
-        child: ElevatedButton(
-          onPressed: () {
-            getController.submitSecondStepRegistration(accessToken);
-          },
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.green,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(4.0.sp.adjustedSp),
-            ),
-            padding: EdgeInsets.symmetric(
-                horizontal: 16.sp.adjustedSp, vertical: 4.sp.adjustedSp),
-          ),
-          child: Text(
-            "Proceed",
-            style: TextStyle(
-                fontSize: 14.sp.adjustedSp,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.normal,
-                color: AppColors.primaryTextColorDark),
-          ),
-        ),
       ),
     ];
   }
