@@ -176,7 +176,7 @@ class IndexPage extends StatelessWidget {
       ListTile(
         title: Text('Delete Profile', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
-          Get.to(() => const DeleteProfilePage());
+          Get.to(() => DeleteProfilePage());
         },
       ),
     ];
