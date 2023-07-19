@@ -145,8 +145,10 @@ class SubmitInformation2GetController extends GetxController
   Future<void> submitSecondStepRegistration(String accessToken) async {
     var headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer $accessToken',
+      'Authorization': 'Bearer $accessToken'
     };
+    var request = http.Request(
+        'POST', Uri.parse('https://hr72.rishtaguru.com/api/register/step/2'));
     RegistrationStep2Request registrationStep2Request =
         RegistrationStep2Request(
             height: "${ftController.text}ft  ${inchController.text}in",
@@ -158,8 +160,6 @@ class SubmitInformation2GetController extends GetxController
             homeTown: homeTownController.text,
             birthPlace: birthPlaceController.text,
             birthTime: birthTimeController.text);
-    var request = http.Request('POST',
-        Uri.parse('https://devmatri.rishtaguru.com/api/register/step/2'));
     request.body = json.encode(registrationStep2Request.toJson());
     request.headers.addAll(headers);
 
@@ -173,7 +173,7 @@ class SubmitInformation2GetController extends GetxController
           backgroundColor: Colors.green, colorText: Colors.white);
       Get.to(() => UploadPhotoScreen(accessToken: accessToken));
     } else {
-      throw Exception(response.reasonPhrase);
+      throw Exception(response.reasonPhrase.toString());
     }
   }
 

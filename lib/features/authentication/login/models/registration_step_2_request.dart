@@ -11,15 +11,15 @@ String registrationStep2RequestToJson(RegistrationStep2Request data) =>
     json.encode(data.toJson());
 
 class RegistrationStep2Request {
-  final String height;
-  final String occupationType;
-  final String education;
-  final String livingCountry;
-  final String livingState;
-  final String livingCity;
-  final String homeTown;
-  final String birthPlace;
-  final String birthTime;
+  String height;
+  String occupationType;
+  String education;
+  String livingCountry;
+  String livingState;
+  String livingCity;
+  String homeTown;
+  String birthPlace;
+  String birthTime;
 
   RegistrationStep2Request({
     required this.height,
@@ -93,7 +93,7 @@ String registrationStep2ResponseToJson(RegistrationStep2Response data) =>
     json.encode(data.toJson());
 
 class RegistrationStep2Response {
-  final String message;
+  String message;
 
   RegistrationStep2Response({
     required this.message,
