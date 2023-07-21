@@ -2,7 +2,6 @@
 
 ///File download from FlutterViz- Drag and drop a tools. For more details visit https://flutterviz.io/
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
@@ -16,6 +15,7 @@ import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:himachali_rishta/profile/ui/MyProfilePage.dart';
 import 'package:himachali_rishta/widgets/dashboard_app_bar.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 
 import '../get_controllers/main_dashboard_get_controller.dart';
@@ -226,9 +226,9 @@ class MainDashboardPage extends StatelessWidget {
                                         TextStyle(fontSize: 16.sp.adjustedSp),
                                   ),
                                   onTap: () {
-                                    FirebaseAuth.instance
-                                        .signOut()
-                                        .then((value) {
+                                    SharedPreferences.getInstance()
+                                        .then((prefs) {
+                                      prefs.clear();
                                       Get.offAll(() => LoginPage());
                                     });
                                   },

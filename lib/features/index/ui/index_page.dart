@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:himachali_rishta/features/authentication/login/models/login_response.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/LoginPage.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/OtpScreen.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/SubmitInformationPage.dart';
@@ -40,7 +41,7 @@ class IndexPage extends StatelessWidget {
         title: Text('Registration Page 1', style: TextStyle(fontSize: 12.sp)),
         onTap: () {
           Get.to(() => SubmitInformationPage(
-                accessToken: '',
+                loginResponse: LoginResponse.empty(),
               ));
         },
       ),

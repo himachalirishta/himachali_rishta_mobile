@@ -10,26 +10,30 @@ LoginResponse loginResponseFromJson(String str) =>
 String loginResponseToJson(LoginResponse data) => json.encode(data.toJson());
 
 class LoginResponse {
-  final String accessToken;
-  final String tokenType;
-  final int expiresIn;
-  final Userdata userdata;
+  String accessToken;
+  bool userStatus;
+  String? tokenType;
+  int? expiresIn;
+  Userdata? userdata;
 
   LoginResponse({
     required this.accessToken,
-    required this.tokenType,
-    required this.expiresIn,
-    required this.userdata,
+    required this.userStatus,
+    this.tokenType,
+    this.expiresIn,
+    this.userdata,
   });
 
   LoginResponse copyWith({
     String? accessToken,
+    bool? userStatus,
     String? tokenType,
     int? expiresIn,
     Userdata? userdata,
   }) =>
       LoginResponse(
         accessToken: accessToken ?? this.accessToken,
+        userStatus: userStatus ?? this.userStatus,
         tokenType: tokenType ?? this.tokenType,
         expiresIn: expiresIn ?? this.expiresIn,
         userdata: userdata ?? this.userdata,
@@ -37,55 +41,66 @@ class LoginResponse {
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) => LoginResponse(
         accessToken: json["access_token"],
+        userStatus: json["User_Status"],
         tokenType: json["token_type"],
         expiresIn: json["expires_in"],
-        userdata: Userdata.fromJson(json["userdata"]),
+        userdata: json["userdata"] == null
+            ? null
+            : Userdata.fromJson(json["userdata"]),
       );
 
   Map<String, dynamic> toJson() => {
         "access_token": accessToken,
+        "User_Status": userStatus,
         "token_type": tokenType,
         "expires_in": expiresIn,
-        "userdata": userdata.toJson(),
+        "userdata": userdata?.toJson(),
       };
 
-  factory LoginResponse.empty() => LoginResponse(
-        accessToken: '',
-        tokenType: '',
-        expiresIn: 0,
-        userdata: Userdata(
-          id: 0,
-          oldId: 0,
-          name: '',
-          email: '',
-          phone: '',
-          stepScreen: '',
-        ),
-      );
+  factory LoginResponse.empty() {
+    return LoginResponse(
+      accessToken: '',
+      userStatus: false,
+      tokenType: '',
+      expiresIn: 0,
+      userdata: Userdata(
+        id: 0,
+        oldId: 0,
+        name: '',
+        email: '',
+        countryCode: '',
+        phone: '',
+        stepScreen: '',
+      ),
+    );
+  }
 }
 
 class Userdata {
-  final int id;
-  final dynamic oldId;
-  final dynamic name;
-  final dynamic email;
-  final String phone;
-  final String stepScreen;
+  int? id;
+  int? oldId;
+  String? name;
+  String? email;
+  String? countryCode;
+  String? phone;
+  String? stepScreen;
 
   Userdata({
-    required this.id,
+    this.id,
     this.oldId,
     this.name,
     this.email,
-    required this.phone,
-    required this.stepScreen,
+    this.countryCode,
+    this.phone,
+    this.stepScreen,
   });
 
   Userdata copyWith({
     int? id,
-    dynamic oldId,
-    dynamic name,
-    dynamic email,
+    int? oldId,
+    String? name,
+    String? email,
+    String? countryCode,
     String? phone,
     String? stepScreen,
   }) =>
@@ -94,6 +109,7 @@ class Userdata {
         oldId: oldId ?? this.oldId,
         name: name ?? this.name,
         email: email ?? this.email,
+        countryCode: countryCode ?? this.countryCode,
         phone: phone ?? this.phone,
         stepScreen: stepScreen ?? this.stepScreen,
       );
@@ -103,6 +119,7 @@ class Userdata {
         oldId: json["old_id"],
         name: json["name"],
         email: json["email"],
+        countryCode: json["country_code"],
         phone: json["phone"],
         stepScreen: json["step_screen"],
       );
@@ -112,6 +129,7 @@ class Userdata {
         "old_id": oldId,
         "name": name,
         "email": email,
+        "country_code": countryCode,
         "phone": phone,
         "step_screen": stepScreen,
       };

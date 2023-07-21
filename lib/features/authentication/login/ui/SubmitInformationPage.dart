@@ -6,18 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/core/app_colors.dart';
 import 'package:himachali_rishta/features/authentication/login/get_controller/submit_information_get_controller.dart';
+import 'package:himachali_rishta/features/authentication/login/models/login_response.dart';
 import 'package:himachali_rishta/features/authentication/login/ui/side_option_drawer.dart';
 import 'package:himachali_rishta/helpers/dimension_helper.dart';
 import 'package:sizer/sizer.dart';
 
 class SubmitInformationPage extends StatelessWidget {
-  final String accessToken;
+  final LoginResponse loginResponse;
   SubmitInformationGetController getController =
       Get.put(SubmitInformationGetController());
 
   SubmitInformationPage({
     super.key,
-    required this.accessToken,
+    required this.loginResponse,
   });
 
   @override
@@ -100,7 +101,7 @@ class SubmitInformationPage extends StatelessWidget {
                                             onPressed: () {
                                               getController
                                                   .submitFirstStepRegistration(
-                                                      accessToken);
+                                                      loginResponse);
                                             },
                                             style: ElevatedButton.styleFrom(
                                               backgroundColor: AppColors.green,

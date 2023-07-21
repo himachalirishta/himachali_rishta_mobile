@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/authentication/login/models/city_model.dart';
@@ -8,7 +7,9 @@ import 'package:himachali_rishta/features/authentication/login/models/country_mo
 import 'package:himachali_rishta/features/authentication/login/models/state_model.dart';
 import 'package:himachali_rishta/features/edit_information/models/contact_details_request.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../core/app_constants.dart';
 import '../../authentication/login/models/login_request.dart';
 import '../../authentication/login/models/login_response.dart';
 
@@ -117,8 +118,11 @@ class ContactDetailsEditGetController extends GetxController
   }
 
   Future<void> submitContactDetails() async {
-    LoginRequest loginRequest =
-        LoginRequest(phone: FirebaseAuth.instance.currentUser!.phoneNumber!);
+    var prefs = await SharedPreferences.getInstance();
+    LoginResponse response = LoginResponse.fromJson(
+        jsonDecode(prefs.getString(AppConstants.loginResponse)!));
+    LoginRequest loginRequest = LoginRequest(
+        phone: response.userdata!.countryCode! + response.userdata!.phone!);
     var headers = {'Content-Type': 'application/json'};
     var request = http.Request(
         'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));

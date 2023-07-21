@@ -1,12 +1,14 @@
 import 'dart:convert';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:himachali_rishta/features/authentication/login/models/login_request.dart';
 import 'package:himachali_rishta/features/authentication/login/models/login_response.dart';
 import 'package:himachali_rishta/features/edit_information/models/physical_attributes_and_eating_habits_request.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../../core/app_constants.dart';
 
 class PhysicalAttributesAndEatingHabitsGetController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -122,8 +124,11 @@ class PhysicalAttributesAndEatingHabitsGetController extends GetxController
           'XSRF-TOKEN=eyJpdiI6IjhZYUl6QncwNk5ZRGIydFZOd0ZiZHc9PSIsInZhbHVlIjoiQ1lWWnRpYkVxb1YxOHExNk5JdHdod1F2Sy9kOUJYQ0E3aStZMUp3QjRPeHE2N1BQM1c2TlZDNDA3Ty9maTMvakZvT1pUZWZUQk8xdEp2VkV6VkZPNWI0Slh4cFhkOUlGN2R4Mll2YkpZL2l1RkZJYVVHN2cva29kWUgzajArVTYiLCJtYWMiOiIwMmYxM2U3OWE4OWNjODkwOWNkNWMxY2ZmMDkwMjUxZGMwZWE2M2Y1YWZiNTI3YTRlMjMwYWU2ODUxMDgxZWE3IiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6ImpMYVJ5UzYyRmxMR0xlNFdhZ0szUFE9PSIsInZhbHVlIjoiOHBRMGwwN0xKcHdLSm1OblBtSTZyNmF2QkcxZkV0ei9jckhJd3dabGllZkZsQTgvWnBPVS9pVXdreVpyNkxaMGM0UDB4SWJVcmE1TUVKU3RCR3lCS0hIS3d0SmM5MlVkTlN3TEpVdE96T2tLU3FqUkxjY2d4eThwYmtBSlRYbU0iLCJtYWMiOiJkYjFhYjhlYTlhMTg1YjQ5MDBkMjI5ZTMwNmQzMWQyZDFlOWJhN2E0NzY2MjBiNTNiNTI5NjIwNzA0YjcxMGQzIiwidGFnIjoiIn0%3D'
     };
 
-    LoginRequest loginRequest =
-        LoginRequest(phone: FirebaseAuth.instance.currentUser!.phoneNumber!);
+    var prefs = await SharedPreferences.getInstance();
+    LoginResponse response = LoginResponse.fromJson(
+        jsonDecode(prefs.getString(AppConstants.loginResponse)!));
+    LoginRequest loginRequest = LoginRequest(
+        phone: response.userdata!.countryCode! + response.userdata!.phone!);
     var request = http.Request(
         'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
     request.body = json.encode(loginRequest.toJson());
@@ -134,48 +139,51 @@ class PhysicalAttributesAndEatingHabitsGetController extends GetxController
     if (responseFromLogin.statusCode == 200) {
       LoginResponse loginResponse =
           loginResponseFromJson(await responseFromLogin.stream.bytesToString());
-      String accessToken = loginResponse.accessToken;
-      var headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer $accessToken',
-        'Cookie':
-            'XSRF-TOKEN=eyJpdiI6IjhZYUl6QncwNk5ZRGIydFZOd0ZiZHc9PSIsInZhbHVlIjoiQ1lWWnRpYkVxb1YxOHExNk5JdHdod1F2Sy9kOUJYQ0E3aStZMUp3QjRPeHE2N1BQM1c2TlZDNDA3Ty9maTMvakZvT1pUZWZUQk8xdEp2VkV6VkZPNWI0Slh4cFhkOUlGN2R4Mll2YkpZL2l1RkZJYVVHN2cva29kWUgzajArVTYiLCJtYWMiOiIwMmYxM2U3OWE4OWNjODkwOWNkNWMxY2ZmMDkwMjUxZGMwZWE2M2Y1YWZiNTI3YTRlMjMwYWU2ODUxMDgxZWE3IiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6ImpMYVJ5UzYyRmxMR0xlNFdhZ0szUFE9PSIsInZhbHVlIjoiOHBRMGwwN0xKcHdLSm1OblBtSTZyNmF2QkcxZkV0ei9jckhJd3dabGllZkZsQTgvWnBPVS9pVXdreVpyNkxaMGM0UDB4SWJVcmE1TUVKU3RCR3lCS0hIS3d0SmM5MlVkTlN3TEpVdE96T2tLU3FqUkxjY2d4eThwYmtBSlRYbU0iLCJtYWMiOiJkYjFhYjhlYTlhMTg1YjQ5MDBkMjI5ZTMwNmQzMWQyZDFlOWJhN2E0NzY2MjBiNTNiNTI5NjIwNzA0YjcxMGQzIiwidGFnIjoiIn0%3D'
-      };
-      var request = http.Request(
-          'POST',
-          Uri.parse(
-              'https://devmatri.rishtaguru.com/api/edit/physical-attributes'));
-      PhysicalAttributesAndEatingHabitsRequest
-          physicalAttributesAndEatingHabitsRequest =
-          PhysicalAttributesAndEatingHabitsRequest(
-              height: "${ftController.text}ft ${inchesController.text}inch",
-              weight: weightController.text,
-              bloodGroup: bloodGroupController.text,
-              complexion: complexionController.text,
-              bodyType: bodyTypeController.text,
-              diet: dietController.text,
-              specialCase: specialCaseController.text,
-              disablity: disabilityController.text);
-      request.body =
-          json.encode(physicalAttributesAndEatingHabitsRequest.toJson());
-      request.headers.addAll(headers);
+      if (loginResponse.accessToken != null &&
+          loginResponse.accessToken != '') {
+        String accessToken = loginResponse.accessToken!;
+        var headers = {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $accessToken',
+          'Cookie':
+              'XSRF-TOKEN=eyJpdiI6IjhZYUl6QncwNk5ZRGIydFZOd0ZiZHc9PSIsInZhbHVlIjoiQ1lWWnRpYkVxb1YxOHExNk5JdHdod1F2Sy9kOUJYQ0E3aStZMUp3QjRPeHE2N1BQM1c2TlZDNDA3Ty9maTMvakZvT1pUZWZUQk8xdEp2VkV6VkZPNWI0Slh4cFhkOUlGN2R4Mll2YkpZL2l1RkZJYVVHN2cva29kWUgzajArVTYiLCJtYWMiOiIwMmYxM2U3OWE4OWNjODkwOWNkNWMxY2ZmMDkwMjUxZGMwZWE2M2Y1YWZiNTI3YTRlMjMwYWU2ODUxMDgxZWE3IiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6ImpMYVJ5UzYyRmxMR0xlNFdhZ0szUFE9PSIsInZhbHVlIjoiOHBRMGwwN0xKcHdLSm1OblBtSTZyNmF2QkcxZkV0ei9jckhJd3dabGllZkZsQTgvWnBPVS9pVXdreVpyNkxaMGM0UDB4SWJVcmE1TUVKU3RCR3lCS0hIS3d0SmM5MlVkTlN3TEpVdE96T2tLU3FqUkxjY2d4eThwYmtBSlRYbU0iLCJtYWMiOiJkYjFhYjhlYTlhMTg1YjQ5MDBkMjI5ZTMwNmQzMWQyZDFlOWJhN2E0NzY2MjBiNTNiNTI5NjIwNzA0YjcxMGQzIiwidGFnIjoiIn0%3D'
+        };
+        var request = http.Request(
+            'POST',
+            Uri.parse(
+                'https://devmatri.rishtaguru.com/api/edit/physical-attributes'));
+        PhysicalAttributesAndEatingHabitsRequest
+            physicalAttributesAndEatingHabitsRequest =
+            PhysicalAttributesAndEatingHabitsRequest(
+                height: "${ftController.text}ft ${inchesController.text}inch",
+                weight: weightController.text,
+                bloodGroup: bloodGroupController.text,
+                complexion: complexionController.text,
+                bodyType: bodyTypeController.text,
+                diet: dietController.text,
+                specialCase: specialCaseController.text,
+                disablity: disabilityController.text);
+        request.body =
+            json.encode(physicalAttributesAndEatingHabitsRequest.toJson());
+        request.headers.addAll(headers);
 
-      http.StreamedResponse response = await request.send();
+        http.StreamedResponse response = await request.send();
 
-      if (response.statusCode == 200) {
-        PhysicalAttributesAndEatingHabitsResponse
-            physicalAttributesAndEatingHabitsResponse =
-            physicalAttributesAndEatingHabitsResponseFromJson(
-                await response.stream.bytesToString());
-        if (physicalAttributesAndEatingHabitsResponse.message
-            .toLowerCase()
-            .contains("upload")) {
-          Get.back();
-          Get.snackbar('Success',
-              'Physical Attributes and Eating Habits Updated Successfully');
+        if (response.statusCode == 200) {
+          PhysicalAttributesAndEatingHabitsResponse
+              physicalAttributesAndEatingHabitsResponse =
+              physicalAttributesAndEatingHabitsResponseFromJson(
+                  await response.stream.bytesToString());
+          if (physicalAttributesAndEatingHabitsResponse.message
+              .toLowerCase()
+              .contains("upload")) {
+            Get.back();
+            Get.snackbar('Success',
+                'Physical Attributes and Eating Habits Updated Successfully');
+          }
+        } else {
+          throw Exception(response.reasonPhrase);
         }
-      } else {
-        throw Exception(response.reasonPhrase);
       }
     } else {
       throw Exception(responseFromLogin.reasonPhrase);
