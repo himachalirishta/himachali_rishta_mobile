@@ -30,7 +30,7 @@ class LoginPageGetController extends GetxController {
 
     var headers = {'Content-Type': 'application/json'};
     var request = http.Request('POST',
-        Uri.parse('https://hr72.rishtaguru.com/api/register/Register2Factor'));
+        Uri.parse('${AppConstants.baseUrl}register/Register2Factor'));
 
     PhoneOtpRequest phoneOtpRequest = PhoneOtpRequest(
         countrycode: "+${selectedCountry.value.phoneCode}",
@@ -51,7 +51,7 @@ class LoginPageGetController extends GetxController {
             var request = http.Request(
                 'POST',
                 Uri.parse(
-                    'https://hr72.rishtaguru.com/api/register/VerifyPhone'));
+                    '${AppConstants.baseUrl}register/VerifyPhone'));
             VerifyPhoneRequest verifyPhoneRequest = VerifyPhoneRequest(
                 countrycode: "+${selectedCountry.value.phoneCode}",
                 phone: mobileNumberController.text,

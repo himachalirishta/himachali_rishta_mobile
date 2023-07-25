@@ -51,7 +51,7 @@ class HoroscopeSocialGetController extends GetxController
         phone: response.userdata!.countryCode! + response.userdata!.phone!);
     var headers = {'Content-Type': 'application/json'};
     var request = http.Request(
-        'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
+        'POST', Uri.parse('${AppConstants.baseUrl}auth/login'));
     request.body = json.encode(loginRequest.toJson());
     request.headers.addAll(headers);
 
@@ -68,7 +68,7 @@ class HoroscopeSocialGetController extends GetxController
       var request = http.Request(
           'POST',
           Uri.parse(
-              'https://devmatri.rishtaguru.com/api/edit/horoscope-social'));
+              '${AppConstants.baseUrl}edit/horoscope-social'));
 
       HoroscopeSocialRequest horoscopeSocialRequest = HoroscopeSocialRequest(
         manglik: manglikController.text,

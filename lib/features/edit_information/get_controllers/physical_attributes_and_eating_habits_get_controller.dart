@@ -130,7 +130,7 @@ class PhysicalAttributesAndEatingHabitsGetController extends GetxController
     LoginRequest loginRequest = LoginRequest(
         phone: response.userdata!.countryCode! + response.userdata!.phone!);
     var request = http.Request(
-        'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
+        'POST', Uri.parse('${AppConstants.baseUrl}auth/login'));
     request.body = json.encode(loginRequest.toJson());
     request.headers.addAll(headers);
 
@@ -151,7 +151,7 @@ class PhysicalAttributesAndEatingHabitsGetController extends GetxController
         var request = http.Request(
             'POST',
             Uri.parse(
-                'https://devmatri.rishtaguru.com/api/edit/physical-attributes'));
+                '${AppConstants.baseUrl}edit/physical-attributes'));
         PhysicalAttributesAndEatingHabitsRequest
             physicalAttributesAndEatingHabitsRequest =
             PhysicalAttributesAndEatingHabitsRequest(

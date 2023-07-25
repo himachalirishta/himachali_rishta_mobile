@@ -82,7 +82,7 @@ class SubmitInformationGetController extends GetxController
     var request = http.Request(
         'GET',
         Uri.parse(
-            'https://devmatri.rishtaguru.com/api/cast?id=${allReligions[indexWhere].id}'));
+            '${AppConstants.baseUrl}cast?id=${allReligions[indexWhere].id}'));
 
     http.StreamedResponse response = await request.send();
 
@@ -97,7 +97,7 @@ class SubmitInformationGetController extends GetxController
 
   Future<void> getReligions() async {
     var request = http.Request(
-        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/religion'));
+        'GET', Uri.parse('${AppConstants.baseUrl}religion'));
 
     http.StreamedResponse response = await request.send();
 
@@ -116,7 +116,7 @@ class SubmitInformationGetController extends GetxController
       'Authorization': 'Bearer ${loginResponse.accessToken}'
     };
     var request = http.Request(
-        'POST', Uri.parse('https://hr72.rishtaguru.com/api/register/step/1'));
+        'POST', Uri.parse('${AppConstants.baseUrl}register/step/1'));
     RegistrationStep1Request registrationStep1Request =
         RegistrationStep1Request(
             brideGroomName: nameController.text.trim(),
@@ -217,7 +217,7 @@ class SubmitInformationGetController extends GetxController
 
   Future<void> getGenders() async {
     var request = http.Request(
-        'GET', Uri.parse('https://hr72.rishtaguru.com/api/Gender'));
+        'GET', Uri.parse('${AppConstants.baseUrl}Gender'));
 
     http.StreamedResponse response = await request.send();
 
@@ -234,7 +234,7 @@ class SubmitInformationGetController extends GetxController
 
   Future<void> getProfileFor() async {
     var request = http.Request(
-        'GET', Uri.parse('https://hr72.rishtaguru.com/api/ProfileFor'));
+        'GET', Uri.parse('${AppConstants.baseUrl}ProfileFor'));
 
     http.StreamedResponse response = await request.send();
 

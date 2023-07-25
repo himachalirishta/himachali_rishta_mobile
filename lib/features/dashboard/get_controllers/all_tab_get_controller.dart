@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 import 'package:himachali_rishta/features/dashboard/models/latest_profile_model.dart';
 import 'package:http/http.dart' as http;
 
+import '../../../core/app_constants.dart';
+
 class AllTabGetController extends GetxController {
   final String accessToken;
   Rx<LatestProfileModel> latestProfileModel = LatestProfileModel.empty().obs;
@@ -13,7 +15,7 @@ class AllTabGetController extends GetxController {
       'Authorization': 'Bearer $accessToken',
     };
     var request = http.Request(
-        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/latest-profile'));
+        'GET', Uri.parse('${AppConstants.baseUrl}latest-profile'));
 
     request.headers.addAll(headers);
 

@@ -125,7 +125,7 @@ class ContactDetailsEditGetController extends GetxController
         phone: response.userdata!.countryCode! + response.userdata!.phone!);
     var headers = {'Content-Type': 'application/json'};
     var request = http.Request(
-        'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
+        'POST', Uri.parse('${AppConstants.baseUrl}auth/login'));
     request.body = json.encode(loginRequest.toJson());
     request.headers.addAll(headers);
 
@@ -142,7 +142,7 @@ class ContactDetailsEditGetController extends GetxController
       var request = http.Request(
           'POST',
           Uri.parse(
-              'https://devmatri.rishtaguru.com/api/edit/contact-details'));
+              '${AppConstants.baseUrl}edit/contact-details'));
 
       ContactDetailsRequest assetsAndPropertiesRequest = ContactDetailsRequest(
           mobileNo: mobileNoController.text,
@@ -180,7 +180,7 @@ class ContactDetailsEditGetController extends GetxController
 
   Future<void> loadCountries() async {
     var request = http.Request(
-        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/country'));
+        'GET', Uri.parse('${AppConstants.baseUrl}country'));
 
     http.StreamedResponse response = await request.send();
 
@@ -206,7 +206,7 @@ class ContactDetailsEditGetController extends GetxController
     var request = http.Request(
         'GET',
         Uri.parse(
-            'https://devmatri.rishtaguru.com/api/state?id=${selectedCountryModel.id}'));
+            '${AppConstants.baseUrl}state?id=${selectedCountryModel.id}'));
 
     http.StreamedResponse response = await request.send();
 
@@ -230,7 +230,7 @@ class ContactDetailsEditGetController extends GetxController
     var request = http.Request(
         'GET',
         Uri.parse(
-            'https://devmatri.rishtaguru.com/api/city?id=${selectedStateModel.id}'));
+            '${AppConstants.baseUrl}city?id=${selectedStateModel.id}'));
 
     http.StreamedResponse response = await request.send();
 
@@ -248,7 +248,7 @@ class ContactDetailsEditGetController extends GetxController
 
   Future<void> loadLivingCountries() async {
     var request = http.Request(
-        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/country'));
+        'GET', Uri.parse('${AppConstants.baseUrl}country'));
 
     http.StreamedResponse response = await request.send();
 
@@ -272,7 +272,7 @@ class ContactDetailsEditGetController extends GetxController
     var request = http.Request(
         'GET',
         Uri.parse(
-            'https://devmatri.rishtaguru.com/api/state?id=${selectedLivingCountryModel.id}}'));
+            '${AppConstants.baseUrl}state?id=${selectedLivingCountryModel.id}}'));
 
     http.StreamedResponse response = await request.send();
 
@@ -297,7 +297,7 @@ class ContactDetailsEditGetController extends GetxController
     var request = http.Request(
         'GET',
         Uri.parse(
-            'https://devmatri.rishtaguru.com/api/city?id=${selectedLivingStateModel.id}'));
+            '${AppConstants.baseUrl}city?id=${selectedLivingStateModel.id}'));
 
     http.StreamedResponse response = await request.send();
 

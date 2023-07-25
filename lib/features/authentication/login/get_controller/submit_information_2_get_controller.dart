@@ -10,6 +10,7 @@ import 'package:himachali_rishta/features/authentication/login/models/state_mode
 import 'package:himachali_rishta/features/authentication/login/ui/UploadPhotoScreen.dart';
 import 'package:http/http.dart' as http;
 
+import '../../../../core/app_constants.dart';
 import '../models/occupation_list_model.dart';
 
 class SubmitInformation2GetController extends GetxController
@@ -80,7 +81,7 @@ class SubmitInformation2GetController extends GetxController
 
   Future<void> loadCountries() async {
     var request = http.Request(
-        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/country'));
+        'GET', Uri.parse('${AppConstants.baseUrl}country'));
 
     http.StreamedResponse response = await request.send();
 
@@ -103,7 +104,7 @@ class SubmitInformation2GetController extends GetxController
     var request = http.Request(
         'GET',
         Uri.parse(
-            'https://devmatri.rishtaguru.com/api/state?id=${allCountries[indexWhere].id}}'));
+            '${AppConstants.baseUrl}state?id=${allCountries[indexWhere].id}}'));
 
     http.StreamedResponse response = await request.send();
 
@@ -128,7 +129,7 @@ class SubmitInformation2GetController extends GetxController
     var request = http.Request(
         'GET',
         Uri.parse(
-            'https://devmatri.rishtaguru.com/api/city?id=${allStates[indexWhere].id}}'));
+            '${AppConstants.baseUrl}city?id=${allStates[indexWhere].id}}'));
     http.StreamedResponse response = await request.send();
 
     if (response.statusCode == 200) {
@@ -148,7 +149,7 @@ class SubmitInformation2GetController extends GetxController
       'Authorization': 'Bearer $accessToken'
     };
     var request = http.Request(
-        'POST', Uri.parse('https://hr72.rishtaguru.com/api/register/step/2'));
+        'POST', Uri.parse('${AppConstants.baseUrl}register/step/2'));
     RegistrationStep2Request registrationStep2Request =
         RegistrationStep2Request(
             height: "${ftController.text}ft  ${inchController.text}in",
@@ -179,7 +180,7 @@ class SubmitInformation2GetController extends GetxController
 
   Future<void> loadEducation() async {
     var request = http.Request(
-        'GET', Uri.parse('https://hr72.rishtaguru.com/api/educations'));
+        'GET', Uri.parse('${AppConstants.baseUrl}educations'));
 
     http.StreamedResponse response = await request.send();
 
@@ -196,7 +197,7 @@ class SubmitInformation2GetController extends GetxController
 
   Future<void> loadOccupations() async {
     var request = http.Request(
-        'GET', Uri.parse('https://hr72.rishtaguru.com/api/cast?id=5'));
+        'GET', Uri.parse('${AppConstants.baseUrl}cast?id=5'));
 
     http.StreamedResponse response = await request.send();
 

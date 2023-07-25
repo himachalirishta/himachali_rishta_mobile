@@ -16,7 +16,7 @@ class MyProfileGetController extends GetxController {
   Future<MyProfileDetailsModel> getProfileDetails() async {
     var headers = {'Content-Type': 'application/json'};
     var request = http.Request(
-        'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
+        'POST', Uri.parse('${AppConstants.baseUrl}auth/login'));
 
     var prefs = await SharedPreferences.getInstance();
     LoginResponse response = LoginResponse.fromJson(
@@ -38,7 +38,7 @@ class MyProfileGetController extends GetxController {
             'XSRF-TOKEN=eyJpdiI6ImJBTGlEa1I4TlRxdE5ZZ2xRMVYrSmc9PSIsInZhbHVlIjoiakdpcW5TNTRDMTlEcDVwTDdveW5BUkhPSVdlTitPTjB5ejNEajBTNkVmLzBiT25DZVNudS93VFc1dWRGaFNSTXIzaTRPb1ZqWXNBbHNtcVFKb2hMT1JFV216MGJoVlFsOVdwUnhlM0oyVHhLWitXa0N0TDJ5eDZLN1B0bUo1S0kiLCJtYWMiOiJjNWE4MWNlZDJjM2UyYmM0NWFlZWQyNzllOTM4NmU2MWM3ZGEwNTIzYTZjOWM0ODI4ZmEyNjdmZDBjOTc1MTI4IiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6ImU2VXcyZ0MrNGtmYUcwelg3dDQvZ0E9PSIsInZhbHVlIjoiT2JqeDNRK2RHVTlEY2tQK0FPSk1zSTJ0OFFTbDl6eXJVb3lJY3pmcjFQR1M0ejRHb0thcHpWQWY3Um1pa3Ywekh4aWZobGhVOHhUeXcwRFlaWmJEUDF3c0E4QysxOGtGMXBqcXFHcEJDUHpqMURHNW5USFBFU1hKUU1leFNqU3EiLCJtYWMiOiJjOTIzMTFkYTRmZWM3ZWFhNjZmMTJhZGYwYzZkOWYwMWQ4MzVlOWE5MDAwNWNhY2IyNDZhZjM0YWI1MDVhNDU0IiwidGFnIjoiIn0%3D'
       };
       var request = http.Request('GET',
-          Uri.parse('https://devmatri.rishtaguru.com/api/view/all-profile'));
+          Uri.parse('${AppConstants.baseUrl}view/all-profile'));
 
       request.headers.addAll(headers);
 

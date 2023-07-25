@@ -77,7 +77,7 @@ class AssetsAndPropertiesGetController extends GetxController
               loginResponse.userdata!.phone!);
       var headers = {'Content-Type': 'application/json'};
       var request = http.Request(
-          'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
+          'POST', Uri.parse('${AppConstants.baseUrl}auth/login'));
       request.body = json.encode(loginRequest.toJson());
       request.headers.addAll(headers);
 
@@ -94,7 +94,7 @@ class AssetsAndPropertiesGetController extends GetxController
         var request = http.Request(
             'POST',
             Uri.parse(
-                'https://devmatri.rishtaguru.com/api/edit/assets-properties'));
+                '${AppConstants.baseUrl}edit/assets-properties'));
 
         AssetsAndPropertiesRequest assetsAndPropertiesRequest =
             AssetsAndPropertiesRequest(

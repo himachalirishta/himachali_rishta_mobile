@@ -78,7 +78,7 @@ class BasicInformationGetController extends GetxController
     var request = http.Request(
         'GET',
         Uri.parse(
-            'https://devmatri.rishtaguru.com/api/cast?id=${allReligions[indexWhere].id}'));
+            '${AppConstants.baseUrl}cast?id=${allReligions[indexWhere].id}'));
 
     http.StreamedResponse response = await request.send();
 
@@ -93,7 +93,7 @@ class BasicInformationGetController extends GetxController
 
   Future<void> getReligions() async {
     var request = http.Request(
-        'GET', Uri.parse('https://devmatri.rishtaguru.com/api/religion'));
+        'GET', Uri.parse('${AppConstants.baseUrl}religion'));
 
     http.StreamedResponse response = await request.send();
 
@@ -123,7 +123,7 @@ class BasicInformationGetController extends GetxController
         phone: response.userdata!.countryCode! + response.userdata!.phone!);
     var headers = {'Content-Type': 'application/json'};
     var request = http.Request(
-        'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
+        'POST', Uri.parse('${AppConstants.baseUrl}auth/login'));
     request.body = json.encode(loginRequest.toJson());
     request.headers.addAll(headers);
 
@@ -137,7 +137,7 @@ class BasicInformationGetController extends GetxController
         'Authorization': 'Bearer ${loginResponse.accessToken}'
       };
       var request = http.Request(
-          'POST', Uri.parse('https://devmatri.rishtaguru.com/api/edit/basic'));
+          'POST', Uri.parse('${AppConstants.baseUrl}edit/basic'));
       request.body = json.encode(basicEditRequest.toJson());
       request.headers.addAll(headers);
 

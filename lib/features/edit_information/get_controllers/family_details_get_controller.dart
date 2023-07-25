@@ -72,7 +72,7 @@ class FamilyDetailsGetController extends GetxController
         phone: response.userdata!.countryCode! + response.userdata!.phone!);
     var headers = {'Content-Type': 'application/json'};
     var request = http.Request(
-        'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
+        'POST', Uri.parse('${AppConstants.baseUrl}auth/login'));
     request.body = json.encode(loginRequest.toJson());
     request.headers.addAll(headers);
 
@@ -87,7 +87,7 @@ class FamilyDetailsGetController extends GetxController
         'Authorization': 'Bearer ${loginResponse.accessToken}'
       };
       var request = http.Request('POST',
-          Uri.parse('https://devmatri.rishtaguru.com/api/edit/family-details'));
+          Uri.parse('${AppConstants.baseUrl}edit/family-details'));
 
       FamilyDetailsRequest educationOccupationRequest = FamilyDetailsRequest(
         fatherOccoupatin: fatherOccupationController.text,

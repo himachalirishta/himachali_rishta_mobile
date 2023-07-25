@@ -21,7 +21,7 @@ class ProfileDescriptionGetController extends GetxController {
         phone: response.userdata!.countryCode! + response.userdata!.phone!);
     var headers = {'Content-Type': 'application/json'};
     var request = http.Request(
-        'POST', Uri.parse('https://devmatri.rishtaguru.com/api/auth/login'));
+        'POST', Uri.parse('${AppConstants.baseUrl}auth/login'));
     request.body = json.encode(loginRequest.toJson());
     request.headers.addAll(headers);
 
@@ -38,7 +38,7 @@ class ProfileDescriptionGetController extends GetxController {
       var request = http.Request(
           'POST',
           Uri.parse(
-              'https://devmatri.rishtaguru.com/api/edit/profile-description'));
+              '${AppConstants.baseUrl}edit/profile-description'));
 
       ProfileDescriptionRequest profileDescriptionRequest =
           ProfileDescriptionRequest(

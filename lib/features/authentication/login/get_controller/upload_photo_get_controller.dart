@@ -3,6 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../../core/app_constants.dart';
+
 class UploadPhotoGetController extends GetxController {
   RxString selectedPhoto = ''.obs;
 
@@ -25,8 +27,8 @@ class UploadPhotoGetController extends GetxController {
     var headers = {
       'Authorization': 'Bearer $accessToken',
     };
-    var request = http.MultipartRequest('POST',
-        Uri.parse('https://devmatri.rishtaguru.com/api/upload/profile_image'));
+    var request = http.MultipartRequest(
+        'POST', Uri.parse('${AppConstants.baseUrl}upload/profile_image'));
     request.fields.addAll({'is_profile_image': 'Y', 'type': 'photo'});
     request.files
         .add(await http.MultipartFile.fromPath('image', selectedPhoto.value));
